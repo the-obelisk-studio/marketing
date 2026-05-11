@@ -181,7 +181,7 @@ export const PartnershipPageSchema = z.object({
 })
 
 export const PostPageSchema = z.object({
-  hero: HeroSchema,
+  hero: HeroPillsHeroSchema,
   approach: z.object({ kicker: z.string(), heading: z.string(), body: z.string() }),
   services: z.object({
     kicker: z.string(),
@@ -207,8 +207,6 @@ export const PostPageSchema = z.object({
 
 export const GracePageSchema = z.object({
   hero: HeroSchema,
-  // grace.html is product-marketing-heavy with screenshot placeholders.
-  // Loose shape for now; commit 4 tightens this as we port content.
   sections: z.array(z.object({
     kicker: z.string().optional(),
     heading: z.string(),
@@ -224,7 +222,7 @@ export const GracePageSchema = z.object({
 })
 
 export const ContactPageSchema = z.object({
-  hero: HeroSchema,
+  hero: HeroPillsHeroSchema,
   info: z.array(z.object({
     label: z.string(),
     value: z.string(),

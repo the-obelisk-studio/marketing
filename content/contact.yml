@@ -1,0 +1,31 @@
+# Contact page content. Edited via Decap CMS at /admin/.
+# Schema: src/lib/schema.ts → ContactPageSchema.
+
+hero:
+  title: ""
+  headline: "Tell us what you're *working on.*"
+  positioning: |
+    Software, finishing, partnership, or something that doesn't fit any of those yet — we read every message ourselves.
+  meta:
+    - Obelisk Studios
+    - Get in touch
+    - Burbank · Los Angeles
+
+info:
+  - label: "— Email"
+    value: hello@theobeliskstudio.com
+  - label: "— Studio"
+    value: Burbank, California
+  - label: "— Response"
+    value: Usually within a few days
+
+form:
+  kicker: The Form
+  heading: "Send a *note.*"
+  body: A few details so we can route your message and respond properly. Or skip this and email us directly above.
+  topics:
+    - Grace · Production Software
+    - Post Services · Edit, Color, Finishing
+    - Partnership · Studio Inquiry
+    - Press & Media
+    - Other / General

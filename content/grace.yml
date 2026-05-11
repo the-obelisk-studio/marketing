@@ -1,0 +1,62 @@
+# Grace product page content. Edited via Decap CMS at /admin/.
+# Schema: src/lib/schema.ts → GracePageSchema.
+#
+# grace.html is screenshot-heavy — real UI captures land via Decap
+# image uploads later. For now <ProductShot src=""> renders a dark
+# placeholder frame so the layout reads correctly.
+
+hero:
+  title: Grace
+  motto: A production operating system.
+
+sections:
+  - kicker: "01 · The Thesis"
+    heading: "Connect *everything.* Re-enter *nothing.*"
+    body: |
+      Grace is built around one idea: every department on a film should be working from the same picture. Breakdown feeds schedule. Schedule feeds budget. Budget feeds call sheet. Everything connects, nothing gets re-entered, and no one is working from a stale version.
+    bullets:
+      - One upload changes everything downstream.
+      - The set dashboard is the schedule, live.
+      - Cast and crew see only what they should.
+
+  - kicker: "02 · The Dot System"
+    heading: "Co-pilot, *not autopilot.*"
+    body: |
+      Every cell, row, and value in Grace carries a colored dot that tells you who made the decision. Blue means Grace suggested it. Gold means a human entered it. Green means it's verified from a signed document.
+    bullets:
+      - "Blue · Grace did this."
+      - "Gold · You did this."
+      - "Green · Verified from a document."
+
+  - kicker: "03 · Pre-Production"
+    heading: "Plan the picture *before the picture rolls.*"
+    body: |
+      Script breakdown that knows scenes and elements. Scheduling and DOOD that pack locations and respect minor hours. A budget that actualizes from purchase orders. A shot list with VFX flags and storyboards. All connected, all live.
+
+  - kicker: "04 · Production"
+    heading: "Every department, *working from the same picture.*"
+    body: |
+      Call sheets that build themselves from the schedule. Time cards that prefill from call time + meal duration. A set dashboard tracking actuals against the strip plan. Script supervisor notes, editor log, VFX flags — every department's daily work in one tool.
+
+  - kicker: "05 · Grace AI"
+    heading: "A co-pilot *that knows your production.*"
+    body: |
+      The chat panel reads the production state and answers questions in context. Why is this scene's HMU so long? Which crew member's call time conflicts with a turnaround? What's our French-hours exposure today? Trained on industry compliance — IATSE, DGA, SAG, Teamsters thresholds built in.
+
+  - kicker: "06 · The Vault"
+    heading: "Send screeners. *Stay in control.*"
+    body: |
+      Magic-link screener portal with forensic watermarking, device locking, time-bound access codes. DIT pipeline from set offload through dailies delivery. Editorial gets a clean editor log + EDL + FCPXML for turnover.
+
+  - kicker: "07 · Operations"
+    heading: "The unglamorous work, *handled.*"
+    bullets:
+      - "Union profiles, *built in.*"
+      - "The right people, *the right view.*"
+      - "Server-rendered PDFs, *by the dozen.*"
+      - "Real software, *under the hood.*"
+
+cta:
+  heading: "Built for the people running production."
+  body: "Currently in beta with a small cohort. Tell us about your production and we'll get you set up."
+  link: { label: "Get in touch", href: "/contact" }

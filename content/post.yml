@@ -1,0 +1,82 @@
+# Post page content. Edited via Decap CMS at /admin/.
+# Schema: src/lib/schema.ts → PostPageSchema.
+
+hero:
+  title: ""
+  headline: "A finishing house, *run by working filmmakers.*"
+  positioning: "Edit, color, and finishing — supervised by the people who shot the picture."
+  meta:
+    - Obelisk Studios
+    - Post Production Services
+    - Burbank · Los Angeles
+  pills:
+    - "● Booking projects"
+    - "Indie features · Shorts · Commercials · Documentary"
+
+approach:
+  kicker: The Approach
+  heading: "Finishing as *collaboration.*"
+  body: |
+    Most finishing houses run on volume. A timeline comes in, an artist works through a punch list, a master goes out. The DP is in the room for one session, maybe two. The director sees a draft on a link.
+
+    We work the other way. The edit, the color, the finish — these are creative decisions, not technical handoffs. A grade isn't a preset matched to dailies; it's a choice about what the picture is supposed to feel like, made in conversation with the people who shot it. Editorial isn't a punch list; it's the moment the film actually becomes itself.
+
+    We give each project the time it needs, and stay in the room with the people who made the picture. *That's the whole offering.*
+
+services:
+  kicker: Services
+  heading: "Edit. Color. *Finishing.*"
+  items:
+    - title: "Edit."
+      description: |
+        From assembly to picture lock. Narrative, documentary, and short-form editorial. We work in DaVinci Resolve and Premiere — whichever the production was cut on, whichever serves the story. Director's cut, producer notes passes, picture lock. Available as full edit from dailies, or as a fresh pair of eyes on a stuck cut.
+      tools: [DaVinci Resolve, Premiere Pro, Avid]
+    - title: "Color."
+      description: |
+        Grade with the people who shot it. DaVinci Resolve color, supervised by working DPs. Conform, primary, secondary, shot match, look development, deliverables. We grade the picture together — DP in the room or on the link, decisions made in conversation. ACES and Rec.709 pipelines, RAW from any camera body, HDR on request.
+      tools: [DaVinci Resolve Studio, ACES, HDR · Rec.709, Calibrated suite]
+    - title: "Finishing."
+      description: |
+        Conform, deliverables, festival masters. Online conform from offline cut. Title and credit work. Versioning for festivals, streamers, broadcast, theatrical. Deliverables in any spec — DCP, ProRes, H.264 mezzanine, IMF. Quality control passes. The unglamorous work that decides whether the picture actually plays.
+      tools: [DCP, ProRes · DNxHR, IMF, QC pass]
+    - title: "Sound."
+      description: |
+        Design, edit, mix — through trusted partners. We don't run sound in-house — yet. For now, sound design, dialogue edit, ADR, foley, and final mix run through a curated set of collaborators we've worked with before. You get a single point of contact through us, and the sound work stays inside the same conversation the picture's in.
+      tools: [Sound design, Dialogue edit · ADR, "5.1 · Atmos mix"]
+
+howItRuns:
+  kicker: How It Runs
+  heading: "A finishing run, *start to finish.*"
+  steps:
+    - number: "01"
+      title: First conversation.
+      description: A call about the project — script, footage, intent. Spec, schedule, scope. We figure out together whether the work fits the suite and the calendar.
+    - number: "02"
+      title: Conform & prep.
+      description: Footage in. Conform from EDL or FCPXML. Reference material — director's notes, look references, prior color work — ingested. Suite calibrated for the project.
+    - number: "03"
+      title: In the room.
+      description: Edit sessions, grade sessions, finishing passes. DP and director present in person or on the link. We build the picture together, one decision at a time.
+    - number: "04"
+      title: Masters out.
+      description: QC pass. Deliverables generated to spec. Any festival, streamer, broadcast, or theatrical version you need. Archive of the project preserved for future revisions.
+
+filmmakers:
+  kicker: The Filmmakers
+  heading: "Two sets of eyes, *both with a viewfinder.*"
+  founders:
+    - name: Kshitij Kapil
+      company: Cinematographer · Colorist
+      bio: Approaches color the way he approaches the camera — as a creative tool in service of the story.
+      portfolioLinks:
+        - { label: View Kshitij's portfolio, href: "https://kshitijkapil.com/" }
+    - name: Siddharth Agrawal
+      company: Producer · Cinematographer · Editor
+      bio: Reads a cut the way an editor does, sees coverage the way someone who's lit it does.
+      portfolioLinks:
+        - { label: View Siddharth's portfolio, href: "https://www.siddharthagrawalfilms.com/" }
+
+cta:
+  heading: "Bring your project *to the suite.*"
+  body: Custom rates per project. Tell us what you're finishing, when it ships, and what spec it needs to land in.
+  link: { label: Inquire about a project, href: "/contact" }
