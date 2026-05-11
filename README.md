@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Obelisk Studios marketing site
 
-## Getting Started
+Live at https://www.theobeliskstudio.com (post-deploy).
 
-First, run the development server:
+Static Next.js export, deployed via Cloudflare Pages. Content lives in
+`content/*.yml` and is edited via the Decap CMS admin at `/admin/`
+(post-Decap commit).
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## For Sid (dev work)
+
+```
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # static export → out/
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Pre-build runs `scripts/validate-content.ts` which Zod-validates every
+`content/*.yml` against `src/lib/schema.ts`. Schema mismatch fails the
+build — so a broken Decap commit gets caught before it ships.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## For KK (content editing)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Open https://www.theobeliskstudio.com/admin/ and log in with GitHub.
+Edit copy / images / lists / structured cards via the WYSIWYG editor.
+Click Publish. The site rebuilds and updates within ~30 seconds.
 
-## Learn More
+## For KK (design changes)
 
-To learn more about Next.js, take a look at the following resources:
+Run Claude Code in this repo (Sid sets this up once):
+```
+cd ~/marketing
+claude
+```
+Prompt in plain English. Claude edits components + tokens, runs the
+dev server for preview. When you're happy, ask Claude to commit on a
+branch and push. Open the PR on GitHub, review the CF Pages preview
+URL, click Merge.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Repo structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `src/app/` — Next.js pages
+- `src/components/` — shared layout primitives
+- `src/lib/` — design tokens, content loader, Zod schemas
+- `content/` — editable YAML (DO NOT edit directly — use Decap)
+- `public/admin/` — Decap CMS shell + config
+- `functions/api/contact.ts` — CF Pages Function for the contact form

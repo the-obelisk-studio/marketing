@@ -1,0 +1,29 @@
+/* CSS variable mirror of src/lib/tokens.ts. Imported by globals.css. */
+
+:root {
+  /* Palette — Kodak film stock, paper, espresso */
+  --paper: #f1e8d6;
+  --paper-warm: #ede2cd;
+  --paper-deep: #e3d4b6;
+  --paper-edge: #cdb893;
+
+  --ink: #1c1612;
+  --ink-soft: #3d322a;
+  --ink-muted: #6b5a44;
+  --ink-faint: #a8967c;
+  --ink-trace: #c9b896;
+
+  /* Accents — used sparingly */
+  --kodachrome: #b83a1f;
+  --saffron: #b8862c;
+  --sage: #4a5d4a;
+
+  /* Type stacks fall back to next/font CSS variables (set in layout.tsx). */
+  --font-display: var(--font-fraunces), "Times New Roman", serif;
+  --font-mono: var(--font-dm-mono), "Courier New", monospace;
+
+  /* Layout */
+  --container-max: 1320px;
+  --container-pad: 80px;
+  --container-pad-mobile: 32px;
+}

@@ -1,7 +1,13 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from "next"
+
+// Static export for Cloudflare Pages.
+// trailingSlash: true so URLs match the way CF Pages serves directories.
+// images.unoptimized: true because Next's image optimizer needs a server.
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
+  output: "export",
+  trailingSlash: true,
+  images: { unoptimized: true },
+}
 
-export default nextConfig;
+export default nextConfig

@@ -5,17 +5,23 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "validate-content": "tsx scripts/validate-content.ts",
+    "prebuild": "npm run validate-content"
   },
   "dependencies": {
+    "js-yaml": "^4.1.0",
     "next": "16.2.6",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "tsx": "^4.19.2",
     "typescript": "^5"
   }
 }
