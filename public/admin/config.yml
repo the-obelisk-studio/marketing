@@ -1,0 +1,364 @@
+# Decap CMS configuration — KK's editing surface.
+#
+# Each collection here mirrors a YAML file in /content. Fields mirror
+# the Zod schemas in src/lib/schema.ts. Mismatches between this config
+# and the schemas fail closed: an invalid Decap commit causes the
+# prebuild validation script to error, which fails the CF Pages build,
+# which means the bad edit never reaches production.
+#
+# OAuth: GitHub backend. base_url points at the OAuth bridge (a small
+# CF Worker that lands during the deploy step). Until that's live, the
+# admin page renders but log-in fails — KK won't lock himself out of
+# his own machine, but he also can't yet save edits via /admin/.
+
+backend:
+  name: github
+  repo: the-obelisk-studio/marketing
+  branch: main
+  # Replace at deploy time with the OAuth bridge URL.
+  base_url: https://auth.theobeliskstudio.com
+
+# Where Decap stores uploaded images. Served from /uploads/foo.jpg in
+# the deployed site.
+media_folder: public/uploads
+public_folder: /uploads
+
+# Editor experience.
+editor:
+  preview: false
+site_url: https://www.theobeliskstudio.com
+display_url: https://www.theobeliskstudio.com
+
+# ── Collections ─────────────────────────────────────────────────────
+collections:
+
+  # ── Shared (nav + footer) ────────────────────────────────────────
+  - name: shared
+    label: "Shared · Nav & Footer"
+    files:
+      - name: shared
+        label: "Site Shared"
+        file: content/shared.yml
+        format: yaml
+        fields:
+          - { name: navLinks, label: Nav links, widget: list, fields: [
+              { name: label, label: Label, widget: string },
+              { name: href, label: Href, widget: string },
+            ] }
+          - name: footer
+            label: Footer
+            widget: object
+            fields:
+              - { name: tagline, label: Tagline, widget: string, required: false }
+              - { name: contactEmail, label: Contact email, widget: string, required: false }
+              - name: columns
+                label: Columns
+                widget: list
+                fields:
+                  - { name: label, label: Column label, widget: string }
+                  - name: links
+                    label: Links
+                    widget: list
+                    fields:
+                      - { name: label, label: Label, widget: string }
+                      - { name: href, label: Href, widget: string }
+
+  # ── Index (homepage) ──────────────────────────────────────────────
+  - name: pages
+    label: "Pages"
+    files:
+      - name: index
+        label: "Home"
+        file: content/index.yml
+        format: yaml
+        fields:
+          - name: hero
+            label: Hero
+            widget: object
+            fields:
+              - { name: eyebrow, label: Eyebrow, widget: string, required: false }
+              - { name: title, label: Title, widget: string }
+              - { name: motto, label: Motto, widget: string, required: false }
+          - name: studio
+            label: "Section 01 · The Studio"
+            widget: object
+            fields:
+              - { name: kicker, label: Kicker, widget: string }
+              - { name: heading, label: Heading (use *italics*), widget: string }
+              - { name: body, label: Body, widget: text }
+              - name: links
+                label: Links
+                widget: list
+                required: false
+                fields:
+                  - { name: label, label: Label, widget: string }
+                  - { name: href, label: Href, widget: string }
+          - name: offerings
+            label: "Section 02 · What We Make"
+            widget: object
+            fields:
+              - { name: kicker, label: Kicker, widget: string }
+              - { name: heading, label: Heading, widget: string, required: false }
+              - name: items
+                label: Offerings
+                widget: list
+                fields:
+                  - { name: kicker, label: Kicker, widget: string }
+                  - { name: title, label: Title, widget: string }
+                  - { name: blurb, label: Blurb, widget: text }
+                  - { name: href, label: Href, widget: string }
+                  - { name: cta, label: CTA, widget: string, default: "Learn more" }
+          - name: partnership
+            label: "Section 03 · In Partnership"
+            widget: object
+            fields:
+              - { name: kicker, label: Kicker, widget: string }
+              - { name: heading, label: Heading, widget: string }
+              - { name: body, label: Body, widget: text, required: false }
+              - name: founders
+                label: Founders
+                widget: list
+                fields:
+                  - { name: name, label: Name, widget: string }
+                  - { name: company, label: Company / Role, widget: string, required: false }
+                  - { name: bio, label: Bio, widget: text }
+              - name: films
+                label: Selected films (compact)
+                widget: list
+                fields:
+                  - { name: title, label: Title, widget: string }
+                  - { name: year, label: Year line, widget: string, required: false }
+                  - { name: synopsis, label: One-line credit, widget: text, required: false }
+
+      # ── Partnership ───────────────────────────────────────────────
+      - name: partnership
+        label: "Partnership"
+        file: content/partnership.yml
+        format: yaml
+        fields:
+          - name: hero
+            label: Hero
+            widget: object
+            fields:
+              - { name: title, label: Title (unused but required), widget: string, default: "" }
+              - { name: headline, label: Headline (use *italics*), widget: string }
+              - { name: positioning, label: Positioning, widget: string }
+              - { name: meta, label: Meta strip, widget: list, field: { name: item, widget: string } }
+              - { name: pills, label: Pills, widget: list, field: { name: item, widget: string } }
+          - name: story
+            label: "01 · Story"
+            widget: object
+            fields:
+              - { name: kicker, widget: string }
+              - { name: heading, widget: string }
+              - { name: body, widget: text }
+          - name: twoStudios
+            label: "02 · Two Studios"
+            widget: object
+            fields:
+              - { name: kicker, widget: string }
+              - { name: heading, widget: string }
+              - { name: body, widget: text, required: false }
+              - name: studios
+                widget: list
+                fields:
+                  - { name: label, label: Eyebrow, widget: string }
+                  - { name: name, label: Name, widget: string }
+                  - { name: founder, label: Founder line, widget: string, required: false }
+                  - { name: description, label: Description, widget: text }
+                  - { name: tags, label: Tags, widget: list, field: { name: tag, widget: string } }
+          - name: filmmakers
+            label: "03 · Filmmakers"
+            widget: object
+            fields:
+              - { name: kicker, widget: string }
+              - { name: heading, widget: string }
+              - name: founders
+                widget: list
+                fields:
+                  - { name: name, widget: string }
+                  - { name: company, widget: string, required: false }
+                  - { name: bio, widget: text }
+                  - name: portfolioLinks
+                    label: Portfolio links
+                    widget: list
+                    fields:
+                      - { name: label, widget: string }
+                      - { name: href, widget: string }
+          - name: selectedWork
+            label: "04 · Selected Work"
+            widget: object
+            fields:
+              - { name: kicker, widget: string }
+              - { name: heading, widget: string }
+              - { name: body, widget: text, required: false }
+              - name: films
+                widget: list
+                fields:
+                  - { name: title, widget: string }
+                  - { name: genre, widget: string, required: false }
+                  - { name: status, widget: string, required: false }
+                  - { name: logline, widget: text, required: false }
+                  - { name: synopsis, widget: text, required: false }
+                  - name: crew
+                    label: Crew
+                    widget: list
+                    fields:
+                      - { name: role, widget: string }
+                      - { name: name, widget: string, required: false }
+                      - { name: names, widget: list, required: false, field: { name: n, widget: string } }
+                  - name: festivals
+                    label: Festivals
+                    widget: list
+                    fields:
+                      - { name: name, widget: string }
+                      - { name: award, widget: string, required: false }
+          - name: cta
+            label: CTA
+            widget: object
+            required: false
+            fields:
+              - { name: eyebrow, widget: string, required: false }
+              - { name: heading, widget: string }
+              - { name: body, widget: text, required: false }
+              - name: button
+                widget: object
+                fields:
+                  - { name: label, widget: string }
+                  - { name: href, widget: string }
+              - { name: note, widget: string, required: false }
+
+      # ── Post ──────────────────────────────────────────────────────
+      - name: post
+        label: "Post Production"
+        file: content/post.yml
+        format: yaml
+        fields:
+          - name: hero
+            widget: object
+            fields:
+              - { name: title, widget: string, default: "" }
+              - { name: headline, widget: string }
+              - { name: positioning, widget: string }
+              - { name: meta, widget: list, field: { name: item, widget: string } }
+              - { name: pills, widget: list, field: { name: item, widget: string } }
+          - name: approach
+            label: "01 · Approach"
+            widget: object
+            fields:
+              - { name: kicker, widget: string }
+              - { name: heading, widget: string }
+              - { name: body, widget: text }
+          - name: services
+            label: "02 · Services"
+            widget: object
+            fields:
+              - { name: kicker, widget: string }
+              - { name: heading, widget: string, required: false }
+              - name: items
+                widget: list
+                fields:
+                  - { name: title, widget: string }
+                  - { name: description, widget: text }
+                  - { name: tools, widget: list, field: { name: tool, widget: string } }
+          - name: howItRuns
+            label: "03 · How It Runs"
+            widget: object
+            fields:
+              - { name: kicker, widget: string }
+              - { name: heading, widget: string, required: false }
+              - name: steps
+                widget: list
+                fields:
+                  - { name: number, widget: string }
+                  - { name: title, widget: string }
+                  - { name: description, widget: text }
+          - name: filmmakers
+            label: "04 · Filmmakers"
+            widget: object
+            required: false
+            fields:
+              - { name: kicker, widget: string }
+              - { name: heading, widget: string }
+              - name: founders
+                widget: list
+                fields:
+                  - { name: name, widget: string }
+                  - { name: company, widget: string, required: false }
+                  - { name: bio, widget: text }
+                  - name: portfolioLinks
+                    widget: list
+                    required: false
+                    fields:
+                      - { name: label, widget: string }
+                      - { name: href, widget: string }
+          - name: cta
+            widget: object
+            required: false
+            fields:
+              - { name: heading, widget: string }
+              - { name: body, widget: text, required: false }
+              - name: link
+                widget: object
+                fields:
+                  - { name: label, widget: string }
+                  - { name: href, widget: string }
+
+      # ── Grace ─────────────────────────────────────────────────────
+      - name: grace
+        label: "Grace"
+        file: content/grace.yml
+        format: yaml
+        fields:
+          - name: hero
+            widget: object
+            fields:
+              - { name: title, widget: string }
+              - { name: motto, widget: string, required: false }
+          - name: sections
+            label: Sections
+            widget: list
+            fields:
+              - { name: kicker, widget: string, required: false }
+              - { name: heading, widget: string }
+              - { name: body, widget: text, required: false }
+              - { name: productShot, label: Product screenshot, widget: image, required: false }
+              - { name: bullets, widget: list, required: false, field: { name: bullet, widget: string } }
+          - name: cta
+            widget: object
+            required: false
+            fields:
+              - { name: heading, widget: string }
+              - { name: body, widget: text, required: false }
+              - name: link
+                widget: object
+                fields:
+                  - { name: label, widget: string }
+                  - { name: href, widget: string }
+
+      # ── Contact ───────────────────────────────────────────────────
+      - name: contact
+        label: "Contact"
+        file: content/contact.yml
+        format: yaml
+        fields:
+          - name: hero
+            widget: object
+            fields:
+              - { name: title, widget: string, default: "" }
+              - { name: headline, widget: string }
+              - { name: positioning, widget: text }
+              - { name: meta, widget: list, field: { name: item, widget: string } }
+          - name: info
+            label: "Direct contact bar"
+            widget: list
+            fields:
+              - { name: label, widget: string }
+              - { name: value, widget: string }
+          - name: form
+            widget: object
+            fields:
+              - { name: kicker, widget: string, required: false }
+              - { name: heading, widget: string, required: false }
+              - { name: body, widget: text, required: false }
+              - { name: topics, label: Form topic options, widget: list, field: { name: topic, widget: string } }
