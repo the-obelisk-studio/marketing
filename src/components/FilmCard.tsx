@@ -8,7 +8,7 @@ export function FilmCard({ film }: Props) {
       <div className="film-poster">
         {film.poster ? (
           // eslint-disable-next-line @next/next/no-img-element
-          <img src={film.poster} alt={film.title} className="film-poster-img" />
+          <img src={film.poster} alt={film.title} className="film-poster-img" loading="lazy" decoding="async" />
         ) : (
           <div className="film-poster-blank" aria-hidden />
         )}

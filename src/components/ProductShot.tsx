@@ -15,7 +15,7 @@ export function ProductShot({ src, alt, caption }: Props) {
       <div className="product-frame">
         {src ? (
           // eslint-disable-next-line @next/next/no-img-element
-          <img src={src} alt={alt ?? ""} className="product-img" />
+          <img src={src} alt={alt ?? ""} className="product-img" loading="lazy" decoding="async" />
         ) : (
           <div className="product-placeholder">
             <div className="mono product-placeholder-label">grace · screenshot</div>

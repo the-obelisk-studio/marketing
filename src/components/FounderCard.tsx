@@ -9,7 +9,7 @@ export function FounderCard({ founder }: Props) {
         {founder.photo ? (
           // Static export → vanilla <img>. No next/image (needs server).
           // eslint-disable-next-line @next/next/no-img-element
-          <img src={founder.photo} alt={founder.name} className="founder-photo" />
+          <img src={founder.photo} alt={founder.name} className="founder-photo" loading="lazy" decoding="async" />
         ) : (
           <div className="founder-monogram">
             {founder.initials || founder.name.split(" ").map(p => p[0]).join("").slice(0, 2)}

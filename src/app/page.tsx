@@ -10,6 +10,14 @@ import { Reveal } from "@/components/Reveal"
 import { RegMark } from "@/components/RegMark"
 import { Inline, Body } from "@/lib/rich-text"
 import { loadContent } from "@/lib/content"
+import { pageMetadata } from "@/lib/seo"
+
+export const metadata = pageMetadata({
+  title: "Obelisk Studios",
+  description:
+    "Independent filmmakers building tools and finishing pictures. Software and post production, run by working filmmakers, in Burbank.",
+  path: "/",
+})
 
 export default function HomePage() {
   const c = loadContent("index.yml")

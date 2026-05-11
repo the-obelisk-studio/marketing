@@ -4,18 +4,19 @@
 // Filmmakers, Selected Work (rich film cards), CTA.
 
 import Link from "next/link"
-import type { Metadata } from "next"
 import { Reveal } from "@/components/Reveal"
 import { RegMark } from "@/components/RegMark"
 import { Inline, Body } from "@/lib/rich-text"
 import { loadContent } from "@/lib/content"
+import { pageMetadata } from "@/lib/seo"
 import type { CrewEntry, FestivalEntry } from "@/lib/schema"
 
-export const metadata: Metadata = {
-  title: "Partnership · Obelisk Studios",
+export const metadata = pageMetadata({
+  title: "Partnership",
   description:
     "Obelisk Studios and TDH Systems — a partnership built on the work. Two studios, one picture.",
-}
+  path: "/partnership/",
+})
 
 function CrewLine({ entry }: { entry: CrewEntry }) {
   const names = entry.names ?? (entry.name ? [entry.name] : [])

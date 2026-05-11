@@ -6,24 +6,27 @@
 // v1 is fine.
 
 import Link from "next/link"
-import type { Metadata } from "next"
 import { Reveal } from "@/components/Reveal"
 import { RegMark } from "@/components/RegMark"
 import { Inline, Body } from "@/lib/rich-text"
 import { ProductShot } from "@/components/ProductShot"
+import { JsonLd } from "@/components/JsonLd"
 import { loadContent } from "@/lib/content"
+import { pageMetadata, softwareApplicationLd } from "@/lib/seo"
 
-export const metadata: Metadata = {
-  title: "Grace · Obelisk Studios",
+export const metadata = pageMetadata({
+  title: "Grace",
   description:
-    "A production operating system. Connect everything. Re-enter nothing. Built for the people running production.",
-}
+    "A production operating system. Connect everything, re-enter nothing — call sheets, scheduling, budgets, scripts, dailies, and Vault screeners in one place. Built for the people running production.",
+  path: "/grace/",
+})
 
 export default function GracePage() {
   const c = loadContent("grace.yml")
 
   return (
     <main>
+      <JsonLd data={softwareApplicationLd()} />
       {/* ── HERO ── */}
       <section className="hero">
         <div className="page-container">

@@ -1,17 +1,18 @@
 // Post production page — direct port of post.html.
 
 import Link from "next/link"
-import type { Metadata } from "next"
 import { Reveal } from "@/components/Reveal"
 import { RegMark } from "@/components/RegMark"
 import { Inline, Body } from "@/lib/rich-text"
 import { loadContent } from "@/lib/content"
+import { pageMetadata } from "@/lib/seo"
 
-export const metadata: Metadata = {
-  title: "Post Production · Obelisk Studios",
+export const metadata = pageMetadata({
+  title: "Post Production",
   description:
     "A finishing house run by working filmmakers. Edit, color, and finishing — supervised by the people who shot the picture.",
-}
+  path: "/post/",
+})
 
 export default function PostPage() {
   const c = loadContent("post.yml")

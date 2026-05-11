@@ -1,17 +1,19 @@
 // Contact page — direct port of contact.html. Form submits to a CF
 // Pages Function (/api/contact) that lands in commit 6.
 
-import type { Metadata } from "next"
 import { Reveal } from "@/components/Reveal"
 import { RegMark } from "@/components/RegMark"
 import { Inline } from "@/lib/rich-text"
 import { ContactForm } from "@/components/ContactForm"
 import { loadContent } from "@/lib/content"
+import { pageMetadata } from "@/lib/seo"
 
-export const metadata: Metadata = {
-  title: "Contact · Obelisk Studios",
-  description: "Get in touch with Obelisk Studios — software, finishing, partnership, or anything else.",
-}
+export const metadata = pageMetadata({
+  title: "Contact",
+  description:
+    "Get in touch with Obelisk Studios — software, finishing, partnership, or anything else.",
+  path: "/contact/",
+})
 
 export default function ContactPage() {
   const c = loadContent("contact.yml")
