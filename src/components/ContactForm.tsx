@@ -27,7 +27,7 @@ export function ContactForm({ topics }: Props) {
         body: JSON.stringify(data),
       })
       if (!res.ok) {
-        const body = await res.json().catch(() => ({}))
+        const body = (await res.json().catch(() => ({}))) as { error?: string }
         setError(body?.error || `Submit failed (${res.status})`)
         setStatus("error")
         return
