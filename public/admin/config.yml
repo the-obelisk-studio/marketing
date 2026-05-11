@@ -6,17 +6,17 @@
 # prebuild validation script to error, which fails the CF Pages build,
 # which means the bad edit never reaches production.
 #
-# OAuth: GitHub backend. base_url points at the OAuth bridge (a small
-# CF Worker that lands during the deploy step). Until that's live, the
-# admin page renders but log-in fails — KK won't lock himself out of
-# his own machine, but he also can't yet save edits via /admin/.
+# OAuth: GitHub backend. The OAuth proxy runs as two Pages Functions
+# on the same project: /oauth/auth and /oauth/callback. Decap opens
+# the popup at `${base_url}/${auth_endpoint}` and the popup
+# completes the flow at `${base_url}/oauth/callback`.
 
 backend:
   name: github
   repo: the-obelisk-studio/marketing
   branch: main
-  # Replace at deploy time with the OAuth bridge URL.
-  base_url: https://auth.theobeliskstudio.com
+  base_url: https://www.theobeliskstudio.com
+  auth_endpoint: oauth/auth
 
 # Where Decap stores uploaded images. Served from /uploads/foo.jpg in
 # the deployed site.
