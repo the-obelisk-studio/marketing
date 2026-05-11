@@ -27,6 +27,10 @@ export default function GracePage() {
       {/* ── HERO ── */}
       <section className="hero">
         <div className="page-container">
+          <svg className="obelisk-glyph" viewBox="0 0 64 380" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+            <path d="M32 0 L48 56 L18 56 Z M18 56 L48 56 L46 380 L20 380 Z" fill="currentColor" />
+          </svg>
+
           <Reveal eager delay={100}>
             <div className="hero-meta">
               <span>Obelisk Studios</span>
@@ -50,6 +54,8 @@ export default function GracePage() {
             </p>
           </Reveal>
         </div>
+
+        <div className="hero-scroll">scroll ↓</div>
       </section>
 
       {/* ── NUMBERED SECTIONS ── */}
@@ -118,7 +124,27 @@ export default function GracePage() {
 
       <style>{`
         .page-container { max-width: var(--container-max); margin: 0 auto; padding: 0 var(--container-pad); position: relative; }
-        .hero { min-height: 88vh; display: flex; flex-direction: column; justify-content: center; padding: 160px 0 80px; }
+        .hero { min-height: 88vh; display: flex; flex-direction: column; justify-content: center; padding: 160px 0 80px; position: relative; }
+        .obelisk-glyph {
+          position: absolute;
+          top: 50%; right: -30px;
+          transform: translateY(-50%);
+          width: 64px; height: 380px;
+          opacity: 0.06; pointer-events: none;
+          color: var(--ink);
+        }
+        .hero-scroll {
+          position: absolute;
+          bottom: 32px; right: var(--container-pad);
+          font-family: var(--font-mono);
+          font-size: 10px;
+          letter-spacing: 0.28em;
+          text-transform: uppercase;
+          color: var(--ink-muted);
+          writing-mode: vertical-rl;
+          text-orientation: mixed;
+          opacity: 0.7;
+        }
         .hero-meta { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 48px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
         .hero-meta .dash { width: 64px; height: 1px; background: var(--ink-faint); }
         .grace-wordmark { font-family: var(--font-display); font-variation-settings: "opsz" 144, "wght" 480; font-size: clamp(80px, 18vw, 260px); line-height: 0.86; letter-spacing: -0.025em; color: var(--ink); margin-bottom: 20px; }
@@ -136,17 +162,31 @@ export default function GracePage() {
         .section-body p + p { margin-top: 1.2em; }
         .section-body em { font-style: italic; }
 
-        .bullet-grid { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px 32px; margin-top: 16px; }
+        /* Bullets render as h3-style feature callouts to match KK's
+           grace.html "One upload changes everything downstream" /
+           "The set dashboard is the schedule, live" treatment. Big
+           serif text with italic emphasis, not flat list items. */
+        .bullet-grid {
+          list-style: none;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+          gap: 48px;
+          margin-top: 24px;
+        }
         .bullet {
           font-family: var(--font-display);
-          font-size: 19px;
-          line-height: 1.4;
+          font-variation-settings: "opsz" 60, "wght" 380;
+          font-size: clamp(24px, 2.6vw, 32px);
+          line-height: 1.15;
+          letter-spacing: -0.012em;
           color: var(--ink);
-          padding: 20px 0 0;
-          border-top: 1px solid var(--paper-edge);
-          font-variation-settings: "opsz" 32, "wght" 380;
+          padding: 28px 0 0;
+          border-top: 1px solid var(--ink);
         }
-        .bullet em { font-style: italic; font-variation-settings: "opsz" 32, "wght" 380; }
+        .bullet em {
+          font-style: italic;
+          font-variation-settings: "opsz" 60, "wght" 360;
+        }
 
         .cta-section { padding: 160px 0; border-top: 1px solid var(--paper-edge); text-align: center; background: var(--paper-warm); }
         .cta-title { font-family: var(--font-display); font-variation-settings: "opsz" 96, "wght" 380; font-size: clamp(36px, 5.6vw, 72px); line-height: 1.05; color: var(--ink); margin-bottom: 24px; }

@@ -1,10 +1,16 @@
 // Fixed top nav, paper-warm semi-transparent bg with backdrop blur.
 // Wordmark uses Fraunces with italic suffix to match KK's design.
-// Links list comes from content/shared.yml; for safety the file
-// passes them in as a prop rather than reading content/ from inside
-// a server component import chain.
+// Links list comes from content/shared.yml; passed in as a prop so
+// the layout can read content/ once at the server-component layer.
+//
+// Active state uses next/navigation's usePathname so the current
+// page's link gets a kodachrome underline (matches KK's .current
+// styling).
+
+"use client"
 
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import type { SharedContent } from "@/lib/schema"
 
 type NavLink = SharedContent["navLinks"][number]
@@ -16,7 +22,17 @@ const FALLBACK_LINKS: NavLink[] = [
   { label: "Contact", href: "/contact" },
 ]
 
+function isCurrent(pathname: string | null, href: string): boolean {
+  if (!pathname) return false
+  // Normalize trailing slashes since next.config.ts sets trailingSlash: true.
+  const a = pathname.replace(/\/+$/, "") || "/"
+  const b = href.replace(/\/+$/, "") || "/"
+  return a === b
+}
+
 export function Nav({ links = FALLBACK_LINKS }: { links?: NavLink[] }) {
+  const pathname = usePathname()
+
   return (
     <nav className="nav">
       <div className="nav-inner">
@@ -26,7 +42,9 @@ export function Nav({ links = FALLBACK_LINKS }: { links?: NavLink[] }) {
         <ul className="nav-links">
           {links.map(l => (
             <li key={l.href}>
-              <Link href={l.href}>{l.label}</Link>
+              <Link href={l.href} className={isCurrent(pathname, l.href) ? "current" : undefined}>
+                {l.label}
+              </Link>
             </li>
           ))}
         </ul>
@@ -79,6 +97,18 @@ export function Nav({ links = FALLBACK_LINKS }: { links?: NavLink[] }) {
         }
         .nav-links a:hover {
           color: var(--kodachrome);
+        }
+        .nav-links a.current {
+          color: var(--ink);
+          position: relative;
+        }
+        .nav-links a.current::after {
+          content: "";
+          position: absolute;
+          left: 0; right: 0;
+          bottom: -8px;
+          height: 1px;
+          background: var(--kodachrome);
         }
         @media (max-width: 900px) {
           .nav-inner { padding: 0 var(--container-pad-mobile); }
