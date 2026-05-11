@@ -390,7 +390,7 @@ export default function HomePage() {
           font-size: 10px;
           letter-spacing: 0.28em;
           text-transform: uppercase;
-          color: var(--ink-faint);
+          color: var(--ink-muted);
           margin-bottom: 20px;
         }
         .about-aside dl {
@@ -445,7 +445,7 @@ export default function HomePage() {
           font-size: 8px;
         }
         .offering-status.future {
-          color: var(--ink-faint);
+          color: var(--ink-muted);
         }
         .offering-status.future::before {
           content: '○';

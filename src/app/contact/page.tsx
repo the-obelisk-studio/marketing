@@ -103,7 +103,7 @@ export default function ContactPage() {
         .hero-headline em { font-style: italic; font-variation-settings: "opsz" 144, "wght" 380; }
         .hero-positioning { max-width: 620px; font-family: var(--font-display); font-size: 21px; line-height: 1.55; color: var(--ink-soft); margin-bottom: 56px; }
         .direct-bar { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; padding-top: 32px; border-top: 1px solid var(--paper-edge); }
-        .direct-item-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 8px; }
+        .direct-item-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 8px; }
         .direct-item-value { font-family: var(--font-display); font-size: 18px; color: var(--ink); }
         .direct-item-value a { color: var(--ink); border-bottom: 1px solid var(--ink-faint); transition: all 0.2s ease; }
         .direct-item-value a:hover { color: var(--kodachrome); border-bottom-color: var(--kodachrome); }

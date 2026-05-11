@@ -247,7 +247,7 @@ export default function PostPage() {
         .service-status::before { content: '●'; font-size: 8px; }
         .service-status.collab { color: var(--saffron); }
         .service-status.collab::before { content: '◐'; }
-        .service-status.future { color: var(--ink-faint); }
+        .service-status.future { color: var(--ink-muted); }
         .service-status.future::before { content: '○'; }
         .service-name { font-family: var(--font-display); font-variation-settings: "opsz" 96, "wght" 480; font-size: 56px; line-height: 1; color: var(--ink); margin-bottom: 14px; letter-spacing: -0.018em; }
         .service-tagline { font-family: var(--font-display); font-variation-settings: "opsz" 32, "wght" 320; font-style: italic; font-size: 22px; color: var(--ink-soft); margin-bottom: 24px; }

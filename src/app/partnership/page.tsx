@@ -592,7 +592,7 @@ export default function PartnershipPage() {
           font-size: 10px;
           letter-spacing: 0.28em;
           text-transform: uppercase;
-          color: var(--ink-faint);
+          color: var(--ink-muted);
           font-weight: 400;
           margin-bottom: 18px;
         }
@@ -611,7 +611,7 @@ export default function PartnershipPage() {
           font-size: 10px;
           letter-spacing: 0.28em;
           text-transform: uppercase;
-          color: var(--ink-faint);
+          color: var(--ink-muted);
           margin-bottom: 18px;
         }
         .festivals-list { list-style: none; }

@@ -93,7 +93,7 @@ export function Footer({ footer = FALLBACK }: Props) {
           font-size: 10px;
           letter-spacing: 0.28em;
           text-transform: uppercase;
-          color: var(--ink-faint);
+          color: var(--ink-muted);
           margin-bottom: 22px;
           font-weight: 400;
         }

@@ -106,7 +106,7 @@ export function ContactForm({ topics }: Props) {
         .form-field { display: flex; flex-direction: column; gap: 10px; }
         .form-field label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-muted); }
         .form-field .req { color: var(--kodachrome); margin-left: 2px; }
-        .form-field .opt { color: var(--ink-faint); margin-left: 6px; letter-spacing: 0.18em; }
+        .form-field .opt { color: var(--ink-muted); margin-left: 6px; letter-spacing: 0.18em; }
         .form-field input, .form-field select, .form-field textarea {
           font-family: var(--font-display);
           font-size: 17px;

@@ -25,5 +25,13 @@
     "@types/react-dom": "^19",
     "tsx": "^4.19.2",
     "typescript": "^5"
-  }
+  },
+  "browserslist": [
+    "chrome >= 92",
+    "firefox >= 90",
+    "safari >= 14",
+    "edge >= 92",
+    "ios_saf >= 14",
+    "not dead"
+  ]
 }

@@ -61,7 +61,7 @@ export function FounderCard({ founder }: Props) {
         .founder-monogram {
           font-family: var(--font-display);
           font-size: 64px;
-          color: var(--ink-faint);
+          color: var(--ink-muted);
           font-weight: 300;
           font-variation-settings: "opsz" 96;
         }
