@@ -307,7 +307,7 @@ export default function PartnershipPage() {
           letter-spacing: 0.24em;
           text-transform: uppercase;
           color: var(--ink-muted);
-          margin-bottom: 56px;
+          margin-bottom: 48px;
           display: flex; align-items: center;
           gap: 18px; flex-wrap: wrap;
         }
@@ -318,8 +318,8 @@ export default function PartnershipPage() {
         .hero-headline {
           font-family: var(--font-display);
           font-variation-settings: "opsz" 144, "wght" 440;
-          font-size: clamp(48px, 7.5vw, 108px);
-          line-height: 0.98;
+          font-size: clamp(56px, 11vw, 168px);
+          line-height: 0.92;
           letter-spacing: -0.025em;
           color: var(--ink);
           margin-bottom: 32px;
@@ -330,14 +330,13 @@ export default function PartnershipPage() {
           font-variation-settings: "opsz" 144, "wght" 380;
         }
         .hero-positioning {
-          max-width: 600px;
+          max-width: 620px;
           font-family: var(--font-display);
           font-variation-settings: "opsz" 22, "wght" 400;
-          font-style: italic;
-          font-size: clamp(20px, 2.4vw, 28px);
-          line-height: 1.5;
+          font-size: 21px;
+          line-height: 1.55;
           color: var(--ink-soft);
-          margin-top: 56px;
+          margin-bottom: 48px;
         }
         .hero-pill-row {
           display: flex;
@@ -381,7 +380,7 @@ export default function PartnershipPage() {
           line-height: 1.02;
           letter-spacing: -0.02em;
           color: var(--ink);
-          margin-bottom: 56px;
+          margin-bottom: 64px;
           max-width: 18ch;
         }
         .section-title em {
@@ -424,18 +423,18 @@ export default function PartnershipPage() {
         }
         .entity-name {
           font-family: var(--font-display);
-          font-variation-settings: "opsz" 96, "wght" 460;
+          font-variation-settings: "opsz" 96, "wght" 480;
           font-size: 56px;
           line-height: 1;
           color: var(--ink);
-          margin-bottom: 12px;
+          margin-bottom: 8px;
           letter-spacing: -0.018em;
         }
         .entity-founder {
-          font-family: var(--font-display);
-          font-variation-settings: "opsz" 22, "wght" 360;
-          font-style: italic;
-          font-size: 19px;
+          font-family: var(--font-mono);
+          font-size: 11px;
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
           color: var(--ink-muted);
           margin-bottom: 28px;
         }
@@ -456,8 +455,7 @@ export default function PartnershipPage() {
           text-transform: uppercase;
           color: var(--ink-soft);
           padding: 6px 12px;
-          background: var(--paper-warm);
-          border: 1px solid var(--paper-edge);
+          background: var(--paper-deep);
           border-radius: 2px;
         }
 
@@ -547,7 +545,7 @@ export default function PartnershipPage() {
         .film-title {
           font-family: var(--font-display);
           font-variation-settings: "opsz" 96, "wght" 480;
-          font-size: clamp(48px, 6.5vw, 88px);
+          font-size: clamp(36px, 5.6vw, 72px);
           line-height: 1;
           color: var(--ink);
           margin-bottom: 24px;
@@ -676,7 +674,7 @@ export default function PartnershipPage() {
           display: inline-flex;
           align-items: center;
           gap: 12px;
-          padding: 22px 40px;
+          padding: 18px 32px;
           background: var(--ink);
           color: var(--paper);
           font-family: var(--font-mono);

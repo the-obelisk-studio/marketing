@@ -145,18 +145,18 @@ export default function GracePage() {
           text-orientation: mixed;
           opacity: 0.7;
         }
-        .hero-meta { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 44px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+        .hero-meta { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 48px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
         .hero-meta .dash { width: 64px; height: 1px; background: var(--ink-faint); }
-        .grace-wordmark { font-family: var(--font-display); font-variation-settings: "opsz" 144, "wght" 460; font-size: clamp(90px, 22vw, 340px); line-height: 0.86; letter-spacing: -0.025em; color: var(--ink); margin-bottom: 20px; }
-        .grace-tagline { font-family: var(--font-display); font-variation-settings: "opsz" 60, "wght" 320; font-style: italic; font-size: clamp(26px, 4vw, 52px); line-height: 1.15; letter-spacing: 0.01em; color: var(--ink-soft); margin-bottom: 32px; }
-        .hero-positioning { max-width: 580px; font-family: var(--font-display); font-variation-settings: "opsz" 22, "wght" 400; font-size: 19px; line-height: 1.6; color: var(--ink-soft); margin-top: 56px; }
+        .grace-wordmark { font-family: var(--font-display); font-variation-settings: "opsz" 144, "wght" 480; font-size: clamp(80px, 18vw, 260px); line-height: 0.86; letter-spacing: -0.025em; color: var(--ink); margin-bottom: 20px; }
+        .grace-tagline { font-family: var(--font-display); font-variation-settings: "opsz" 60, "wght" 320; font-style: italic; font-size: clamp(28px, 4vw, 56px); letter-spacing: 0.01em; color: var(--ink-soft); margin-bottom: 32px; }
+        .hero-positioning { max-width: 620px; font-family: var(--font-display); font-size: 21px; line-height: 1.55; color: var(--ink-soft); }
 
         .section { padding: 160px 0; position: relative; border-top: 1px solid var(--paper-edge); }
         .section :global(.reg-mark.tl) { top: 24px; left: var(--container-pad); }
         .section :global(.reg-mark.tr) { top: 24px; right: var(--container-pad); }
         .section-num { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 56px; display: flex; align-items: center; gap: 18px; }
         .section-num .dash { width: 48px; height: 1px; background: var(--ink-faint); }
-        .section-title { font-family: var(--font-display); font-variation-settings: "opsz" 96, "wght" 380; font-size: clamp(44px, 7vw, 96px); line-height: 1.02; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 56px; max-width: 22ch; }
+        .section-title { font-family: var(--font-display); font-variation-settings: "opsz" 96, "wght" 380; font-size: clamp(44px, 6.5vw, 88px); line-height: 1.02; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 48px; max-width: 22ch; }
         .section-title em { font-style: italic; }
         .section-body { font-family: var(--font-display); font-size: 19px; line-height: 1.65; color: var(--ink-soft); max-width: 720px; margin-bottom: 32px; }
         .section-body p + p { margin-top: 1.2em; }

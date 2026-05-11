@@ -7,9 +7,7 @@
 
 hero:
   title: Grace
-  motto: |
-    A production OS
-    built by working filmmakers.
+  motto: A production operating system.
 
 sections:
   - kicker: "01 · The Thesis"
