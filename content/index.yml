@@ -1,33 +1,38 @@
-# Obelisk Studios homepage content. Edited via Decap CMS at /admin/.
-# Schema: src/lib/schema.ts → IndexPageSchema.
-
 hero:
-  eyebrow: ""    # unused on index (the meta strip below replaces it)
+  eyebrow: ""
   title: Obelisk
-  motto: One studio. Every stage.
-
+  motto: One studio. All stage.
 studio:
   kicker: The Studio
-  heading: "Built by *filmmakers*, for the work."
-  body: |
-    Obelisk was founded by Kshitij Kapil, a working filmmaker tired of using software made for everyone except the people on set. The studio operates in partnership with TDH Systems, who lead the technical build behind Grace. Every choice begins with the question, *would we use this on our own production?* If the answer is no, we don't ship it.
+  heading: Built by *filmmakers*, for the work.
+  body: >
+    Obelisk was founded by Kshitij Kapil, a working filmmaker tired of using
+    software made for everyone except the people on set. The studio operates in
+    partnership with TDH Systems, who lead the technical build behind Grace.
+    Every choice begins with the question, *would we use this on our own
+    production?* If the answer is no, we don't ship it.
+
 
     A film moves in stages: development, prep, production, post. Most tools and most studios live in one of those stages and pretend the others don't exist. We've worked all of them. Obelisk is built from that understanding — that what gets decided in development shapes what's possible in color, that what gets shot on day one matters in the edit suite three months later, that the picture is one continuous thing from page to final frame.
 
+
     And we work *with* people, not for them. Software is a co-pilot, never an autopilot. Finishing runs as a collaboration with the DP, the director, and the editor — not a black box that returns a master. The studio is built around a single conviction across both pillars: the work is better when the people doing it are working together.
   links: []
-
 offerings:
   kicker: What We Make
-  heading: "Software. *Finishing.*"
+  heading: Software. *Finishing.*
   items:
     - kicker: I · Software
       status: In Development
       statusKind: active
       title: Grace
       tagline: A production operating system.
-      blurb: |
-        Grace is built around one idea: every department on a film should be working from the same picture. Breakdown feeds schedule. Schedule feeds budget. Budget feeds call sheet. Everything connects, nothing gets re-entered, and no one is working from a stale version. The smart parts are baked in — co-pilot, never autopilot. Filmmakers stay in command.
+      blurb: >
+        Grace is built around one idea: every department on a film should be
+        working from the same picture. Breakdown feeds schedule. Schedule feeds
+        budget. Budget feeds call sheet. Everything connects, nothing gets
+        re-entered, and no one is working from a stale version. The smart parts
+        are baked in — co-pilot, never autopilot. Filmmakers stay in command.
       href: /grace
       cta: Learn more
     - kicker: II · Services
@@ -35,36 +40,46 @@ offerings:
       statusKind: future
       title: Post Production
       tagline: Edit, color, and finishing.
-      blurb: |
-        A finishing house run by working filmmakers. Editorial and color anchor the work — supervised by DPs and editors who care about the picture as a whole, not as a queue of timelines to push through. Sound design and mix are next; we're locking in collaborators now. Built for indie features, documentaries, and short-form work that deserves to be finished with care — not pushed through a render queue.
+      blurb: >
+        A finishing house run by working filmmakers. Editorial and color anchor
+        the work — supervised by DPs and editors who care about the picture as a
+        whole, not as a queue of timelines to push through. Sound design and mix
+        are next; we're locking in collaborators now. Built for indie features,
+        documentaries, and short-form work that deserves to be finished with
+        care — not pushed through a render queue.
       href: /post
       cta: View finishing
-
 partnership:
   kicker: In Partnership
-  heading: "Two founders, *across the cycle.*"
+  heading: Two founders, *across the cycle.*
   body: ""
   founders:
     - name: Kshitij Kapil
       company: Founder · Obelisk Studios
       roles: []
-      bio: |
-        Cinematographer and colorist. The picture side of Grace, the post house, and the studio.
+      bio: >
+        Cinematographer and colorist. The picture side of Grace, the post house,
+        and the studio.
     - name: Siddharth Agrawal
       company: Founder · TDH Systems
       roles: []
-      bio: |
-        Producer, cinematographer, and editor. Builds the engineering behind Grace.
+      bio: >
+        Producer, cinematographer, and editor. Builds the engineering behind
+        Grace.
   films:
     - title: Piroba
       year: 2026 · NYIFA
-      synopsis: Best Indie Short · Cinematography by Kshitij Kapil · Produced by Siddharth Agrawal
+      synopsis: Best Indie Short · Cinematography by Kshitij Kapil · Produced by
+        Siddharth Agrawal
     - title: Exsanguination
       year: 2025 · IFEFA · Picasso
-      synopsis: Best Production · Best Cinematographer of the Year · Cinematography & Produced by Siddharth Agrawal
+      synopsis: Best Production · Best Cinematographer of the Year · Cinematography &
+        Produced by Siddharth Agrawal
     - title: Between The Lines
       year: 2025 · 5 Festivals
-      synopsis: Best Film at Mokkho · Best US Short at Rohip and Kodaikanal · Cinematography & Produced by Siddharth Agrawal
+      synopsis: Best Film at Mokkho · Best US Short at Rohip and Kodaikanal ·
+        Cinematography & Produced by Siddharth Agrawal
     - title: The Night the Sky Fell
       year: 2025 · IndieX
-      synopsis: Outstanding Achievement for Cinematography · Cinematography & Produced by Kshitij Kapil
+      synopsis: Outstanding Achievement for Cinematography · Cinematography & Produced
+        by Kshitij Kapil
