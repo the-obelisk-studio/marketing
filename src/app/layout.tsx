@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Fraunces, DM_Mono } from "next/font/google"
 import { Nav } from "@/components/Nav"
 import { Footer } from "@/components/Footer"
+import { loadContent } from "@/lib/content"
 import "./globals.css"
 
 const fraunces = Fraunces({
@@ -18,16 +19,19 @@ const dmMono = DM_Mono({
 
 export const metadata: Metadata = {
   title: "Obelisk Studios",
-  description: "One studio. Every stage. Independent filmmakers building tools and finishing pictures.",
+  description:
+    "One studio. Every stage. Independent filmmakers building tools and finishing pictures.",
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  const shared = loadContent("shared.yml")
+
   return (
     <html lang="en" className={`${fraunces.variable} ${dmMono.variable}`}>
       <body>
-        <Nav />
+        <Nav links={shared.navLinks} />
         {children}
-        <Footer />
+        <Footer footer={shared.footer} />
       </body>
     </html>
   )

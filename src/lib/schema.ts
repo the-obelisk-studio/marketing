@@ -32,16 +32,37 @@ export const FounderSchema = z.object({
   company: z.string().optional(),         // "Obelisk Studios" / "TDH Systems"
 })
 
-// ── Film credit (used on partnership) ──────────────────────────
+// ── Film credit ────────────────────────────────────────────────
+// Permissive shape — index uses just title + year + synopsis; partnership
+// uses the full set with crew breakdown, festivals + awards, etc.
+
+export const CrewEntrySchema = z.object({
+  role: z.string(),
+  // Either a single name or a multi-line list of names. Both accepted
+  // so YAML can be written naturally.
+  name: z.string().optional(),
+  names: z.array(z.string()).optional(),
+})
+
+export const FestivalEntrySchema = z.union([
+  z.string(),
+  z.object({ name: z.string(), award: z.string().optional() }),
+])
 
 export const FilmSchema = z.object({
   title: z.string(),
   year: z.union([z.string(), z.number()]).optional(),
-  crew: z.array(z.object({ role: z.string(), name: z.string() })).default([]),
+  genre: z.string().optional(),         // "Short Film · Drama"
+  status: z.string().optional(),        // "In Festival Circuit · 2026"
+  logline: z.string().optional(),
   synopsis: z.string().optional(),
-  festivals: z.array(z.string()).default([]),
+  crew: z.array(CrewEntrySchema).default([]),
+  festivals: z.array(FestivalEntrySchema).default([]),
   poster: z.string().optional(),
 })
+
+export type CrewEntry = z.infer<typeof CrewEntrySchema>
+export type FestivalEntry = z.infer<typeof FestivalEntrySchema>
 
 // ── Service item (used on post) ────────────────────────────────
 
@@ -114,17 +135,30 @@ export const IndexPageSchema = z.object({
   }),
 })
 
+// Hero "pill" badges used on partnership/post page heroes.
+export const HeroPillsHeroSchema = HeroSchema.extend({
+  headline: z.string().optional(),       // matches "Two studios, *one picture.*" treatment
+  positioning: z.string().optional(),    // sub-paragraph under headline
+  meta: z.array(z.string()).default([]), // "Burbank · Los Angeles", "Independent Studio"
+  pills: z.array(z.string()).default([]),
+})
+
+export const StudioEntitySchema = z.object({
+  label: z.string(),                     // "— Studio of Record"
+  name: z.string(),                      // "Obelisk Studios"
+  founder: z.string().optional(),        // "Founded by Kshitij Kapil"
+  description: z.string(),
+  tags: z.array(z.string()).default([]),
+})
+
 export const PartnershipPageSchema = z.object({
-  hero: HeroSchema,
+  hero: HeroPillsHeroSchema,
   story: z.object({ kicker: z.string(), heading: z.string(), body: z.string() }),
   twoStudios: z.object({
     kicker: z.string(),
     heading: z.string(),
-    studios: z.array(z.object({
-      tag: z.string(),
-      name: z.string(),
-      description: z.string(),
-    })),
+    body: z.string().optional(),
+    studios: z.array(StudioEntitySchema),
   }),
   filmmakers: z.object({
     kicker: z.string(),
@@ -134,17 +168,15 @@ export const PartnershipPageSchema = z.object({
   selectedWork: z.object({
     kicker: z.string(),
     heading: z.string(),
+    body: z.string().optional(),
     films: z.array(FilmSchema),
   }),
-  howWeWork: z.object({
-    kicker: z.string(),
-    heading: z.string(),
-    body: z.string(),
-  }).optional(),
   cta: z.object({
+    eyebrow: z.string().optional(),
     heading: z.string(),
     body: z.string().optional(),
-    link: LinkSchema,
+    button: z.object({ label: z.string(), href: z.string() }),
+    note: z.string().optional(),
   }).optional(),
 })
 

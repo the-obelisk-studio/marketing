@@ -1,0 +1,22 @@
+# Shared content — nav links, footer columns. Decap edits this.
+# Schema: src/lib/schema.ts → SharedSchema.
+
+navLinks:
+  - { label: Grace, href: /grace }
+  - { label: Post Services, href: /post }
+  - { label: Partnership, href: /partnership }
+  - { label: Contact, href: /contact }
+
+footer:
+  tagline: studio · grace · post
+  contactEmail: hello@theobeliskstudio.com
+  columns:
+    - label: Studio
+      links:
+        - { label: About, href: "/#about" }
+        - { label: Work, href: "/#offerings" }
+        - { label: Partnership, href: /partnership }
+    - label: Contact
+      links:
+        - { label: hello@theobeliskstudio.com, href: "mailto:hello@theobeliskstudio.com" }
+        - { label: Contact form, href: /contact }

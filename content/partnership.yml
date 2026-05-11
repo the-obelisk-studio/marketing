@@ -1,0 +1,147 @@
+# Partnership page content. Edited via Decap CMS at /admin/.
+# Schema: src/lib/schema.ts → PartnershipPageSchema.
+
+hero:
+  title: ""
+  headline: "Two studios, *one picture.*"
+  positioning: "Obelisk Studios and TDH Systems — a partnership built on the work."
+  meta:
+    - Obelisk Studios
+    - The Partnership
+    - Est. 2026
+  pills:
+    - Founded 2026
+    - Built on years of working together
+
+story:
+  kicker: The Story
+  heading: "Built on the work, *over time.*"
+  body: |
+    Kshitij and Siddharth have been making films together for years — first as classmates at NYFA, then as collaborators across short films, festivals, productions, and post sessions. Different roles each time, same shared instinct about what makes a picture work.
+
+    The vision was never a corporate value — it was just how the work always got made.
+
+    Obelisk Studios and TDH Systems are what happens when that work gets formalized.
+
+twoStudios:
+  kicker: Two Studios
+  heading: "A picture, *across two studios.*"
+  body: |
+    The partnership is structured as two independent studios, working on the same picture from opposite sides. One owns what gets seen. The other owns what makes it run.
+  studios:
+    - label: — Studio of Record
+      name: Obelisk Studios
+      founder: Founded by Kshitij Kapil
+      description: |
+        The picture side. Operates the post house, leads Grace's American business, runs conversations with productions and clients. Shapes the creative direction, the user experience, the industry presence. The studio of record for everything that ships under the Obelisk name.
+      tags:
+        - Post Production
+        - Grace · Product
+        - Studio of Record
+    - label: — Technical Engine
+      name: TDH Systems
+      founder: Founded by Siddharth Agrawal
+      description: |
+        The engineering side. Builds and runs Grace's backend, infrastructure, and the technical systems that make the platform real. The work nobody sees but that everything the studio ships depends on. Long-form thinking on architecture, scaling, and what gets built next.
+      tags:
+        - Grace · Engineering
+        - Infrastructure
+        - Technical Lead
+
+filmmakers:
+  kicker: The Filmmakers
+  heading: "Two filmmakers, *across the cycle.*"
+  founders:
+    - name: Kshitij Kapil
+      company: Founder · Obelisk Studios
+      bio: |
+        Kshitij Kapil is an award-winning cinematographer and colorist with nearly a decade of experience. He holds a Master of Fine Arts in Cinematography from the New York Film Academy and a Bachelor of Fine Arts in Film from Syracuse University. He has had the privilege of being mentored by acclaimed cinematographer Anthony B. Richmond, ASC, BSC.
+      portfolioLinks:
+        - { label: Read more, href: "https://kshitijkapil.com/" }
+    - name: Siddharth Agrawal
+      company: Founder · TDH Systems
+      bio: |
+        Siddharth Agrawal is an award-winning Producer and Director of Photography with a strong track record in narrative, documentary, and commercial filmmaking. His work has screened internationally and earned recognition at top festivals including the International Film & Entertainment Festival of Australia, LA International Film Festival, One-Reeler, and the Palermo International Film Festival.
+      portfolioLinks:
+        - { label: Read more, href: "https://www.siddharthagrawalfilms.com/" }
+
+selectedWork:
+  kicker: Selected Work
+  heading: "A working history, *on screen.*"
+  body: |
+    Films from the partners — together and apart. Each one carried through some part of the cycle the studio now serves.
+  films:
+    - title: Piroba
+      genre: Short Film · Drama, Action
+      status: In Festival Circuit · 2026
+      logline: An emotionally drained young fighter carrying the ache of her late father must summon the strength to outlast her bitter rival in the stale heat of an empty gym.
+      crew:
+        - { role: Producers, names: [Siddharth Agrawal, Jaimin Maru] }
+        - { role: Director, name: Matthew Arkema }
+        - { role: Director of Photography, name: Kshitij Kapil }
+        - { role: Cast, names: [Gvantsa Bukhnikashvili, Bria Steedley, Elijah Barnes] }
+      synopsis: |
+        *Piroba* is a gritty, intimate portrait of a young female boxer navigating the brutal world of underground fighting while confronting the ghosts of her past. The film explores themes of identity, resilience, and the price of ambition — shot with a raw, visceral energy that places the audience ringside for every blow.
+      festivals:
+        - { name: New York International Film Awards, award: Best Indie Short }
+        - { name: IndieX Film Fest, award: Official Selection }
+        - { name: The Great Film Club, award: Official Selection }
+
+    - title: Exsanguination
+      genre: Short Film · Psychological Horror
+      status: In Festival Circuit · 2025
+      logline: As a desperate father turns to a psychic medium to find his missing wife, his skeptical daughter begins to unravel the unsettling truth behind the séance — and the hidden motives that could cost them everything.
+      crew:
+        - { role: Producers, names: [Siddharth Agrawal, Josie Hull] }
+        - { role: Director, name: Jonathan King }
+        - { role: Director of Photography, name: Siddharth Agrawal }
+        - { role: Cast, names: [Lindsay Shiner, Steven O Ty, Hannah Kwon] }
+      synopsis: |
+        *Exsanguination* is a tense, atmospheric descent into grief, belief, and manipulation. When Lily reluctantly accompanies her father to a psychic medium in hopes of finding her missing mother, what begins as a fragile act of desperation slowly unravels into something far more disturbing. As the night deepens, Lily's skepticism sharpens, and the line between truth and deception blurs within the claustrophobic setting. With an eerie, slow-burning intensity, the film explores the emotional cost of loss and the dangerous lengths people will go to for closure.
+      festivals:
+        - { name: International Film & Entertainment Festival Australia, award: Best Production }
+        - { name: Picasso International Film Festival, award: Best Cinematographer of the Year }
+        - { name: International New York Film Festival, award: Official Selection }
+        - { name: Los Angeles Lift-Off Film Festival, award: Official Selection }
+        - { name: LA International Film Festival, award: Official Selection }
+
+    - title: Between The Lines
+      genre: Short Film · Drama
+      status: In Festival Circuit · 2025
+      logline: Alex, a talented young dancer at a crossroads in his life, grapples with choices that will define his career and relationships.
+      crew:
+        - { role: Producers, names: [Jaimin Maru, Siddharth Agrawal, Mushkan Arora] }
+        - { role: Director, name: Taytum Blake }
+        - { role: Director of Photography, name: Siddharth Agrawal }
+        - { role: Cast, names: [Jaimin Maru, Emma Clay, Olivia Sprague] }
+      synopsis: |
+        Torn between a promising dance tour with the enthralling Maya and a stable emotional connection with his childhood friend Emily, Alex comes to realize that the dance of life requires a balance between passion and stability. The film culminates in Alex's solo dance, a fusion piece symbolizing his internal harmony. The story unfolds as an ode to life's complexities and the courage it takes to make a choice.
+      festivals:
+        - { name: Los Angeles Movie Awards, award: Honorable Mention }
+        - { name: Makizhmithran International Film Festival, award: Special Jury Award }
+        - { name: Rohip International Film Festival, award: Best US Short · Best Actor }
+        - { name: Mokkho International Film Festival, award: Best Film · Best Producer · Best Actor }
+        - { name: Kodaikanal International Film Festival, award: Best US Short · Best Actor · Best Cinematography }
+
+    - title: The Night the Sky Fell
+      genre: Short Film · Sci-Fi, Drama
+      status: In Festival Circuit · 2025
+      logline: A grieving young boy and his emotionally distant father are forced to confront their shared loss when a mysterious supernatural encounter challenges the silence between them.
+      crew:
+        - { role: Producers, names: [Mrunal Mestri, Kshitij Kapil] }
+        - { role: Director, name: Matthew Arkema }
+        - { role: Director of Photography, name: Kshitij Kapil }
+        - { role: Cast, names: [Adequin Reagan Meisenzahl, Dennis O'Connor] }
+      synopsis: |
+        *The Night the Sky Fell* is a poignant, atmospheric exploration of grief, distance, and quiet healing. Through the eyes of a young boy mourning his brother, the film captures the fragile, unspoken tension between a father and son struggling to reconnect. When an otherworldly presence disrupts their reality, it becomes a catalyst for confronting the emotions they've both buried. Blending subtle sci-fi elements with grounded emotional truth, the film reflects on loss, faith, and the small, powerful moments that can begin to mend what feels irreparably broken.
+      festivals:
+        - { name: IndieX Film Fest Los Angeles, award: Outstanding Achievement for Cinematography · Best Young Actor }
+        - { name: FilmHaus Film Festival, award: "Nominee — Best Fantasy Drama" }
+        - { name: Lonely Wolf Film Festival, award: Best Emerging Director }
+
+cta:
+  eyebrow: Get in touch
+  heading: "Bring a project *to the studio.*"
+  body: Software, finishing, or something that doesn't fit either yet — tell us what you're working on.
+  button: { label: Get in touch, href: "/contact" }
+  note: "hello@theobeliskstudio.com · Burbank, California"

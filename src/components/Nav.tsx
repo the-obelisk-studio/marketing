@@ -1,29 +1,32 @@
-// Fixed top nav, semi-transparent paper bg with backdrop blur. Same shape
-// across every page. Links list comes from content/shared.yml in
-// commit 2; for the bootstrap phase the links are hard-coded.
+// Fixed top nav, paper-warm semi-transparent bg with backdrop blur.
+// Wordmark uses Fraunces with italic suffix to match KK's design.
+// Links list comes from content/shared.yml; for safety the file
+// passes them in as a prop rather than reading content/ from inside
+// a server component import chain.
 
 import Link from "next/link"
+import type { SharedContent } from "@/lib/schema"
 
-type NavLink = { label: string; href: string }
+type NavLink = SharedContent["navLinks"][number]
 
-const DEFAULT_LINKS: NavLink[] = [
-  { label: "Partnership", href: "/partnership" },
-  { label: "Post", href: "/post" },
+const FALLBACK_LINKS: NavLink[] = [
   { label: "Grace", href: "/grace" },
+  { label: "Post Services", href: "/post" },
+  { label: "Partnership", href: "/partnership" },
   { label: "Contact", href: "/contact" },
 ]
 
-export function Nav({ links = DEFAULT_LINKS }: { links?: NavLink[] }) {
+export function Nav({ links = FALLBACK_LINKS }: { links?: NavLink[] }) {
   return (
     <nav className="nav">
-      <div className="container nav-inner">
+      <div className="nav-inner">
         <Link href="/" className="nav-mark">
-          <span className="mono nav-mark-label">Obelisk</span>
+          Obelisk <span>studio</span>
         </Link>
         <ul className="nav-links">
           {links.map(l => (
             <li key={l.href}>
-              <Link href={l.href} className="mono nav-link">{l.label}</Link>
+              <Link href={l.href}>{l.label}</Link>
             </li>
           ))}
         </ul>
@@ -41,37 +44,46 @@ export function Nav({ links = DEFAULT_LINKS }: { links?: NavLink[] }) {
           border-bottom: 1px solid rgba(28, 22, 18, 0.06);
         }
         .nav-inner {
+          max-width: var(--container-max);
+          margin: 0 auto;
+          padding: 0 var(--container-pad);
           display: flex;
-          align-items: center;
           justify-content: space-between;
+          align-items: center;
         }
         .nav-mark {
-          display: inline-flex;
-          align-items: center;
-          gap: 10px;
-        }
-        .nav-mark-label {
-          font-size: 12px;
-          letter-spacing: 0.28em;
+          font-family: var(--font-display);
+          font-variation-settings: "opsz" 96, "wght" 500;
+          font-size: 20px;
+          letter-spacing: 0.02em;
           color: var(--ink);
         }
+        .nav-mark span {
+          font-style: italic;
+          font-variation-settings: "opsz" 96, "wght" 350;
+          color: var(--ink-muted);
+          margin-left: 4px;
+        }
         .nav-links {
-          list-style: none;
           display: flex;
           gap: 36px;
-        }
-        .nav-link {
+          list-style: none;
+          font-family: var(--font-mono);
           font-size: 11px;
           letter-spacing: 0.22em;
+          text-transform: uppercase;
+        }
+        .nav-links a {
           color: var(--ink-soft);
           transition: color 200ms;
         }
-        .nav-link:hover {
+        .nav-links a:hover {
           color: var(--kodachrome);
         }
         @media (max-width: 900px) {
-          .nav-links { gap: 18px; }
-          .nav-link { font-size: 10px; letter-spacing: 0.18em; }
+          .nav-inner { padding: 0 var(--container-pad-mobile); }
+          .nav-links { gap: 16px; font-size: 10px; }
+          .nav-links li:nth-child(3) { display: none; }
         }
       `}</style>
     </nav>

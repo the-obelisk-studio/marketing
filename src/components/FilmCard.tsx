@@ -32,7 +32,9 @@ export function FilmCard({ film }: Props) {
         {film.festivals.length > 0 && (
           <ul className="film-festivals">
             {film.festivals.map((f, i) => (
-              <li key={i} className="film-festival mono">{f}</li>
+              <li key={i} className="film-festival mono">
+                {typeof f === "string" ? f : `${f.name}${f.award ? ` · ${f.award}` : ""}`}
+              </li>
             ))}
           </ul>
         )}

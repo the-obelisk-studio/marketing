@@ -1,70 +1,130 @@
-// Shared footer. Warmer paper bg + thin top border. Three columns on
-// desktop, stack on mobile.
+// Footer — big Obelisk wordmark + tagline + 3-col link grid + base
+// strip. Mirrors KK's exact layout from index.html.
 
 import Link from "next/link"
+import type { SharedContent } from "@/lib/schema"
+
+type Props = {
+  footer?: SharedContent["footer"]
+}
+
+const FALLBACK: SharedContent["footer"] = {
+  tagline: "studio · grace · post",
+  contactEmail: "hello@theobeliskstudio.com",
+  columns: [
+    { label: "Studio", links: [
+      { label: "About", href: "/#about" },
+      { label: "Work", href: "/#offerings" },
+      { label: "Partnership", href: "/partnership" },
+    ] },
+    { label: "Contact", links: [
+      { label: "hello@theobeliskstudio.com", href: "mailto:hello@theobeliskstudio.com" },
+      { label: "Contact form", href: "/contact" },
+    ] },
+  ],
+}
 
 const FOOTER_YEAR = new Date().getFullYear()
 
-export function Footer() {
+export function Footer({ footer = FALLBACK }: Props) {
   return (
-    <footer className="footer">
-      <div className="container footer-inner">
-        <div className="footer-col">
-          <div className="mono footer-label">Studio</div>
-          <Link href="/partnership" className="footer-link">Partnership</Link>
-          <Link href="/post" className="footer-link">Post production</Link>
-          <Link href="/grace" className="footer-link">Grace</Link>
+    <footer className="footer" id="contact">
+      <div className="footer-container">
+        <div className="footer-grid">
+          <div>
+            <div className="footer-mark">Obelisk</div>
+            {footer.tagline && <div className="footer-tagline">{footer.tagline}</div>}
+          </div>
+          {footer.columns.map(col => (
+            <div key={col.label} className="footer-col">
+              <h4>{col.label}</h4>
+              <ul>
+                {col.links.map(l => (
+                  <li key={l.href}>
+                    <Link href={l.href}>{l.label}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
-        <div className="footer-col">
-          <div className="mono footer-label">Reach</div>
-          <Link href="/contact" className="footer-link">Contact</Link>
-          <a href="mailto:hello@theobeliskstudio.com" className="footer-link">hello@theobeliskstudio.com</a>
-        </div>
-        <div className="footer-col footer-meta">
-          <div className="mono footer-label">Obelisk Studios</div>
-          <div className="footer-fine">One studio. Every stage.</div>
-          <div className="footer-fine">© {FOOTER_YEAR} Obelisk Studios &middot; in partnership with TDH Systems</div>
+
+        <div className="footer-base">
+          <div>© {FOOTER_YEAR} Obelisk Studios · in partnership with TDH Systems</div>
+          <div>v0.1</div>
         </div>
       </div>
 
       <style>{`
         .footer {
-          background: var(--paper-warm);
+          padding: 100px 0 56px;
           border-top: 1px solid var(--paper-edge);
-          padding: 64px 0 48px;
-          margin-top: 120px;
+          background: var(--paper-warm);
         }
-        .footer-inner {
+        .footer-container {
+          max-width: var(--container-max);
+          margin: 0 auto;
+          padding: 0 var(--container-pad);
+        }
+        .footer-grid {
           display: grid;
-          grid-template-columns: 1fr 1fr 1.4fr;
-          gap: 48px;
+          grid-template-columns: 2fr 1fr 1fr;
+          gap: 64px;
+          margin-bottom: 80px;
         }
-        .footer-col {
-          display: flex;
-          flex-direction: column;
-          gap: 8px;
+        .footer-mark {
+          font-family: var(--font-display);
+          font-variation-settings: "opsz" 144, "wght" 480;
+          font-size: clamp(60px, 9vw, 108px);
+          line-height: 0.86;
+          letter-spacing: -0.025em;
+          color: var(--ink);
+          margin-bottom: 14px;
         }
-        .footer-label {
-          font-size: 10px;
+        .footer-tagline {
+          font-family: var(--font-display);
+          font-variation-settings: "opsz" 22, "wght" 320;
+          font-style: italic;
+          font-size: 19px;
           color: var(--ink-muted);
-          margin-bottom: 8px;
         }
-        .footer-link {
+        .footer-col h4 {
+          font-family: var(--font-mono);
+          font-size: 10px;
+          letter-spacing: 0.28em;
+          text-transform: uppercase;
+          color: var(--ink-faint);
+          margin-bottom: 22px;
+          font-weight: 400;
+        }
+        .footer-col ul {
+          list-style: none;
+          font-family: var(--font-display);
+          font-size: 16px;
+          line-height: 1.85;
+        }
+        .footer-col a {
           color: var(--ink-soft);
-          font-size: 15px;
           transition: color 200ms;
         }
-        .footer-link:hover {
+        .footer-col a:hover {
           color: var(--kodachrome);
         }
-        .footer-fine {
-          font-size: 13px;
+        .footer-base {
+          display: flex;
+          justify-content: space-between;
+          padding-top: 32px;
+          border-top: 1px solid var(--paper-edge);
+          font-family: var(--font-mono);
+          font-size: 10px;
+          letter-spacing: 0.22em;
+          text-transform: uppercase;
           color: var(--ink-muted);
-          line-height: 1.6;
         }
         @media (max-width: 900px) {
-          .footer { padding: 40px 0 32px; margin-top: 80px; }
-          .footer-inner { grid-template-columns: 1fr; gap: 28px; }
+          .footer-container { padding: 0 var(--container-pad-mobile); }
+          .footer-grid { grid-template-columns: 1fr; gap: 48px; }
+          .footer-base { flex-direction: column; gap: 14px; }
         }
       `}</style>
     </footer>
