@@ -124,7 +124,7 @@ export default function GracePage() {
 
       <style>{`
         .page-container { max-width: var(--container-max); margin: 0 auto; padding: 0 var(--container-pad); position: relative; }
-        .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 160px 0 80px; position: relative; }
+        .hero { min-height: 88vh; display: flex; flex-direction: column; justify-content: center; padding: 160px 0 80px; position: relative; }
         .obelisk-glyph {
           position: absolute;
           top: 50%; right: -30px;
