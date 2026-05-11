@@ -118,7 +118,7 @@ export function ContactForm({ topics }: Props) {
           outline: none;
           transition: border-color 0.2s ease, background 0.2s ease;
         }
-        .form-field textarea { resize: vertical; min-height: 140px; line-height: 1.55; }
+        .form-field textarea { resize: vertical; min-height: 180px; line-height: 1.55; }
         .form-field select {
           appearance: none;
           -webkit-appearance: none;
