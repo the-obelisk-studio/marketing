@@ -23,7 +23,7 @@ export default function HomePage() {
             <path d="M32 0 L48 56 L18 56 Z M18 56 L48 56 L46 380 L20 380 Z" fill="currentColor" />
           </svg>
 
-          <Reveal>
+          <Reveal eager delay={100}>
             <div className="hero-meta">
               <span>Burbank · Los Angeles</span>
               <span className="dash" />
@@ -33,22 +33,22 @@ export default function HomePage() {
             </div>
           </Reveal>
 
-          <Reveal delay={120}>
+          <Reveal eager delay={250}>
             <h1 className="wordmark">{c.hero.title}</h1>
           </Reveal>
-          <Reveal delay={220}>
+          <Reveal eager delay={450}>
             <div className="wordmark-sub">studio</div>
           </Reveal>
 
           {c.hero.motto && (
-            <Reveal delay={360}>
+            <Reveal eager delay={700}>
               <div className="motto-area">
                 <div className="motto">{c.hero.motto}</div>
               </div>
             </Reveal>
           )}
 
-          <Reveal delay={520}>
+          <Reveal eager delay={950}>
             <p className="hero-positioning">
               An independent studio of working filmmakers — building tools and finishing pictures for the people who actually make films.
             </p>
@@ -122,8 +122,14 @@ export default function HomePage() {
                 <article className="offering">
                   <div className="offering-meta">
                     <span>{item.kicker}</span>
+                    {item.status && (
+                      <span className={`offering-status ${item.statusKind === "future" ? "future" : ""}`}>
+                        {item.status}
+                      </span>
+                    )}
                   </div>
                   <h3 className="offering-name">{item.title}</h3>
+                  {item.tagline && <p className="offering-tagline">{item.tagline}</p>}
                   <div className="section-body">
                     <Body>{item.blurb}</Body>
                   </div>
@@ -419,6 +425,30 @@ export default function HomePage() {
           text-transform: uppercase;
           color: var(--ink-muted);
           margin-bottom: 36px;
+        }
+        .offering-status {
+          color: var(--kodachrome);
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+        }
+        .offering-status::before {
+          content: '●';
+          font-size: 8px;
+        }
+        .offering-status.future {
+          color: var(--ink-faint);
+        }
+        .offering-status.future::before {
+          content: '○';
+        }
+        .offering-tagline {
+          font-family: var(--font-display);
+          font-variation-settings: "opsz" 32, "wght" 320;
+          font-style: italic;
+          font-size: 22px;
+          color: var(--ink-soft);
+          margin-bottom: 24px;
         }
         .offering-name {
           font-family: var(--font-display);

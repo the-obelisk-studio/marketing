@@ -27,7 +27,7 @@ export default function GracePage() {
       {/* ── HERO ── */}
       <section className="hero">
         <div className="page-container">
-          <Reveal>
+          <Reveal eager delay={100}>
             <div className="hero-meta">
               <span>Obelisk Studios</span>
               <span className="dash" />
@@ -36,15 +36,15 @@ export default function GracePage() {
               <span>In Development</span>
             </div>
           </Reveal>
-          <Reveal delay={140}>
+          <Reveal eager delay={250}>
             <h1 className="grace-wordmark">{c.hero.title}</h1>
           </Reveal>
           {c.hero.motto && (
-            <Reveal delay={260}>
+            <Reveal eager delay={450}>
               <p className="grace-tagline">{c.hero.motto}</p>
             </Reveal>
           )}
-          <Reveal delay={400}>
+          <Reveal eager delay={700}>
             <p className="hero-positioning">
               Grace is the production operating system Obelisk runs on. Built by working filmmakers, in partnership with TDH Systems. Co-pilot, never autopilot — filmmakers stay in command.
             </p>

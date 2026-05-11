@@ -56,7 +56,7 @@ export default function PartnershipPage() {
           </svg>
 
           {c.hero.meta.length > 0 && (
-            <Reveal>
+            <Reveal eager delay={100}>
               <div className="hero-meta">
                 {c.hero.meta.map((m, i) => (
                   <span key={i}>
@@ -69,7 +69,7 @@ export default function PartnershipPage() {
           )}
 
           {c.hero.headline && (
-            <Reveal delay={140}>
+            <Reveal eager delay={250}>
               <h1 className="hero-headline">
                 <Inline>{c.hero.headline}</Inline>
               </h1>
@@ -77,13 +77,13 @@ export default function PartnershipPage() {
           )}
 
           {c.hero.positioning && (
-            <Reveal delay={280}>
+            <Reveal eager delay={450}>
               <p className="hero-positioning">{c.hero.positioning}</p>
             </Reveal>
           )}
 
           {c.hero.pills.length > 0 && (
-            <Reveal delay={420}>
+            <Reveal eager delay={700}>
               <div className="hero-pill-row">
                 {c.hero.pills.map((p, i) => <span key={i} className="pill">{p}</span>)}
               </div>
@@ -513,7 +513,7 @@ export default function PartnershipPage() {
           border-bottom-color: var(--kodachrome);
         }
         .portfolio-link .arrow { transition: transform 0.3s ease; }
-        .portfolio-link:hover .arrow { transform: translate(2px, -2px); }
+        .portfolio-link:hover .arrow { transform: translate(3px, -3px); }
 
         /* ── FILMS LIST ── */
         .films-list {
@@ -523,7 +523,7 @@ export default function PartnershipPage() {
           margin-top: 16px;
         }
         .film {
-          padding: 64px 0;
+          padding: 96px 0;
           border-top: 1px solid var(--ink);
         }
         .film:last-child {
@@ -583,8 +583,8 @@ export default function PartnershipPage() {
         .crew-names { display: flex; flex-direction: column; gap: 2px; }
         .crew-name {
           font-family: var(--font-display);
-          font-size: 15px;
-          color: var(--ink-soft);
+          font-size: 17px;
+          color: var(--ink);
         }
         .film-synopsis-block h4 {
           font-family: var(--font-mono);

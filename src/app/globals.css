@@ -62,22 +62,38 @@ a {
   text-decoration: none;
 }
 
-/* Reveal animation — IntersectionObserver flips data-revealed=true.
-   Fallback keyframe kicks in at 2s in case JS is delayed/disabled so
-   content never stays invisible forever. */
+/* Reveal animation. Two modes:
+   1. Scroll-reveal (default) — IntersectionObserver flips data-revealed
+      to true when the element enters the viewport; opacity transitions
+      from 0 → 1 with KK's `ease 1s` curve.
+   2. Eager (data-eager=true) — used on above-the-fold heroes. Element
+      is hydrated visible immediately (data-revealed set in useEffect),
+      and the `eager` keyframe runs at page load so the staggered
+      fade-in actually animates rather than snapping in.
+   Fallback keyframe (2s delay) catches the long-tail case where JS
+   stalls or is disabled — content stays visible regardless. */
 [data-reveal] {
   opacity: 0;
   transform: translateY(28px);
-  transition: opacity 800ms cubic-bezier(0.2, 0.7, 0.2, 1), transform 800ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition: opacity 1000ms ease, transform 1000ms ease;
   transition-delay: var(--reveal-delay, 0ms);
   will-change: opacity, transform;
-  animation: reveal-fallback 800ms cubic-bezier(0.2, 0.7, 0.2, 1) 2s forwards;
+  animation: reveal-fallback 1000ms ease 2s forwards;
 }
 
 [data-reveal][data-revealed="true"] {
   opacity: 1;
   transform: translateY(0);
   animation: none;
+}
+
+[data-reveal][data-eager="true"] {
+  animation: reveal-eager 1000ms ease var(--reveal-delay, 0ms) both;
+}
+
+@keyframes reveal-eager {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes reveal-fallback {

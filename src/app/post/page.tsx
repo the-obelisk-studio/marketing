@@ -26,7 +26,7 @@ export default function PostPage() {
           </svg>
 
           {c.hero.meta.length > 0 && (
-            <Reveal>
+            <Reveal eager delay={100}>
               <div className="hero-meta">
                 {c.hero.meta.map((m, i) => (
                   <span key={i}>
@@ -39,19 +39,19 @@ export default function PostPage() {
           )}
 
           {c.hero.headline && (
-            <Reveal delay={140}>
+            <Reveal eager delay={250}>
               <h1 className="hero-headline"><Inline>{c.hero.headline}</Inline></h1>
             </Reveal>
           )}
 
           {c.hero.positioning && (
-            <Reveal delay={280}>
+            <Reveal eager delay={450}>
               <p className="hero-positioning">{c.hero.positioning}</p>
             </Reveal>
           )}
 
           {c.hero.pills.length > 0 && (
-            <Reveal delay={420}>
+            <Reveal eager delay={700}>
               <div className="hero-pill-row">
                 {c.hero.pills.map((p, i) => (
                   <span key={i} className={`pill ${p.startsWith("●") ? "pill-active" : ""}`}>{p}</span>
@@ -94,7 +94,18 @@ export default function PostPage() {
             {c.services.items.map((s, i) => (
               <Reveal key={s.title} delay={200 + i * 100}>
                 <article className="service">
+                  {(s.roman || s.status) && (
+                    <div className="service-roman">
+                      {s.roman && <span>{s.roman}</span>}
+                      {s.status && (
+                        <span className={`service-status ${s.statusKind ?? "active"}`}>
+                          {s.status}
+                        </span>
+                      )}
+                    </div>
+                  )}
                   <h3 className="service-name">{s.title}</h3>
+                  {s.tagline && <p className="service-tagline">{s.tagline}</p>}
                   <p className="service-body">{s.description}</p>
                   {s.tools.length > 0 && (
                     <div className="service-tools">
@@ -221,7 +232,24 @@ export default function PostPage() {
         /* SERVICES */
         .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; margin-top: 16px; }
         .service { padding: 40px 0 0; border-top: 1px solid var(--ink); }
-        .service-name { font-family: var(--font-display); font-variation-settings: "opsz" 96, "wght" 480; font-size: 56px; line-height: 1; color: var(--ink); margin-bottom: 18px; letter-spacing: -0.018em; }
+        .service-roman {
+          display: flex;
+          justify-content: space-between;
+          font-family: var(--font-mono);
+          font-size: 10px;
+          letter-spacing: 0.24em;
+          text-transform: uppercase;
+          color: var(--ink-muted);
+          margin-bottom: 32px;
+        }
+        .service-status { display: inline-flex; align-items: center; gap: 6px; color: var(--kodachrome); }
+        .service-status::before { content: '●'; font-size: 8px; }
+        .service-status.collab { color: var(--saffron); }
+        .service-status.collab::before { content: '◐'; }
+        .service-status.future { color: var(--ink-faint); }
+        .service-status.future::before { content: '○'; }
+        .service-name { font-family: var(--font-display); font-variation-settings: "opsz" 96, "wght" 480; font-size: 56px; line-height: 1; color: var(--ink); margin-bottom: 14px; letter-spacing: -0.018em; }
+        .service-tagline { font-family: var(--font-display); font-variation-settings: "opsz" 32, "wght" 320; font-style: italic; font-size: 22px; color: var(--ink-soft); margin-bottom: 24px; }
         .service-body { font-family: var(--font-display); font-size: 16px; line-height: 1.7; color: var(--ink-soft); margin-bottom: 24px; }
         .service-tools { display: flex; flex-wrap: wrap; gap: 8px; }
         .tool-pill { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-soft); padding: 6px 12px; background: var(--paper-deep); border-radius: 2px; }

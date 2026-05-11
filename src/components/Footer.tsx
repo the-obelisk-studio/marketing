@@ -50,7 +50,7 @@ export function Footer({ footer = FALLBACK }: Props) {
         </div>
 
         <div className="footer-base">
-          <div>© {FOOTER_YEAR} Obelisk Studios · in partnership with TDH Systems</div>
+          <div>© {FOOTER_YEAR} Obelisk Studios · Burbank, California</div>
           <div>v0.1</div>
         </div>
       </div>

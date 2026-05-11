@@ -67,7 +67,11 @@ export type FestivalEntry = z.infer<typeof FestivalEntrySchema>
 // ── Service item (used on post) ────────────────────────────────
 
 export const ServiceSchema = z.object({
+  roman: z.string().optional(),                         // "I · Editorial"
+  status: z.string().optional(),                        // "Booking" / "In Collaboration"
+  statusKind: z.enum(["active", "future", "collab"]).optional(),
   title: z.string(),
+  tagline: z.string().optional(),                       // italic line under title
   description: z.string(),
   tools: z.array(z.string()).default([]),
 })
@@ -83,8 +87,11 @@ export const ProcessStepSchema = z.object({
 // ── Offering (used on index — Grace + Post tiles) ──────────────
 
 export const OfferingSchema = z.object({
-  kicker: z.string(),
+  kicker: z.string(),                                   // "I · Software"
+  status: z.string().optional(),                        // "In Development" / "In Planning"
+  statusKind: z.enum(["active", "future"]).optional(),  // ● vs ○
   title: z.string(),
+  tagline: z.string().optional(),                       // italic line under title
   blurb: z.string(),
   href: z.string(),
   cta: z.string().default("Learn more"),

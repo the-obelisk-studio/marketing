@@ -22,13 +22,19 @@ offerings:
   heading: "Software. *Finishing.*"
   items:
     - kicker: I · Software
+      status: In Development
+      statusKind: active
       title: Grace
+      tagline: A production operating system.
       blurb: |
         Grace is built around one idea: every department on a film should be working from the same picture. Breakdown feeds schedule. Schedule feeds budget. Budget feeds call sheet. Everything connects, nothing gets re-entered, and no one is working from a stale version. The smart parts are baked in — co-pilot, never autopilot. Filmmakers stay in command.
       href: /grace
       cta: Learn more
     - kicker: II · Services
+      status: In Planning
+      statusKind: future
       title: Post Production
+      tagline: Edit, color, and finishing.
       blurb: |
         A finishing house run by working filmmakers. Editorial and color anchor the work — supervised by DPs and editors who care about the picture as a whole, not as a queue of timelines to push through. Sound design and mix are next; we're locking in collaborators now. Built for indie features, documentaries, and short-form work that deserves to be finished with care — not pushed through a render queue.
       href: /post

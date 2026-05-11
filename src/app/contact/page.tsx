@@ -22,7 +22,7 @@ export default function ContactPage() {
       <section className="hero">
         <div className="page-container">
           {c.hero.meta.length > 0 && (
-            <Reveal>
+            <Reveal eager delay={100}>
               <div className="hero-meta">
                 {c.hero.meta.map((m, i) => (
                   <span key={i}>
@@ -35,19 +35,19 @@ export default function ContactPage() {
           )}
 
           {c.hero.headline && (
-            <Reveal delay={140}>
+            <Reveal eager delay={250}>
               <h1 className="hero-headline"><Inline>{c.hero.headline}</Inline></h1>
             </Reveal>
           )}
 
           {c.hero.positioning && (
-            <Reveal delay={280}>
+            <Reveal eager delay={450}>
               <p className="hero-positioning">{c.hero.positioning}</p>
             </Reveal>
           )}
 
           {c.info.length > 0 && (
-            <Reveal delay={420}>
+            <Reveal eager delay={700}>
               <div className="direct-bar">
                 {c.info.map((row, i) => (
                   <div key={i} className="direct-item">

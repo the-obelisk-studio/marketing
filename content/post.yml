@@ -27,21 +27,37 @@ services:
   kicker: Services
   heading: "Edit. Color. *Finishing.*"
   items:
-    - title: "Edit."
+    - roman: I · Editorial
+      status: Booking
+      statusKind: active
+      title: "Edit."
+      tagline: From assembly to picture lock.
       description: |
-        From assembly to picture lock. Narrative, documentary, and short-form editorial. We work in DaVinci Resolve and Premiere — whichever the production was cut on, whichever serves the story. Director's cut, producer notes passes, picture lock. Available as full edit from dailies, or as a fresh pair of eyes on a stuck cut.
+        Narrative, documentary, and short-form editorial. We work in DaVinci Resolve and Premiere — whichever the production was cut on, whichever serves the story. Director's cut, producer notes passes, picture lock. Available as full edit from dailies, or as a fresh pair of eyes on a stuck cut.
       tools: [DaVinci Resolve, Premiere Pro, Avid]
-    - title: "Color."
+    - roman: II · Color
+      status: Booking
+      statusKind: active
+      title: "Color."
+      tagline: Grade with the people who shot it.
       description: |
-        Grade with the people who shot it. DaVinci Resolve color, supervised by working DPs. Conform, primary, secondary, shot match, look development, deliverables. We grade the picture together — DP in the room or on the link, decisions made in conversation. ACES and Rec.709 pipelines, RAW from any camera body, HDR on request.
+        DaVinci Resolve color, supervised by working DPs. Conform, primary, secondary, shot match, look development, deliverables. We grade the picture together — DP in the room or on the link, decisions made in conversation. ACES and Rec.709 pipelines, RAW from any camera body, HDR on request.
       tools: [DaVinci Resolve Studio, ACES, HDR · Rec.709, Calibrated suite]
-    - title: "Finishing."
+    - roman: III · Finishing
+      status: Booking
+      statusKind: active
+      title: "Finishing."
+      tagline: Conform, deliverables, festival masters.
       description: |
-        Conform, deliverables, festival masters. Online conform from offline cut. Title and credit work. Versioning for festivals, streamers, broadcast, theatrical. Deliverables in any spec — DCP, ProRes, H.264 mezzanine, IMF. Quality control passes. The unglamorous work that decides whether the picture actually plays.
+        Online conform from offline cut. Title and credit work. Versioning for festivals, streamers, broadcast, theatrical. Deliverables in any spec — DCP, ProRes, H.264 mezzanine, IMF. Quality control passes. The unglamorous work that decides whether the picture actually plays.
       tools: [DCP, ProRes · DNxHR, IMF, QC pass]
-    - title: "Sound."
+    - roman: IV · Sound
+      status: In Collaboration
+      statusKind: collab
+      title: "Sound."
+      tagline: Design, edit, mix — through trusted partners.
       description: |
-        Design, edit, mix — through trusted partners. We don't run sound in-house — yet. For now, sound design, dialogue edit, ADR, foley, and final mix run through a curated set of collaborators we've worked with before. You get a single point of contact through us, and the sound work stays inside the same conversation the picture's in.
+        We don't run sound in-house — yet. For now, sound design, dialogue edit, ADR, foley, and final mix run through a curated set of collaborators we've worked with before. You get a single point of contact through us, and the sound work stays inside the same conversation the picture's in.
       tools: [Sound design, Dialogue edit · ADR, "5.1 · Atmos mix"]
 
 howItRuns:
