@@ -286,7 +286,7 @@ export default function PartnershipPage() {
 
         /* ── HERO ── */
         .hero {
-          min-height: 100vh;
+          min-height: 88vh;
           display: flex;
           flex-direction: column;
           justify-content: center;

@@ -207,7 +207,7 @@ export default function PostPage() {
           padding: 0 var(--container-pad);
           position: relative;
         }
-        .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 160px 0 100px; position: relative; }
+        .hero { min-height: 90vh; display: flex; flex-direction: column; justify-content: center; padding: 160px 0 100px; position: relative; }
         .obelisk-glyph { position: absolute; top: 50%; right: -30px; transform: translateY(-50%); width: 64px; height: 380px; opacity: 0.06; pointer-events: none; color: var(--ink); }
         .hero-meta { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 56px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
         .hero-meta .dash { width: 64px; height: 1px; background: var(--ink-faint); }
