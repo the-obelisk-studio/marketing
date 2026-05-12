@@ -1,18 +1,18 @@
-// Render the Obelisk monogram as a square logo PNG for use in
+// Render the Obelisk wordmark as a square logo PNG for use in
 // external services (Google OAuth, Stripe billing, Slack, etc.).
 //
-// The brand mark on the marketing site is the obelisk silhouette, but
-// at small square sizes its 1:5.94 aspect ratio renders as a near-
-// invisible vertical line. So this logo uses the Fraunces letterform
-// "O" as a monogram — instantly recognizable, still tied to the
-// wordmark.
+// Uses the same treatment as the marketing-site nav: "Obelisk" in
+// Fraunces 500 + " studio" italic 350 in muted ink, paper bg, thin
+// frame. Direct port of src/components/Nav.tsx's .nav-mark styling,
+// scaled up to fit a 512×512 square with comfortable padding.
+//
+// Earlier iterations tried a standalone "O" monogram — looked
+// generic. The full wordmark is more on-brand and still legible at
+// the smallest sizes downstream services will downscale to.
 //
 // We render a single 512×512 master. Google OAuth requires minimum
 // 120×120 (not exactly 120) and accepts larger; Stripe/Slack/etc.
-// also accept 512+. Downsizing in headless Chrome is unreliable
-// because the Fraunces CDN race condition produces inconsistent
-// results at small viewports — so we just ship one source-of-truth
-// image and let consumers downscale if they need to.
+// also accept 512+. Consumers downscale.
 //
 // Re-run when branding changes:
 //   node scripts/build-logo.mjs
@@ -53,25 +53,38 @@ const HTML = (size) => `<!doctype html>
   }
   .frame{
     position:absolute;
-    inset:${Math.round(size * 0.06)}px;
+    inset:${Math.round(size * 0.07)}px;
     border:1px solid rgba(28,22,18,0.15);
   }
-  .monogram{
+  /* Direct port of Nav.tsx .nav-mark + .nav-mark span — scaled. */
+  .wordmark{
+    display:inline-flex;
+    align-items:baseline;
     font-family:'Fraunces',Georgia,serif;
-    font-variation-settings:"opsz" 144, "wght" 480;
-    font-weight:480;
-    font-size:${Math.round(size * 0.62)}px;
-    line-height:1.15;
+    font-size:${Math.round(size * 0.14)}px;
+    line-height:1;
+    letter-spacing:0.02em;
+  }
+  .wordmark-main{
+    font-variation-settings:"opsz" 96, "wght" 500;
+    font-weight:500;
     color:#1c1612;
-    letter-spacing:-0.04em;
-    /* Use translate, not margin, so flex centering math stays clean. */
-    transform:translateY(${Math.round(size * 0.02)}px);
+  }
+  .wordmark-italic{
+    font-variation-settings:"opsz" 96, "wght" 350;
+    font-weight:350;
+    font-style:italic;
+    color:#6b5a44;
+    margin-left:0.18em;
   }
 </style>
 </head>
 <body>
   <div class="frame"></div>
-  <div class="monogram">O</div>
+  <div class="wordmark">
+    <span class="wordmark-main">Obelisk</span>
+    <span class="wordmark-italic">studio</span>
+  </div>
 </body>
 </html>
 `
