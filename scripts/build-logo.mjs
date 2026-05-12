@@ -62,6 +62,12 @@ const HTML = (size) => `<!doctype html>
     /* Safe zone: stay inside the inscribed circle (radius = size/2)
        with a comfortable margin for visual breathing room. */
     max-width:${Math.round(size * 0.78)}px;
+    /* Fraunces' line metrics put the cap-top-to-baseline mass in the
+       upper portion of the line box, so flex-centering puts the text
+       visually above center. Nudge down to optical center.
+       Empirically tuned via Playwright screenshots — 5% lands the
+       cap-to-baseline midpoint on the canvas center. */
+    transform:translateY(${Math.round(size * 0.05)}px);
   }
   .wordmark-main{
     font-variation-settings:"opsz" 96, "wght" 500;
