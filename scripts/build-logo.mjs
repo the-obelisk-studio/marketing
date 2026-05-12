@@ -71,7 +71,7 @@ const HTML = (size) => `<!doctype html>
          flex-justify-content:center read as right-shifted. Pull left
          to compensate.
        Empirically tuned via Playwright screenshots. */
-    transform:translate(${Math.round(size * -0.01)}px, ${Math.round(size * -0.02)}px);
+    transform:translate(${Math.round(size * -0.025)}px, ${Math.round(size * -0.02)}px);
   }
   .wordmark-main{
     font-variation-settings:"opsz" 96, "wght" 500;
