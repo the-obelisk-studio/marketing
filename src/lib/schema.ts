@@ -242,6 +242,35 @@ export const ContactPageSchema = z.object({
   }),
 })
 
+// ── Privacy policy ─────────────────────────────────────────────
+// Structured sections so KK can edit through Decap. Each section has
+// a heading, optional body (markdown-lite paragraphs via Body), and an
+// optional list of {label, detail} rows for subprocessor enumerations.
+
+export const PrivacySectionSchema = z.object({
+  heading: z.string(),
+  body: z.string().optional(),
+  list: z.array(z.object({
+    label: z.string(),
+    detail: z.string(),
+  })).default([]).optional(),
+})
+
+export const PrivacyPageSchema = z.object({
+  hero: z.object({
+    eyebrow: z.string().default("Privacy"),
+    title: z.string(),
+    lastUpdated: z.string(),    // ISO date or display string
+    intro: z.string(),          // markdown-lite paragraphs
+  }),
+  sections: z.array(PrivacySectionSchema).default([]),
+  contact: z.object({
+    heading: z.string().default("Contact"),
+    body: z.string(),
+    email: z.string(),
+  }).optional(),
+})
+
 // ── Schema registry — maps filename → schema ───────────────────
 
 export const CONTENT_SCHEMAS = {
@@ -251,6 +280,7 @@ export const CONTENT_SCHEMAS = {
   "post.yml": PostPageSchema,
   "grace.yml": GracePageSchema,
   "contact.yml": ContactPageSchema,
+  "privacy.yml": PrivacyPageSchema,
 } as const
 
 export type ContentFile = keyof typeof CONTENT_SCHEMAS
@@ -263,6 +293,8 @@ export type PartnershipContent = z.infer<typeof PartnershipPageSchema>
 export type PostContent = z.infer<typeof PostPageSchema>
 export type GraceContent = z.infer<typeof GracePageSchema>
 export type ContactContent = z.infer<typeof ContactPageSchema>
+export type PrivacyContent = z.infer<typeof PrivacyPageSchema>
+export type PrivacySection = z.infer<typeof PrivacySectionSchema>
 
 export type Founder = z.infer<typeof FounderSchema>
 export type Film = z.infer<typeof FilmSchema>

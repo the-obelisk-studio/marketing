@@ -362,3 +362,38 @@ collections:
               - { name: heading, widget: string, required: false }
               - { name: body, widget: text, required: false }
               - { name: topics, label: Form topic options, widget: list, field: { name: topic, widget: string } }
+
+      # ── Privacy policy ────────────────────────────────────────────
+      - name: privacy
+        label: "Privacy Policy"
+        file: content/privacy.yml
+        format: yaml
+        fields:
+          - name: hero
+            widget: object
+            fields:
+              - { name: eyebrow, widget: string, default: "Privacy" }
+              - { name: title, widget: string }
+              - { name: lastUpdated, label: "Last updated", widget: string, hint: "e.g. May 12, 2026" }
+              - { name: intro, widget: text, hint: "Plain text. Blank lines separate paragraphs. *asterisks* render italic." }
+          - name: sections
+            label: "Sections"
+            widget: list
+            fields:
+              - { name: heading, widget: string }
+              - { name: body, widget: text, required: false, hint: "Paragraphs separated by blank lines. *asterisks* render italic." }
+              - name: list
+                label: "Optional inline list (e.g. service providers)"
+                widget: list
+                required: false
+                fields:
+                  - { name: label, widget: string }
+                  - { name: detail, widget: text }
+          - name: contact
+            label: "Contact card"
+            widget: object
+            required: false
+            fields:
+              - { name: heading, widget: string, default: "Contact" }
+              - { name: body, widget: text }
+              - { name: email, widget: string, hint: "Privacy contact email — should be a real inbox or forward" }

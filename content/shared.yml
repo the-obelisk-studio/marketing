@@ -20,3 +20,6 @@ footer:
       links:
         - { label: hello@theobeliskstudio.com, href: "mailto:hello@theobeliskstudio.com" }
         - { label: Contact form, href: /contact }
+    - label: Legal
+      links:
+        - { label: Privacy Policy, href: /privacy }
