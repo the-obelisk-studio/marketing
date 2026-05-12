@@ -271,6 +271,27 @@ export const PrivacyPageSchema = z.object({
   }).optional(),
 })
 
+// Terms of Service. Structurally identical to PrivacyPageSchema but
+// kept separate so the two can diverge later (e.g., adding an
+// "effectiveDate" field distinct from "lastUpdated" on terms only).
+// Shares PrivacySectionSchema for the per-section shape — that part
+// is genuinely identical and reuse keeps the Decap admin UX symmetric.
+
+export const TermsPageSchema = z.object({
+  hero: z.object({
+    eyebrow: z.string().default("Legal"),
+    title: z.string(),
+    lastUpdated: z.string(),
+    intro: z.string(),
+  }),
+  sections: z.array(PrivacySectionSchema).default([]),
+  contact: z.object({
+    heading: z.string().default("Contact"),
+    body: z.string(),
+    email: z.string(),
+  }).optional(),
+})
+
 // ── Schema registry — maps filename → schema ───────────────────
 
 export const CONTENT_SCHEMAS = {
@@ -281,6 +302,7 @@ export const CONTENT_SCHEMAS = {
   "grace.yml": GracePageSchema,
   "contact.yml": ContactPageSchema,
   "privacy.yml": PrivacyPageSchema,
+  "terms.yml": TermsPageSchema,
 } as const
 
 export type ContentFile = keyof typeof CONTENT_SCHEMAS
@@ -295,6 +317,7 @@ export type GraceContent = z.infer<typeof GracePageSchema>
 export type ContactContent = z.infer<typeof ContactPageSchema>
 export type PrivacyContent = z.infer<typeof PrivacyPageSchema>
 export type PrivacySection = z.infer<typeof PrivacySectionSchema>
+export type TermsContent = z.infer<typeof TermsPageSchema>
 
 export type Founder = z.infer<typeof FounderSchema>
 export type Film = z.infer<typeof FilmSchema>

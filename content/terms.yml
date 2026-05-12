@@ -1,0 +1,163 @@
+# Terms of Service — Sid and KK can edit via Decap. Each section
+# corresponds to one block on the rendered /terms page. The schema
+# in src/lib/schema.ts is what the prebuild validator enforces.
+
+hero:
+  eyebrow: Legal
+  title: Terms of Service
+  lastUpdated: May 12, 2026
+  intro: |
+    These terms govern your use of Grace Production OS — the software product operated by Obelisk Studios. By signing in to an account, paying for a subscription, or otherwise using Grace, you agree to be bound by these terms.
+
+    They're long but real: they cover what we promise, what you promise, how the relationship is paid for, what happens if something goes wrong, and how disputes get resolved.
+
+sections:
+  - heading: Who is agreeing to what
+    body: |
+      These terms form a binding contract between you and Obelisk Studios. If you sign up on behalf of a production company, studio, or other organization, you represent that you have the authority to bind that entity, and references to "you" in these terms mean both you individually and the organization you represent.
+
+      We refer to Obelisk Studios as "we," "us," or "our" throughout.
+
+  - heading: The service
+    body: |
+      Grace is a software-as-a-service platform for managing film and television production. We provide hosted tools for call sheets, schedules, budgets, scripts, dailies, screeners, cast and crew records, and related production workflows.
+
+      The features available to you depend on your subscription plan. Current plans, prices, and feature breakdowns are published at theobeliskstudio.com/pricing.
+
+  - heading: Eligibility and account
+    body: |
+      You must be at least 18 years old, or the legal age of majority in your jurisdiction if higher, to enter into this agreement.
+
+      You agree to provide accurate, current, and complete information when you create your account, and to keep that information up to date. You are responsible for the security of your sign-in credentials and for all activity that occurs under your account. Notify us promptly at security@theobeliskstudio.com if you suspect unauthorized access.
+
+  - heading: Subscriptions, billing, and changes
+    body: |
+      Grace is sold as a monthly or annual subscription. Subscriptions auto-renew at the end of each billing period unless cancelled.
+
+      Payment is processed by Stripe, our payment provider. Their terms apply to the payment process itself; we do not store your card details.
+
+      Upgrades, downgrades, and add-on changes prorate against your current billing period — the math is computed by Stripe at the moment of change. Cancellations end your subscription at the close of the current period; we do not refund the unused portion of a paid period.
+
+      If a payment fails, we will attempt recovery in line with Stripe's standard retry schedule. After a defined grace period (currently seven days), your account moves to read-only access until payment is restored.
+
+      We may change subscription prices on at least 30 days' notice before they apply to your renewal. Existing subscriptions continue at their current rate until renewal.
+
+  - heading: Acceptable use
+    body: |
+      You agree not to use Grace to:
+
+      *Violate the law,* infringe anyone's intellectual property or other rights, defame, harass, or harm anyone.
+
+      *Upload content* that is unlawful, deceptive, sexually exploitative of minors, glorifies violence, or that you do not have the right to upload.
+
+      *Interfere with the service* through automated scraping at a rate that degrades availability, unauthorized penetration testing, attempts to bypass access controls, reverse engineering (except as permitted by mandatory law), or unauthorized resale of access.
+
+      *Misuse confidentiality features* — for example, using the Vault screener share flow to distribute material you are not authorized to distribute.
+
+      We may suspend or terminate accounts that materially violate this section. Where reasonable, we will notify you and give you a chance to cure.
+
+  - heading: Your content
+    body: |
+      Everything you upload to Grace — scripts, schedules, budgets, cast and crew records, dailies, screeners, photos, call sheets, deal memos, and any other materials — *belongs to you.* You retain full ownership and intellectual property rights in your content. We claim no ownership.
+
+      To operate the service, you grant Obelisk Studios a limited, non-exclusive, royalty-free license to host, store, transmit, process (including through the AI subprocessors named in our Privacy Policy), display, and deliver your content for the sole purpose of providing Grace to you and the people you have authorized through Grace's access controls.
+
+      This license is co-extensive with your need for the service: it ends when you delete the content, close your account, or instruct us to stop processing — subject to the retention timelines described in the Privacy Policy and any legal obligations we may have to retain records (e.g., financial records for tax purposes).
+
+  - heading: Confidentiality
+    body: |
+      Production materials — particularly unproduced scripts, cast contact information, deal terms, and dailies — carry industry-standard confidentiality expectations. Obelisk Studios treats all content you upload as confidential.
+
+      We do not disclose user content to third parties except:
+
+      *To the subprocessors named in our Privacy Policy,* and only to the minimum extent necessary to operate the service.
+
+      *Where required by valid legal process* — in which case we will notify you of the request prior to disclosure unless we are legally prohibited from doing so.
+
+      *Where you instruct us to* through Grace's sharing features (e.g., emailing a call sheet, sharing a screener via Vault, inviting a collaborator).
+
+  - heading: AI features and output
+    body: |
+      Grace uses AI services from Anthropic (Claude) and Google (Gemini) for tasks including script parsing, scene breakdown generation, and conversational assistance through the Grace AI panel.
+
+      AI output is *generated, not human-authored.* It can be inaccurate, incomplete, or inconsistent. It is not legal, medical, financial, or other professional advice. You remain responsible for reviewing AI output before relying on it. We do not warrant the accuracy of AI-generated content.
+
+      Grace's Dot System (the colored-dot trust indicators on every field) is designed precisely so that AI-suggested values remain visibly distinguishable from human-verified ones. Use it.
+
+  - heading: Beta features
+    body: |
+      Features labeled "beta," "preview," "early access," or similar are made available on an as-is basis. They may behave unpredictably, change without notice, or be withdrawn entirely. Beta features are excluded from any service-level commitment we may otherwise make, and from the AI accuracy expectations described above.
+
+  - heading: Third-party services
+    body: |
+      Grace integrates with third-party services to deliver parts of its functionality — payment processing through Stripe, email delivery through Resend, file storage through Cloudflare R2, AI processing through Anthropic and Google, weather data through Open-Meteo, geocoding through OpenStreetMap, and others enumerated in our Privacy Policy.
+
+      Your use of those third-party services is governed by their respective terms in addition to these. We are not responsible for the availability, accuracy, or behavior of third-party services.
+
+  - heading: Our intellectual property
+    body: |
+      Grace's software, source code, design, branding (including the names "Grace," "Grace Production OS," "Obelisk Studios," and related marks and logos), and documentation are the intellectual property of Obelisk Studios.
+
+      During your active subscription, we grant you a non-transferable, non-sublicensable, non-exclusive right to access and use Grace for your production needs. No other rights are granted, expressly or by implication. You agree not to copy, modify, decompile, or create derivative works of Grace except as expressly permitted by these terms or by mandatory law.
+
+  - heading: Term and termination
+    body: |
+      These terms apply for as long as you have an account with us. You may close your account at any time through Settings — your subscription will end at the close of the current billing period and your data will be handled per the Privacy Policy's retention schedule.
+
+      We may suspend or terminate your account if you materially breach these terms, if your payment fails after the grace period described above, or if continued operation would create undue legal or operational risk for us. Where reasonable, we will notify you in advance and give you an opportunity to cure.
+
+      On termination by either party, your access to Grace ends, billing stops at the end of the then-current period, and your data is retained or deleted per the Privacy Policy. Sections of these terms that by their nature should survive termination — Your Content (the license you granted us, to the extent we still hold data), Confidentiality, Intellectual Property, Disclaimers, Limitation of Liability, Indemnification, Governing Law — survive.
+
+  - heading: Disclaimers
+    body: |
+      Grace is provided *"as is"* and *"as available,"* without warranties of any kind, whether express or implied, including any warranties of merchantability, fitness for a particular purpose, title, non-infringement, accuracy, or that the service will be uninterrupted, secure, error-free, or that any data will be preserved.
+
+      To the maximum extent permitted by applicable law, all implied warranties are disclaimed. Some jurisdictions do not allow the exclusion of implied warranties; in those jurisdictions, the exclusions in this section apply to the maximum extent permitted by law.
+
+  - heading: Limitation of liability
+    body: |
+      *To the maximum extent permitted by applicable law*, Obelisk Studios' aggregate liability for any and all claims arising out of or relating to these terms or your use of Grace will not exceed the amount you paid us in the twelve months immediately preceding the event giving rise to the claim, or $100 if you have paid us less than that.
+
+      We will not be liable for indirect, incidental, consequential, special, exemplary, or punitive damages, lost profits, lost revenue, lost data, business interruption, or loss of goodwill, even if we have been advised of the possibility of those damages.
+
+      Some jurisdictions do not allow these limitations; in those jurisdictions, our liability is limited to the maximum extent permitted by law. This section does not limit liability for fraud, gross negligence, or any liability that cannot be limited by law.
+
+  - heading: Indemnification
+    body: |
+      You agree to defend, indemnify, and hold harmless Obelisk Studios and its officers, employees, and agents from any third-party claim, demand, loss, liability, damage, or expense (including reasonable attorneys' fees) arising out of (a) content you upload to or share through Grace, (b) your breach of these terms, or (c) your violation of any law or any right of a third party.
+
+      We will promptly notify you of any such claim, give you reasonable cooperation in the defense, and allow you to control the defense — provided you do not settle the matter in a way that imposes obligations on us without our written consent.
+
+  - heading: Governing law and dispute resolution
+    body: |
+      These terms are governed by the laws of the State of California, without regard to its conflict-of-laws principles. Any dispute arising out of or relating to these terms or your use of Grace will be resolved exclusively in the state or federal courts located in Los Angeles County, California, and you consent to the personal jurisdiction of those courts.
+
+      Nothing in this section limits non-waivable consumer protection rights you may have under the law of your jurisdiction of residence.
+
+  - heading: Changes to these terms
+    body: |
+      We may update these terms as Grace evolves, as new features ship, or as laws change. The "Last updated" date at the top of this page always reflects the current version.
+
+      Material changes — anything that meaningfully alters the rights and obligations described here — will be communicated by email to active account holders at least 14 days before the changes take effect. Continued use of Grace after the effective date constitutes acceptance of the updated terms. If you do not accept the updates, you may close your account before the effective date and the prior terms will continue to apply to your historical use.
+
+  - heading: Miscellaneous
+    body: |
+      *Entire agreement.* These terms, together with the Privacy Policy and any plan-specific terms presented at checkout, constitute the entire agreement between you and Obelisk Studios with respect to Grace, and supersede any prior agreements on the same subject.
+
+      *Severability.* If any provision is held unenforceable, the remaining provisions remain in effect, and the unenforceable provision will be modified to the minimum extent necessary to make it enforceable while preserving its intent.
+
+      *No waiver.* Our failure to enforce any provision is not a waiver of our right to do so later.
+
+      *Assignment.* You may not assign these terms without our prior written consent. We may assign these terms to an affiliate or in connection with a merger, acquisition, or sale of all or substantially all of our assets, on notice to you.
+
+      *Notices.* We may send notices to you by email at the address associated with your account. You may send notices to us at legal@theobeliskstudio.com.
+
+      *Headings.* Section headings are for convenience only and do not affect interpretation.
+
+      *Language.* If we provide a translation of these terms, the English version controls in case of conflict.
+
+contact:
+  heading: Contact
+  body: |
+    Questions about these terms, or about anything legal-adjacent, go to the address below. For general support, billing, or product questions, use the contact form at theobeliskstudio.com/contact instead.
+  email: legal@theobeliskstudio.com
