@@ -1,18 +1,17 @@
 // Render the Obelisk wordmark as a square logo PNG for use in
 // external services (Google OAuth, Stripe billing, Slack, etc.).
 //
-// Uses the same treatment as the marketing-site nav: "Obelisk" in
-// Fraunces 500 + " studio" italic 350 in muted ink, paper bg, thin
-// frame. Direct port of src/components/Nav.tsx's .nav-mark styling,
-// scaled up to fit a 512×512 square with comfortable padding.
+// Treatment: "Obelisk" in Fraunces 500 + " studio" italic 350 in
+// muted ink, paper bg, no border. Direct port of the marketing-site
+// nav-mark (src/components/Nav.tsx), scaled up.
 //
-// Earlier iterations tried a standalone "O" monogram — looked
-// generic. The full wordmark is more on-brand and still legible at
-// the smallest sizes downstream services will downscale to.
+// No square frame — most platforms apply a circle mask to logos
+// (Google account avatars, Slack/Discord, etc.) and an inner square
+// border chops weirdly inside the circle crop. Open paper bg crops
+// cleanly to a circle.
 //
-// We render a single 512×512 master. Google OAuth requires minimum
-// 120×120 (not exactly 120) and accepts larger; Stripe/Slack/etc.
-// also accept 512+. Consumers downscale.
+// 512×512 master. Google OAuth requires minimum 120×120 and accepts
+// larger; Stripe/Slack/etc. also accept 512+. Consumers downscale.
 //
 // Re-run when branding changes:
 //   node scripts/build-logo.mjs
@@ -48,22 +47,21 @@ const HTML = (size) => `<!doctype html>
     display:flex;
     align-items:center;
     justify-content:center;
-    position:relative;
     font-family:'Fraunces',Georgia,serif;
   }
-  .frame{
-    position:absolute;
-    inset:${Math.round(size * 0.07)}px;
-    border:1px solid rgba(28,22,18,0.15);
-  }
-  /* Direct port of Nav.tsx .nav-mark + .nav-mark span — scaled. */
+  /* Direct port of Nav.tsx .nav-mark + .nav-mark span — scaled.
+     No frame: circle-crop platforms (Google avatars, Slack, etc.)
+     chop a square border ugly. */
   .wordmark{
     display:inline-flex;
     align-items:baseline;
     font-family:'Fraunces',Georgia,serif;
-    font-size:${Math.round(size * 0.14)}px;
+    font-size:${Math.round(size * 0.155)}px;
     line-height:1;
     letter-spacing:0.02em;
+    /* Safe zone: stay inside the inscribed circle (radius = size/2)
+       with a comfortable margin for visual breathing room. */
+    max-width:${Math.round(size * 0.78)}px;
   }
   .wordmark-main{
     font-variation-settings:"opsz" 96, "wght" 500;
@@ -80,7 +78,6 @@ const HTML = (size) => `<!doctype html>
 </style>
 </head>
 <body>
-  <div class="frame"></div>
   <div class="wordmark">
     <span class="wordmark-main">Obelisk</span>
     <span class="wordmark-italic">studio</span>
