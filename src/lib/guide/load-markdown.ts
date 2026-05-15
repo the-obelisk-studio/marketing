@@ -1,23 +1,12 @@
 import "server-only"
-import { existsSync, readFileSync } from "fs"
+import { readFileSync } from "fs"
 import { resolve, normalize } from "path"
 
 // Build-time only: the Cloudflare Pages deploy is a static export, so
-// these reads happen on the build machine, not at request time.
-//
-// Lookup order:
-//   1. GRACE_DOCS_PATH env var (escape hatch).
-//   2. ./grace-docs/ inside the marketing repo (git submodule — the
-//      shape Cloudflare Pages expects when --recurse-submodules is on).
-//   3. ../grace-docs/ sibling worktree (local dev on Sid's machine).
-function resolveGuideRoot(): string {
-  if (process.env.GRACE_DOCS_PATH) return resolve(process.env.GRACE_DOCS_PATH)
-  const inRepo = resolve(process.cwd(), "grace-docs")
-  if (existsSync(inRepo)) return inRepo
-  return resolve(process.cwd(), "..", "grace-docs")
-}
-
-const GUIDE_ROOT = resolveGuideRoot()
+// these reads happen on the build machine, not at request time. Docs
+// live in the marketing repo at ./grace-docs/ (merged in from the
+// former submodule — single repo, single push to deploy).
+const GUIDE_ROOT = resolve(process.cwd(), "grace-docs")
 
 export function loadMarkdownSync(relativePath: string): string | null {
   // Guard against path traversal — the resolved absolute path must

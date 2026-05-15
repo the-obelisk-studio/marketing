@@ -11,16 +11,7 @@ import { fileURLToPath } from "node:url"
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const REPO_ROOT = resolve(__dirname, "..")
-
-// Mirror the lookup order in src/lib/guide/load-markdown.ts.
-function resolveGuideRoot() {
-  if (process.env.GRACE_DOCS_PATH) return resolve(process.env.GRACE_DOCS_PATH)
-  const inRepo = resolve(REPO_ROOT, "grace-docs")
-  if (existsSync(inRepo)) return inRepo
-  return resolve(REPO_ROOT, "..", "grace-docs")
-}
-
-const SRC = resolve(resolveGuideRoot(), "img")
+const SRC = resolve(REPO_ROOT, "grace-docs", "img")
 const DST = resolve(REPO_ROOT, "public", "grace", "guide", "img")
 
 if (!existsSync(SRC)) {
