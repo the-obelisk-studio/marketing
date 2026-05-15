@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# grace guide assets — copied from the grace-docs submodule at build
+# time by scripts/copy-guide-assets.mjs. Don't check in.
+/public/grace/guide/img/

@@ -9,13 +9,17 @@
     "validate-content": "tsx scripts/validate-content.ts",
     "build-og": "node scripts/build-og.mjs",
     "build-logo": "node scripts/build-logo.mjs",
-    "prebuild": "npm run validate-content"
+    "copy-guide-assets": "node scripts/copy-guide-assets.mjs",
+    "prebuild": "npm run validate-content && npm run copy-guide-assets"
   },
   "dependencies": {
     "js-yaml": "^4.1.0",
     "next": "16.2.6",
     "react": "19.2.4",
     "react-dom": "19.2.4",
+    "react-markdown": "^10.1.0",
+    "rehype-slug": "^6.0.0",
+    "remark-gfm": "^4.0.1",
     "zod": "^3.23.8"
   },
   "devDependencies": {
