@@ -188,7 +188,10 @@ const GUIDE_CSS = `
 .guide-body {
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: 56px var(--container-pad) 80px;
+  /* Top padding clears the marketing site's fixed nav (~64px tall)
+     with visual breathing room. Mirrors the hero pattern on /grace
+     and other marketing pages. */
+  padding: 130px var(--container-pad) 80px;
   display: grid;
   grid-template-columns: 260px minmax(0, 1fr);
   gap: 56px;
@@ -196,14 +199,16 @@ const GUIDE_CSS = `
 @media (max-width: 900px) {
   .guide-body {
     grid-template-columns: 1fr;
-    padding: 32px var(--container-pad-mobile) 56px;
+    padding: 104px var(--container-pad-mobile) 56px;
     gap: 32px;
   }
 }
 
 .guide-sidebar {
   position: sticky;
-  top: 88px;
+  /* Match the body's top padding minus a touch so the sidebar pins
+     just below the fixed nav when the user scrolls down. */
+  top: 96px;
   align-self: start;
   max-height: calc(100vh - 120px);
   overflow-y: auto;
@@ -253,6 +258,16 @@ const GUIDE_CSS = `
 
 .guide-main { min-width: 0; max-width: 760px; }
 .guide-article { font-family: var(--font-display); color: var(--ink); }
+
+/* Anchor offset — heading hashes (#concepts etc.) need to land below
+   the fixed nav, not behind it. Applies to all headings since any of
+   them can be a jump target. */
+.guide-main h1,
+.guide-main h2,
+.guide-main h3,
+.guide-main h4 {
+  scroll-margin-top: 96px;
+}
 
 .guide-main h1 {
   font-family: var(--font-display);
