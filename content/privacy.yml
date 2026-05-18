@@ -1,181 +1,272 @@
-# Privacy policy — KK and Sid can edit via Decap. Each section
-# corresponds to one block on the rendered /privacy page. Add or
-# reorder sections by editing this file; the schema in
-# src/lib/schema.ts is what the prebuild validator enforces.
-
 hero:
   eyebrow: Privacy
   title: Privacy Policy
   lastUpdated: May 17, 2026
-  intro: |
-    This policy explains what Obelisk Studios collects when you use Grace Production OS, why we collect it, who else touches it, and the rights you have over it.
+  intro: >
+    This policy explains what Obelisk Studios collects when you use Grace
+    Production OS, why we collect it, who else touches it, and the rights you
+    have over it.
+
 
     Grace handles materials productions historically treat as confidential — unproduced scripts, cast contact details, deal memos, dailies. We've designed our data practices around that reality. Where a typical SaaS policy is generic, this one is specific: every third-party service that ever sees your data is named below.
-
 sections:
   - heading: Who we are
-    body: |
-      Obelisk Studios LLC ("Obelisk Studios") is an independent studio organized under the laws of the United States and based in Burbank, California. Grace Production OS — the software product — is operated by Obelisk Studios LLC. References below to "we," "us," and "our" mean Obelisk Studios LLC, which is the data controller for the personal data processed through Grace.
+    body: >
+      Obelisk Studios LLC ("Obelisk Studios") is an independent studio organized
+      under the laws of the United States and based in Burbank, California.
+      Grace Production OS — the software product — is operated by Obelisk
+      Studios LLC. References below to "we," "us," and "our" mean Obelisk
+      Studios LLC, which is the data controller for the personal data processed
+      through Grace.
+
 
       Our privacy contact is the Obelisk Studios Privacy Lead, who can be reached at privacy@theobeliskstudio.com. For the full registered address and any inquiry that requires postal correspondence, write to that address and we will respond with the appropriate mailing information.
-
   - heading: What we collect
-    body: |
-      *Account information.* Your name, email address, and password (stored only as a one-way hash by our authentication provider). Optionally a profile photo and username.
+    body: >
+      *Account information.* Your name, email address, and password (stored only
+      as a one-way hash by our authentication provider). Optionally a profile
+      photo and username.
+
 
       *Production content you upload.* Scripts, schedules, budgets, call sheets, dailies, screeners, photos, and any other production materials you create or import.
 
+
       *Cast and crew records you enter.* Names, contact information, role/department, deal terms, work eligibility documents, and per-person rates and notes you choose to record.
+
 
       *Billing information.* Your card details are never seen by Grace — they're collected directly by our payment processor (Stripe). We retain billing history, invoice metadata, and subscription state.
 
+
       *Usage information.* Standard server logs (IP address, request time, route, status code), error reports, and which features were used. We don't run ad tracking, behavioral profiling, or session-replay tools.
 
-      *Communications.* If you contact us or send a call sheet, invitation, or screener through Grace, we retain the message contents and recipients.
 
+      *Communications.* If you contact us or send a call sheet, invitation, or screener through Grace, we retain the message contents and recipients.
   - heading: How we use it
-    body: |
-      To deliver the product — render dashboards, send the call sheets and emails you compose, parse scripts you upload, generate PDFs, process payments. To diagnose bugs and outages from the server logs. To communicate with you about your account, security issues, and material changes to the service.
+    body: >
+      To deliver the product — render dashboards, send the call sheets and
+      emails you compose, parse scripts you upload, generate PDFs, process
+      payments. To diagnose bugs and outages from the server logs. To
+      communicate with you about your account, security issues, and material
+      changes to the service.
+
 
       We do not sell your data, share it with advertisers, or use it to train third-party AI models for purposes beyond serving your request.
-
   - heading: Service providers that process your data on our behalf
-    body: |
-      The following companies receive specific data to operate Grace. Each is contractually bound to use that data only to deliver their service to us.
+    body: >
+      The following companies receive specific data to operate Grace. Each is
+      contractually bound to use that data only to deliver their service to us.
     list:
       - label: Clerk
-        detail: Authentication, sign-in, and session management. Receives your email, name, password hash, and (if enabled) MFA factors.
+        detail: Authentication, sign-in, and session management. Receives your email,
+          name, password hash, and (if enabled) MFA factors.
       - label: Stripe
-        detail: Subscription billing and payment processing. Receives your billing email, payment method details (collected by Stripe directly, never by us), and tax/billing address.
+        detail: Subscription billing and payment processing. Receives your billing
+          email, payment method details (collected by Stripe directly, never by
+          us), and tax/billing address.
       - label: Resend
-        detail: Outbound email delivery (call sheets, invitations, vault shares, verification codes). Receives recipient addresses and email body content.
+        detail: Outbound email delivery (call sheets, invitations, vault shares,
+          verification codes). Receives recipient addresses and email body
+          content.
       - label: Cloudflare R2
-        detail: File storage for scripts, photos, screeners, dailies, and call-sheet PDFs. Files are stored encrypted at rest.
+        detail: File storage for scripts, photos, screeners, dailies, and call-sheet
+          PDFs. Files are stored encrypted at rest.
       - label: Cloudflare
-        detail: DNS, network edge, and the marketing-site CDN. Receives standard request metadata (IP, user agent, URL path).
+        detail: DNS, network edge, and the marketing-site CDN. Receives standard request
+          metadata (IP, user agent, URL path).
       - label: Neon
-        detail: Managed PostgreSQL hosting for the Grace application database. Receives all structured app data described above.
+        detail: Managed PostgreSQL hosting for the Grace application database. Receives
+          all structured app data described above.
       - label: Railway
-        detail: Application hosting and compute. Receives all data passing through Grace's servers.
+        detail: Application hosting and compute. Receives all data passing through
+          Grace's servers.
       - label: Anthropic
-        detail: AI processing of script content (Claude). Script text or PDF is sent for breakdown extraction. Anthropic does not retain user-API data beyond standard operational logs and does not use it for model training.
+        detail: AI processing of script content (Claude). Script text or PDF is sent for
+          breakdown extraction. Anthropic does not retain user-API data beyond
+          standard operational logs and does not use it for model training.
       - label: Google
-        detail: Fallback AI processing of script content (Gemini), used when Claude is unavailable. Google does not use API content for model training when accessed via the paid API tier.
+        detail: Fallback AI processing of script content (Gemini), used when Claude is
+          unavailable. Google does not use API content for model training when
+          accessed via the paid API tier.
       - label: Open-Meteo
-        detail: Weather data for shoot-day forecasts on call sheets. Receives latitude/longitude only — no production identity.
+        detail: Weather data for shoot-day forecasts on call sheets. Receives
+          latitude/longitude only — no production identity.
       - label: Google Maps Platform (Places API)
-        detail: Address-to-coordinates geocoding for production locations and nearest-hospital lookups on call sheets. Receives the address string or coordinates only — no production identity. Operated by Google under its API-tier terms; content is not used to train Google's general models.
+        detail: Address-to-coordinates geocoding for production locations and
+          nearest-hospital lookups on call sheets. Receives the address string
+          or coordinates only — no production identity. Operated by Google under
+          its API-tier terms; content is not used to train Google's general
+          models.
       - label: OpenStreetMap (Nominatim)
-        detail: City-level coordinates lookup for weather forecasts on call sheets. Receives the city string only — no production identity.
-      - label: TDH Systems Pvt Ltd
-        detail: Software development, technical operations, and customer-support engineering for Grace. Personnel acting under TDH's engagement may access the production database for engineering and support purposes, subject to an intercompany data-processing addendum with Obelisk Studios LLC. TDH is based in India; cross-border transfers are described under "International data transfers" below.
-
+        detail: City-level coordinates lookup for weather forecasts on call sheets.
+          Receives the city string only — no production identity.
+      - label: Thy Dark Hour Systems (OPC) Pvt Ltd
+        detail: Software development, technical operations, and customer-support
+          engineering for Grace. Personnel acting under TDH's engagement may
+          access the production database for engineering and support purposes,
+          subject to an intercompany data-processing addendum with Obelisk
+          Studios LLC. TDH is based in India; cross-border transfers are
+          described under "International data transfers" below.
   - heading: Cast and crew data — how Grace handles it
-    body: |
-      When you add cast or crew to a production, you're representing that you have a legitimate production-related need for their contact and rate information. Grace's tiered access controls (the Dot System and section-level permissions) are designed so that producers see what producers need to see, department heads see their own departments, and crew see their own information — minimizing data exposure even within a production.
+    body: >
+      When you add cast or crew to a production, you're representing that you
+      have a legitimate production-related need for their contact and rate
+      information. Grace's tiered access controls (the Dot System and
+      section-level permissions) are designed so that producers see what
+      producers need to see, department heads see their own departments, and
+      crew see their own information — minimizing data exposure even within a
+      production.
+
 
       Above-the-line phone numbers are masked by default for below-the-line crew, with the option to override per role. Cast minors and their guardians have additional access protections that mirror standard production-side compliance practice.
 
-      Vault screeners use a magic-link plus six-digit access code flow with device-kick enforcement and per-session forensic logging — these features exist specifically because confidential cuts get leaked and the industry has learned to value attribution.
 
+      Vault screeners use a magic-link plus six-digit access code flow with device-kick enforcement and per-session forensic logging — these features exist specifically because confidential cuts get leaked and the industry has learned to value attribution.
   - heading: AI processing of scripts
-    body: |
-      Because this is a real concern for our user base: when you upload a script, its full text is sent to Anthropic's Claude API for parsing into scenes, characters, and breakdown elements. If Claude is unavailable, the text falls back to Google's Gemini API for the same purpose.
+    body: >
+      Because this is a real concern for our user base: when you upload a
+      script, its full text is sent to Anthropic's Claude API for parsing into
+      scenes, characters, and breakdown elements. If Claude is unavailable, the
+      text falls back to Google's Gemini API for the same purpose.
+
 
       Both providers' paid API tiers commit, in their terms of service, to not training models on user-API content. Both encrypt traffic in transit. We do not send scripts anywhere else, do not retain copies outside your Grace account, and do not share scripts with third parties for marketing or analytics.
 
-      If you have a script that cannot leave a closed network for legal or contractual reasons (e.g., NDA-bound studio material), do not upload it to Grace.
 
+      If you have a script that cannot leave a closed network for legal or contractual reasons (e.g., NDA-bound studio material), do not upload it to Grace.
   - heading: Cookies and tracking
-    body: |
-      Grace uses session cookies set by Clerk to keep you signed in, a small HMAC-signed cookie to remember your active organization, and (during checkout) cookies set by Stripe on its hosted pages. Vault screener sessions use a separate HMAC-signed cookie scoped to the share token.
+    body: >
+      Grace uses session cookies set by Clerk to keep you signed in, a small
+      HMAC-signed cookie to remember your active organization, and (during
+      checkout) cookies set by Stripe on its hosted pages. Vault screener
+      sessions use a separate HMAC-signed cookie scoped to the share token.
+
 
       We do not use third-party advertising cookies, marketing pixels, or analytics tools that track users across other sites. Server-side analytics (page views and error counts) are aggregate.
-
   - heading: How long we keep your data
-    body: |
-      *While your account is active.* We retain all data necessary to operate the service.
+    body: >
+      *While your account is active.* We retain all data necessary to operate
+      the service.
+
 
       *After cancellation.* We retain your data for up to 30 days to allow recovery if you resubscribe. After 30 days, your production data is deleted from active systems. Encrypted backups age out within 90 additional days.
 
-      *Billing records.* We retain invoices and payment history for as long as required by tax and accounting law (typically seven years in the United States), independent of your account status.
 
+      *Billing records.* We retain invoices and payment history for as long as required by tax and accounting law (typically seven years in the United States), independent of your account status.
   - heading: Legal basis for processing (EU/UK/Swiss users)
-    body: |
-      For users in the European Economic Area, the United Kingdom, or Switzerland, we rely on the following legal bases under Article 6(1) of the GDPR (and equivalent provisions of the UK GDPR and the Swiss FADP):
+    body: >
+      For users in the European Economic Area, the United Kingdom, or
+      Switzerland, we rely on the following legal bases under Article 6(1) of
+      the GDPR (and equivalent provisions of the UK GDPR and the Swiss FADP):
+
 
       *Contract performance* — creating and operating your account, billing you, delivering call sheets and screeners you compose, and otherwise providing the service you have asked for.
 
+
       *Legitimate interest* — diagnosing outages, preventing abuse, securing the platform, and operating ordinary server logs. We balance these interests against your privacy expectations and do not use legitimate interest as a basis for marketing.
+
 
       *Legal obligation* — retaining billing and tax records, responding to lawful regulatory inquiries, and complying with industry-specific requirements (e.g., minor-employment record-keeping where applicable).
 
+
       *Consent* — only where consent is the appropriate basis: optional marketing emails, optional analytics or non-essential cookies if and when we introduce them, and any other purpose presented to you with a clear opt-in.
 
-      Where we ask for consent, you may withdraw it at any time by writing to privacy@theobeliskstudio.com or by using the in-product control where one is provided. Withdrawal does not affect the lawfulness of processing carried out before the withdrawal.
 
+      Where we ask for consent, you may withdraw it at any time by writing to privacy@theobeliskstudio.com or by using the in-product control where one is provided. Withdrawal does not affect the lawfulness of processing carried out before the withdrawal.
   - heading: Sensitive Personal Information (California)
-    body: |
-      Under the California Privacy Rights Act ("CPRA"), certain categories of personal information are designated as Sensitive Personal Information ("SPI"). Within Grace, the SPI we handle is limited to:
+    body: >
+      Under the California Privacy Rights Act ("CPRA"), certain categories of
+      personal information are designated as Sensitive Personal Information
+      ("SPI"). Within Grace, the SPI we handle is limited to:
+
 
       *Account credentials.* Your password is stored only as a one-way hash by our authentication provider (Clerk) — we never see or store the plaintext.
 
+
       *Precise geolocation* in the form of production-location coordinates and shoot-day coordinates derived from addresses you enter.
+
 
       We use SPI only as necessary to deliver the service — to authenticate you, to render maps and distances, and to attach weather forecasts to call sheets. We do not use SPI to infer characteristics about you, for targeted advertising, for cross-context behavioral advertising, or for any purpose outside the service you have asked for.
 
-      Because we operate within the CPRA's "service necessity" exception, there is no separate "Limit the Use of My Sensitive Personal Information" link to enable — we are not using SPI beyond what the service requires. If our use of SPI ever changes, this section will change accordingly and we will obtain consent where the law requires it.
 
+      Because we operate within the CPRA's "service necessity" exception, there is no separate "Limit the Use of My Sensitive Personal Information" link to enable — we are not using SPI beyond what the service requires. If our use of SPI ever changes, this section will change accordingly and we will obtain consent where the law requires it.
   - heading: Your rights
-    body: |
+    body: >
       Regardless of where you live, you can ask us to:
+
 
       *Access* the data we hold about you, in a portable format.
 
+
       *Correct* inaccuracies in your account information.
+
 
       *Delete* your account and the data associated with it, subject to the retention timelines above and any legal records we are required to keep.
 
+
       *Restrict or object* to particular uses of your data.
+
 
       If you are in the European Economic Area, the United Kingdom, or Switzerland, you have these rights under the GDPR. You also have the right to lodge a complaint with your national supervisory authority (for example, the Information Commissioner's Office in the United Kingdom, your member-state data protection authority in the EEA, or the Federal Data Protection and Information Commissioner in Switzerland) at any time, without first contacting us.
 
+
       If you are a California resident, you have analogous rights under the CCPA and CPRA, including the right to opt out of sale or sharing of personal information — though as noted, we do not sell or share for advertising in any case — and the right to limit the use of your SPI, addressed in the section above.
 
-      Account-holders can submit data-access, correction, and deletion requests from Settings → Account inside Grace. Anyone else — including production crew whose contact details we hold but who never created a Grace account — can submit a request at theobeliskstudio.com/privacy/request or by emailing privacy@theobeliskstudio.com. We respond within 30 days.
 
+      Account-holders can submit data-access, correction, and deletion requests from Settings → Account inside Grace. Anyone else — including production crew whose contact details we hold but who never created a Grace account — can submit a request at theobeliskstudio.com/privacy/request or by emailing privacy@theobeliskstudio.com. We respond within 30 days.
   - heading: Security
-    body: |
-      Traffic between your browser and Grace is encrypted in transit (TLS 1.2 or higher). Files at rest in Cloudflare R2 are encrypted using AES-256. Database contents at rest on Neon are encrypted using AES-256.
+    body: >
+      Traffic between your browser and Grace is encrypted in transit (TLS 1.2 or
+      higher). Files at rest in Cloudflare R2 are encrypted using AES-256.
+      Database contents at rest on Neon are encrypted using AES-256.
+
 
       Passwords are stored only as one-way hashes by Clerk. We do not store, see, or process plaintext passwords.
 
+
       Vault screeners apply per-viewer watermarking and device-kick enforcement to make the path of any captured copy attributable. This is a deterrent layer, not a guarantee against determined screen capture.
 
-      If we become aware of a breach affecting your data, we will notify you and any relevant regulators within the timelines required by applicable law.
 
+      If we become aware of a breach affecting your data, we will notify you and any relevant regulators within the timelines required by applicable law.
   - heading: Children and minors
-    body: |
-      Grace is not directed to children under 13 and we do not knowingly collect personal information from anyone under 13 within the meaning of the United States Children's Online Privacy Protection Act ("COPPA"). If you believe we have inadvertently collected such information, please email privacy@theobeliskstudio.com and we will delete it promptly.
+    body: >
+      Grace is not directed to children under 13 and we do not knowingly collect
+      personal information from anyone under 13 within the meaning of the United
+      States Children's Online Privacy Protection Act ("COPPA"). If you believe
+      we have inadvertently collected such information, please email
+      privacy@theobeliskstudio.com and we will delete it promptly.
+
 
       Productions frequently involve minor cast members. Grace's data model treats minor cast as records *about* a minor, entered by the production team (typically the casting team or unit production manager) who carry the production-side legal duty around minor employment. The guardian role exists to allow a parent or legal guardian to see Grace records about their minor child during a production.
 
-      If you are a minor who has been given direct sign-in access to Grace and you wish to have your account closed, please email privacy@theobeliskstudio.com and we will close the account.
 
+      If you are a minor who has been given direct sign-in access to Grace and you wish to have your account closed, please email privacy@theobeliskstudio.com and we will close the account.
   - heading: International data transfers
-    body: |
-      Grace's customer-facing infrastructure is hosted in the United States. Some of our service providers and personnel operate from other jurisdictions — most notably, TDH Systems Pvt Ltd, our software-development and operations partner, is based in India. If you access Grace from outside the United States, your data will be transferred to and processed in the United States and in India. By using Grace from another jurisdiction, you consent to these transfers.
+    body: >
+      Grace's customer-facing infrastructure is hosted in the United States.
+      Some of our service providers and personnel operate from other
+      jurisdictions — most notably, Thy Dark Hour Systems (OPC) Pvt Ltd, our
+      software-development and operations partner, is based in India. If you
+      access Grace from outside the United States, your data will be transferred
+      to and processed in the United States and in India. By using Grace from
+      another jurisdiction, you consent to these transfers.
+
 
       For users in the European Economic Area, the United Kingdom, or Switzerland, we rely on the EU Standard Contractual Clauses (and the UK International Data Transfer Agreement / UK Addendum where applicable) as the legal basis for international transfers. Following the Schrems II decision and corresponding guidance from the EDPB, we have completed a Transfer Impact Assessment that documents the technical and organizational safeguards applied to each downstream transfer (encryption in transit and at rest, contractual SCCs with each sub-processor, EU–US Data Privacy Framework certifications where vendors have them). The Transfer Impact Assessment and our Data Processing Addendum are available at theobeliskstudio.com/legal/dpa, or on request to privacy@theobeliskstudio.com.
-
   - heading: Changes to this policy
-    body: |
-      We may update this policy as Grace evolves, new service providers come online, or laws change. The "Last updated" date at the top of this page always reflects the current version.
+    body: >
+      We may update this policy as Grace evolves, new service providers come
+      online, or laws change. The "Last updated" date at the top of this page
+      always reflects the current version.
+
 
       Material changes — anything that meaningfully expands what we collect, who we share it with, or how we use it — will be communicated by email to active account holders at least 14 days before taking effect, and we will obtain affirmative consent where the law requires it.
-
 contact:
   heading: Contact
-  body: |
-    For privacy questions, data requests, or to exercise any of the rights above, write to the Privacy Lead at Obelisk Studios. We answer every privacy email — typically within a few business days, always within 30 days as required by law. Anyone whose data we hold can also submit a structured request at theobeliskstudio.com/privacy/request without needing a Grace account.
+  body: >
+    For privacy questions, data requests, or to exercise any of the rights
+    above, write to the Privacy Lead at Obelisk Studios. We answer every privacy
+    email — typically within a few business days, always within 30 days as
+    required by law. Anyone whose data we hold can also submit a structured
+    request at theobeliskstudio.com/privacy/request without needing a Grace
+    account.
   email: privacy@theobeliskstudio.com
