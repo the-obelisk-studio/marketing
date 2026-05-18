@@ -1,0 +1,10 @@
+# Cloudflare Pages redirects file. One rule per line:
+#   <source> <destination> <status>
+# Static-export Next.js + CF Pages reads this at the edge before
+# any page request hits the built HTML.
+
+# Pricing lives inside the app (Clerk-authed). Marketing redirects
+# to the public pricing page on the app subdomain so the ToS link
+# (theobeliskstudio.com/pricing) resolves cleanly instead of 404ing.
+/pricing https://app.theobeliskstudio.com/pricing 301
+/pricing/ https://app.theobeliskstudio.com/pricing 301
