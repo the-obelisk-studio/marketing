@@ -1,0 +1,66 @@
+# Data Processing Addendum page. KK can edit via Decap. Rendered by
+# /src/app/legal/dpa/page.tsx with the shared LegalDocument component.
+#
+# NOTE: This page publishes the *summary* of our DPA. The full executable
+# DPA — including SCCs and Annexes — is the PDF at /legal/dpa.pdf, which
+# will be replaced with a lawyer-redlined version before any enterprise
+# counterparty needs to countersign. Until then, this page communicates
+# the substantive position and the path to countersignature.
+
+hero:
+  eyebrow: Legal
+  title: Data Processing Addendum
+  lastUpdated: May 17, 2026
+  intro: |
+    This Data Processing Addendum ("DPA") supplements the Terms of Service between Obelisk Studios LLC ("Obelisk Studios," "we") and the customer ("Customer") and applies whenever Obelisk Studios processes personal data on Customer's behalf in connection with Grace Production OS.
+
+    Where Customer is a business or organization that holds personal data about its cast, crew, production partners, or other individuals and uses Grace to manage that data, Customer acts as the *controller* of that personal data and Obelisk Studios acts as the *processor*. This DPA sets out the terms governing that processor relationship.
+
+    The full executable DPA — including EU Standard Contractual Clauses and the Annexes describing technical and organizational measures and sub-processors — is available as a downloadable PDF. The summary on this page is a faithful description of what the DPA contains. Where this page and the DPA PDF differ, the PDF controls.
+
+sections:
+  - heading: Subject matter, duration, and scope
+    body: |
+      The subject matter of the processing is the provision of Grace Production OS — a hosted software-as-a-service platform for managing film and television production — to Customer. The duration is the term of Customer's subscription, plus any post-termination retention period required under the Privacy Policy or applicable law. The nature and purpose of the processing are limited to those operations necessary to operate Grace for Customer.
+
+  - heading: Categories of data subjects and personal data
+    body: |
+      The categories of data subjects whose personal data we may process on Customer's behalf include Customer's account users, the cast and crew Customer adds to productions, recipients of call sheets and screener shares sent by Customer through Grace, and other individuals whose data Customer enters into Grace.
+
+      The categories of personal data include names, contact details, role and department, deal terms and rates, work-eligibility documents (where Customer chooses to record them), production-related notes, and content Customer uploads through Grace. Special categories of data are processed only where Customer enters them (e.g., minor cast information, in which case standard production-side compliance practice applies).
+
+  - heading: Obelisk Studios' obligations as processor
+    body: |
+      *Processing only on documented instructions.* We process personal data only on Customer's documented instructions, which are reflected in the Terms of Service, this DPA, and Customer's use of the product.
+
+      *Confidentiality.* Personnel authorized to process personal data are bound by appropriate confidentiality obligations.
+
+      *Security.* We maintain technical and organizational measures appropriate to the risk, as described in our Privacy Policy and in Annex II of the executable DPA. Measures include encryption in transit (TLS 1.2+), encryption at rest for files in Cloudflare R2 and structured data in Neon, tiered application-level access controls, per-viewer watermarking and forensic logging on Vault screeners, and incident-response procedures.
+
+      *Assistance.* We assist Customer in responding to data-subject requests, in meeting Customer's security obligations under Article 32 of the GDPR, and in handling notifications of personal-data breaches and data-protection impact assessments under Articles 33–36, in each case taking into account the nature of the processing and the information available to us.
+
+      *Return or deletion.* On termination of Customer's subscription, we delete Customer's personal data per the retention schedule in the Privacy Policy unless applicable law requires us to retain it.
+
+      *Audit.* We provide Customer with information necessary to demonstrate compliance with this DPA and allow for audits, including inspections, conducted by Customer or another auditor mandated by Customer. Audits proceed on reasonable notice, no more than once per twelve-month period absent a regulatory trigger, at Customer's cost.
+
+  - heading: Sub-processors
+    body: |
+      Customer authorizes Obelisk Studios to engage the sub-processors listed at theobeliskstudio.com/legal/subprocessors, which is updated as our sub-processor list changes. We require each sub-processor to provide at least the same level of data protection that we provide under this DPA.
+
+      We will notify Customer at least 14 days in advance of adding or replacing any sub-processor that processes Customer's personal data. Customer may object to the change in writing; if the objection cannot be resolved by mutually agreed mitigations, Customer may terminate the subscription with respect to the affected service without further liability beyond fees accrued.
+
+  - heading: International data transfers
+    body: |
+      Where personal data is transferred outside the European Economic Area, the United Kingdom, or Switzerland to a jurisdiction not covered by an adequacy decision, the transfer is governed by the EU Standard Contractual Clauses (Module Two, Controller-to-Processor), the UK International Data Transfer Agreement / UK Addendum, or the Swiss equivalent, as applicable. Annex I to those Clauses is set out in Annex I of the executable DPA.
+
+      We have completed a Transfer Impact Assessment that documents the technical and organizational safeguards applied to each downstream transfer (encryption, contractual SCCs with each sub-processor, EU–US Data Privacy Framework certifications where vendors hold them). The TIA is available on request.
+
+  - heading: How to countersign
+    body: |
+      For an executed copy of the DPA — fully filled in with Customer's identification details, signed by Obelisk Studios, and ready for Customer's countersignature — email legal@theobeliskstudio.com. Provide the customer entity's legal name, the data-protection contact's name and email, and any specific sub-processor objections you wish to record. We return countersigned copies within ten business days.
+
+contact:
+  heading: Legal contact
+  body: |
+    For DPA execution, sub-processor inquiries, or audit requests, contact the Obelisk Studios legal team at the address below.
+  email: legal@theobeliskstudio.com

@@ -6,7 +6,7 @@
 hero:
   eyebrow: Privacy
   title: Privacy Policy
-  lastUpdated: May 12, 2026
+  lastUpdated: May 17, 2026
   intro: |
     This policy explains what Obelisk Studios collects when you use Grace Production OS, why we collect it, who else touches it, and the rights you have over it.
 
@@ -15,7 +15,9 @@ hero:
 sections:
   - heading: Who we are
     body: |
-      Obelisk Studios is an independent studio based in Burbank, California. Grace Production OS — the software product — is operated by Obelisk Studios. References below to "we," "us," and "our" mean Obelisk Studios.
+      Obelisk Studios LLC ("Obelisk Studios") is an independent studio organized under the laws of the United States and based in Burbank, California. Grace Production OS — the software product — is operated by Obelisk Studios LLC. References below to "we," "us," and "our" mean Obelisk Studios LLC, which is the data controller for the personal data processed through Grace.
+
+      Our privacy contact is the Obelisk Studios Privacy Lead, who can be reached at privacy@theobeliskstudio.com. For the full registered address and any inquiry that requires postal correspondence, write to that address and we will respond with the appropriate mailing information.
 
   - heading: What we collect
     body: |
@@ -61,8 +63,12 @@ sections:
         detail: Fallback AI processing of script content (Gemini), used when Claude is unavailable. Google does not use API content for model training when accessed via the paid API tier.
       - label: Open-Meteo
         detail: Weather data for shoot-day forecasts on call sheets. Receives latitude/longitude only — no production identity.
+      - label: Google Maps Platform (Places API)
+        detail: Address-to-coordinates geocoding for production locations and nearest-hospital lookups on call sheets. Receives the address string or coordinates only — no production identity. Operated by Google under its API-tier terms; content is not used to train Google's general models.
       - label: OpenStreetMap (Nominatim)
-        detail: Address-to-coordinates geocoding. Receives the address string only.
+        detail: City-level coordinates lookup for weather forecasts on call sheets. Receives the city string only — no production identity.
+      - label: TDH Systems Pvt Ltd
+        detail: Software development, technical operations, and customer-support engineering for Grace. Personnel acting under TDH's engagement may access the production database for engineering and support purposes, subject to an intercompany data-processing addendum with Obelisk Studios LLC. TDH is based in India; cross-border transfers are described under "International data transfers" below.
 
   - heading: Cast and crew data — how Grace handles it
     body: |
@@ -94,6 +100,32 @@ sections:
 
       *Billing records.* We retain invoices and payment history for as long as required by tax and accounting law (typically seven years in the United States), independent of your account status.
 
+  - heading: Legal basis for processing (EU/UK/Swiss users)
+    body: |
+      For users in the European Economic Area, the United Kingdom, or Switzerland, we rely on the following legal bases under Article 6(1) of the GDPR (and equivalent provisions of the UK GDPR and the Swiss FADP):
+
+      *Contract performance* — creating and operating your account, billing you, delivering call sheets and screeners you compose, and otherwise providing the service you have asked for.
+
+      *Legitimate interest* — diagnosing outages, preventing abuse, securing the platform, and operating ordinary server logs. We balance these interests against your privacy expectations and do not use legitimate interest as a basis for marketing.
+
+      *Legal obligation* — retaining billing and tax records, responding to lawful regulatory inquiries, and complying with industry-specific requirements (e.g., minor-employment record-keeping where applicable).
+
+      *Consent* — only where consent is the appropriate basis: optional marketing emails, optional analytics or non-essential cookies if and when we introduce them, and any other purpose presented to you with a clear opt-in.
+
+      Where we ask for consent, you may withdraw it at any time by writing to privacy@theobeliskstudio.com or by using the in-product control where one is provided. Withdrawal does not affect the lawfulness of processing carried out before the withdrawal.
+
+  - heading: Sensitive Personal Information (California)
+    body: |
+      Under the California Privacy Rights Act ("CPRA"), certain categories of personal information are designated as Sensitive Personal Information ("SPI"). Within Grace, the SPI we handle is limited to:
+
+      *Account credentials.* Your password is stored only as a one-way hash by our authentication provider (Clerk) — we never see or store the plaintext.
+
+      *Precise geolocation* in the form of production-location coordinates and shoot-day coordinates derived from addresses you enter.
+
+      We use SPI only as necessary to deliver the service — to authenticate you, to render maps and distances, and to attach weather forecasts to call sheets. We do not use SPI to infer characteristics about you, for targeted advertising, for cross-context behavioral advertising, or for any purpose outside the service you have asked for.
+
+      Because we operate within the CPRA's "service necessity" exception, there is no separate "Limit the Use of My Sensitive Personal Information" link to enable — we are not using SPI beyond what the service requires. If our use of SPI ever changes, this section will change accordingly and we will obtain consent where the law requires it.
+
   - heading: Your rights
     body: |
       Regardless of where you live, you can ask us to:
@@ -106,9 +138,11 @@ sections:
 
       *Restrict or object* to particular uses of your data.
 
-      If you are in the European Economic Area, the United Kingdom, or Switzerland, you have these rights under the GDPR. If you are a California resident, you have analogous rights under the CCPA and CPRA, including the right to opt out of sale or sharing of personal information — though as noted, we do not sell or share for advertising in any case.
+      If you are in the European Economic Area, the United Kingdom, or Switzerland, you have these rights under the GDPR. You also have the right to lodge a complaint with your national supervisory authority (for example, the Information Commissioner's Office in the United Kingdom, your member-state data protection authority in the EEA, or the Federal Data Protection and Information Commissioner in Switzerland) at any time, without first contacting us.
 
-      To exercise any of these rights, email privacy@theobeliskstudio.com. We respond within 30 days.
+      If you are a California resident, you have analogous rights under the CCPA and CPRA, including the right to opt out of sale or sharing of personal information — though as noted, we do not sell or share for advertising in any case — and the right to limit the use of your SPI, addressed in the section above.
+
+      Account-holders can submit data-access, correction, and deletion requests from Settings → Account inside Grace. Anyone else — including production crew whose contact details we hold but who never created a Grace account — can submit a request at theobeliskstudio.com/privacy/request or by emailing privacy@theobeliskstudio.com. We respond within 30 days.
 
   - heading: Security
     body: |
@@ -122,7 +156,7 @@ sections:
 
   - heading: Children and minors
     body: |
-      Grace is not directed to people under 13 and we do not knowingly collect personal information from anyone under 13.
+      Grace is not directed to children under 13 and we do not knowingly collect personal information from anyone under 13 within the meaning of the United States Children's Online Privacy Protection Act ("COPPA"). If you believe we have inadvertently collected such information, please email privacy@theobeliskstudio.com and we will delete it promptly.
 
       Productions frequently involve minor cast members. Grace's data model treats minor cast as records *about* a minor, entered by the production team (typically the casting team or unit production manager) who carry the production-side legal duty around minor employment. The guardian role exists to allow a parent or legal guardian to see Grace records about their minor child during a production.
 
@@ -130,9 +164,9 @@ sections:
 
   - heading: International data transfers
     body: |
-      Grace's infrastructure is currently hosted in the United States. If you access Grace from outside the United States, your data will be transferred to and processed in the United States. By using Grace from another jurisdiction, you consent to this transfer.
+      Grace's customer-facing infrastructure is hosted in the United States. Some of our service providers and personnel operate from other jurisdictions — most notably, TDH Systems Pvt Ltd, our software-development and operations partner, is based in India. If you access Grace from outside the United States, your data will be transferred to and processed in the United States and in India. By using Grace from another jurisdiction, you consent to these transfers.
 
-      For users in the European Economic Area, the United Kingdom, or Switzerland, we rely on the EU Standard Contractual Clauses as the legal basis for international transfers where applicable. A data processing addendum is available on request.
+      For users in the European Economic Area, the United Kingdom, or Switzerland, we rely on the EU Standard Contractual Clauses (and the UK International Data Transfer Agreement / UK Addendum where applicable) as the legal basis for international transfers. Following the Schrems II decision and corresponding guidance from the EDPB, we have completed a Transfer Impact Assessment that documents the technical and organizational safeguards applied to each downstream transfer (encryption in transit and at rest, contractual SCCs with each sub-processor, EU–US Data Privacy Framework certifications where vendors have them). The Transfer Impact Assessment and our Data Processing Addendum are available at theobeliskstudio.com/legal/dpa, or on request to privacy@theobeliskstudio.com.
 
   - heading: Changes to this policy
     body: |
@@ -143,5 +177,5 @@ sections:
 contact:
   heading: Contact
   body: |
-    For privacy questions, data requests, or to exercise any of the rights above, write to us. We answer every privacy email — typically within a few business days, always within 30 days as required by law.
+    For privacy questions, data requests, or to exercise any of the rights above, write to the Privacy Lead at Obelisk Studios. We answer every privacy email — typically within a few business days, always within 30 days as required by law. Anyone whose data we hold can also submit a structured request at theobeliskstudio.com/privacy/request without needing a Grace account.
   email: privacy@theobeliskstudio.com

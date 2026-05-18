@@ -25,3 +25,9 @@ footer:
       links:
         - { label: Privacy Policy, href: /privacy }
         - { label: Terms of Service, href: /terms }
+        - { label: Refund Policy, href: /refunds }
+        - { label: Sub-processors, href: /legal/subprocessors }
+        - { label: Data Processing Addendum, href: /legal/dpa }
+        - { label: Vault Recipient Terms, href: /legal/vault }
+        - { label: DMCA, href: /dmca }
+        - { label: Privacy request, href: /privacy/request }

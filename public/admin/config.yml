@@ -432,3 +432,178 @@ collections:
               - { name: heading, widget: string, default: "Contact" }
               - { name: body, widget: text }
               - { name: email, widget: string, hint: "Legal contact email — should be a real inbox or forward" }
+
+      # ── DMCA / takedown ───────────────────────────────────────────
+      - name: dmca
+        label: "DMCA / Copyright"
+        file: content/dmca.yml
+        format: yaml
+        fields:
+          - name: hero
+            widget: object
+            fields:
+              - { name: eyebrow, widget: string, default: "Legal" }
+              - { name: title, widget: string }
+              - { name: lastUpdated, label: "Last updated", widget: string }
+              - { name: intro, widget: text }
+          - name: sections
+            label: "Sections"
+            widget: list
+            fields:
+              - { name: heading, widget: string }
+              - { name: body, widget: text, required: false }
+              - name: list
+                label: "Optional inline list"
+                widget: list
+                required: false
+                fields:
+                  - { name: label, widget: string }
+                  - { name: detail, widget: text }
+          - name: contact
+            label: "Contact card"
+            widget: object
+            required: false
+            fields:
+              - { name: heading, widget: string, default: "Designated agent" }
+              - { name: body, widget: text }
+              - { name: email, widget: string }
+
+      # ── Data Processing Addendum ──────────────────────────────────
+      - name: dpa
+        label: "Data Processing Addendum"
+        file: content/dpa.yml
+        format: yaml
+        fields:
+          - name: hero
+            widget: object
+            fields:
+              - { name: eyebrow, widget: string, default: "Legal" }
+              - { name: title, widget: string }
+              - { name: lastUpdated, label: "Last updated", widget: string }
+              - { name: intro, widget: text }
+          - name: sections
+            label: "Sections"
+            widget: list
+            fields:
+              - { name: heading, widget: string }
+              - { name: body, widget: text, required: false }
+              - name: list
+                label: "Optional inline list"
+                widget: list
+                required: false
+                fields:
+                  - { name: label, widget: string }
+                  - { name: detail, widget: text }
+          - name: contact
+            label: "Contact card"
+            widget: object
+            required: false
+            fields:
+              - { name: heading, widget: string, default: "Legal contact" }
+              - { name: body, widget: text }
+              - { name: email, widget: string }
+
+      # ── Sub-processors list ───────────────────────────────────────
+      - name: subprocessors
+        label: "Sub-processors"
+        file: content/subprocessors.yml
+        format: yaml
+        fields:
+          - name: hero
+            widget: object
+            fields:
+              - { name: eyebrow, widget: string, default: "Legal" }
+              - { name: title, widget: string }
+              - { name: lastUpdated, label: "Last updated", widget: string, hint: "Bumping this date starts the 14-day notification clock for change subscribers." }
+              - { name: intro, widget: text }
+          - name: sections
+            label: "Sections"
+            widget: list
+            fields:
+              - { name: heading, widget: string }
+              - { name: body, widget: text, required: false }
+              - name: list
+                label: "Provider list (entity → role)"
+                widget: list
+                required: false
+                fields:
+                  - { name: label, widget: string }
+                  - { name: detail, widget: text }
+          - name: contact
+            label: "Contact card"
+            widget: object
+            required: false
+            fields:
+              - { name: heading, widget: string, default: "Privacy contact" }
+              - { name: body, widget: text }
+              - { name: email, widget: string }
+
+      # ── Refund policy ─────────────────────────────────────────────
+      - name: refunds
+        label: "Refund Policy"
+        file: content/refunds.yml
+        format: yaml
+        fields:
+          - name: hero
+            widget: object
+            fields:
+              - { name: eyebrow, widget: string, default: "Legal" }
+              - { name: title, widget: string }
+              - { name: lastUpdated, label: "Last updated", widget: string }
+              - { name: intro, widget: text }
+          - name: sections
+            label: "Sections"
+            widget: list
+            fields:
+              - { name: heading, widget: string }
+              - { name: body, widget: text, required: false }
+              - name: list
+                label: "Optional inline list"
+                widget: list
+                required: false
+                fields:
+                  - { name: label, widget: string }
+                  - { name: detail, widget: text }
+          - name: contact
+            label: "Contact card"
+            widget: object
+            required: false
+            fields:
+              - { name: heading, widget: string, default: "Billing contact" }
+              - { name: body, widget: text }
+              - { name: email, widget: string }
+
+      # ── Vault Recipient Terms ─────────────────────────────────────
+      - name: vault
+        label: "Vault Recipient Terms"
+        file: content/vault.yml
+        format: yaml
+        fields:
+          - name: hero
+            widget: object
+            fields:
+              - { name: eyebrow, widget: string, default: "Legal" }
+              - { name: title, widget: string }
+              - { name: lastUpdated, label: "Last updated", widget: string }
+              - { name: intro, widget: text }
+          - name: sections
+            label: "Sections"
+            widget: list
+            fields:
+              - { name: heading, widget: string }
+              - { name: body, widget: text, required: false }
+              - name: list
+                label: "Optional inline list"
+                widget: list
+                required: false
+                fields:
+                  - { name: label, widget: string }
+                  - { name: detail, widget: text }
+          - name: contact
+            label: "Contact card"
+            widget: object
+            required: false
+            fields:
+              - { name: heading, widget: string, default: "Questions" }
+              - { name: body, widget: text }
+              - { name: email, widget: string }

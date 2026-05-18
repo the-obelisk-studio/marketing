@@ -294,6 +294,28 @@ export const TermsPageSchema = z.object({
 
 // ── Schema registry — maps filename → schema ───────────────────
 
+// Generic legal-document schema. Structurally identical to Privacy/Terms.
+// Used for any standalone legal page that follows the hero + sections +
+// optional contact-card shape: DMCA, DPA, sub-processors, refunds, vault
+// recipient terms. New legal pages should register their YAML here and
+// the existing <LegalDocument> renderer covers the markup.
+export const LegalDocumentSchema = z.object({
+  hero: z.object({
+    eyebrow: z.string().default("Legal"),
+    title: z.string(),
+    lastUpdated: z.string(),
+    intro: z.string(),
+  }),
+  sections: z.array(PrivacySectionSchema).default([]),
+  contact: z.object({
+    heading: z.string().default("Contact"),
+    body: z.string(),
+    email: z.string(),
+  }).optional(),
+})
+
+export type LegalDocumentContent = z.infer<typeof LegalDocumentSchema>
+
 export const CONTENT_SCHEMAS = {
   "shared.yml": SharedSchema,
   "index.yml": IndexPageSchema,
@@ -303,6 +325,11 @@ export const CONTENT_SCHEMAS = {
   "contact.yml": ContactPageSchema,
   "privacy.yml": PrivacyPageSchema,
   "terms.yml": TermsPageSchema,
+  "dmca.yml": LegalDocumentSchema,
+  "dpa.yml": LegalDocumentSchema,
+  "subprocessors.yml": LegalDocumentSchema,
+  "refunds.yml": LegalDocumentSchema,
+  "vault.yml": LegalDocumentSchema,
 } as const
 
 export type ContentFile = keyof typeof CONTENT_SCHEMAS

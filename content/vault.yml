@@ -1,0 +1,64 @@
+# Vault Recipient Terms. KK can edit via Decap. Rendered by
+# /src/app/legal/vault/page.tsx with the shared LegalDocument component.
+#
+# Linked from the Vault email and from the pre-code-entry modal on the
+# vault recipient page. Designed to be readable in under two minutes so
+# recipients can actually consent meaningfully before clicking through.
+
+hero:
+  eyebrow: Legal
+  title: Vault Recipient Terms
+  lastUpdated: May 17, 2026
+  intro: |
+    You're reading this because someone has shared a confidential screener with you through the Grace Vault. These short terms govern that access.
+
+    By entering the access code on the screener page, you accept the terms below. If you cannot accept them, do not enter the code — and let the sender know they should send the material another way.
+
+sections:
+  - heading: What "confidential" means here
+    body: |
+      The material behind the share link — a cut, a screener, a work-in-progress — is confidential. Treat it the way you would treat any unreleased film or television material you receive from a studio under an industry NDA, even if no separate NDA has been signed.
+
+      Specifically: do not download, copy, screen-capture, screen-record, photograph, or transcribe the material. Do not show it to anyone else. Do not discuss its contents publicly, including on social media. Do not use it for any purpose other than the one for which it was shared with you (review, awards consideration, festival submission, casting feedback, financing review, etc.).
+
+  - heading: Watermarking, device-kick, and forensic logging
+    body: |
+      To protect the sender's interest in keeping the material confidential, Grace applies several enforcement layers to every Vault session:
+
+      *Per-viewer watermarking.* Your email address and a session identifier are visibly watermarked across every frame you see. If a captured copy surfaces, the watermark identifies the session it came from.
+
+      *Device-kick.* Each access code is bound to the first device that uses it. If a second device tries to use the same code, the original device is kicked and the access is invalidated.
+
+      *Forensic logging.* The IP address, user agent, viewer email, watch duration, and any seek events are recorded. The sender can see those records.
+
+      None of this is theoretical. By entering the access code you acknowledge that Grace is collecting this information for the specific purpose of attributing any future leak, and you consent to the collection.
+
+  - heading: Personal data
+    body: |
+      Obelisk Studios LLC, the operator of Grace, is the controller for the personal data described in the section above (your IP address, user agent, viewer email, and session timing). We retain that data for as long as the screener share is active and for a reasonable period afterward in case forensic review is needed. The full Privacy Policy is at theobeliskstudio.com/privacy.
+
+      If you want a copy of the records we hold about your specific Vault session, or you want them deleted, email privacy@theobeliskstudio.com. We will respond within 30 days. Note that records may need to be retained where required by law or where they are subject to an active forensic-review request from the sender.
+
+  - heading: Sender's responsibility
+    body: |
+      The person who shared the screener with you — not Obelisk Studios — is responsible for deciding whether to share the material with you and for the consequences of that decision under any agreement they have with the rights-holder. Obelisk Studios provides the platform; the share decision is theirs.
+
+      If you believe the sender has shared material with you that they were not authorized to share, do not enter the access code. Contact the rights-holder, or email legal@theobeliskstudio.com so we can investigate.
+
+  - heading: Misuse
+    body: |
+      Misuse of the screener — including downloading, copying, redistributing, or sharing the access code with anyone — may give rise to civil claims by the sender or the rights-holder under copyright law, trade-secret law, and contract law. The forensic records described above are designed to support those claims.
+
+      Misuse also entitles us to immediately revoke the screener share and may result in Obelisk Studios terminating any Grace account associated with the misuse.
+
+  - heading: Governing law
+    body: |
+      These Vault Recipient Terms are governed by the laws of the State of California, without regard to its conflict-of-laws principles. Any dispute arising out of these terms will be resolved in the state or federal courts located in Los Angeles County, California, and you consent to the personal jurisdiction of those courts.
+
+      Nothing in this section limits non-waivable consumer-protection rights you may have under the law of your jurisdiction of residence.
+
+contact:
+  heading: Questions
+  body: |
+    If you have questions about these terms or about the share you received, write to the address below or to the sender.
+  email: legal@theobeliskstudio.com

@@ -5,7 +5,7 @@
 hero:
   eyebrow: Legal
   title: Terms of Service
-  lastUpdated: May 12, 2026
+  lastUpdated: May 17, 2026
   intro: |
     These terms govern your use of Grace Production OS — the software product operated by Obelisk Studios. By signing in to an account, paying for a subscription, or otherwise using Grace, you agree to be bound by these terms.
 
@@ -22,7 +22,7 @@ sections:
     body: |
       Grace is a software-as-a-service platform for managing film and television production. We provide hosted tools for call sheets, schedules, budgets, scripts, dailies, screeners, cast and crew records, and related production workflows.
 
-      The features available to you depend on your subscription plan. Current plans, prices, and feature breakdowns are published at theobeliskstudio.com/pricing.
+      The features available to you depend on your subscription plan. Current plans, prices, and feature breakdowns are published at app.theobeliskstudio.com/pricing.
 
   - heading: Eligibility and account
     body: |
@@ -36,11 +36,35 @@ sections:
 
       Payment is processed by Stripe, our payment provider. Their terms apply to the payment process itself; we do not store your card details.
 
-      Upgrades, downgrades, and add-on changes prorate against your current billing period — the math is computed by Stripe at the moment of change. Cancellations end your subscription at the close of the current period; we do not refund the unused portion of a paid period.
+      Upgrades, downgrades, and add-on changes prorate against your current billing period — the math is computed by Stripe at the moment of change.
 
       If a payment fails, we will attempt recovery in line with Stripe's standard retry schedule. After a defined grace period (currently seven days), your account moves to read-only access until payment is restored.
 
       We may change subscription prices on at least 30 days' notice before they apply to your renewal. Existing subscriptions continue at their current rate until renewal.
+
+  - heading: Automatic renewal disclosures (California subscribers and ROSCA)
+    body: |
+      Grace subscriptions, including those that begin with a free trial, automatically renew at the rate disclosed at sign-up. This section sets out the specific disclosures required by California Business & Professions Code §§17600 et seq. (the California Automatic Renewal Law) and the federal Restore Online Shoppers' Confidence Act ("ROSCA").
+
+      *What auto-renews and at what price.* Each plan renews monthly or annually, at the current price shown on the plan card at sign-up, until you cancel. For trials longer than 31 days (the 90-day Founders' Beta), the trial converts automatically to a paid subscription at the disclosed price unless you cancel before the trial ends.
+
+      *Affirmative consent.* Before the first charge, we present a dedicated acknowledgment that displays the renewal date, the renewal amount, and the cancellation mechanism. You must check that acknowledgment separately from your acceptance of these Terms of Service in order to start a trial or subscription.
+
+      *Post-signup confirmation.* Immediately after you start a subscription or trial, we send a confirmation email to the address on your account that repeats the renewal date, the renewal amount, and a direct link to cancel.
+
+      *Pre-renewal reminder.* For trials longer than 31 days, we send a reminder email between 3 and 21 days before the first charge — currently scheduled at 7 days before — repeating the charge amount and the cancellation link.
+
+      *How to cancel.* You can cancel any subscription or trial online, at any time, without contacting support, in Settings → Billing inside Grace. The cancel control is at least as easy to find and use as the sign-up flow. You may also email billing@theobeliskstudio.com.
+
+      *California rights.* California subscribers may exercise their cancellation rights under California Business & Professions Code §17600 et seq., which this section is designed to satisfy.
+
+  - heading: Refunds
+    body: |
+      Cancellations end your subscription at the close of the current period; we do not refund the unused portion of a paid period.
+
+      If you believe you were charged in error — for example, a duplicate charge, a charge after a successful cancellation, or a charge on a closed account — email billing@theobeliskstudio.com within 30 days of the charge and we will review the case. Where we agree we charged in error, we will refund the disputed amount through the original payment method.
+
+      For promotional trials that auto-convert to paid subscriptions, the conversion charge follows the same rule: cancel before the trial ends to avoid the charge; once the charge is processed, the no-refund-of-unused-portion rule applies to the converted period.
 
   - heading: Acceptable use
     body: |
@@ -80,9 +104,17 @@ sections:
     body: |
       Grace uses AI services from Anthropic (Claude) and Google (Gemini) for tasks including script parsing, scene breakdown generation, and conversational assistance through the Grace AI panel.
 
-      AI output is *generated, not human-authored.* It can be inaccurate, incomplete, or inconsistent. It is not legal, medical, financial, or other professional advice. You remain responsible for reviewing AI output before relying on it. We do not warrant the accuracy of AI-generated content.
+      AI output is *generated, not human-authored.* It can be inaccurate, incomplete, or inconsistent. It is not legal, medical, financial, accounting, employment, or other professional advice. You remain responsible for reviewing AI output before relying on it. To the maximum extent permitted by applicable law, we disclaim all warranties of accuracy, completeness, and fitness for purpose with respect to AI-generated content.
 
-      Grace's Dot System (the colored-dot trust indicators on every field) is designed precisely so that AI-suggested values remain visibly distinguishable from human-verified ones. Use it.
+      Grace's Dot System (the colored-dot trust indicators on every field) is designed precisely so that AI-suggested values remain visibly distinguishable from human-verified ones — *blue* dots mark Grace-suggested or AI-inferred content, *gold* dots mark human-entered content, and *green* dots mark content verified from a signed document. Treat blue-dot fields as drafts to be reviewed, not as authoritative.
+
+  - heading: Promotional trials and beta codes
+    body: |
+      From time to time we offer promotional sign-up codes — including, currently, the 90-day Founders' Beta — that grant a longer free trial than the default. The mechanics of each promotion are disclosed at the moment you redeem the code: trial length, the post-trial price, the renewal cadence, and eligibility.
+
+      Promotional trials auto-convert to paid subscriptions at the disclosed price on the disclosed date unless you cancel before then. The acknowledgment, confirmation, and pre-renewal reminder requirements described under "Automatic renewal disclosures" above apply to promotional trials in the same way they apply to ordinary subscriptions.
+
+      We may withdraw a promotion, change its terms, or refuse a code that has been issued in error or used in violation of the promotion's published rules. Where you have already signed up under an earlier set of promotional terms, those earlier terms continue to apply to your subscription through the end of the current promotional period.
 
   - heading: Beta features
     body: |
@@ -107,6 +139,30 @@ sections:
       We may suspend or terminate your account if you materially breach these terms, if your payment fails after the grace period described above, or if continued operation would create undue legal or operational risk for us. Where reasonable, we will notify you in advance and give you an opportunity to cure.
 
       On termination by either party, your access to Grace ends, billing stops at the end of the then-current period, and your data is retained or deleted per the Privacy Policy. Sections of these terms that by their nature should survive termination — Your Content (the license you granted us, to the extent we still hold data), Confidentiality, Intellectual Property, Disclaimers, Limitation of Liability, Indemnification, Governing Law — survive.
+
+  - heading: Copyright complaints and DMCA agent
+    body: |
+      Obelisk Studios respects the intellectual property rights of others and expects users of Grace to do the same. We respond to notices of alleged copyright infringement that comply with the U.S. Digital Millennium Copyright Act ("DMCA"), 17 U.S.C. §512.
+
+      *How to send a notice.* If you believe content stored or transmitted through Grace infringes a copyright you own or are authorized to enforce, send a notice to our designated agent that includes (a) a physical or electronic signature of the rights-holder or authorized representative, (b) identification of the copyrighted work claimed to be infringed, (c) identification of the allegedly infringing material with enough detail for us to locate it, (d) your contact information, (e) a statement that you have a good-faith belief that the use is not authorized, and (f) a statement, under penalty of perjury, that the information in the notice is accurate and that you are authorized to act on the rights-holder's behalf.
+
+      *Designated agent and the formal process.* Our designated agent contact and the formal DMCA filing instructions are published at theobeliskstudio.com/dmca. We have registered the agent with the United States Copyright Office under 17 U.S.C. §512(c)(2).
+
+      *Counter-notification.* If your content was removed in response to a notice and you believe the removal was a mistake or misidentification, you may file a counter-notification under 17 U.S.C. §512(g). The procedure is described on the same page.
+
+      *Repeat infringers.* In appropriate circumstances, and at our sole discretion, we will terminate the accounts of users who repeatedly receive DMCA notices we determine to be valid.
+
+  - heading: Force majeure
+    body: |
+      We are not liable for any delay or failure to perform under these terms caused by events outside our reasonable control, including but not limited to: failures, outages, or capacity limits of upstream service providers (cloud, AI, payment, email, storage, network, DNS); acts of government, court orders, or regulatory action; war, civil unrest, terrorism, or cyberattack; pandemic, natural disaster, fire, flood, or extreme weather; labor disputes affecting us or our providers; and material disruption to the public internet.
+
+      Where reasonably possible, we will notify affected subscribers of a material outage and resume service as soon as the cause is resolved. If a force majeure event materially disables the service for more than thirty consecutive days, either party may terminate this agreement on written notice without further liability beyond payment of fees accrued before the event.
+
+  - heading: Export controls and sanctions
+    body: |
+      You represent and warrant that you are not located in, ordinarily resident in, or a national of a country or territory subject to comprehensive U.S. economic sanctions (currently including Cuba, Iran, North Korea, Syria, the Crimea region of Ukraine, and the so-called Donetsk and Luhansk People's Republics), and that you are not identified on the U.S. Treasury Department's Office of Foreign Assets Control ("OFAC") Specially Designated Nationals list or any equivalent denied-parties or sanctions list maintained by the United States, the European Union, the United Kingdom, or the United Nations.
+
+      You agree not to use Grace, and not to permit any third party under your control to use Grace, in violation of any applicable export-control or sanctions law, including the U.S. Export Administration Regulations and the regulations administered by OFAC. We may suspend or terminate accounts that we determine, in good faith, are operated in violation of this section.
 
   - heading: Disclaimers
     body: |

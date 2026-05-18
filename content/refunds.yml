@@ -1,0 +1,50 @@
+# Refund policy. KK can edit via Decap. Rendered by
+# /src/app/refunds/page.tsx with the shared LegalDocument component.
+#
+# Standalone page exists so Stripe's merchant-policy URL field and
+# customer dispute references can point directly at this page rather
+# than at a buried section of the ToS.
+
+hero:
+  eyebrow: Legal
+  title: Refund Policy
+  lastUpdated: May 17, 2026
+  intro: |
+    This page sets out our refund policy for paid Grace Production OS subscriptions. The substance is also reflected in our Terms of Service.
+
+    Short version: cancel any time, no refund of the unused portion of a paid period, and we'll review any charge you believe was made in error.
+
+sections:
+  - heading: Cancellations and the no-refund-of-unused-portion rule
+    body: |
+      Grace subscriptions auto-renew until cancelled. When you cancel, the subscription ends at the close of the current billing period — monthly subscribers retain access through the end of the paid month, annual subscribers through the end of the paid year.
+
+      We do not refund the unused portion of a paid period. The reason is operational: subscription revenue funds the hosting, AI processing, and support that the service runs on, and pro-rating mid-period creates accounting complexity that we have chosen not to take on at our current scale.
+
+      If a no-refund-of-unused-portion rule is unworkable for your situation — for example, you signed up by mistake and reached out within hours — email billing@theobeliskstudio.com and we will review the case on its facts.
+
+  - heading: Promotional trials that auto-convert to paid
+    body: |
+      The 90-day Founders' Beta and similar promotional trials auto-convert to paid subscriptions at the price disclosed when the code was redeemed. To avoid the conversion charge, cancel before the trial ends — Settings → Billing inside Grace, no support contact required.
+
+      Once the conversion charge has processed, the no-refund-of-unused-portion rule above applies to the newly paid period.
+
+  - heading: Charges in error
+    body: |
+      If you believe you were charged in error — examples include duplicate charges, a charge after a successful cancellation, a charge on a closed account, or a charge at a price different from what you accepted — email billing@theobeliskstudio.com within 30 days of the charge. Include the charge date, the amount, and the email associated with the account.
+
+      Where we agree the charge was made in error, we refund the disputed amount through the original payment method. Stripe typically clears refunds within 5–10 business days; the exact timing depends on your card issuer.
+
+  - heading: Payment failures and the read-only grace period
+    body: |
+      If your renewal payment fails, Stripe retries on its standard schedule. After a defined grace period (currently seven days), your account moves to read-only access until payment is restored — you can still view existing data but not make changes. If your payment method fails permanently, your subscription cancels and the data-retention timelines in the Privacy Policy begin.
+
+  - heading: Chargebacks and disputes
+    body: |
+      Please email billing@theobeliskstudio.com before initiating a chargeback with your card issuer. A chargeback bypasses the review process described above and triggers automated subscription suspension. We respond faster, and with more flexibility, when we get the question by email first.
+
+contact:
+  heading: Billing contact
+  body: |
+    For refund requests, charge questions, or any billing-related inquiry, write to the address below. Privacy and legal questions go to privacy@theobeliskstudio.com and legal@theobeliskstudio.com respectively.
+  email: billing@theobeliskstudio.com
