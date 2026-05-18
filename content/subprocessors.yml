@@ -1,60 +1,92 @@
-# Sub-processor list. KK can edit via Decap when vendors change.
-# Rendered by /src/app/legal/subprocessors/page.tsx with the shared
-# LegalDocument component.
-#
-# This list is referenced by the Privacy Policy and by the DPA as the
-# single source of truth for who processes personal data on Obelisk
-# Studios' behalf. Add or remove entries here, then bump
-# hero.lastUpdated, then publish — the Privacy Policy's 14-day-notice
-# covenant kicks in from this page's date.
-
 hero:
   eyebrow: Legal
   title: Sub-processors
   lastUpdated: May 17, 2026
-  intro: |
-    This page lists the third-party service providers ("sub-processors") that Obelisk Studios LLC engages to operate Grace Production OS. Each receives only the personal data necessary to deliver its piece of the service, and each is contractually bound to use that data solely on our instructions.
+  intro: >
+    This page lists the third-party service providers ("sub-processors") that
+    Obelisk Studios LLC engages to operate Grace Production OS. Each receives
+    only the personal data necessary to deliver its piece of the service, and
+    each is contractually bound to use that data solely on our instructions.
+
 
     Per our Privacy Policy and Data Processing Addendum, we provide at least 14 days' advance notice before adding or replacing a sub-processor that processes customer personal data. To receive that notice by email, write to privacy@theobeliskstudio.com.
-
 sections:
   - heading: Current sub-processors
-    body: |
-      Effective as of the "Last updated" date above. Each entry names the provider, the function it performs, the categories of data it receives, and the legal entity's principal place of business.
+    body: >
+      Effective as of the "Last updated" date above. Each entry names the
+      provider, the function it performs, the categories of data it receives,
+      and the legal entity's principal place of business.
     list:
       - label: Clerk, Inc. — United States
-        detail: Authentication, sign-in, session management, and multi-factor enrollment. Receives account email, name, password hash, and (if enabled) MFA factors.
+        detail: Authentication, sign-in, session management, and multi-factor
+          enrollment. Receives account email, name, password hash, and (if
+          enabled) MFA factors.
       - label: Stripe, Inc. — United States
-        detail: Subscription billing and payment processing. Receives billing email, payment-method details (collected by Stripe directly, never by Obelisk Studios), tax/billing address, and the metadata Stripe needs to render invoices.
+        detail: Subscription billing and payment processing. Receives billing email,
+          payment-method details (collected by Stripe directly, never by Obelisk
+          Studios), tax/billing address, and the metadata Stripe needs to render
+          invoices.
       - label: Resend, Inc. — United States
-        detail: Outbound email delivery (call sheets, production invitations, vault shares, verification codes, transactional notifications). Receives recipient addresses and email body content.
+        detail: Outbound email delivery (call sheets, production invitations, vault
+          shares, verification codes, transactional notifications). Receives
+          recipient addresses and email body content.
       - label: Cloudflare, Inc. — United States
-        detail: (a) Object storage via Cloudflare R2 for scripts, photos, screeners, dailies, and call-sheet PDFs (files encrypted at rest with AES-256). (b) DNS, network edge, marketing-site CDN, and bot/DDoS mitigation. Receives standard request metadata (IP, user agent, URL path) in the edge role; receives uploaded file contents in the R2 role.
+        detail: (a) Object storage via Cloudflare R2 for scripts, photos, screeners,
+          dailies, and call-sheet PDFs (files encrypted at rest with AES-256).
+          (b) DNS, network edge, marketing-site CDN, and bot/DDoS mitigation.
+          Receives standard request metadata (IP, user agent, URL path) in the
+          edge role; receives uploaded file contents in the R2 role.
       - label: Neon, Inc. — United States
-        detail: Managed PostgreSQL hosting for the Grace application database, with point-in-time recovery snapshots. Receives all structured application data described in the Privacy Policy.
+        detail: Managed PostgreSQL hosting for the Grace application database, with
+          point-in-time recovery snapshots. Receives all structured application
+          data described in the Privacy Policy.
       - label: Railway Corp. — United States
-        detail: Application hosting and compute for the Grace web/server tier. Receives all data passing through Grace's servers in the course of request handling.
+        detail: Application hosting and compute for the Grace web/server tier. Receives
+          all data passing through Grace's servers in the course of request
+          handling.
       - label: Anthropic, PBC — United States
-        detail: AI processing of script content (Claude API). Receives script text or PDF for breakdown extraction. Anthropic's paid API tier does not retain user-API data beyond standard operational logs and does not use it for model training.
+        detail: AI processing of script content (Claude API). Receives script text or
+          PDF for breakdown extraction. Anthropic's paid API tier does not
+          retain user-API data beyond standard operational logs and does not use
+          it for model training.
       - label: Google LLC — United States
-        detail: (a) Fallback AI processing of script content (Gemini API) when Claude is unavailable. (b) Address geocoding via the Google Maps Platform Places API for production locations and nearest-hospital lookups on call sheets. Receives the script text (Gemini) or the address string (Places). Neither service uses paid-API content to train Google's general models.
+        detail: (a) Fallback AI processing of script content (Gemini API) when Claude is
+          unavailable. (b) Address geocoding via the Google Maps Platform Places
+          API for production locations and nearest-hospital lookups on call
+          sheets. Receives the script text (Gemini) or the address string
+          (Places). Neither service uses paid-API content to train Google's
+          general models.
       - label: Open-Meteo GmbH — Germany
-        detail: Weather data for shoot-day forecasts on call sheets. Receives latitude/longitude only — no production identity.
+        detail: Weather data for shoot-day forecasts on call sheets. Receives
+          latitude/longitude only — no production identity.
       - label: OpenStreetMap Foundation — United Kingdom (Nominatim hosted service)
-        detail: City-level coordinates lookup for weather forecasts on call sheets. Receives the city string only — no production identity.
-      - label: TDH Systems Pvt Ltd — India
-        detail: Software development, technical operations, and customer-support engineering for Grace. Personnel acting under TDH's engagement may access the production database for engineering and support purposes. Subject to an intercompany DPA with Obelisk Studios LLC and to the international-transfer safeguards described in the Privacy Policy.
-
+        detail: City-level coordinates lookup for weather forecasts on call sheets.
+          Receives the city string only — no production identity.
+      - label: Thy Dark Hour Systems (OPC) Pvt Ltd — India
+        detail: Software development, technical operations, and customer-support
+          engineering for Grace. Personnel acting under TDH's engagement may
+          access the production database for engineering and support purposes.
+          Subject to an intercompany DPA with Obelisk Studios LLC and to the
+          international-transfer safeguards described in the Privacy Policy.
   - heading: How to receive change notifications
-    body: |
-      Email privacy@theobeliskstudio.com with the subject "Sub-processor notifications" and we will add your address to the notification list. Notifications go out at least 14 days before any added or replaced sub-processor begins processing customer personal data. If a security incident at a sub-processor requires immediate substitution, we will notify the list as quickly as reasonably possible and follow up with the post-incident review.
-
+    body: >
+      Email privacy@theobeliskstudio.com with the subject "Sub-processor
+      notifications" and we will add your address to the notification list.
+      Notifications go out at least 14 days before any added or replaced
+      sub-processor begins processing customer personal data. If a security
+      incident at a sub-processor requires immediate substitution, we will
+      notify the list as quickly as reasonably possible and follow up with the
+      post-incident review.
   - heading: Audit history
-    body: |
-      The list above is the current state. We do not yet publish a historical changelog of past sub-processor changes; if you need that history for a vendor-risk review, email privacy@theobeliskstudio.com and we will provide it for the period of your engagement.
-
+    body: >
+      The list above is the current state. We do not yet publish a historical
+      changelog of past sub-processor changes; if you need that history for a
+      vendor-risk review, email privacy@theobeliskstudio.com and we will provide
+      it for the period of your engagement.
 contact:
   heading: Privacy contact
-  body: |
-    For questions about any sub-processor on this list, to object to a planned change, or to subscribe to change notifications, contact the Obelisk Studios Privacy Lead.
+  body: >
+    For questions about any sub-processor on this list, to object to a planned
+    change, or to subscribe to change notifications, contact the Obelisk Studios
+    Privacy Lead.
   email: privacy@theobeliskstudio.com
