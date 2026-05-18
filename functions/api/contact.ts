@@ -9,9 +9,9 @@
 //
 // Env vars (set in CF Pages → Settings → Environment variables):
 //   - RESEND_API_KEY        Resend API key (same one used by Grace)
-//   - CONTACT_TO_EMAIL      Where to deliver. Default support@theobeliskstudio.com
+//   - CONTACT_TO_EMAIL      Where to deliver. Default hello@theobeliskstudio.com
 //   - CONTACT_FROM_EMAIL    Sender (must be a Resend-verified address).
-//                            Default contact@theobeliskstudio.com
+//                            Default hello@theobeliskstudio.com
 
 type Env = {
   RESEND_API_KEY?: string
@@ -27,8 +27,8 @@ type Payload = {
   message?: string
 }
 
-const DEFAULT_TO = "support@theobeliskstudio.com"
-const DEFAULT_FROM = "Obelisk Studios <contact@theobeliskstudio.com>"
+const DEFAULT_TO = "hello@theobeliskstudio.com"
+const DEFAULT_FROM = "Obelisk Studios <hello@theobeliskstudio.com>"
 
 function escapeHtml(s: string): string {
   return s.replace(/[&<>"']/g, c => (

@@ -21,7 +21,7 @@ sections:
 
       We do not refund the unused portion of a paid period. The reason is operational: subscription revenue funds the hosting, AI processing, and support that the service runs on, and pro-rating mid-period creates accounting complexity that we have chosen not to take on at our current scale.
 
-      If a no-refund-of-unused-portion rule is unworkable for your situation — for example, you signed up by mistake and reached out within hours — email billing@theobeliskstudio.com and we will review the case on its facts.
+      If a no-refund-of-unused-portion rule is unworkable for your situation — for example, you signed up by mistake and reached out within hours — email finance@theobeliskstudio.com and we will review the case on its facts.
 
   - heading: Promotional trials that auto-convert to paid
     body: |
@@ -31,7 +31,7 @@ sections:
 
   - heading: Charges in error
     body: |
-      If you believe you were charged in error — examples include duplicate charges, a charge after a successful cancellation, a charge on a closed account, or a charge at a price different from what you accepted — email billing@theobeliskstudio.com within 30 days of the charge. Include the charge date, the amount, and the email associated with the account.
+      If you believe you were charged in error — examples include duplicate charges, a charge after a successful cancellation, a charge on a closed account, or a charge at a price different from what you accepted — email finance@theobeliskstudio.com within 30 days of the charge. Include the charge date, the amount, and the email associated with the account.
 
       Where we agree the charge was made in error, we refund the disputed amount through the original payment method. Stripe typically clears refunds within 5–10 business days; the exact timing depends on your card issuer.
 
@@ -41,10 +41,10 @@ sections:
 
   - heading: Chargebacks and disputes
     body: |
-      Please email billing@theobeliskstudio.com before initiating a chargeback with your card issuer. A chargeback bypasses the review process described above and triggers automated subscription suspension. We respond faster, and with more flexibility, when we get the question by email first.
+      Please email finance@theobeliskstudio.com before initiating a chargeback with your card issuer. A chargeback bypasses the review process described above and triggers automated subscription suspension. We respond faster, and with more flexibility, when we get the question by email first.
 
 contact:
   heading: Billing contact
   body: |
     For refund requests, charge questions, or any billing-related inquiry, write to the address below. Privacy and legal questions go to privacy@theobeliskstudio.com and legal@theobeliskstudio.com respectively.
-  email: billing@theobeliskstudio.com
+  email: finance@theobeliskstudio.com

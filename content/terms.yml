@@ -54,7 +54,7 @@ sections:
 
       *Pre-renewal reminder.* For trials longer than 31 days, we send a reminder email between 3 and 21 days before the first charge — currently scheduled at 7 days before — repeating the charge amount and the cancellation link.
 
-      *How to cancel.* You can cancel any subscription or trial online, at any time, without contacting support, in Settings → Billing inside Grace. The cancel control is at least as easy to find and use as the sign-up flow. You may also email billing@theobeliskstudio.com.
+      *How to cancel.* You can cancel any subscription or trial online, at any time, without contacting support, in Settings → Billing inside Grace. The cancel control is at least as easy to find and use as the sign-up flow. You may also email finance@theobeliskstudio.com.
 
       *California rights.* California subscribers may exercise their cancellation rights under California Business & Professions Code §17600 et seq., which this section is designed to satisfy.
 
@@ -62,7 +62,7 @@ sections:
     body: |
       Cancellations end your subscription at the close of the current period; we do not refund the unused portion of a paid period.
 
-      If you believe you were charged in error — for example, a duplicate charge, a charge after a successful cancellation, or a charge on a closed account — email billing@theobeliskstudio.com within 30 days of the charge and we will review the case. Where we agree we charged in error, we will refund the disputed amount through the original payment method.
+      If you believe you were charged in error — for example, a duplicate charge, a charge after a successful cancellation, or a charge on a closed account — email finance@theobeliskstudio.com within 30 days of the charge and we will review the case. Where we agree we charged in error, we will refund the disputed amount through the original payment method.
 
       For promotional trials that auto-convert to paid subscriptions, the conversion charge follows the same rule: cancel before the trial ends to avoid the charge; once the charge is processed, the no-refund-of-unused-portion rule applies to the converted period.
 
