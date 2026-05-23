@@ -16,6 +16,7 @@ footer:
         - { label: About, href: "/#about" }
         - { label: Work, href: "/#offerings" }
         - { label: Partnership, href: /partnership }
+        - { label: Product, href: /product }
         - { label: Grace guide, href: /grace/guide }
     - label: Contact
       links:

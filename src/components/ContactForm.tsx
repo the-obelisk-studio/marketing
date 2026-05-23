@@ -4,7 +4,7 @@
 // Function landing in commit 6). Until that ships, falls back to a
 // mailto: link for hello@theobeliskstudio.com.
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 type Status = "idle" | "submitting" | "success" | "error"
 
@@ -13,6 +13,15 @@ type Props = { topics: string[] }
 export function ContactForm({ topics }: Props) {
   const [status, setStatus] = useState<Status>("idle")
   const [error, setError] = useState<string | null>(null)
+  // Prefill the topic from ?topic= query param — used by the /product
+  // page's "Request beta access" CTA to land on the form with Grace
+  // already selected. Read at mount so the static-export prerender
+  // doesn't see it (window-only).
+  const [initialTopic, setInitialTopic] = useState<string>("")
+  useEffect(() => {
+    const q = new URLSearchParams(window.location.search).get("topic")
+    if (q && topics.includes(q)) setInitialTopic(q)
+  }, [topics])
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -74,7 +83,7 @@ export function ContactForm({ topics }: Props) {
 
       <div className="form-field">
         <label htmlFor="topic">I'm reaching out about <span className="req">*</span></label>
-        <select id="topic" name="topic" required defaultValue="">
+        <select id="topic" name="topic" required key={initialTopic} defaultValue={initialTopic}>
           <option value="" disabled>Pick one</option>
           {topics.map(t => <option key={t} value={t}>{t}</option>)}
         </select>

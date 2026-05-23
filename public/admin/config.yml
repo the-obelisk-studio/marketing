@@ -336,6 +336,162 @@ collections:
                   - { name: label, widget: string }
                   - { name: href, widget: string }
 
+      # ── Product (long-form sales) ────────────────────────────────
+      - name: product
+        label: "Product (long-form)"
+        file: content/product.yml
+        format: yaml
+        fields:
+          - name: hero
+            widget: object
+            fields:
+              - { name: eyebrow, widget: string, required: false }
+              - { name: title, widget: string }
+              - { name: sub, widget: text }
+              - name: primaryCta
+                widget: object
+                fields:
+                  - { name: label, widget: string }
+                  - { name: href, widget: string }
+              - name: secondaryCta
+                widget: object
+                required: false
+                fields:
+                  - { name: label, widget: string }
+                  - { name: href, widget: string }
+          - name: painCards
+            widget: object
+            fields:
+              - { name: kicker, widget: string }
+              - { name: heading, widget: string }
+              - name: cards
+                widget: list
+                fields:
+                  - { name: scenario, widget: text }
+                  - { name: response, widget: text }
+          - name: dotSystem
+            widget: object
+            fields:
+              - { name: kicker, widget: string }
+              - { name: heading, widget: string }
+              - { name: body, widget: text, required: false }
+              - name: dots
+                widget: list
+                fields:
+                  - { name: color, widget: select, options: [blue, gold, green] }
+                  - { name: label, widget: string }
+                  - { name: detail, widget: text }
+              - { name: closingLine, widget: string, required: false }
+          - name: workflow
+            widget: object
+            fields:
+              - { name: kicker, widget: string }
+              - { name: heading, widget: string }
+              - { name: body, widget: text, required: false }
+              - name: steps
+                widget: list
+                fields:
+                  - { name: label, widget: string }
+                  - { name: detail, widget: text, required: false }
+              - { name: timeToValue, widget: text, required: false }
+          - name: roles
+            widget: object
+            fields:
+              - { name: kicker, widget: string }
+              - { name: heading, widget: string }
+              - { name: body, widget: text, required: false }
+              - name: tiles
+                widget: list
+                fields:
+                  - { name: role, widget: string }
+                  - name: gives
+                    widget: list
+                    field: { name: give, widget: string }
+          - name: compliance
+            widget: object
+            fields:
+              - { name: kicker, widget: string }
+              - { name: heading, widget: string }
+              - { name: body, widget: text, required: false }
+              - name: profiles
+                widget: list
+                field: { name: profile, widget: string }
+              - name: features
+                widget: list
+                field: { name: feature, widget: string }
+              - { name: deferralNote, widget: text, required: false }
+          - name: vault
+            widget: object
+            fields:
+              - { name: kicker, widget: string }
+              - { name: heading, widget: string }
+              - { name: body, widget: text, required: false }
+              - name: features
+                widget: list
+                field: { name: feature, widget: string }
+              - { name: tierNote, widget: string, required: false }
+          - name: whyBuilt
+            widget: object
+            fields:
+              - { name: kicker, widget: string }
+              - { name: heading, widget: string }
+              - { name: body, widget: text }
+              - name: link
+                widget: object
+                required: false
+                fields:
+                  - { name: label, widget: string }
+                  - { name: href, widget: string }
+          - name: pricing
+            widget: object
+            fields:
+              - { name: kicker, widget: string }
+              - { name: heading, widget: string }
+              - { name: body, widget: text, required: false }
+              - name: tiers
+                widget: list
+                fields:
+                  - { name: name, widget: string }
+                  - { name: tagline, widget: string, required: false }
+                  - { name: price, widget: string }
+                  - name: bullets
+                    widget: list
+                    field: { name: bullet, widget: string }
+              - { name: addonNote, widget: text, required: false }
+              - { name: betaNote, widget: text, required: false }
+              - name: fullPricingLink
+                widget: object
+                required: false
+                fields:
+                  - { name: label, widget: string }
+                  - { name: href, widget: string }
+          - name: faq
+            widget: object
+            fields:
+              - { name: kicker, widget: string }
+              - { name: heading, widget: string }
+              - name: items
+                widget: list
+                fields:
+                  - { name: q, widget: string }
+                  - { name: a, widget: text }
+          - name: finalCta
+            widget: object
+            fields:
+              - { name: heading, widget: string }
+              - { name: body, widget: text, required: false }
+              - name: primary
+                widget: object
+                fields:
+                  - { name: label, widget: string }
+                  - { name: href, widget: string }
+              - name: secondary
+                widget: object
+                required: false
+                fields:
+                  - { name: label, widget: string }
+                  - { name: href, widget: string }
+
       # ── Contact ───────────────────────────────────────────────────
       - name: contact
         label: "Contact"
