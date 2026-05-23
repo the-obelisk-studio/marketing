@@ -43,3 +43,6 @@ next-env.d.ts
 # grace guide assets — copied from the grace-docs submodule at build
 # time by scripts/copy-guide-assets.mjs. Don't check in.
 /public/grace/guide/img/
+
+# Kshitij's hand-off drop (zip + extracted contents) — review-only, not part of the repo
+/Kshitij files/
