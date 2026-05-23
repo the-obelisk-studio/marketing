@@ -322,7 +322,14 @@ collections:
               - { name: kicker, widget: string, required: false }
               - { name: heading, widget: string }
               - { name: body, widget: text, required: false }
-              - { name: productShot, label: Product screenshot, widget: image, required: false }
+              - name: shots
+                label: Screenshots
+                widget: list
+                required: false
+                summary: "{{fields.label}}"
+                fields:
+                  - { name: src, label: Image, widget: image }
+                  - { name: label, label: "Caption (e.g. 'Strip board')", widget: string, required: false }
               - { name: bullets, widget: list, required: false, field: { name: bullet, widget: string } }
           - name: cta
             widget: object

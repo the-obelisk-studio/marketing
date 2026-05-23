@@ -1,9 +1,10 @@
 # Grace product page content. Edited via Decap CMS at /admin/.
 # Schema: src/lib/schema.ts → GracePageSchema.
 #
-# grace.html is screenshot-heavy — real UI captures land via Decap
-# image uploads later. For now <ProductShot src=""> renders a dark
-# placeholder frame so the layout reads correctly.
+# Each section can carry a `shots:` list of screenshots — the first
+# is the hero, the rest populate the clickable thumb strip below.
+# Images live under /public/uploads/grace/. KK can swap/reorder via
+# Decap's image picker.
 
 hero:
   title: Grace
@@ -14,6 +15,9 @@ sections:
     heading: "Connect *everything.* Re-enter *nothing.*"
     body: |
       Grace is built around one idea: every department on a film should be working from the same picture. Breakdown feeds schedule. Schedule feeds budget. Budget feeds call sheet. Everything connects, nothing gets re-entered, and no one is working from a stale version.
+    shots:
+      - { src: /uploads/grace/per-production-dashboard.png, label: "Per-production dashboard" }
+      - { src: /uploads/grace/dashboard-home.png, label: "Studio home" }
     bullets:
       - One upload changes everything downstream.
       - The set dashboard is the schedule, live.
@@ -23,6 +27,8 @@ sections:
     heading: "Co-pilot, *not autopilot.*"
     body: |
       Every cell, row, and value in Grace carries a colored dot that tells you who made the decision. Blue means Grace suggested it. Gold means a human entered it. Green means it's verified from a signed document.
+    shots:
+      - { src: /uploads/grace/dot-system.png, label: "Breakdown · dots in every cell" }
     bullets:
       - "Blue · Grace did this."
       - "Gold · You did this."
@@ -32,24 +38,55 @@ sections:
     heading: "Plan the picture *before the picture rolls.*"
     body: |
       Script breakdown that knows scenes and elements. Scheduling and DOOD that pack locations and respect minor hours. A budget that actualizes from purchase orders. A shot list with VFX flags and storyboards. All connected, all live.
+    shots:
+      - { src: /uploads/grace/scenes-list.png, label: "Scene breakdown" }
+      - { src: /uploads/grace/element-summary.png, label: "Element summary" }
+      - { src: /uploads/grace/schedule.png, label: "Strip board" }
+      - { src: /uploads/grace/dood.png, label: "Day Out of Days" }
+      - { src: /uploads/grace/budget.png, label: "Budget · top sheet" }
+      - { src: /uploads/grace/budget-detail.png, label: "Budget · line-item detail" }
+      - { src: /uploads/grace/shot-list.png, label: "Shot list" }
+      - { src: /uploads/grace/creative-refs.png, label: "Creative refs" }
+      - { src: /uploads/grace/locations.png, label: "Locations" }
 
   - kicker: "04 · Production"
     heading: "Every department, *working from the same picture.*"
     body: |
       Call sheets that build themselves from the schedule. Time cards that prefill from call time + meal duration. A set dashboard tracking actuals against the strip plan. Script supervisor notes, editor log, VFX flags — every department's daily work in one tool.
+    shots:
+      - { src: /uploads/grace/day1-approved.png, label: "Call sheet · approved" }
+      - { src: /uploads/grace/set-dashboard.png, label: "Set dashboard · live" }
+      - { src: /uploads/grace/set-dashboard-mobile-modes.png, label: "Set dashboard · mobile · light & dark" }
+      - { src: /uploads/grace/timecards-day1.png, label: "Timecards" }
+      - { src: /uploads/grace/script-supervisor.png, label: "Script supervisor" }
+      - { src: /uploads/grace/editor-log.png, label: "Editor log" }
+      - { src: /uploads/grace/vfx.png, label: "VFX tracking" }
 
   - kicker: "05 · Grace AI"
     heading: "A co-pilot *that knows your production.*"
     body: |
       The chat panel reads the production state and answers questions in context. Why is this scene's HMU so long? Which crew member's call time conflicts with a turnaround? What's our French-hours exposure today? Trained on industry compliance — IATSE, DGA, SAG, Teamsters thresholds built in.
+    shots:
+      - { src: /uploads/grace/grace-ai-panel.png, label: "Grace · open on the strip board" }
 
   - kicker: "06 · The Vault"
     heading: "Send screeners. *Stay in control.*"
     body: |
       Magic-link screener portal with forensic watermarking, device locking, time-bound access codes. DIT pipeline from set offload through dailies delivery. Editorial gets a clean editor log + EDL + FCPXML for turnover.
+    shots:
+      - { src: /uploads/grace/dit-pipeline.png, label: "DIT pipeline" }
+      - { src: /uploads/grace/dailies.png, label: "Dailies delivery" }
+      - { src: /uploads/grace/screeners.png, label: "Screeners · watermarked" }
 
   - kicker: "07 · Operations"
     heading: "The unglamorous work, *handled.*"
+    shots:
+      - { src: /uploads/grace/org-settings.png, label: "Org settings" }
+      - { src: /uploads/grace/access.png, label: "Access control · per person" }
+      - { src: /uploads/grace/cast-roster.png, label: "Cast roster · SAG-AFTRA" }
+      - { src: /uploads/grace/crew-roster.png, label: "Crew roster · IATSE rates" }
+      - { src: /uploads/grace/compliance.png, label: "Compliance · union profiles" }
+      - { src: /uploads/grace/billing.png, label: "Billing · floating pool" }
     bullets:
       - "Union profiles, *built in.*"
       - "The right people, *the right view.*"

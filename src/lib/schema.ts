@@ -212,13 +212,22 @@ export const PostPageSchema = z.object({
   }).optional(),
 })
 
+// Per-section gallery item. `src` points to a Decap-managed upload
+// under /uploads/grace/. `label` shows under the active thumb in the
+// strip — short ("Strip board", "DOOD grid") — and is optional so a
+// single-shot section doesn't need to invent a label.
+export const GraceShotSchema = z.object({
+  src: z.string(),
+  label: z.string().optional(),
+})
+
 export const GracePageSchema = z.object({
   hero: HeroSchema,
   sections: z.array(z.object({
     kicker: z.string().optional(),
     heading: z.string(),
     body: z.string().optional(),
-    productShot: z.string().optional(),
+    shots: z.array(GraceShotSchema).default([]),
     bullets: z.array(z.string()).default([]),
   })).default([]),
   cta: z.object({
@@ -444,6 +453,7 @@ export type IndexContent = z.infer<typeof IndexPageSchema>
 export type PartnershipContent = z.infer<typeof PartnershipPageSchema>
 export type PostContent = z.infer<typeof PostPageSchema>
 export type GraceContent = z.infer<typeof GracePageSchema>
+export type GraceShot = z.infer<typeof GraceShotSchema>
 export type ProductContent = z.infer<typeof ProductPageSchema>
 export type ContactContent = z.infer<typeof ContactPageSchema>
 export type PrivacyContent = z.infer<typeof PrivacyPageSchema>
