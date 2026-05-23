@@ -21,17 +21,17 @@ Mostly: check the call sheet the night before to confirm your call time, scenes,
 
 For your specific department:
 
-- **Sound Mixer** — open Production → Set Dashboard during the day to see live strip status. (Sound-specific tools like wireless frequency planning aren't in Grace yet — they're on the roadmap.)
-- **Wardrobe / HMU** — Production → Script Sup shows continuity notes per element. Your dept's notes are tagged with the capturing department (HMU, Wardrobe, etc.).
+- **Sound Mixer** — open On-Set → Set Dashboard during the day to see live strip status. (Sound-specific tools like wireless frequency planning aren't in Grace yet — they're on the roadmap.)
+- **Wardrobe / HMU** — Coverage → Script Sup shows continuity notes per element. Your dept's notes are tagged with the capturing department (HMU, Wardrobe, etc.).
 - **Gaffer / Key Grip** — same set dashboard view. Lighting plans aren't in Grace yet either.
-- **Locations / Transport** — Pre-Pro → Locations for addresses, hospital, parking.
+- **Locations / Transport** — Schedule & Locations → Locations for addresses, hospital, parking.
 
 ## What you can write to
 
 By default, T2 dept heads have **read-only access to everything**. The Producer can grant per-section write overrides if you need them — for example, "Wardrobe HoD also needs write on character_looks" → Producer adds an override on your crew row. See [Access control](../reference/access-control.md).
 
 You'll always be able to write to:
-- Your own creative refs (Production → Creative) — see [the creative refs section](../workflows/03-pre-production.md).
+- Your own creative refs (Creative Prep → Creative) — see [the creative refs section](../workflows/03-pre-production.md).
 
 ## What you can't do
 

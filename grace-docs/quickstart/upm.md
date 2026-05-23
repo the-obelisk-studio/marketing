@@ -7,8 +7,8 @@ You have **T1 access** — every section, every action. The producer/owner gave 
 ## Day one
 
 1. Open the production dashboard for the show you're on (or the home grid if managing several). See [Production setup](../workflows/01-production-setup.md) if it's a brand-new prod.
-2. Make sure the schedule has dates that match real-world reality. Pre-Pro → Schedule.
-3. Bring up the crew + cast rosters and confirm everyone you expect is invited. Settings → Access for invites; Production → Crew/Cast for the rosters themselves.
+2. Make sure the schedule has dates that match real-world reality. Schedule & Locations → Schedule.
+3. Bring up the crew + cast rosters and confirm everyone you expect is invited. Settings → Access for invites; Roster → Crew/Cast for the rosters themselves.
 4. If you're working with a 1st AD, hand them the keys — they'll live in Call Sheets and Set Dashboard.
 
 ![Schedule](../img/workflows/03-pre-production/schedule.png)
@@ -19,7 +19,7 @@ You have **T1 access** — every section, every action. The producer/owner gave 
 - **Budget** — categories → accounts → lines → items. Items can be flagged `manual` (locked from Grace's auto-cascades) or `grace` (Grace re-suggests on data change). See [Pre-production](../workflows/03-pre-production.md).
 - **POs** — Purchase Orders, one PO per budget line/item. Status cycles pending → approved → paid. Per-PO actuals roll up to the budget actuals card on the dashboard.
 - **Compliance** — daily timesheet PDFs, exhibit G, turnaround waivers. See [Compliance](../workflows/06-compliance.md).
-- **Vendors** — every PO points at a vendor. Vendor list lives at Pre-Pro → Vendors.
+- **Vendors** — every PO points at a vendor. Vendor list lives at Budget → Vendors.
 
 ## When you're handing off to the 1st AD
 

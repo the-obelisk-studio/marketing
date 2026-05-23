@@ -13,7 +13,7 @@ Run through these at company wrap:
 - [ ] **Script supervisor reports** — same, but the continuity-focused variant.
 - [ ] **Daily timesheet PDFs** — from [Timecards](../reference/timecards.md), one per shoot day for both crew + cast.
 - [ ] **Compliance documents** — make sure all 8 doc types have their `executed` versions uploaded for each shoot day they were generated.
-- [ ] **Final budget actuals** — Pre-Pro → Budget shows current state including all POs. Snapshot to PDF for accounting.
+- [ ] **Final budget actuals** — Budget → Budget shows current state including all POs. Snapshot to PDF for accounting.
 
 ## What to do with the org after wrap
 

@@ -80,7 +80,7 @@ From the script sup detail pane, you'll see a **CREATIVE REFS** strip showing an
 
 Everything you log here drives:
 
-- **Editor log** — Production → Editor Log is the circled-takes view by default, with an option to show all takes.
+- **Editor log** — Coverage → Editor Log is the circled-takes view by default, with an option to show all takes.
 - **Camera report PDF** — exports a daily camera report from your take data.
 - **Script supervisor report PDF** — exports a continuity-focused report.
 - **Editor log exports** — EDL / FCPXML / CSV / PDF — see [Editor log](09-editor-log.md).

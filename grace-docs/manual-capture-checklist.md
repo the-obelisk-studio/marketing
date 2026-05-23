@@ -38,7 +38,7 @@ Save each PNG at the path listed below. Drop them straight into `~/grace-docs/im
 ## 2 — Quickstart (1 shot)
 
 - [ ] **`quickstart/sidebar-overview.png`** — `/dashboard/breakdown`
-  Just the sidebar — crop tightly to it. Shows the 5 sections (Breakdown / Pre-Pro / Production / Vault / Settings) expanded. Used for "where to find things."
+  Just the sidebar — crop tightly to it. Shows the 9 sections (Story / Schedule & Locations / Budget / Creative Prep / Roster / On-Set / Coverage / The Vault / Settings) expanded. Used for "where to find things."
 
 ## 3 — Workflow 02: Script → Breakdown (3 shots)
 

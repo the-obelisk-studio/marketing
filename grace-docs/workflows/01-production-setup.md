@@ -27,7 +27,7 @@ Fields:
 - **Working title** — what you'll call the production internally. Can be different from the final film title.
 - **Format** — feature / short / TV series / mini-series / pilot / commercial / documentary / music video.
 - **Shoot days** — total scheduled days. Determines the schedule's day count + DOOD width.
-- **Shoot start date** — calendar date of day 1. Subsequent days skip Saturday/Sunday by default; you can override individual days from the production settings if you're shooting weekends.
+- **Shoot start date** — calendar date of day 1. Subsequent days default to the next calendar day, including weekends. If your production has dark days (e.g., shooting Mon–Fri only), set the date for any affected day from the Schedule page or the Call Sheet — those edits sync everywhere.
 - **Union status** — sag_aftra / iatse / non_union / mixed / tbd. Drives compliance profile (turnaround, meal, OT thresholds).
 - **Production size** — Low Budget / Ultra Low Budget / Short Project Agreement / etc. Surfaces SAG-specific compliance variants.
 - **Production company** — the production company that shows on call sheets. By default it's the org name; owner can override per-production.

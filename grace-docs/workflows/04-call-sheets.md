@@ -4,7 +4,7 @@ The 1st AD's daily cycle. Every shoot day starts the night before — the AD ass
 
 ## 1. Open the day
 
-Production → Call Sheet. The day-stepper at the top lets you navigate to the day you're building. Day 1 is the first shoot day from the production's `shootStartDate`.
+On-Set → Call Sheet. The day-stepper at the top lets you navigate to the day you're building. Day 1 is the first shoot day from the production's `shootStartDate`.
 
 ![Day 1 approved](../img/workflows/04-call-sheets/day1-approved.png)
 
@@ -52,7 +52,7 @@ The email comes from `callsheet@theobeliskstudio.com` with `From: Grace Producti
 
 ## 7. Crew + cast rosters
 
-Production → Crew and Production → Cast are where the actual roster lives.
+Roster → Crew and Roster → Cast are where the actual roster lives.
 
 ![Crew roster](../img/workflows/04-call-sheets/crew-roster.png)
 ![Cast roster](../img/workflows/04-call-sheets/cast-roster.png)

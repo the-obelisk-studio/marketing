@@ -7,8 +7,8 @@ Grace doesn't replace your creative judgment or your storyboarding workflow. Wha
 ## Day one
 
 1. Read [the breakdown](../workflows/02-script-to-breakdown.md). Grace has parsed your script into scenes and elements (cast, props, stunts, etc.) — review the parse and accept/reject the AI's calls. This is your master list for the show.
-2. Build your shot list. Pre-Pro → Shot List. Per-scene shot rows with size, angle, lens, movement, description. The DP works from this same list.
-3. Capture creative refs. Production → Creative. Drop in mood boards, frame references, prevs. Tag by scene so they show up on the relevant pages.
+2. Build your shot list. Creative Prep → Shot List. Per-scene shot rows with size, angle, lens, movement, description. The DP works from this same list.
+3. Capture creative refs. Creative Prep → Creative. Drop in mood boards, frame references, prevs. Tag by scene so they show up on the relevant pages.
 
 ![Scenes list](../img/workflows/02-script-to-breakdown/scenes-list.png)
 
@@ -25,7 +25,7 @@ On a shoot day, you spend more time on set than on Grace. When you are in Grace,
 
 ## Picking takes
 
-After each scene wraps, head to Production → Script Sup or Production → Editor Log to mark circled takes and rank director picks. Picks flow through to the editor log exports (EDL / FCPXML / CSV) that go to the editor at wrap.
+After each scene wraps, head to Coverage → Script Sup or Coverage → Editor Log to mark circled takes and rank director picks. Picks flow through to the editor log exports (EDL / FCPXML / CSV) that go to the editor at wrap.
 
 See [Script supervisor](../workflows/07-script-supervisor.md) for the continuity + take workflow.
 

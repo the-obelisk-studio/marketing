@@ -4,7 +4,7 @@ You're a **T2 role** focused on flagging VFX shots and tracking capture readines
 
 ## Day one
 
-1. Open Production → VFX. Grace may have flagged some shots already via the Claude Haiku VFX-suggest pass — review and accept/dismiss those suggestions.
+1. Open Coverage → VFX. Grace may have flagged some shots already via the Claude Haiku VFX-suggest pass — review and accept/dismiss those suggestions.
 2. Walk through the shot list scene by scene. For each shot that needs VFX, flag it.
 3. Set the capture requirements per flagged shot: clean plate / tracking markers / HDRI / chrome+gray ball / measurements / reference stills / LIDAR.
 

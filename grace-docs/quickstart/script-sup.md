@@ -4,7 +4,7 @@ You're a **T2 role** focused on continuity and takes. Scenes are hidden by defau
 
 ## Day one
 
-1. Open Production → Script Sup. This is your home dashboard.
+1. Open Coverage → Script Sup. This is your home dashboard.
 2. Walk through today's scenes (left panel) → today's shots (middle) → take entry (right). The takes you log here flow through to the [editor log](../workflows/09-editor-log.md) at wrap.
 3. Add continuity notes per element as you go. Tap an element on the scene side to attach a note.
 

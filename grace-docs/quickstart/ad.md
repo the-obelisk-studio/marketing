@@ -8,10 +8,10 @@ You have **T2 access** with `callSheets:write` — full write on the call sheet 
 
 In rough order, every shoot day:
 
-1. **Build tomorrow's call sheet** — the night before. Production → Call Sheet → pick the day. Grace pre-populates from the schedule strips; you set general call, lock per-row call-time overrides (HMU chains, pickup actors), add department notes. See [Call sheets](../workflows/04-call-sheets.md).
+1. **Build tomorrow's call sheet** — the night before. On-Set → Call Sheet → pick the day. Grace pre-populates from the schedule strips; you set general call, lock per-row call-time overrides (HMU chains, pickup actors), add department notes. See [Call sheets](../workflows/04-call-sheets.md).
 2. **Approve + send** — once it looks right, mark approved and send to crew + cast. Each recipient gets a Grace-branded email with a unique magic link to view the day's sheet.
-3. **Run the day** — Production → Set Dashboard. Strip timeline, current scene, meal timer, OT clock, projected wrap, turnaround compliance. Mark strips prepping → shooting → wrapped as the day goes. See [Set Dashboard](../workflows/05-set-dashboard.md).
-4. **Capture timecards** — Production → Timecards. Grace pre-fills based on call time + meal duration; you override the actuals as people arrive/wrap. See [Timecards](../reference/timecards.md).
+3. **Run the day** — On-Set → Set Dashboard. Strip timeline, current scene, meal timer, OT clock, projected wrap, turnaround compliance. Mark strips prepping → shooting → wrapped as the day goes. See [Set Dashboard](../workflows/05-set-dashboard.md).
+4. **Capture timecards** — On-Set → Timecards. Grace pre-fills based on call time + meal duration; you override the actuals as people arrive/wrap. See [Timecards](../reference/timecards.md).
 5. **Generate DPR** — Daily Production Report, button on the set dashboard. PDF goes to UPM/producer.
 6. **Repeat** — open the next day's sheet.
 

@@ -15,7 +15,7 @@ You created the Grace organization (or were named the owner). The credit card on
 You're not in Grace every day during a shoot. The AD and UPM are. Your daily check-ins are likely:
 
 - **Production dashboard** — open `/dashboard/production` for whichever show is active. The at-a-glance cards (compliance, call sheet status, budget snapshot, crew/cast on set, today's scenes, shot list progress) tell you the state of the production in 30 seconds. See [Dashboard cards](../reference/dashboard-cards.md) for the owner view.
-- **Budget snapshot** — total committed vs spent vs pending. The card on the dashboard surfaces a percent bar; for line-item depth, drill into Pre-Pro → Budget.
+- **Budget snapshot** — total committed vs spent vs pending. The card on the dashboard surfaces a percent bar; for line-item depth, drill into Budget → Budget.
 - **Compliance flags** — red alerts on the dashboard mean something needs your attention or the AD's (turnaround violation, minor hours, unapproved call sheet).
 
 ![Per-production dashboard](../img/concepts/per-production-dashboard.png)

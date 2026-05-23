@@ -138,7 +138,7 @@ Status cycles: `draft` → `pending_signature` → `executed` → `expired`/`sup
 
 ## Creative refs
 
-`/dashboard/production/creative` (this lives under Production not Pre-Pro, but it's mostly used during pre-pro).
+`/dashboard/production/creative` (in the sidebar this lives under **Creative Prep** alongside Shot List + Props).
 
 ![Creative refs](../img/workflows/07-script-supervisor/creative-refs.png)
 

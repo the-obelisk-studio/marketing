@@ -1,6 +1,6 @@
 # Timecards
 
-`Dashboard → Production → Timecards`. Per-day, per-crew/cast actuals. The dot system applies here heavily — the difference between Grace's prefill (blue) and a human override (gold) is the audit trail.
+`Dashboard → On-Set → Timecards`. Per-day, per-crew/cast actuals. The dot system applies here heavily — the difference between Grace's prefill (blue) and a human override (gold) is the audit trail.
 
 ![Timecards day 1](../img/workflows/06-compliance/timecards-day1.png)
 

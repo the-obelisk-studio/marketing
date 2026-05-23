@@ -31,9 +31,13 @@ In the sidebar, each top-level section has an accent dot color:
 
 | Section | Color |
 |---|---|
-| Breakdown | Gold |
-| Pre-Pro | Purple |
-| Production | Green |
+| Story | Gold |
+| Schedule & Locations | Purple |
+| Budget | Green |
+| Creative Prep | Orange |
+| Roster | Blue |
+| On-Set | Red |
+| Coverage | Purple |
 | The Vault | Blue |
 | Settings | Muted gray |
 

@@ -14,7 +14,7 @@ The companion cards above the day header surface things every department needs t
 
 A banner with current temp + condition + wind, an hourly icon row across the shoot window, and a sunset countdown when today has EXT scenes. If precipitation crosses 40% within the shoot window and you're scheduled for EXT, you get a "RAIN AT 3PM" alert.
 
-Driven by Open-Meteo (free, browser-side fetch). Requires the day's primary location to have lat/lon geocoded — set this at Pre-Pro → Locations.
+Driven by Open-Meteo (free, browser-side fetch). Requires the day's primary location to have lat/lon geocoded — set this at Schedule & Locations → Locations.
 
 ### Day header
 
