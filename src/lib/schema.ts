@@ -237,108 +237,6 @@ export const GracePageSchema = z.object({
   }).optional(),
 })
 
-// ── /product page ───────────────────────────────────────────────
-// The conversion-focused product page (long-form sales). Distinct
-// from /grace (the basic overview) and /grace/guide (post-purchase
-// docs). All fields editable through Decap.
-
-export const ProductPageSchema = z.object({
-  hero: z.object({
-    eyebrow: z.string().optional(),
-    title: z.string(),
-    sub: z.string(),
-    primaryCta: LinkSchema,
-    secondaryCta: LinkSchema.optional(),
-  }),
-  painCards: z.object({
-    kicker: z.string().default("The pain it kills"),
-    heading: z.string(),
-    cards: z.array(z.object({
-      scenario: z.string(),                    // "Tomorrow's call sheet is hostage..."
-      response: z.string(),                    // What Grace does about it
-    })).default([]),
-  }),
-  dotSystem: z.object({
-    kicker: z.string().default("The Dot System"),
-    heading: z.string(),
-    body: z.string().optional(),
-    dots: z.array(z.object({
-      color: z.enum(["blue", "gold", "green"]),
-      label: z.string(),
-      detail: z.string(),
-    })).default([]),
-    closingLine: z.string().optional(),        // The single-sentence closer
-  }),
-  workflow: z.object({
-    kicker: z.string().default("One workflow, end to end"),
-    heading: z.string(),
-    body: z.string().optional(),
-    steps: z.array(z.object({
-      label: z.string(),                       // "Script upload"
-      detail: z.string().optional(),
-    })).default([]),
-    timeToValue: z.string().optional(),        // "Upload to first call sheet: 12 minutes"
-  }),
-  roles: z.object({
-    kicker: z.string().default("Built for the people on set"),
-    heading: z.string(),
-    body: z.string().optional(),
-    tiles: z.array(z.object({
-      role: z.string(),                        // "1st AD"
-      gives: z.array(z.string()).default([]),  // 2-3 short benefits
-    })).default([]),
-  }),
-  compliance: z.object({
-    kicker: z.string().default("Built-in compliance"),
-    heading: z.string(),
-    body: z.string().optional(),
-    profiles: z.array(z.string()).default([]), // ["IATSE", "DGA", "SAG"...]
-    features: z.array(z.string()).default([]), // ["Turnaround thresholds enforced"...]
-    deferralNote: z.string().optional(),       // Honesty about 5.3b DocuSeal
-  }),
-  vault: z.object({
-    kicker: z.string().default("The Vault"),
-    heading: z.string(),
-    body: z.string().optional(),
-    features: z.array(z.string()).default([]),
-    tierNote: z.string().optional(),           // "Studio-only" caveat
-  }),
-  whyBuilt: z.object({
-    kicker: z.string().default("Why we built this"),
-    heading: z.string(),
-    body: z.string(),
-    link: LinkSchema.optional(),               // → /partnership
-  }),
-  pricing: z.object({
-    kicker: z.string().default("Pricing"),
-    heading: z.string(),
-    body: z.string().optional(),
-    tiers: z.array(z.object({
-      name: z.string(),                        // "Standard" / "Studio"
-      tagline: z.string().optional(),
-      price: z.string(),                       // "$X / month"
-      bullets: z.array(z.string()).default([]),
-    })).default([]),
-    addonNote: z.string().optional(),          // Add-ons summary
-    betaNote: z.string().optional(),           // Closed-beta context
-    fullPricingLink: LinkSchema.optional(),    // → app pricing page
-  }),
-  faq: z.object({
-    kicker: z.string().default("FAQ"),
-    heading: z.string(),
-    items: z.array(z.object({
-      q: z.string(),
-      a: z.string(),
-    })).default([]),
-  }),
-  finalCta: z.object({
-    heading: z.string(),
-    body: z.string().optional(),
-    primary: LinkSchema,
-    secondary: LinkSchema.optional(),
-  }),
-})
-
 export const ContactPageSchema = z.object({
   hero: HeroPillsHeroSchema,
   info: z.array(z.object({
@@ -433,7 +331,6 @@ export const CONTENT_SCHEMAS = {
   "partnership.yml": PartnershipPageSchema,
   "post.yml": PostPageSchema,
   "grace.yml": GracePageSchema,
-  "product.yml": ProductPageSchema,
   "contact.yml": ContactPageSchema,
   "privacy.yml": PrivacyPageSchema,
   "terms.yml": TermsPageSchema,
@@ -454,7 +351,6 @@ export type PartnershipContent = z.infer<typeof PartnershipPageSchema>
 export type PostContent = z.infer<typeof PostPageSchema>
 export type GraceContent = z.infer<typeof GracePageSchema>
 export type GraceShot = z.infer<typeof GraceShotSchema>
-export type ProductContent = z.infer<typeof ProductPageSchema>
 export type ContactContent = z.infer<typeof ContactPageSchema>
 export type PrivacyContent = z.infer<typeof PrivacyPageSchema>
 export type PrivacySection = z.infer<typeof PrivacySectionSchema>
