@@ -2,7 +2,6 @@
 # Schema: src/lib/schema.ts → PostPageSchema.
 
 hero:
-  title: ""
   headline: "A finishing house, *run by working filmmakers.*"
   positioning: "Edit, color, and finishing — supervised by the people who shot the picture."
   meta:

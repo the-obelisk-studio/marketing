@@ -142,8 +142,12 @@ export const IndexPageSchema = z.object({
   }),
 })
 
-// Hero "pill" badges used on partnership/post page heroes.
-export const HeroPillsHeroSchema = HeroSchema.extend({
+// Hero "pill" badges used on partnership/post/contact page heroes.
+// These pages don't render an <h1> from `title`; the headline+positioning
+// block carries the role. Title is intentionally omitted so Decap doesn't
+// surface a required-but-unused field.
+export const HeroPillsHeroSchema = z.object({
+  eyebrow: z.string().optional(),
   headline: z.string().optional(),       // matches "Two studios, *one picture.*" treatment
   positioning: z.string().optional(),    // sub-paragraph under headline
   meta: z.array(z.string()).default([]), // "Burbank · Los Angeles", "Independent Studio"
@@ -212,29 +216,177 @@ export const PostPageSchema = z.object({
   }).optional(),
 })
 
-// Per-section gallery item. `src` points to a Decap-managed upload
-// under /uploads/grace/. `label` shows under the active thumb in the
-// strip — short ("Strip board", "DOOD grid") — and is optional so a
-// single-shot section doesn't need to invent a label.
-export const GraceShotSchema = z.object({
+// ── Grace page (the long-form product walkthrough at /grace) ───
+//
+// Every section here mirrors a block in src/app/grace/page.tsx. The
+// page renders a section iff its YAML key is present, so dropping or
+// reordering blocks via Decap rearranges the page — but layout, type,
+// and animation are owned by the React component, not YAML.
+//
+// `heading` + `headingMuted`: the design splits each section title into
+// a primary clause and a de-emphasized clause ("Connect everything." +
+// "Re-enter nothing."). Two fields instead of one with embedded markup
+// so Decap can show two clean inputs.
+
+const GraceShotSchema = z.object({
   src: z.string(),
-  label: z.string().optional(),
+  caption: z.string().optional(),
+  alt: z.string().optional(),
+  wide: z.boolean().optional(),
+})
+
+const GraceRowSchema = z.object({
+  layout: z.enum(["one-col", "two-col", "three-col", "featured"]),
+  shots: z.array(GraceShotSchema).min(1),
+})
+
+const GraceCtaButtonSchema = z.object({
+  label: z.string(),
+  href: z.string(),
+})
+
+const GraceSectionHeadSchema = z.object({
+  num: z.string(),
+  numLabel: z.string().optional(),
+  heading: z.string(),
+  headingMuted: z.string().optional(),
+  body: z.string().optional(),
 })
 
 export const GracePageSchema = z.object({
-  hero: HeroSchema,
-  sections: z.array(z.object({
-    kicker: z.string().optional(),
-    heading: z.string(),
-    body: z.string().optional(),
-    shots: z.array(GraceShotSchema).default([]),
+  hero: z.object({
+    badge: z.string().optional(),
+    title: z.string(),
+    titleMuted: z.string().optional(),
+    sub: z.string(),
+    primaryCta: GraceCtaButtonSchema,
+    secondaryCta: GraceCtaButtonSchema,
+    shot: GraceShotSchema,
+  }),
+
+  problems: GraceSectionHeadSchema.extend({
+    items: z.array(z.object({
+      scenario: z.string(),
+      response: z.string(),
+    })).min(1),
+  }),
+
+  thesis: GraceSectionHeadSchema.extend({
+    points: z.array(z.string()).default([]),
+    flow: z.object({
+      inputsLabel: z.string().default("Inputs"),
+      inputs: z.array(z.string()).min(1),
+      hub: z.object({
+        label: z.string(),
+        sub: z.string().optional(),
+        meta: z.string().optional(),
+      }),
+      outputsLabel: z.string().default("Outputs"),
+      outputs: z.array(z.string()).min(1),
+      ariaLabel: z.string().optional(),
+    }),
+  }),
+
+  dots: GraceSectionHeadSchema.extend({
+    items: z.array(z.object({
+      color: z.enum(["blue", "gold", "green"]),
+      label: z.string(),
+      detail: z.string(),
+    })).min(1),
+    closer: z.string().optional(),
+    shot: GraceShotSchema.optional(),
+  }),
+
+  cascade: GraceSectionHeadSchema.extend({
+    steps: z.array(z.object({
+      label: z.string(),
+      detail: z.string(),
+    })).min(1),
+    stat: z.object({
+      num: z.string(),
+      label: z.string(),
+    }).optional(),
+  }),
+
+  preProduction: GraceSectionHeadSchema.extend({
+    rows: z.array(GraceRowSchema).default([]),
+  }),
+
+  production: GraceSectionHeadSchema.extend({
+    rows: z.array(GraceRowSchema).default([]),
+  }),
+
+  graceAi: GraceSectionHeadSchema.extend({
+    shot: GraceShotSchema.optional(),
+  }),
+
+  departments: GraceSectionHeadSchema.extend({
+    items: z.array(z.object({
+      role: z.string(),
+      gives: z.array(z.string()).min(1),
+    })).min(1),
+  }),
+
+  compliance: GraceSectionHeadSchema.extend({
+    unions: z.array(z.object({
+      label: z.string(),
+      active: z.boolean().default(false),
+    })).default([]),
     bullets: z.array(z.string()).default([]),
-  })).default([]),
-  cta: z.object({
+    deferralNote: z.string().optional(),
+  }),
+
+  vault: GraceSectionHeadSchema.extend({
+    features: z.array(z.object({
+      title: z.string(),
+      body: z.string(),
+    })).default([]),
+    shots: z.array(GraceShotSchema).default([]),
+    tierNote: z.string().optional(),
+  }),
+
+  operations: GraceSectionHeadSchema.extend({
+    items: z.array(z.object({
+      title: z.string(),
+      body: z.string(),
+    })).default([]),
+    rows: z.array(GraceRowSchema).default([]),
+  }),
+
+  whyBuilt: GraceSectionHeadSchema.extend({
+    paragraphs: z.array(z.string()).min(1),
+    link: LinkSchema.optional(),
+    shot: GraceShotSchema.optional(),
+  }),
+
+  pricing: GraceSectionHeadSchema.extend({
+    tiers: z.array(z.object({
+      name: z.string(),
+      desc: z.string(),
+      price: z.string(),
+      annual: z.string().optional(),
+      bullets: z.array(z.string()).default([]),
+      featured: z.boolean().default(false),
+      badge: z.string().optional(),  // shown on the featured tier ("Recommended")
+    })).min(1),
+    tierCta: GraceCtaButtonSchema,
+    note: z.string().optional(),
+  }),
+
+  faq: GraceSectionHeadSchema.extend({
+    items: z.array(z.object({
+      q: z.string(),
+      a: z.string(),
+    })).min(1),
+  }),
+
+  finalCta: z.object({
     heading: z.string(),
+    headingMuted: z.string().optional(),
     body: z.string().optional(),
-    link: LinkSchema,
-  }).optional(),
+    primaryCta: GraceCtaButtonSchema,
+    secondaryCta: GraceCtaButtonSchema.optional(),
+  }),
 })
 
 export const ContactPageSchema = z.object({
@@ -350,7 +502,6 @@ export type IndexContent = z.infer<typeof IndexPageSchema>
 export type PartnershipContent = z.infer<typeof PartnershipPageSchema>
 export type PostContent = z.infer<typeof PostPageSchema>
 export type GraceContent = z.infer<typeof GracePageSchema>
-export type GraceShot = z.infer<typeof GraceShotSchema>
 export type ContactContent = z.infer<typeof ContactPageSchema>
 export type PrivacyContent = z.infer<typeof PrivacyPageSchema>
 export type PrivacySection = z.infer<typeof PrivacySectionSchema>

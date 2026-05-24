@@ -2,7 +2,6 @@
 # Schema: src/lib/schema.ts → ContactPageSchema.
 
 hero:
-  title: ""
   headline: "Tell us what you're *working on.*"
   positioning: |
     Software, finishing, partnership, or something that doesn't fit any of those yet — we read every message ourselves.

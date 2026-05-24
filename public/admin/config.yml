@@ -140,7 +140,6 @@ collections:
             label: Hero
             widget: object
             fields:
-              - { name: title, label: Title (unused but required), widget: string, default: "" }
               - { name: headline, label: Headline (use *italics*), widget: string }
               - { name: positioning, label: Positioning, widget: string }
               - { name: meta, label: Meta strip, widget: list, field: { name: item, widget: string } }
@@ -237,7 +236,6 @@ collections:
           - name: hero
             widget: object
             fields:
-              - { name: title, widget: string, default: "" }
               - { name: headline, widget: string }
               - { name: positioning, widget: string }
               - { name: meta, widget: list, field: { name: item, widget: string } }
@@ -305,40 +303,391 @@ collections:
                   - { name: href, widget: string }
 
       # ── Grace ─────────────────────────────────────────────────────
+      # Mirrors GracePageSchema in src/lib/schema.ts. Each top-level
+      # object below maps to one section of /grace. Headings split into
+      # `heading` (primary clause) + `headingMuted` (de-emphasized clause)
+      # so the two-tone title from the design lands in two clean inputs.
       - name: grace
         label: "Grace"
         file: content/grace.yml
         format: yaml
         fields:
           - name: hero
+            label: "Hero"
             widget: object
             fields:
-              - { name: title, widget: string }
-              - { name: motto, widget: string, required: false }
-          - name: sections
-            label: Sections
-            widget: list
+              - { name: badge, label: "Badge pill (e.g. 'In Development · Closed Beta')", widget: string, required: false }
+              - { name: title, label: "Title (primary clause)", widget: string }
+              - { name: titleMuted, label: "Title (muted clause)", widget: string, required: false }
+              - { name: sub, label: "Sub-headline", widget: text }
+              - name: primaryCta
+                label: "Primary CTA"
+                widget: object
+                fields:
+                  - { name: label, widget: string }
+                  - { name: href, widget: string }
+              - name: secondaryCta
+                label: "Secondary CTA"
+                widget: object
+                fields:
+                  - { name: label, widget: string }
+                  - { name: href, widget: string }
+              - name: shot
+                label: "Hero screenshot"
+                widget: object
+                fields:
+                  - { name: src, label: "Image", widget: image }
+                  - { name: alt, label: "Alt text", widget: string, required: false }
+                  - { name: caption, label: "Caption (optional)", widget: string, required: false }
+
+          - name: problems
+            label: "01 · Problem"
+            widget: object
             fields:
-              - { name: kicker, widget: string, required: false }
-              - { name: heading, widget: string }
-              - { name: body, widget: text, required: false }
-              - name: shots
-                label: Screenshots
+              - { name: num, label: "Section number", widget: string }
+              - { name: numLabel, label: "Section label", widget: string, required: false }
+              - { name: heading, label: "Heading (primary clause)", widget: string }
+              - { name: headingMuted, label: "Heading (muted clause)", widget: string, required: false }
+              - { name: body, label: "Body", widget: text, required: false }
+              - name: items
+                label: "Problem cards"
                 widget: list
-                required: false
+                summary: "{{fields.scenario}}"
+                fields:
+                  - { name: scenario, label: "Scenario (card heading)", widget: string }
+                  - { name: response, label: "Response", widget: text }
+
+          - name: thesis
+            label: "02 · Thesis (Connect everything)"
+            widget: object
+            fields:
+              - { name: num, widget: string }
+              - { name: numLabel, widget: string, required: false }
+              - { name: heading, label: "Heading (primary clause)", widget: string }
+              - { name: headingMuted, label: "Heading (muted clause)", widget: string, required: false }
+              - { name: body, widget: text, required: false }
+              - { name: points, label: "Thesis points", widget: list, field: { name: point, widget: string } }
+              - name: flow
+                label: "Flow diagram"
+                widget: object
+                fields:
+                  - { name: ariaLabel, label: "Screen-reader description", widget: string, required: false }
+                  - { name: inputsLabel, label: "Inputs column label", widget: string, default: "Inputs" }
+                  - { name: inputs, label: "Input cards", widget: list, field: { name: card, widget: string } }
+                  - name: hub
+                    label: "Hub (center card)"
+                    widget: object
+                    fields:
+                      - { name: label, widget: string }
+                      - { name: sub, label: "Tagline", widget: string, required: false }
+                      - { name: meta, label: "Meta line", widget: string, required: false }
+                  - { name: outputsLabel, label: "Outputs column label", widget: string, default: "Outputs" }
+                  - { name: outputs, label: "Output cards", widget: list, field: { name: card, widget: string } }
+
+          - name: dots
+            label: "03 · Dot System"
+            widget: object
+            fields:
+              - { name: num, widget: string }
+              - { name: numLabel, widget: string, required: false }
+              - { name: heading, label: "Heading (primary clause)", widget: string }
+              - { name: headingMuted, label: "Heading (muted clause)", widget: string, required: false }
+              - { name: body, widget: text, required: false }
+              - name: items
+                label: "Dot cards"
+                widget: list
                 summary: "{{fields.label}}"
                 fields:
-                  - { name: src, label: Image, widget: image }
-                  - { name: label, label: "Caption (e.g. 'Strip board')", widget: string, required: false }
-              - { name: bullets, widget: list, required: false, field: { name: bullet, widget: string } }
-          - name: cta
-            widget: object
-            required: false
-            fields:
-              - { name: heading, widget: string }
-              - { name: body, widget: text, required: false }
-              - name: link
+                  - { name: color, label: "Dot color", widget: select, options: ["blue", "gold", "green"] }
+                  - { name: label, label: "Label (caps)", widget: string }
+                  - { name: detail, widget: text }
+              - { name: closer, label: "Closer line", widget: string, required: false }
+              - name: shot
+                label: "Section screenshot (optional)"
                 widget: object
+                required: false
+                fields:
+                  - { name: src, label: "Image", widget: image }
+                  - { name: caption, widget: string, required: false }
+                  - { name: alt, widget: string, required: false }
+                  - { name: wide, label: "Render at full width", widget: boolean, required: false, default: true }
+
+          - name: cascade
+            label: "04 · Workflow Cascade"
+            widget: object
+            fields:
+              - { name: num, widget: string }
+              - { name: numLabel, widget: string, required: false }
+              - { name: heading, label: "Heading (primary clause)", widget: string }
+              - { name: headingMuted, label: "Heading (muted clause)", widget: string, required: false }
+              - { name: body, widget: text, required: false }
+              - name: steps
+                label: "Cascade steps (rendered 4-per-row)"
+                widget: list
+                summary: "{{fields.label}}"
+                fields:
+                  - { name: label, label: "Step name (e.g. 'Script')", widget: string }
+                  - { name: detail, widget: text }
+              - name: stat
+                label: "Stat callout (optional)"
+                widget: object
+                required: false
+                fields:
+                  - { name: num, label: "Number / metric", widget: string }
+                  - { name: label, label: "Description", widget: string }
+
+          - name: preProduction
+            label: "05 · Pre-Production"
+            widget: object
+            fields:
+              - { name: num, widget: string }
+              - { name: numLabel, widget: string, required: false }
+              - { name: heading, label: "Heading (primary clause)", widget: string }
+              - { name: headingMuted, label: "Heading (muted clause)", widget: string, required: false }
+              - { name: body, widget: text, required: false }
+              - name: rows
+                label: "Screenshot rows"
+                widget: list
+                summary: "{{fields.layout}} — {{fields.shots.length}} shot(s)"
+                fields:
+                  - { name: layout, label: "Grid layout", widget: select, options: ["one-col", "two-col", "three-col", "featured"] }
+                  - name: shots
+                    label: "Shots in this row"
+                    widget: list
+                    summary: "{{fields.caption}}"
+                    fields:
+                      - { name: src, label: "Image", widget: image }
+                      - { name: caption, label: "Caption", widget: string, required: false }
+                      - { name: alt, label: "Alt text (defaults to caption)", widget: string, required: false }
+                      - { name: wide, label: "Wide", widget: boolean, required: false, default: false }
+
+          - name: production
+            label: "06 · Production"
+            widget: object
+            fields:
+              - { name: num, widget: string }
+              - { name: numLabel, widget: string, required: false }
+              - { name: heading, label: "Heading (primary clause)", widget: string }
+              - { name: headingMuted, label: "Heading (muted clause)", widget: string, required: false }
+              - { name: body, widget: text, required: false }
+              - name: rows
+                label: "Screenshot rows"
+                widget: list
+                summary: "{{fields.layout}} — {{fields.shots.length}} shot(s)"
+                fields:
+                  - { name: layout, label: "Grid layout", widget: select, options: ["one-col", "two-col", "three-col", "featured"] }
+                  - name: shots
+                    label: "Shots"
+                    widget: list
+                    summary: "{{fields.caption}}"
+                    fields:
+                      - { name: src, label: "Image", widget: image }
+                      - { name: caption, widget: string, required: false }
+                      - { name: alt, widget: string, required: false }
+                      - { name: wide, widget: boolean, required: false, default: false }
+
+          - name: graceAi
+            label: "07 · Grace AI"
+            widget: object
+            fields:
+              - { name: num, widget: string }
+              - { name: numLabel, widget: string, required: false }
+              - { name: heading, label: "Heading (primary clause)", widget: string }
+              - { name: headingMuted, label: "Heading (muted clause)", widget: string, required: false }
+              - { name: body, widget: text, required: false }
+              - name: shot
+                label: "Section screenshot (optional)"
+                widget: object
+                required: false
+                fields:
+                  - { name: src, label: "Image", widget: image }
+                  - { name: caption, widget: string, required: false }
+                  - { name: alt, widget: string, required: false }
+                  - { name: wide, widget: boolean, required: false, default: true }
+
+          - name: departments
+            label: "08 · Departments"
+            widget: object
+            fields:
+              - { name: num, widget: string }
+              - { name: numLabel, widget: string, required: false }
+              - { name: heading, label: "Heading (primary clause)", widget: string }
+              - { name: headingMuted, label: "Heading (muted clause)", widget: string, required: false }
+              - { name: body, widget: text, required: false }
+              - name: items
+                label: "Department cards"
+                widget: list
+                summary: "{{fields.role}}"
+                fields:
+                  - { name: role, label: "Role title (e.g. '1st AD')", widget: string }
+                  - { name: gives, label: "Bullet list", widget: list, field: { name: bullet, widget: string } }
+
+          - name: compliance
+            label: "09 · Compliance"
+            widget: object
+            fields:
+              - { name: num, widget: string }
+              - { name: numLabel, widget: string, required: false }
+              - { name: heading, label: "Heading (primary clause)", widget: string }
+              - { name: headingMuted, label: "Heading (muted clause)", widget: string, required: false }
+              - { name: body, widget: text, required: false }
+              - name: unions
+                label: "Union tags"
+                widget: list
+                summary: "{{fields.label}}"
+                fields:
+                  - { name: label, widget: string }
+                  - { name: active, label: "Highlighted", widget: boolean, default: false }
+              - { name: bullets, label: "Compliance checklist", widget: list, field: { name: bullet, widget: string } }
+              - { name: deferralNote, label: "Footnote / deferral note", widget: text, required: false }
+
+          - name: vault
+            label: "10 · The Vault"
+            widget: object
+            fields:
+              - { name: num, widget: string }
+              - { name: numLabel, widget: string, required: false }
+              - { name: heading, label: "Heading (primary clause)", widget: string }
+              - { name: headingMuted, label: "Heading (muted clause)", widget: string, required: false }
+              - { name: body, widget: text, required: false }
+              - name: features
+                label: "Feature cards"
+                widget: list
+                summary: "{{fields.title}}"
+                fields:
+                  - { name: title, widget: string }
+                  - { name: body, widget: text }
+              - name: shots
+                label: "Screenshots (rendered 3-col)"
+                widget: list
+                summary: "{{fields.caption}}"
+                fields:
+                  - { name: src, label: "Image", widget: image }
+                  - { name: caption, widget: string, required: false }
+                  - { name: alt, widget: string, required: false }
+              - { name: tierNote, label: "Tier note (e.g. 'Studio-tier feature')", widget: string, required: false }
+
+          - name: operations
+            label: "11 · Operations"
+            widget: object
+            fields:
+              - { name: num, widget: string }
+              - { name: numLabel, widget: string, required: false }
+              - { name: heading, label: "Heading (primary clause)", widget: string }
+              - { name: headingMuted, label: "Heading (muted clause)", widget: string, required: false }
+              - { name: body, widget: text, required: false }
+              - name: items
+                label: "Ops cards"
+                widget: list
+                summary: "{{fields.title}}"
+                fields:
+                  - { name: title, widget: string }
+                  - { name: body, widget: text }
+              - name: rows
+                label: "Screenshot rows"
+                widget: list
+                summary: "{{fields.layout}} — {{fields.shots.length}} shot(s)"
+                fields:
+                  - { name: layout, label: "Grid layout", widget: select, options: ["one-col", "two-col", "three-col", "featured"] }
+                  - name: shots
+                    label: "Shots"
+                    widget: list
+                    summary: "{{fields.caption}}"
+                    fields:
+                      - { name: src, label: "Image", widget: image }
+                      - { name: caption, widget: string, required: false }
+                      - { name: alt, widget: string, required: false }
+                      - { name: wide, widget: boolean, required: false, default: false }
+
+          - name: whyBuilt
+            label: "12 · Why we built this"
+            widget: object
+            fields:
+              - { name: num, widget: string }
+              - { name: numLabel, widget: string, required: false }
+              - { name: heading, label: "Heading (primary clause)", widget: string }
+              - { name: headingMuted, label: "Heading (muted clause)", widget: string, required: false }
+              - { name: body, widget: text, required: false }
+              - { name: paragraphs, label: "Body paragraphs", widget: list, field: { name: paragraph, widget: text } }
+              - name: link
+                label: "Trailing link"
+                widget: object
+                required: false
+                fields:
+                  - { name: label, widget: string }
+                  - { name: href, widget: string }
+              - name: shot
+                label: "Side screenshot"
+                widget: object
+                required: false
+                fields:
+                  - { name: src, label: "Image", widget: image }
+                  - { name: alt, widget: string, required: false }
+                  - { name: caption, widget: string, required: false }
+
+          - name: pricing
+            label: "13 · Pricing"
+            widget: object
+            fields:
+              - { name: num, widget: string }
+              - { name: numLabel, widget: string, required: false }
+              - { name: heading, label: "Heading (primary clause)", widget: string }
+              - { name: headingMuted, label: "Heading (muted clause)", widget: string, required: false }
+              - { name: body, widget: text, required: false }
+              - name: tiers
+                label: "Pricing tiers"
+                widget: list
+                summary: "{{fields.name}} — {{fields.price}}"
+                fields:
+                  - { name: name, widget: string }
+                  - { name: desc, label: "Short tagline", widget: string }
+                  - { name: price, label: "Price (e.g. '$149')", widget: string }
+                  - { name: annual, label: "Annual line (e.g. '$1,499 / year')", widget: string, required: false }
+                  - { name: featured, label: "Featured tier (gold border)", widget: boolean, default: false }
+                  - { name: badge, label: "Badge text (e.g. 'Recommended')", widget: string, required: false }
+                  - { name: bullets, label: "Bullet list", widget: list, field: { name: bullet, widget: string } }
+              - name: tierCta
+                label: "Per-tier CTA button"
+                widget: object
+                fields:
+                  - { name: label, widget: string }
+                  - { name: href, widget: string }
+              - { name: note, label: "Footnote", widget: text, required: false }
+
+          - name: faq
+            label: "14 · FAQ"
+            widget: object
+            fields:
+              - { name: num, widget: string }
+              - { name: numLabel, widget: string, required: false }
+              - { name: heading, label: "Heading (primary clause)", widget: string }
+              - { name: headingMuted, label: "Heading (muted clause)", widget: string, required: false }
+              - { name: body, widget: text, required: false }
+              - name: items
+                label: "Q&A pairs"
+                widget: list
+                summary: "{{fields.q}}"
+                fields:
+                  - { name: q, label: "Question", widget: string }
+                  - { name: a, label: "Answer", widget: text }
+
+          - name: finalCta
+            label: "Final CTA"
+            widget: object
+            fields:
+              - { name: heading, label: "Heading (primary clause)", widget: string }
+              - { name: headingMuted, label: "Heading (muted clause)", widget: string, required: false }
+              - { name: body, label: "Body", widget: text, required: false }
+              - name: primaryCta
+                label: "Primary CTA"
+                widget: object
+                fields:
+                  - { name: label, widget: string }
+                  - { name: href, widget: string }
+              - name: secondaryCta
+                label: "Secondary CTA (optional)"
+                widget: object
+                required: false
                 fields:
                   - { name: label, widget: string }
                   - { name: href, widget: string }
@@ -352,7 +701,6 @@ collections:
           - name: hero
             widget: object
             fields:
-              - { name: title, widget: string, default: "" }
               - { name: headline, widget: string }
               - { name: positioning, widget: text }
               - { name: meta, widget: list, field: { name: item, widget: string } }

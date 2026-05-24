@@ -1,23 +1,18 @@
-// /grace — the combined product page. Conversion copy from /product
-// woven together with the screenshot walkthrough of Grace itself, as
-// one comprehensive page (the new design KK approved on 2026-05-22).
+// /grace — long-form product walkthrough.
 //
-// Content is hard-coded in this iteration. Round 2 will move section
-// copy back into content/grace.yml so KK can edit via Decap. The
-// previous content schema (sections[].shots[]) is unused by this page
-// but left in place to keep the YAML valid.
-//
-// Screenshot src paths point at /public/uploads/grace/*. The mockup
-// (Desktop/Website/grace-product-page.html) referenced some filenames
-// with a -new suffix that don't exist on disk — those are mapped to
-// the actual uploaded file in the SHOTS table below.
+// Layout, animation, and visual rhythm are owned by this component.
+// Copy, screenshots, and section ordering are owned by content/grace.yml
+// (validated by GracePageSchema in src/lib/schema.ts). Edits flow through
+// Decap CMS → YAML → build.
 
 import Link from "next/link"
 import { Reveal } from "@/components/Reveal"
 import { RegMark } from "@/components/RegMark"
 import { JsonLd } from "@/components/JsonLd"
 import { ZoomableImage } from "@/components/ZoomableImage"
+import { loadContent } from "@/lib/content"
 import { pageMetadata, softwareApplicationLd } from "@/lib/seo"
+import type { GraceContent } from "@/lib/schema"
 
 export const metadata = pageMetadata({
   title: "Grace — Production OS for working filmmakers",
@@ -26,42 +21,11 @@ export const metadata = pageMetadata({
   path: "/grace/",
 })
 
-// Path table — mockup ref → actual uploaded file. Keeping it in one
-// place so KK can swap a screenshot by editing this single map.
-const SHOTS = {
-  perProductionDashboard: "/uploads/grace/per-production-dashboard.png",
-  dashboardHome: "/uploads/grace/dashboard-home.png",
-  dotSystem: "/uploads/grace/dot-system.png",
-  scenesList: "/uploads/grace/scenes-list.png",
-  elementSummary: "/uploads/grace/element-summary.png",
-  schedule: "/uploads/grace/schedule.png",
-  dood: "/uploads/grace/dood.png",
-  locations: "/uploads/grace/locations.png",
-  budget: "/uploads/grace/budget.png",
-  budgetDetail: "/uploads/grace/budget-detail.png",
-  shotList: "/uploads/grace/shot-list.png",
-  creativeRefs: "/uploads/grace/creative-refs.png",
-  callSheetApproved: "/uploads/grace/day1-approved.png",
-  setDashboard: "/uploads/grace/set-dashboard.png",
-  setDashboardMobile: "/uploads/grace/set-dashboard-mobile-modes.png",
-  timecards: "/uploads/grace/timecards-day1.png",
-  scriptSupervisor: "/uploads/grace/script-supervisor.png",
-  editorLog: "/uploads/grace/editor-log.png",
-  vfx: "/uploads/grace/vfx.png",
-  graceAi: "/uploads/grace/grace-ai-panel.png",
-  ditPipeline: "/uploads/grace/dit-pipeline.png",
-  dailies: "/uploads/grace/dailies.png",
-  screeners: "/uploads/grace/screeners.png",
-  orgSettings: "/uploads/grace/org-settings.png",
-  access: "/uploads/grace/access.png",
-  compliance: "/uploads/grace/compliance.png",
-  castRoster: "/uploads/grace/cast-roster.png",
-  crewRoster: "/uploads/grace/crew-roster.png",
-  billing: "/uploads/grace/billing.png",
-  graceLightDarkMockup: "/uploads/grace/grace-light-dark-mockup.png",
-} as const
+type Shot = GraceContent["hero"]["shot"]
+type Row = GraceContent["preProduction"]["rows"][number]
 
 export default function GracePage() {
+  const c = loadContent("grace.yml")
   return (
     <main>
       <JsonLd data={softwareApplicationLd()} />
@@ -69,30 +33,31 @@ export default function GracePage() {
       {/* ── HERO ─────────────────────────────────────────────────── */}
       <section className="hero">
         <div className="page-container">
-          <Reveal eager delay={80}>
-            <div className="hero-badge">In Development · Closed Beta</div>
-          </Reveal>
+          {c.hero.badge && (
+            <Reveal eager delay={80}>
+              <div className="hero-badge">{c.hero.badge}</div>
+            </Reveal>
+          )}
           <Reveal eager delay={220}>
             <h1 className="hero-title">
-              The production operating system <span className="muted">built by working filmmakers.</span>
+              {c.hero.title}
+              {c.hero.titleMuted && <> <span className="muted">{c.hero.titleMuted}</span></>}
             </h1>
           </Reveal>
           <Reveal eager delay={420}>
-            <p className="hero-sub">
-              Script, schedule, budget, call sheets, and on-set comms running from one source of truth — so a 4 pm script revision doesn&apos;t become a 7 pm crisis.
-            </p>
+            <p className="hero-sub">{c.hero.sub}</p>
           </Reveal>
           <Reveal eager delay={620}>
             <div className="hero-ctas">
-              <Link href="/contact?topic=Grace" className="cta-primary">Request beta access →</Link>
-              <a href="#problem" className="cta-secondary">See how it works ↓</a>
+              <Link href={c.hero.primaryCta.href} className="cta-primary">{c.hero.primaryCta.label}</Link>
+              <a href={c.hero.secondaryCta.href} className="cta-secondary">{c.hero.secondaryCta.label}</a>
             </div>
           </Reveal>
           <Reveal eager delay={820}>
             <figure className="hero-shot">
               <ZoomableImage
-                src={SHOTS.perProductionDashboard}
-                alt="Per-production dashboard"
+                src={c.hero.shot.src}
+                alt={c.hero.shot.alt ?? c.hero.shot.caption ?? ""}
                 loading="eager"
               />
             </figure>
@@ -100,24 +65,23 @@ export default function GracePage() {
         </div>
       </section>
 
-      {/* ── 01 · THE PROBLEM ─────────────────────────────────────── */}
+      {/* ── PROBLEM ──────────────────────────────────────────────── */}
       <section className="section" id="problem">
         <RegMark className="tl" />
         <RegMark className="tr" />
         <div className="page-container">
-          <Reveal>
-            <SectionNum n="01" />
-          </Reveal>
+          <Reveal><SectionNum n={c.problems.num} label={c.problems.numLabel} /></Reveal>
           <Reveal delay={120}>
-            <h2 className="section-title">
-              Three things that go wrong every week, <span className="muted">handled.</span>
-            </h2>
+            <SectionTitle heading={c.problems.heading} muted={c.problems.headingMuted} />
           </Reveal>
+          {c.problems.body && (
+            <Reveal delay={200}><p className="section-body">{c.problems.body}</p></Reveal>
+          )}
           <div className="problem-grid">
-            {PROBLEMS.map((p, i) => (
+            {c.problems.items.map((p, i) => (
               <Reveal key={i} delay={200 + i * 140}>
                 <article className="problem-card">
-                  <div className="problem-num">0{i + 1}</div>
+                  <div className="problem-num">{String(i + 1).padStart(2, "0")}</div>
                   <h3 className="problem-h">{p.scenario}</h3>
                   <p className="problem-p">{p.response}</p>
                 </article>
@@ -127,24 +91,20 @@ export default function GracePage() {
         </div>
       </section>
 
-      {/* ── 02 · THESIS ─────────────────────────────────────────── */}
+      {/* ── THESIS ───────────────────────────────────────────────── */}
       <section className="section">
         <RegMark className="tl" />
         <RegMark className="tr" />
         <div className="page-container">
-          <Reveal><SectionNum n="02" /></Reveal>
+          <Reveal><SectionNum n={c.thesis.num} label={c.thesis.numLabel} /></Reveal>
           <Reveal delay={120}>
-            <h2 className="section-title">
-              Connect everything. <span className="muted">Re-enter nothing.</span>
-            </h2>
+            <SectionTitle heading={c.thesis.heading} muted={c.thesis.headingMuted} />
           </Reveal>
-          <Reveal delay={200}>
-            <p className="section-body">
-              Grace is built around one idea: every department on a film should be working from the same picture. Breakdown feeds schedule. Schedule feeds budget. Budget feeds call sheet. Everything connects, nothing gets re-entered, and no one is working from a stale version.
-            </p>
-          </Reveal>
+          {c.thesis.body && (
+            <Reveal delay={200}><p className="section-body">{c.thesis.body}</p></Reveal>
+          )}
           <div className="thesis-points">
-            {THESIS_POINTS.map((t, i) => (
+            {c.thesis.points.map((t, i) => (
               <Reveal key={i} delay={280 + i * 90}>
                 <div className="thesis-point">
                   <span className="thesis-dot" aria-hidden />
@@ -154,47 +114,43 @@ export default function GracePage() {
             ))}
           </div>
           <Reveal delay={640}>
-            <div className="flow-diagram" role="img" aria-label="Inputs flow into Grace's single source of truth, which cascades into outputs.">
+            <div className="flow-diagram" role="img" aria-label={c.thesis.flow.ariaLabel ?? ""}>
               <div className="flow-column flow-inputs">
-                <span className="flow-label">Inputs</span>
-                <div className="flow-card">Script &amp; revisions</div>
-                <div className="flow-card">Cast &amp; crew rosters</div>
-                <div className="flow-card">Union &amp; compliance rules</div>
+                <span className="flow-label">{c.thesis.flow.inputsLabel}</span>
+                {c.thesis.flow.inputs.map((label, i) => (
+                  <div key={i} className="flow-card">{label}</div>
+                ))}
               </div>
               <div className="flow-hub">
-                <div className="flow-hub-label">Grace</div>
-                <div className="flow-hub-sub">One source of truth</div>
-                <div className="flow-hub-meta">Breakdown · Schedule · Budget</div>
+                <div className="flow-hub-label">{c.thesis.flow.hub.label}</div>
+                {c.thesis.flow.hub.sub && <div className="flow-hub-sub">{c.thesis.flow.hub.sub}</div>}
+                {c.thesis.flow.hub.meta && <div className="flow-hub-meta">{c.thesis.flow.hub.meta}</div>}
               </div>
               <div className="flow-column flow-outputs">
-                <span className="flow-label">Outputs</span>
-                <div className="flow-card">Call sheets, auto-built</div>
-                <div className="flow-card">Time cards, prefilled</div>
-                <div className="flow-card">Editor turnover &amp; exports</div>
+                <span className="flow-label">{c.thesis.flow.outputsLabel}</span>
+                {c.thesis.flow.outputs.map((label, i) => (
+                  <div key={i} className="flow-card">{label}</div>
+                ))}
               </div>
             </div>
           </Reveal>
         </div>
       </section>
 
-      {/* ── 03 · DOT SYSTEM ─────────────────────────────────────── */}
+      {/* ── DOT SYSTEM ───────────────────────────────────────────── */}
       <section className="section">
         <RegMark className="tl" />
         <RegMark className="tr" />
         <div className="page-container">
-          <Reveal><SectionNum n="03" /></Reveal>
+          <Reveal><SectionNum n={c.dots.num} label={c.dots.numLabel} /></Reveal>
           <Reveal delay={120}>
-            <h2 className="section-title">
-              Co-pilot, <span className="muted">not autopilot.</span>
-            </h2>
+            <SectionTitle heading={c.dots.heading} muted={c.dots.headingMuted} />
           </Reveal>
-          <Reveal delay={200}>
-            <p className="section-body">
-              Every value in Grace carries a colored dot that tells you who made the call. Software does the busywork. The people running the show stay in the chair.
-            </p>
-          </Reveal>
+          {c.dots.body && (
+            <Reveal delay={200}><p className="section-body">{c.dots.body}</p></Reveal>
+          )}
           <div className="dots-grid">
-            {DOTS.map((d, i) => (
+            {c.dots.items.map((d, i) => (
               <Reveal key={d.color} delay={280 + i * 120}>
                 <div className="dot-card">
                   <div className="dot-row">
@@ -206,174 +162,129 @@ export default function GracePage() {
               </Reveal>
             ))}
           </div>
-          <Reveal delay={700}>
-            <p className="dot-closer">Grace suggests. You decide. Signed docs lock it in.</p>
-          </Reveal>
-          <div className="screenshot-grid one-col">
-            <Reveal delay={820}>
-              <ShotItem src={SHOTS.dotSystem} caption="Breakdown — dots visible in every cell" wide />
-            </Reveal>
-          </div>
+          {c.dots.closer && (
+            <Reveal delay={700}><p className="dot-closer">{c.dots.closer}</p></Reveal>
+          )}
+          {c.dots.shot && (
+            <div className="screenshot-grid one-col">
+              <Reveal delay={820}>
+                <ShotItem shot={c.dots.shot} />
+              </Reveal>
+            </div>
+          )}
         </div>
       </section>
 
-      {/* ── 04 · WORKFLOW CASCADE ───────────────────────────────── */}
+      {/* ── CASCADE ──────────────────────────────────────────────── */}
       <section className="section" id="workflow">
         <RegMark className="tl" />
         <RegMark className="tr" />
         <div className="page-container">
-          <Reveal><SectionNum n="04" label="One workflow, end to end" /></Reveal>
+          <Reveal><SectionNum n={c.cascade.num} label={c.cascade.numLabel} /></Reveal>
           <Reveal delay={120}>
-            <h2 className="section-title">
-              Upload the script. <span className="muted">Everything else cascades.</span>
-            </h2>
+            <SectionTitle heading={c.cascade.heading} muted={c.cascade.headingMuted} />
           </Reveal>
-          <Reveal delay={200}>
-            <p className="section-body">
-              Every module in Grace reads from the modules upstream of it. Re-enter nothing, hand off nothing.
-            </p>
-          </Reveal>
+          {c.cascade.body && (
+            <Reveal delay={200}><p className="section-body">{c.cascade.body}</p></Reveal>
+          )}
 
           <div className="cascade-wrap">
-            <div className="cascade-row">
-              {CASCADE.slice(0, 4).map((s, i) => (
-                <Reveal key={s.label} delay={280 + i * 70}>
-                  <CascadeStep n={i + 1} {...s} last={i === 3} />
-                </Reveal>
-              ))}
-            </div>
-            <div className="cascade-row">
-              {CASCADE.slice(4, 8).map((s, i) => (
-                <Reveal key={s.label} delay={620 + i * 70}>
-                  <CascadeStep n={i + 5} {...s} last={i === 3} />
-                </Reveal>
-              ))}
-            </div>
+            {chunk(c.cascade.steps, 4).map((row, ri) => {
+              const rowStart = 280 + ri * 340
+              return (
+                <div key={ri} className="cascade-row">
+                  {row.map((s, i) => {
+                    const n = ri * 4 + i + 1
+                    return (
+                      <Reveal key={s.label} delay={rowStart + i * 70}>
+                        <CascadeStep n={n} label={s.label} detail={s.detail} last={i === row.length - 1} />
+                      </Reveal>
+                    )
+                  })}
+                </div>
+              )
+            })}
           </div>
 
-          <Reveal delay={1000}>
-            <div className="cascade-stat">
-              <div className="cascade-stat-num">~12 min</div>
-              <div className="cascade-stat-label">
-                From script upload to first sendable call sheet on a 90-page feature.
+          {c.cascade.stat && (
+            <Reveal delay={1000}>
+              <div className="cascade-stat">
+                <div className="cascade-stat-num">{c.cascade.stat.num}</div>
+                <div className="cascade-stat-label">{c.cascade.stat.label}</div>
               </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* ── 05 · PRE-PRODUCTION ─────────────────────────────────── */}
-      <section className="section">
-        <RegMark className="tl" />
-        <RegMark className="tr" />
-        <div className="page-container">
-          <Reveal><SectionNum n="05" label="Pre-Production" /></Reveal>
-          <Reveal delay={120}>
-            <h2 className="section-title">
-              Plan the picture <span className="muted">before the picture rolls.</span>
-            </h2>
-          </Reveal>
-          <Reveal delay={200}>
-            <p className="section-body">
-              Script breakdown that knows scenes and elements. Scheduling and DOOD that pack locations and respect minor hours. A budget that actualizes from purchase orders. A shot list with VFX flags and storyboards. All connected, all live.
-            </p>
-          </Reveal>
-
-          <div className="screenshot-grid two-col">
-            <Reveal delay={280}><ShotItem src={SHOTS.scenesList} caption="Scene breakdown" /></Reveal>
-            <Reveal delay={360}><ShotItem src={SHOTS.elementSummary} caption="Element summary" /></Reveal>
-          </div>
-          <div className="screenshot-grid three-col">
-            <Reveal delay={440}><ShotItem src={SHOTS.schedule} caption="Strip board" /></Reveal>
-            <Reveal delay={520}><ShotItem src={SHOTS.dood} caption="Day Out of Days" /></Reveal>
-            <Reveal delay={600}><ShotItem src={SHOTS.locations} caption="Locations" /></Reveal>
-          </div>
-          <div className="screenshot-grid two-col">
-            <Reveal delay={680}><ShotItem src={SHOTS.budget} caption="Budget — top sheet" /></Reveal>
-            <Reveal delay={760}><ShotItem src={SHOTS.budgetDetail} caption="Budget — line-item detail" /></Reveal>
-          </div>
-          <div className="screenshot-grid two-col">
-            <Reveal delay={840}><ShotItem src={SHOTS.shotList} caption="Shot list" /></Reveal>
-            <Reveal delay={920}><ShotItem src={SHOTS.creativeRefs} caption="Creative references" /></Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 06 · PRODUCTION ─────────────────────────────────────── */}
-      <section className="section">
-        <RegMark className="tl" />
-        <RegMark className="tr" />
-        <div className="page-container">
-          <Reveal><SectionNum n="06" label="Production" /></Reveal>
-          <Reveal delay={120}>
-            <h2 className="section-title">
-              Every department, <span className="muted">working from the same picture.</span>
-            </h2>
-          </Reveal>
-          <Reveal delay={200}>
-            <p className="section-body">
-              Call sheets that build themselves from the schedule. Time cards that prefill from call time and meal duration. A set dashboard tracking actuals against the strip plan. Script supervisor notes, editor log, VFX flags — every department&apos;s daily work in one tool.
-            </p>
-          </Reveal>
-
-          <div className="screenshot-grid featured">
-            <Reveal delay={280}><ShotItem src={SHOTS.callSheetApproved} caption="Call sheet — approved" /></Reveal>
-            <Reveal delay={360}><ShotItem src={SHOTS.setDashboard} caption="Set dashboard — live" /></Reveal>
-          </div>
-          <div className="screenshot-grid three-col">
-            <Reveal delay={440}><ShotItem src={SHOTS.setDashboardMobile} caption="Mobile dashboards" /></Reveal>
-            <Reveal delay={520}><ShotItem src={SHOTS.timecards} caption="Timecards" /></Reveal>
-            <Reveal delay={600}><ShotItem src={SHOTS.scriptSupervisor} caption="Script supervisor" /></Reveal>
-          </div>
-          <div className="screenshot-grid two-col">
-            <Reveal delay={680}><ShotItem src={SHOTS.editorLog} caption="Editor log" /></Reveal>
-            <Reveal delay={760}><ShotItem src={SHOTS.vfx} caption="VFX tracking" /></Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 07 · GRACE AI ───────────────────────────────────────── */}
-      <section className="section">
-        <RegMark className="tl" />
-        <RegMark className="tr" />
-        <div className="page-container">
-          <Reveal><SectionNum n="07" label="Grace AI" /></Reveal>
-          <Reveal delay={120}>
-            <h2 className="section-title">
-              A co-pilot <span className="muted">that knows your production.</span>
-            </h2>
-          </Reveal>
-          <Reveal delay={200}>
-            <p className="section-body">
-              The chat panel reads the production state and answers questions in context. Why is this scene&apos;s HMU so long? Which crew member&apos;s call time conflicts with a turnaround? What&apos;s our French-hours exposure today? Trained on industry compliance — IATSE, DGA, SAG, Teamsters thresholds built in.
-            </p>
-          </Reveal>
-          <div className="screenshot-grid one-col">
-            <Reveal delay={280}>
-              <ShotItem src={SHOTS.graceAi} caption="Grace AI — co-pilot panel open on the strip board" wide />
             </Reveal>
-          </div>
+          )}
         </div>
       </section>
 
-      {/* ── 08 · DEPARTMENT VIEWS ───────────────────────────────── */}
+      {/* ── PRE-PRODUCTION ───────────────────────────────────────── */}
       <section className="section">
         <RegMark className="tl" />
         <RegMark className="tr" />
         <div className="page-container">
-          <Reveal><SectionNum n="08" label="Built for the people on set" /></Reveal>
+          <Reveal><SectionNum n={c.preProduction.num} label={c.preProduction.numLabel} /></Reveal>
           <Reveal delay={120}>
-            <h2 className="section-title">
-              Every department, <span className="muted">the same picture.</span>
-            </h2>
+            <SectionTitle heading={c.preProduction.heading} muted={c.preProduction.headingMuted} />
           </Reveal>
-          <Reveal delay={200}>
-            <p className="section-body">
-              Grace&apos;s access model maps to how productions are actually organized. The right people see the right view, and nothing else.
-            </p>
+          {c.preProduction.body && (
+            <Reveal delay={200}><p className="section-body">{c.preProduction.body}</p></Reveal>
+          )}
+          <ShotRows rows={c.preProduction.rows} startDelay={280} />
+        </div>
+      </section>
+
+      {/* ── PRODUCTION ───────────────────────────────────────────── */}
+      <section className="section">
+        <RegMark className="tl" />
+        <RegMark className="tr" />
+        <div className="page-container">
+          <Reveal><SectionNum n={c.production.num} label={c.production.numLabel} /></Reveal>
+          <Reveal delay={120}>
+            <SectionTitle heading={c.production.heading} muted={c.production.headingMuted} />
           </Reveal>
+          {c.production.body && (
+            <Reveal delay={200}><p className="section-body">{c.production.body}</p></Reveal>
+          )}
+          <ShotRows rows={c.production.rows} startDelay={280} />
+        </div>
+      </section>
+
+      {/* ── GRACE AI ─────────────────────────────────────────────── */}
+      <section className="section">
+        <RegMark className="tl" />
+        <RegMark className="tr" />
+        <div className="page-container">
+          <Reveal><SectionNum n={c.graceAi.num} label={c.graceAi.numLabel} /></Reveal>
+          <Reveal delay={120}>
+            <SectionTitle heading={c.graceAi.heading} muted={c.graceAi.headingMuted} />
+          </Reveal>
+          {c.graceAi.body && (
+            <Reveal delay={200}><p className="section-body">{c.graceAi.body}</p></Reveal>
+          )}
+          {c.graceAi.shot && (
+            <div className="screenshot-grid one-col">
+              <Reveal delay={280}>
+                <ShotItem shot={c.graceAi.shot} />
+              </Reveal>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* ── DEPARTMENTS ──────────────────────────────────────────── */}
+      <section className="section">
+        <RegMark className="tl" />
+        <RegMark className="tr" />
+        <div className="page-container">
+          <Reveal><SectionNum n={c.departments.num} label={c.departments.numLabel} /></Reveal>
+          <Reveal delay={120}>
+            <SectionTitle heading={c.departments.heading} muted={c.departments.headingMuted} />
+          </Reveal>
+          {c.departments.body && (
+            <Reveal delay={200}><p className="section-body">{c.departments.body}</p></Reveal>
+          )}
           <div className="dept-grid">
-            {DEPARTMENTS.map((d, i) => (
+            {c.departments.items.map((d, i) => (
               <Reveal key={d.role} delay={280 + i * 70}>
                 <article className="dept-card">
                   <div className="dept-role">{d.role}</div>
@@ -389,65 +300,59 @@ export default function GracePage() {
         </div>
       </section>
 
-      {/* ── 09 · COMPLIANCE ─────────────────────────────────────── */}
+      {/* ── COMPLIANCE ───────────────────────────────────────────── */}
       <section className="section">
         <RegMark className="tl" />
         <RegMark className="tr" />
         <div className="page-container">
-          <Reveal><SectionNum n="09" label="Built-in compliance" /></Reveal>
+          <Reveal><SectionNum n={c.compliance.num} label={c.compliance.numLabel} /></Reveal>
           <Reveal delay={120}>
-            <h2 className="section-title">
-              Union rules, <span className="muted">enforced when it matters.</span>
-            </h2>
+            <SectionTitle heading={c.compliance.heading} muted={c.compliance.headingMuted} />
           </Reveal>
-          <Reveal delay={200}>
-            <p className="section-body">
-              Pick your union profile on production setup. Grace&apos;s compliance engine uses the right thresholds for turnaround, meal penalties, OT, and minor hours from day one.
-            </p>
-          </Reveal>
-          <Reveal delay={280}>
-            <div className="union-tags">
-              {UNIONS.map((u) => (
-                <span key={u.label} className={`union-tag${u.active ? " active" : ""}`}>{u.label}</span>
-              ))}
-            </div>
-          </Reveal>
+          {c.compliance.body && (
+            <Reveal delay={200}><p className="section-body">{c.compliance.body}</p></Reveal>
+          )}
+          {c.compliance.unions.length > 0 && (
+            <Reveal delay={280}>
+              <div className="union-tags">
+                {c.compliance.unions.map((u) => (
+                  <span key={u.label} className={`union-tag${u.active ? " active" : ""}`}>{u.label}</span>
+                ))}
+              </div>
+            </Reveal>
+          )}
           <ul className="compliance-list">
-            {COMPLIANCE.map((c, i) => (
+            {c.compliance.bullets.map((b, i) => (
               <Reveal key={i} delay={400 + i * 80}>
                 <li>
                   <span className="check" aria-hidden>✓</span>
-                  <span>{c}</span>
+                  <span>{b}</span>
                 </li>
               </Reveal>
             ))}
           </ul>
-          <Reveal delay={900}>
-            <p className="deferral-note">
-              Paper-first today: generated PDFs get signed in person and re-uploaded. In-app electronic signatures (DocuSeal-backed) land in the next release.
-            </p>
-          </Reveal>
+          {c.compliance.deferralNote && (
+            <Reveal delay={900}>
+              <p className="deferral-note">{c.compliance.deferralNote}</p>
+            </Reveal>
+          )}
         </div>
       </section>
 
-      {/* ── 10 · THE VAULT ──────────────────────────────────────── */}
+      {/* ── VAULT ────────────────────────────────────────────────── */}
       <section className="section">
         <RegMark className="tl" />
         <RegMark className="tr" />
         <div className="page-container">
-          <Reveal><SectionNum n="10" label="The Vault" /></Reveal>
+          <Reveal><SectionNum n={c.vault.num} label={c.vault.numLabel} /></Reveal>
           <Reveal delay={120}>
-            <h2 className="section-title">
-              Send screeners. <span className="muted">Stay in control.</span>
-            </h2>
+            <SectionTitle heading={c.vault.heading} muted={c.vault.headingMuted} />
           </Reveal>
-          <Reveal delay={200}>
-            <p className="section-body">
-              Send a cut to a financier on Tuesday. Know on Friday they opened it twice from a hotel Wi-Fi in Park City.
-            </p>
-          </Reveal>
+          {c.vault.body && (
+            <Reveal delay={200}><p className="section-body">{c.vault.body}</p></Reveal>
+          )}
           <div className="vault-features">
-            {VAULT.map((v, i) => (
+            {c.vault.features.map((v, i) => (
               <Reveal key={v.title} delay={280 + i * 60}>
                 <div className="vault-feature">
                   <h4>{v.title}</h4>
@@ -456,30 +361,37 @@ export default function GracePage() {
               </Reveal>
             ))}
           </div>
-          <div className="screenshot-grid three-col">
-            <Reveal delay={680}><ShotItem src={SHOTS.ditPipeline} caption="DIT pipeline" /></Reveal>
-            <Reveal delay={760}><ShotItem src={SHOTS.dailies} caption="Dailies delivery" /></Reveal>
-            <Reveal delay={840}><ShotItem src={SHOTS.screeners} caption="Screeners — watermarked" /></Reveal>
-          </div>
-          <Reveal delay={920}>
-            <p className="tier-note">The Vault is a Studio-tier feature.</p>
-          </Reveal>
+          {c.vault.shots.length > 0 && (
+            <div className="screenshot-grid three-col">
+              {c.vault.shots.map((s, i) => (
+                <Reveal key={s.src} delay={680 + i * 80}>
+                  <ShotItem shot={s} />
+                </Reveal>
+              ))}
+            </div>
+          )}
+          {c.vault.tierNote && (
+            <Reveal delay={920}>
+              <p className="tier-note">{c.vault.tierNote}</p>
+            </Reveal>
+          )}
         </div>
       </section>
 
-      {/* ── 11 · OPERATIONS ─────────────────────────────────────── */}
+      {/* ── OPERATIONS ───────────────────────────────────────────── */}
       <section className="section">
         <RegMark className="tl" />
         <RegMark className="tr" />
         <div className="page-container">
-          <Reveal><SectionNum n="11" label="Operations" /></Reveal>
+          <Reveal><SectionNum n={c.operations.num} label={c.operations.numLabel} /></Reveal>
           <Reveal delay={120}>
-            <h2 className="section-title">
-              The unglamorous work, <span className="muted">handled.</span>
-            </h2>
+            <SectionTitle heading={c.operations.heading} muted={c.operations.headingMuted} />
           </Reveal>
+          {c.operations.body && (
+            <Reveal delay={200}><p className="section-body">{c.operations.body}</p></Reveal>
+          )}
           <div className="ops-grid">
-            {OPS.map((o, i) => (
+            {c.operations.items.map((o, i) => (
               <Reveal key={o.title} delay={200 + i * 80}>
                 <div className="ops-item">
                   <h4>{o.title}</h4>
@@ -488,112 +400,99 @@ export default function GracePage() {
               </Reveal>
             ))}
           </div>
-          <div className="screenshot-grid three-col">
-            <Reveal delay={560}><ShotItem src={SHOTS.orgSettings} caption="Org settings" /></Reveal>
-            <Reveal delay={640}><ShotItem src={SHOTS.access} caption="Access control — per person" /></Reveal>
-            <Reveal delay={720}><ShotItem src={SHOTS.compliance} caption="Compliance — union profiles" /></Reveal>
-          </div>
-          <div className="screenshot-grid three-col">
-            <Reveal delay={800}><ShotItem src={SHOTS.castRoster} caption="Cast roster — SAG-AFTRA" /></Reveal>
-            <Reveal delay={880}><ShotItem src={SHOTS.crewRoster} caption="Crew roster — IATSE rates" /></Reveal>
-            <Reveal delay={960}><ShotItem src={SHOTS.billing} caption="Billing" /></Reveal>
-          </div>
+          <ShotRows rows={c.operations.rows} startDelay={560} />
         </div>
       </section>
 
-      {/* ── 12 · WHY WE BUILT THIS ──────────────────────────────── */}
+      {/* ── WHY WE BUILT THIS ────────────────────────────────────── */}
       <section className="section">
         <RegMark className="tl" />
         <RegMark className="tr" />
         <div className="page-container">
-          <Reveal><SectionNum n="12" /></Reveal>
+          <Reveal><SectionNum n={c.whyBuilt.num} label={c.whyBuilt.numLabel} /></Reveal>
           <Reveal delay={120}>
-            <h2 className="section-title">
-              Every feature here exists because <span className="muted">one of us needed it.</span>
-            </h2>
+            <SectionTitle heading={c.whyBuilt.heading} muted={c.whyBuilt.headingMuted} />
           </Reveal>
           <div className="why-split">
             <div className="why-text">
-              <Reveal delay={200}>
-                <p>
-                  Grace is built by Kshitij Kapil, a working cinematographer and colorist, and Siddharth Agrawal, who runs the studio. We&apos;ve sat in the AD chair, signed the timesheets, and watched a call sheet die because someone re-cut the script at 4 pm.
-                </p>
-              </Reveal>
-              <Reveal delay={320}>
-                <p>This isn&apos;t market research. It&apos;s the tool we wanted on our own pictures.</p>
-              </Reveal>
-              <Reveal delay={440}>
-                <Link href="/partnership" className="link-arrow">
-                  About the partnership <span className="arrow">→</span>
-                </Link>
-              </Reveal>
+              {c.whyBuilt.paragraphs.map((p, i) => (
+                <Reveal key={i} delay={200 + i * 120}>
+                  <p>{p}</p>
+                </Reveal>
+              ))}
+              {c.whyBuilt.link && (
+                <Reveal delay={200 + c.whyBuilt.paragraphs.length * 120}>
+                  <Link href={c.whyBuilt.link.href} className="link-arrow">
+                    {c.whyBuilt.link.label} <span className="arrow">→</span>
+                  </Link>
+                </Reveal>
+              )}
             </div>
-            <Reveal delay={360}>
-              <figure className="why-shot">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={SHOTS.graceLightDarkMockup} alt="Grace — light and dark mode" />
-              </figure>
-            </Reveal>
+            {c.whyBuilt.shot && (
+              <Reveal delay={360}>
+                <figure className="why-shot">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={c.whyBuilt.shot.src} alt={c.whyBuilt.shot.alt ?? c.whyBuilt.shot.caption ?? ""} />
+                </figure>
+              </Reveal>
+            )}
           </div>
         </div>
       </section>
 
-      {/* ── 13 · PRICING ─────────────────────────────────────────── */}
+      {/* ── PRICING ──────────────────────────────────────────────── */}
       <section className="section" id="pricing">
         <RegMark className="tl" />
         <RegMark className="tr" />
         <div className="page-container">
-          <Reveal><SectionNum n="13" /></Reveal>
+          <Reveal><SectionNum n={c.pricing.num} label={c.pricing.numLabel} /></Reveal>
           <Reveal delay={120}>
-            <h2 className="section-title">
-              Two plans. <span className="muted">No per-user gouging.</span>
-            </h2>
+            <SectionTitle heading={c.pricing.heading} muted={c.pricing.headingMuted} />
           </Reveal>
-          <Reveal delay={200}>
-            <p className="section-body">
-              Pricing is per production company, not per seat. Pack-style add-ons let you grow without re-negotiating.
-            </p>
-          </Reveal>
+          {c.pricing.body && (
+            <Reveal delay={200}><p className="section-body">{c.pricing.body}</p></Reveal>
+          )}
           <div className="pricing-grid">
-            {TIERS.map((t, i) => (
+            {c.pricing.tiers.map((t, i) => (
               <Reveal key={t.name} delay={280 + i * 140}>
                 <article className={`pricing-card${t.featured ? " featured" : ""}`}>
-                  {t.featured && <div className="tier-badge">Recommended</div>}
+                  {t.badge && <div className="tier-badge">{t.badge}</div>}
                   <div className="tier-name">{t.name}</div>
                   <div className="tier-desc">{t.desc}</div>
                   <div className="tier-price">{t.price}<span> / month</span></div>
-                  <div className="tier-annual">{t.annual}</div>
+                  {t.annual && <div className="tier-annual">{t.annual}</div>}
                   <ul className="tier-bullets">
                     {t.bullets.map((b, j) => (
                       <li key={j}>{b}</li>
                     ))}
                   </ul>
-                  <Link href="/contact?topic=Grace" className="cta-primary tier-cta">Request access →</Link>
+                  <Link href={c.pricing.tierCta.href} className="cta-primary tier-cta">{c.pricing.tierCta.label}</Link>
                 </article>
               </Reveal>
             ))}
           </div>
-          <Reveal delay={620}>
-            <p className="pricing-note">
-              Add-on packs: additional production slots ($30/mo), seat packs by tier. All prorated. Beta access includes a 90-day trial on a card-on-file Standard or Studio subscription.
-            </p>
-          </Reveal>
+          {c.pricing.note && (
+            <Reveal delay={620}>
+              <p className="pricing-note">{c.pricing.note}</p>
+            </Reveal>
+          )}
         </div>
       </section>
 
-      {/* ── 14 · FAQ ─────────────────────────────────────────────── */}
+      {/* ── FAQ ──────────────────────────────────────────────────── */}
       <section className="section" id="faq">
         <RegMark className="tl" />
         <RegMark className="tr" />
         <div className="page-container">
-          <Reveal><SectionNum n="14" /></Reveal>
+          <Reveal><SectionNum n={c.faq.num} label={c.faq.numLabel} /></Reveal>
           <Reveal delay={120}>
             <h2 className="section-title section-title-centered">
-              Things people ask <span className="muted">before they buy.</span>
+              {c.faq.heading}
+              {c.faq.headingMuted && <> <span className="muted">{c.faq.headingMuted}</span></>}
             </h2>
           </Reveal>
           <div className="faq-list">
-            {FAQ.map((f, i) => (
+            {c.faq.items.map((f, i) => (
               <Reveal key={i} delay={200 + i * 60}>
                 <details className="faq-item">
                   <summary className="faq-q">{f.q}</summary>
@@ -605,25 +504,26 @@ export default function GracePage() {
         </div>
       </section>
 
-      {/* ── FINAL CTA ───────────────────────────────────────────── */}
+      {/* ── FINAL CTA ────────────────────────────────────────────── */}
       <section className="section section-cta" id="contact">
         <RegMark className="tl" />
         <RegMark className="tr" />
         <div className="page-container">
           <Reveal>
             <h2 className="cta-heading">
-              Grace is open to a small beta cohort <span className="muted">right now.</span>
+              {c.finalCta.heading}
+              {c.finalCta.headingMuted && <> <span className="muted">{c.finalCta.headingMuted}</span></>}
             </h2>
           </Reveal>
-          <Reveal delay={140}>
-            <p className="cta-body">
-              Tell us about your production — title, format, shoot dates, union status — and we&apos;ll get you set up.
-            </p>
-          </Reveal>
+          {c.finalCta.body && (
+            <Reveal delay={140}><p className="cta-body">{c.finalCta.body}</p></Reveal>
+          )}
           <Reveal delay={280}>
             <div className="hero-ctas centered">
-              <Link href="/contact?topic=Grace" className="cta-primary">Request beta access →</Link>
-              <a href="#" className="cta-secondary">Back to top ↑</a>
+              <Link href={c.finalCta.primaryCta.href} className="cta-primary">{c.finalCta.primaryCta.label}</Link>
+              {c.finalCta.secondaryCta && (
+                <a href={c.finalCta.secondaryCta.href} className="cta-secondary">{c.finalCta.secondaryCta.label}</a>
+              )}
             </div>
           </Reveal>
         </div>
@@ -650,12 +550,43 @@ function SectionNum({ n, label }: { n: string; label?: string }) {
   )
 }
 
-function ShotItem({ src, caption, wide }: { src: string; caption: string; wide?: boolean }) {
+function SectionTitle({ heading, muted }: { heading: string; muted?: string }) {
   return (
-    <figure className={`shot${wide ? " shot-wide" : ""}`}>
-      <ZoomableImage src={src} alt={caption} />
-      <figcaption>{caption}</figcaption>
+    <h2 className="section-title">
+      {heading}
+      {muted && <> <span className="muted">{muted}</span></>}
+    </h2>
+  )
+}
+
+function ShotItem({ shot }: { shot: Shot }) {
+  const alt = shot.alt ?? shot.caption ?? ""
+  return (
+    <figure className={`shot${shot.wide ? " shot-wide" : ""}`}>
+      <ZoomableImage src={shot.src} alt={alt} />
+      {shot.caption && <figcaption>{shot.caption}</figcaption>}
     </figure>
+  )
+}
+
+function ShotRows({ rows, startDelay }: { rows: Row[]; startDelay: number }) {
+  let idx = 0
+  return (
+    <>
+      {rows.map((row, ri) => (
+        <div key={ri} className={`screenshot-grid ${row.layout}`}>
+          {row.shots.map((shot) => {
+            const delay = startDelay + idx * 80
+            idx += 1
+            return (
+              <Reveal key={shot.src} delay={delay}>
+                <ShotItem shot={shot} />
+              </Reveal>
+            )
+          })}
+        </div>
+      ))}
+    </>
   )
 }
 
@@ -670,131 +601,11 @@ function CascadeStep({ n, label, detail, last }: { n: number; label: string; det
   )
 }
 
-// ─── Static content ─────────────────────────────────────────────
-
-const PROBLEMS = [
-  {
-    scenario: "Tomorrow's call sheet is hostage to today's script revision.",
-    response: "Upload the new revision. Grace diffs it against the current breakdown, lets you accept or reject scene-by-scene, and rolls the survivors into a forked schedule, budget, and shot list. The call sheet rebuilds itself.",
-  },
-  {
-    scenario: "Three departments are looking at three versions of the schedule.",
-    response: "One stripboard, one budget, one DOOD. Every department reads the same number. Approvals lock the version; what-if branches let you model a re-shoot day without breaking what's live.",
-  },
-  {
-    scenario: "Compliance violations show up in payroll, not on set.",
-    response: "Turnaround, meal-penalty, and minor-hours thresholds are checked when you build the day — not when you account for it. The sheet refuses to lock on a violation unless an authorized signer overrides it. Audit trail attached.",
-  },
-]
-
-const THESIS_POINTS = [
-  "One upload changes everything downstream.",
-  "The set dashboard is the schedule, live.",
-  "Cast and crew see only what they should.",
-  "What-if branches without breaking what's live.",
-]
-
-const DOTS = [
-  { color: "blue", label: "Grace did this", detail: "Suggested from your data — rate cards, breakdown inferences, recommended pacings. Editable, overridable." },
-  { color: "gold", label: "You did this", detail: "Entered or changed by a human. Grace doesn't touch a gold value without asking." },
-  { color: "green", label: "Verified", detail: "Locked from a signed document — deal memo, contract, executed compliance form." },
-]
-
-const CASCADE = [
-  { label: "Script", detail: "PDF, FDX, Fountain, DOCX. Parsed into scenes, headings, elements." },
-  { label: "Breakdown", detail: "Per-scene elements, cast, locations. Diff-aware revisions." },
-  { label: "Schedule", detail: "Stripboard, DOOD, location packing, HMU chain." },
-  { label: "Budget", detail: "Line items, vendor POs, actualized rollup." },
-  { label: "Call Sheet", detail: "Auto-built from the day. Weather, drive time, French hours." },
-  { label: "Set Dashboard", detail: "Live timing, takes, circle/hold. The schedule, live." },
-  { label: "Timecards", detail: "Prefilled from call time + meal duration. Overrides flagged." },
-  { label: "Editor Log", detail: "CSV, PDF, EDL, FCPXML for turnover." },
-]
-
-const DEPARTMENTS = [
-  { role: "1st AD", gives: ["Call sheets that build themselves from the schedule", "Compliance alerts before the sheet locks, not after payroll", "Set Dashboard that mirrors the strip plan in real time"] },
-  { role: "UPM / Line Producer", gives: ["Live budget actuals from POs and vendor rolls", "What-if branches for schedule changes, costed out before commit", "Owner-grade access to every dept's daily output"] },
-  { role: "Director", gives: ["Shot list, storyboards, scene timing, creative refs", "Take selects flowing straight to the editor's log", "A Grace AI panel that knows your production's state"] },
-  { role: "DP", gives: ["Shot list with movement, lens, camera notes per scene", "VFX flagging + per-shot capture requirements", "Camera report + scene timing exports for the camera dept"] },
-  { role: "Script Supervisor", gives: ["Per-take logging with circle/hold/NG and continuity photos", "Cross-shot-list-version editor log — never orphans a circled take", "Daily Script Sup Report PDF, ready to send"] },
-  { role: "VFX Supervisor", gives: ["Flag shots from the shot list; track plates required vs captured", "AI auto-suggests VFX shots from scene context", "Per-shot turnover package for vendors"] },
-  { role: "DIT", gives: ["Media-card pipeline: hot → offloading → offloaded → verified → cleared", "Per-day dailies packages delivered to editorial via the Vault", "Shared-key delivery — no byte duplication"] },
-]
-
-const UNIONS = [
-  { label: "IATSE", active: true },
-  { label: "DGA", active: false },
-  { label: "SAG-AFTRA", active: false },
-  { label: "Teamsters", active: false },
-  { label: "Non-union", active: false },
-  { label: "Mixed (strictest)", active: false },
-]
-
-const COMPLIANCE = [
-  "Turnaround check at call-sheet lock — refuses approval on a short rest, requires authorized override",
-  "Meal-penalty math baked into the day clock — six- and twelve-hour windows tracked",
-  "Minor hours hard-blocked server-side — minors can't be scheduled past the cap without acknowledgement",
-  "French hours (continuous workday) handled as a per-day flag",
-  "Exhibit G, Studio Teacher Daily Report, Safety Meeting sign-in, Daily Timesheets — generated as PDFs",
-]
-
-const VAULT = [
-  { title: "Magic-link delivery", body: "Recipient verifies via 6-digit code to their email. No accounts to create." },
-  { title: "Forensic watermarking", body: "Recipient email, share ID, UTC timestamp burned into the player." },
-  { title: "Device locking", body: "First device claims the session. Second device gets kicked." },
-  { title: "Time-bound access", body: "Sliding session refresh, range-only streaming, access codes that expire." },
-  { title: "Full event log", body: "Code requests, play starts, seeks, device changes. Everything tracked." },
-  { title: "DIT pipeline", body: "Dailies packages delivered with the same auth and forensic trail." },
-]
-
-const OPS = [
-  { title: "Union profiles, built in", body: "Rate cards and compliance thresholds from day one." },
-  { title: "The right people, the right view", body: "Role-based access that maps to how productions work." },
-  { title: "Server-rendered PDFs", body: "Call sheets, timecards, reports — by the dozen." },
-  { title: "Real software, under the hood", body: "Audit trails, version history, API-first architecture." },
-]
-
-const TIERS = [
-  {
-    name: "Standard",
-    desc: "Run pre-pro and shoot a project end-to-end.",
-    price: "$149",
-    annual: "$1,499 / year",
-    bullets: [
-      "1 active production",
-      "3 producer-tier + 5 dept-head-tier + 20 crew/cast seats",
-      "Full breakdown, schedule, budget, call sheets",
-      "Set dashboard, compliance, editor turnover",
-      "Vault and DIT pipeline available as upgrade",
-    ],
-    featured: false,
-  },
-  {
-    name: "Studio",
-    desc: "Plus secure dailies, screener portal, and DIT workflow.",
-    price: "$299",
-    annual: "$2,999 / year",
-    bullets: [
-      "Everything in Standard",
-      "Vault: forensic-watermarked screener portal with magic-link auth",
-      "DIT pipeline: media cards, dailies packages, clip delivery",
-      "Higher seat ceilings: 6 T1 · 10 T2 · 40 T3",
-      "Priority beta support",
-    ],
-    featured: true,
-  },
-]
-
-const FAQ = [
-  { q: "How is this different from StudioBinder / Yamdu / Croogloo?", a: "Those tools are databases. Grace is a workflow. Your script change cascades to your call sheet automatically; their schedule pages don't talk to their call sheet pages. We also enforce union compliance at the point of decision, not at the audit. And every value carries a dot showing who decided it — humans, not the software, own the production." },
-  { q: "Can my whole crew use it, or just production?", a: "Whole crew. Seat tiers are T1 (producer / UPM), T2 (director / 1st AD / DP / department heads), T3 (crew + cast). Standard includes 28 seats out of the box; Studio includes 56. Pack add-ons extend further. T3 sees only their day, their call, their own time card — never the budget." },
-  { q: "What happens to my data if I cancel?", a: "Read-only access through the end of the billing period. Export every artifact (PDFs, CSVs, EDL, FCPXML) before then. After that, we retain your data for 30 days in case you reactivate, then deletion runs on schedule per the Privacy Policy." },
-  { q: "Does it handle weekly TV or multi-block episodics?", a: "Today, Grace is optimized for a single production at a time. Multi-block / weekly TV is on the roadmap. If that's your shape, reach out — we'd like to talk before we build it." },
-  { q: "What about SAG Ultra Low Budget / Short Project Agreement?", a: "Standard SAG-AFTRA thresholds today. SAG tier-specific variants (Low Budget, Ultra Low Budget, Short Project Agreement) are scoped for the next compliance release." },
-  { q: "Can I run this on a script I haven't shared with anyone yet?", a: "Yes. Scripts live in your private org. Per-section access controls mean a confidential script can be uploaded by the producer and stay locked from the rest of the org until it's broken down and shared. The Vault adds another layer: magic-link sharing with watermarking and device locking when you do need to send something out." },
-  { q: "Are you self-hosted or SaaS?", a: "SaaS, hosted on Railway + Neon (US-East) with Cloudflare R2 for object storage. Self-hosted for enterprise is on the table — get in touch if that's a hard requirement." },
-  { q: "Who's behind it?", a: "Obelisk Studios — Kshitij Kapil (working DP / colorist) and Siddharth Agrawal. A real, small, working studio. Burbank, California." },
-]
+function chunk<T>(arr: T[], size: number): T[][] {
+  const out: T[][] = []
+  for (let i = 0; i < arr.length; i += size) out.push(arr.slice(i, i + size))
+  return out
+}
 
 // ─── Page-scoped CSS ────────────────────────────────────────────
 
