@@ -16,6 +16,7 @@ import Link from "next/link"
 import { Reveal } from "@/components/Reveal"
 import { RegMark } from "@/components/RegMark"
 import { JsonLd } from "@/components/JsonLd"
+import { ZoomableImage } from "@/components/ZoomableImage"
 import { pageMetadata, softwareApplicationLd } from "@/lib/seo"
 
 export const metadata = pageMetadata({
@@ -89,8 +90,11 @@ export default function GracePage() {
           </Reveal>
           <Reveal eager delay={820}>
             <figure className="hero-shot">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={SHOTS.perProductionDashboard} alt="Per-production dashboard" />
+              <ZoomableImage
+                src={SHOTS.perProductionDashboard}
+                alt="Per-production dashboard"
+                loading="eager"
+              />
             </figure>
           </Reveal>
         </div>
@@ -149,14 +153,27 @@ export default function GracePage() {
               </Reveal>
             ))}
           </div>
-          <div className="screenshot-grid two-col">
-            <Reveal delay={640}>
-              <ShotItem src={SHOTS.perProductionDashboard} caption="Per-production dashboard" />
-            </Reveal>
-            <Reveal delay={720}>
-              <ShotItem src={SHOTS.dashboardHome} caption="Studio home" />
-            </Reveal>
-          </div>
+          <Reveal delay={640}>
+            <div className="flow-diagram" role="img" aria-label="Inputs flow into Grace's single source of truth, which cascades into outputs.">
+              <div className="flow-column flow-inputs">
+                <span className="flow-label">Inputs</span>
+                <div className="flow-card">Script &amp; revisions</div>
+                <div className="flow-card">Cast &amp; crew rosters</div>
+                <div className="flow-card">Union &amp; compliance rules</div>
+              </div>
+              <div className="flow-hub">
+                <div className="flow-hub-label">Grace</div>
+                <div className="flow-hub-sub">One source of truth</div>
+                <div className="flow-hub-meta">Breakdown · Schedule · Budget</div>
+              </div>
+              <div className="flow-column flow-outputs">
+                <span className="flow-label">Outputs</span>
+                <div className="flow-card">Call sheets, auto-built</div>
+                <div className="flow-card">Time cards, prefilled</div>
+                <div className="flow-card">Editor turnover &amp; exports</div>
+              </div>
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -636,8 +653,7 @@ function SectionNum({ n, label }: { n: string; label?: string }) {
 function ShotItem({ src, caption, wide }: { src: string; caption: string; wide?: boolean }) {
   return (
     <figure className={`shot${wide ? " shot-wide" : ""}`}>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={src} alt={caption} loading="lazy" decoding="async" />
+      <ZoomableImage src={src} alt={caption} />
       <figcaption>{caption}</figcaption>
     </figure>
   )
@@ -952,6 +968,7 @@ function PageStyles() {
         border: 1px solid var(--paper-edge);
         border-radius: 12px;
         padding: 32px;
+        height: 100%;
         transition: border-color 0.3s, transform 0.3s;
       }
       .problem-card:hover {
@@ -1014,6 +1031,89 @@ function PageStyles() {
         color: var(--ink-soft);
       }
 
+      /* ── 02 FLOW DIAGRAM (Connect everything) ── */
+      .flow-diagram {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        gap: 56px;
+        align-items: center;
+        margin-top: 8px;
+        padding: 40px 36px;
+        background: var(--paper-warm);
+        border: 1px solid var(--paper-edge);
+        border-radius: 16px;
+      }
+      .flow-column {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        position: relative;
+      }
+      .flow-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--ink-muted);
+        margin-bottom: 4px;
+      }
+      .flow-card {
+        padding: 14px 18px;
+        background: var(--paper);
+        border: 1px solid var(--paper-edge);
+        border-radius: 8px;
+        font-family: var(--font-display);
+        font-size: 14.5px;
+        line-height: 1.4;
+        color: var(--ink-soft);
+        position: relative;
+      }
+      .flow-inputs .flow-card::after,
+      .flow-outputs .flow-card::before {
+        content: "→";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--saffron);
+        font-size: 18px;
+        font-family: var(--font-mono);
+        line-height: 1;
+      }
+      .flow-inputs .flow-card::after { right: -40px; }
+      .flow-outputs .flow-card::before { left: -40px; }
+      .flow-hub {
+        background: var(--ink);
+        color: var(--paper);
+        border-radius: 14px;
+        padding: 32px 36px;
+        text-align: center;
+        min-width: 220px;
+      }
+      .flow-hub-label {
+        font-family: var(--font-display);
+        font-variation-settings: "opsz" 48, "wght" 540;
+        font-size: 28px;
+        color: var(--paper);
+        letter-spacing: -0.01em;
+        line-height: 1;
+      }
+      .flow-hub-sub {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--saffron);
+        margin-top: 8px;
+      }
+      .flow-hub-meta {
+        font-family: var(--font-display);
+        font-size: 13px;
+        color: rgba(241, 232, 214, 0.55);
+        margin-top: 16px;
+        padding-top: 14px;
+        border-top: 1px solid rgba(241, 232, 214, 0.12);
+      }
+
       /* ── 03 DOT SYSTEM ── */
       .dots-grid {
         display: grid;
@@ -1026,6 +1126,7 @@ function PageStyles() {
         background: var(--paper-warm);
         border: 1px solid var(--paper-edge);
         border-radius: 12px;
+        height: 100%;
       }
       .dot-row {
         display: flex;
@@ -1082,6 +1183,7 @@ function PageStyles() {
         border-right: none;
         position: relative;
         background: var(--paper);
+        height: 100%;
       }
       .cascade-row .cascade-step:last-child { border-right: 1px solid var(--paper-edge); }
       .cascade-row:first-child .cascade-step:first-child { border-top-left-radius: 12px; }
@@ -1151,7 +1253,7 @@ function PageStyles() {
       .screenshot-grid + .screenshot-grid { margin-top: 20px; }
       .screenshot-grid.two-col { grid-template-columns: repeat(2, 1fr); }
       .screenshot-grid.three-col { grid-template-columns: repeat(3, 1fr); }
-      .screenshot-grid.featured { grid-template-columns: 1.5fr 1fr; }
+      .screenshot-grid.featured { grid-template-columns: 1fr 1fr; }
       .screenshot-grid.one-col { grid-template-columns: 1fr; max-width: 960px; margin-left: auto; margin-right: auto; }
 
       .shot {
@@ -1175,6 +1277,83 @@ function PageStyles() {
         text-transform: uppercase;
         color: var(--ink-muted);
         margin-top: 12px;
+      }
+
+      /* ── ZOOMABLE IMAGE (click to expand → fullscreen <dialog>) ── */
+      .zoom-trigger {
+        display: block;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        border: none;
+        background: none;
+        cursor: zoom-in;
+        border-radius: 12px;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+      .zoom-trigger:hover {
+        transform: translateY(-2px);
+      }
+      .zoom-trigger:focus-visible {
+        outline: 2px solid var(--saffron);
+        outline-offset: 3px;
+      }
+      .hero-shot .zoom-trigger:hover { transform: none; }
+
+      .zoom-dialog {
+        border: none;
+        padding: 0;
+        background: transparent;
+        max-width: min(96vw, 1800px);
+        max-height: 96vh;
+        width: auto;
+        height: auto;
+        margin: auto;
+        overflow: visible;
+        color: var(--paper);
+      }
+      .zoom-dialog::backdrop {
+        background: rgba(20, 16, 12, 0.88);
+        backdrop-filter: blur(6px);
+      }
+      .zoom-dialog img {
+        display: block;
+        max-width: 100%;
+        max-height: 96vh;
+        width: auto;
+        height: auto;
+        border: none;
+        border-radius: 8px;
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.55);
+        cursor: zoom-out;
+      }
+      .zoom-dialog-close {
+        position: absolute;
+        top: -44px;
+        right: 0;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border: 1px solid rgba(241, 232, 214, 0.35);
+        background: rgba(241, 232, 214, 0.08);
+        color: var(--paper);
+        font-size: 22px;
+        line-height: 1;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        font-family: var(--font-mono);
+        transition: background 0.2s, border-color 0.2s;
+      }
+      .zoom-dialog-close:hover {
+        background: rgba(241, 232, 214, 0.18);
+        border-color: rgba(241, 232, 214, 0.55);
+      }
+      .zoom-dialog-close:focus-visible {
+        outline: 2px solid var(--saffron);
+        outline-offset: 2px;
       }
 
       /* ── 08 DEPARTMENTS ── */
@@ -1411,6 +1590,7 @@ function PageStyles() {
         position: relative;
         display: flex;
         flex-direction: column;
+        height: 100%;
       }
       .pricing-card.featured {
         border-color: var(--saffron);
@@ -1597,6 +1777,11 @@ function PageStyles() {
         .screenshot-grid.featured { grid-template-columns: 1fr; }
         .pricing-grid { grid-template-columns: 1fr; }
         .why-split { grid-template-columns: 1fr; gap: 40px; }
+
+        .flow-diagram { grid-template-columns: 1fr; gap: 20px; padding: 28px 22px; }
+        .flow-inputs .flow-card::after,
+        .flow-outputs .flow-card::before { content: none; }
+        .flow-hub { min-width: 0; padding: 24px; }
       }
       @media (max-width: 600px) {
         .cascade-row { grid-template-columns: 1fr; }
