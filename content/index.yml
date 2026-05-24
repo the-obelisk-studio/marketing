@@ -2,6 +2,13 @@ hero:
   eyebrow: ""
   title: Obelisk
   motto: One studio. Every stage.
+  positioning: >-
+    An independent studio of working filmmakers — building tools and finishing
+    pictures for the people who actually make films.
+  meta:
+    - Burbank · Los Angeles
+    - Independent Studio
+    - Est. 2026
 studio:
   kicker: The Studio
   heading: Built by *filmmakers*, for the work.
@@ -18,6 +25,12 @@ studio:
 
     And we work *with* people, not for them. Software is a co-pilot, never an autopilot. Finishing runs as a collaboration with the DP, the director, and the editor — not a black box that returns a master. The studio is built around a single conviction across both pillars: the work is better when the people doing it are working together.
   links: []
+  aside:
+    label: Studio Index
+    items:
+      - { term: Founded, detail: "2026" }
+      - { term: Discipline, detail: "Software · Post Production" }
+      - { term: Location, detail: "Burbank, California" }
 offerings:
   kicker: What We Make
   heading: Software. *Finishing.*
@@ -83,3 +96,10 @@ partnership:
       year: 2025 · IndieX
       synopsis: Outstanding Achievement for Cinematography · Cinematography & Produced
         by Kshitij Kapil
+  collab:
+    eyebrow: — Previous Collaboration
+    heading: A working history, *on screen.*
+    lead: >-
+      Selected films from the partners — together and apart. The work that built
+      the trust this partnership runs on.
+    ctaLabel: View the full partnership

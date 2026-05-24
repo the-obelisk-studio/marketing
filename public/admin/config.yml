@@ -79,6 +79,8 @@ collections:
               - { name: eyebrow, label: Eyebrow, widget: string, required: false }
               - { name: title, label: Title, widget: string }
               - { name: motto, label: Motto, widget: string, required: false }
+              - { name: positioning, label: "Positioning paragraph (under the motto)", widget: text, required: false }
+              - { name: meta, label: "Meta strip (Burbank · Independent Studio · Est. 2026)", widget: list, required: false, field: { name: item, widget: string } }
           - name: studio
             label: "Section 01 · The Studio"
             widget: object
@@ -93,6 +95,19 @@ collections:
                 fields:
                   - { name: label, label: Label, widget: string }
                   - { name: href, label: Href, widget: string }
+              - name: aside
+                label: "Studio Index (right-rail aside)"
+                widget: object
+                required: false
+                fields:
+                  - { name: label, label: "Aside label", widget: string, default: "Studio Index" }
+                  - name: items
+                    label: "Index rows"
+                    widget: list
+                    summary: "{{fields.term}} — {{fields.detail}}"
+                    fields:
+                      - { name: term, label: "Term (e.g. Founded)", widget: string }
+                      - { name: detail, label: "Detail (e.g. 2026)", widget: string }
           - name: offerings
             label: "Section 02 · What We Make"
             widget: object
@@ -129,6 +144,15 @@ collections:
                   - { name: title, label: Title, widget: string }
                   - { name: year, label: Year line, widget: string, required: false }
                   - { name: synopsis, label: One-line credit, widget: text, required: false }
+              - name: collab
+                label: "Previous Collaboration subsection"
+                widget: object
+                required: false
+                fields:
+                  - { name: eyebrow, label: "Eyebrow (e.g. '— Previous Collaboration')", widget: string, required: false }
+                  - { name: heading, label: "Heading (use *italics*)", widget: string, required: false }
+                  - { name: lead, label: "Lead paragraph", widget: text, required: false }
+                  - { name: ctaLabel, label: "Bottom link label (e.g. 'View the full partnership')", widget: string, required: false }
 
       # ── Partnership ───────────────────────────────────────────────
       - name: partnership
@@ -294,6 +318,7 @@ collections:
             widget: object
             required: false
             fields:
+              - { name: eyebrow, label: "Eyebrow (e.g. 'Booking now')", widget: string, required: false }
               - { name: heading, widget: string }
               - { name: body, widget: text, required: false }
               - name: link

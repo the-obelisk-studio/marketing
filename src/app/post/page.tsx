@@ -181,9 +181,11 @@ export default function PostPage() {
       {c.cta && (
         <section className="cta-section">
           <div className="page-container">
-            <Reveal>
-              <div className="cta-eyebrow">Booking now</div>
-            </Reveal>
+            {c.cta.eyebrow && (
+              <Reveal>
+                <div className="cta-eyebrow">{c.cta.eyebrow}</div>
+              </Reveal>
+            )}
             <Reveal delay={120}>
               <h2 className="cta-title"><Inline>{c.cta.heading}</Inline></h2>
             </Reveal>

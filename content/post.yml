@@ -92,6 +92,7 @@ filmmakers:
         - { label: View Siddharth's portfolio, href: "https://www.siddharthagrawalfilms.com/" }
 
 cta:
+  eyebrow: Booking now
   heading: "Bring your project *to the suite.*"
   body: Custom rates per project. Tell us what you're finishing, when it ships, and what spec it needs to land in.
   link: { label: Inquire about a project, href: "/contact" }

@@ -117,6 +117,8 @@ const HeroSchema = z.object({
   eyebrow: z.string().optional(),
   title: z.string(),
   motto: z.string().optional(),
+  positioning: z.string().optional(),     // hero sub-paragraph
+  meta: z.array(z.string()).default([]),  // meta strip (Burbank · Independent Studio · Est. 2026)
   registrationMark: z.string().optional(),
 })
 
@@ -127,6 +129,13 @@ export const IndexPageSchema = z.object({
     heading: z.string(),
     body: z.string(),
     links: z.array(SectionLinkSchema).default([]),
+    aside: z.object({
+      label: z.string().default("Studio Index"),
+      items: z.array(z.object({
+        term: z.string(),
+        detail: z.string(),
+      })).default([]),
+    }).optional(),
   }),
   offerings: z.object({
     kicker: z.string().default("What We Make"),
@@ -139,6 +148,12 @@ export const IndexPageSchema = z.object({
     body: z.string().optional(),
     founders: z.array(FounderSchema).default([]),
     films: z.array(FilmSchema).default([]),
+    collab: z.object({
+      eyebrow: z.string().optional(),
+      heading: z.string().optional(),     // *italics* supported
+      lead: z.string().optional(),
+      ctaLabel: z.string().optional(),
+    }).optional(),
   }),
 })
 
@@ -210,6 +225,7 @@ export const PostPageSchema = z.object({
     founders: z.array(FounderSchema),
   }).optional(),
   cta: z.object({
+    eyebrow: z.string().optional(),
     heading: z.string(),
     body: z.string().optional(),
     link: LinkSchema,

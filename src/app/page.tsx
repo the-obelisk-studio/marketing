@@ -31,15 +31,18 @@ export default function HomePage() {
             <path d="M32 0 L48 56 L18 56 Z M18 56 L48 56 L46 380 L20 380 Z" fill="currentColor" />
           </svg>
 
-          <Reveal eager delay={100}>
-            <div className="hero-meta">
-              <span>Burbank · Los Angeles</span>
-              <span className="dash" />
-              <span>Independent Studio</span>
-              <span className="dash" />
-              <span>Est. 2026</span>
-            </div>
-          </Reveal>
+          {c.hero.meta.length > 0 && (
+            <Reveal eager delay={100}>
+              <div className="hero-meta">
+                {c.hero.meta.map((item, i) => (
+                  <span key={`${item}-${i}`} style={{ display: "contents" }}>
+                    {i > 0 && <span className="dash" />}
+                    <span>{item}</span>
+                  </span>
+                ))}
+              </div>
+            </Reveal>
+          )}
 
           <Reveal eager delay={250}>
             <h1 className="wordmark">{c.hero.title}</h1>
@@ -56,11 +59,11 @@ export default function HomePage() {
             </Reveal>
           )}
 
-          <Reveal eager delay={950}>
-            <p className="hero-positioning">
-              An independent studio of working filmmakers — building tools and finishing pictures for the people who actually make films.
-            </p>
-          </Reveal>
+          {c.hero.positioning && (
+            <Reveal eager delay={950}>
+              <p className="hero-positioning">{c.hero.positioning}</p>
+            </Reveal>
+          )}
         </div>
 
         <div className="hero-scroll">scroll ↓</div>
@@ -90,14 +93,19 @@ export default function HomePage() {
                 <Body>{c.studio.body}</Body>
               </div>
 
-              <aside className="about-aside">
-                <div className="about-aside-label">Studio Index</div>
-                <dl>
-                  <dt>Founded</dt><dd>2026</dd>
-                  <dt>Discipline</dt><dd>Software · Post Production</dd>
-                  <dt>Location</dt><dd>Burbank, California</dd>
-                </dl>
-              </aside>
+              {c.studio.aside && c.studio.aside.items.length > 0 && (
+                <aside className="about-aside">
+                  <div className="about-aside-label">{c.studio.aside.label}</div>
+                  <dl>
+                    {c.studio.aside.items.map((item) => (
+                      <span key={item.term} style={{ display: "contents" }}>
+                        <dt>{item.term}</dt>
+                        <dd>{item.detail}</dd>
+                      </span>
+                    ))}
+                  </dl>
+                </aside>
+              )}
             </Reveal>
           </div>
         </div>
@@ -182,17 +190,23 @@ export default function HomePage() {
 
           {c.partnership.films.length > 0 && (
             <div className="collab-subsection">
-              <Reveal>
-                <div className="collab-eyebrow">— Previous Collaboration</div>
-              </Reveal>
-              <Reveal delay={120}>
-                <h3 className="collab-title">A working history, <em>on screen.</em></h3>
-              </Reveal>
-              <Reveal delay={220}>
-                <p className="collab-lead">
-                  Selected films from the partners — together and apart. The work that built the trust this partnership runs on.
-                </p>
-              </Reveal>
+              {c.partnership.collab?.eyebrow && (
+                <Reveal>
+                  <div className="collab-eyebrow">{c.partnership.collab.eyebrow}</div>
+                </Reveal>
+              )}
+              {c.partnership.collab?.heading && (
+                <Reveal delay={120}>
+                  <h3 className="collab-title">
+                    <Inline>{c.partnership.collab.heading}</Inline>
+                  </h3>
+                </Reveal>
+              )}
+              {c.partnership.collab?.lead && (
+                <Reveal delay={220}>
+                  <p className="collab-lead">{c.partnership.collab.lead}</p>
+                </Reveal>
+              )}
 
               <div className="credits-list">
                 {c.partnership.films.map((film, i) => (
@@ -206,12 +220,14 @@ export default function HomePage() {
                 ))}
               </div>
 
-              <div style={{ marginTop: 48 }}>
-                <Link href="/partnership" className="portfolio-link">
-                  View the full partnership
-                  <span className="arrow">→</span>
-                </Link>
-              </div>
+              {c.partnership.collab?.ctaLabel && (
+                <div style={{ marginTop: 48 }}>
+                  <Link href="/partnership" className="portfolio-link">
+                    {c.partnership.collab.ctaLabel}
+                    <span className="arrow">→</span>
+                  </Link>
+                </div>
+              )}
             </div>
           )}
         </div>
