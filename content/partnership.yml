@@ -15,10 +15,11 @@ story:
     Kshitij and Siddharth met as MFA Cinematography students at the New York
     Film Academy, both trained under BAFTA Lifetime Achievement recipient
     Anthony B. Richmond, ASC, BSC. What began as classmates became years of
-    working together — Kshitij behind the camera, Siddharth producing — across
-    short films that travelled from the New York International Film Festival to
-    the International Film & Entertainment Festival of Australia. Different
-    roles each time, same shared instinct about what makes a picture work.
+    working together — Kshitij behind the camera, Sid producing — across short
+    films that travelled from the New York International Film Festival to the
+    International Film & Entertainment Festival of Australia to Cannes Marché du
+    Film. Different roles each time, same shared instinct about what makes a
+    picture work.
 
 
     Before the MFA, Siddharth completed a degree in Computer Science and Communication Engineering, the path that now powers Grace's backend and the partnership's technical work.
@@ -35,7 +36,7 @@ twoStudios:
   studios:
     - label: — Studio of Record
       name: Obelisk Studios
-      founder: Founded by Kshitij Kapil
+      founder: Kshitij Kapil, Founder
       description: >
         The picture side. Operates the post house, leads Grace's American
         business, runs conversations with productions and clients. Shapes the
@@ -47,7 +48,7 @@ twoStudios:
         - Studio of Record
     - label: — Technical Engine
       name: TDH Systems
-      founder: Founded by Siddharth Agrawal
+      founder: Siddharth Agrawal, Founding Partner
       description: >
         The engineering side. Builds and runs Grace's backend, infrastructure,
         and the technical systems that make the platform real. The work nobody
@@ -81,19 +82,18 @@ filmmakers:
         recipient Anthony B. Richmond, ASC, BSC. Before that, he completed a
         Bachelor's degree in Computer Science and Communication Engineering —
         the foundation that now powers Grace's backend and TDH Systems'
-        technical work. His films have been recognized at the International New
-        York Film Festival, Los Angeles International Film Festival, and the
-        International Film & Entertainment Festival of Australia, where he won
-        Best Production.
+        technical work. His films have been recognized at the Cannes Marché du
+        Film, International New York Film Festival, Los Angeles International
+        Film Festival, and the International Film & Entertainment Festival of
+        Australia, where he won Best Production.
       portfolioLinks:
         - label: Read more
           href: https://www.siddharthagrawalfilms.com/
 selectedWork:
   kicker: Selected Work
   heading: A working history, *on screen.*
-  body: >
-    Films from the partners — together and apart. Each one carried through some
-    part of the cycle the studio now serves.
+  body: Films from the partners — together and apart. Each one carried through
+    some part of the cycle the studio now serves.
   films:
     - title: Piroba
       genre: Short Film · Drama, Action
