@@ -31,8 +31,8 @@ twoStudios:
   heading: A picture, *across two studios.*
   body: >
     The partnership is structured as two independent studios, working on the
-    same picture from opposite sides. One owns what gets seen. The other owns
-    what makes it run.
+    same picture from opposite sides. One shapes what gets seen. The other
+    builds what makes it run.
   studios:
     - label: — Studio of Record
       name: Obelisk Studios
@@ -74,14 +74,18 @@ filmmakers:
         - label: Read more
           href: https://kshitijkapil.com/
     - name: Siddharth Agrawal
-      company: Founder · TDH Systems
-      bio: >
-        Siddharth Agrawal is an award-winning Producer and Director of
-        Photography with a strong track record in narrative, documentary, and
-        commercial filmmaking. His work has screened internationally and earned
-        recognition at top festivals including the International Film &
-        Entertainment Festival of Australia, LA International Film Festival,
-        One-Reeler, and the Palermo International Film Festival.
+      company: Founding Partner · TDH Systems
+      bio: Siddharth Agrawal is a producer and Director of Photography based in Los
+        Angeles, with experience across 100+ productions in film, commercial,
+        and post-production. He holds an MFA in Cinematography from the New York
+        Film Academy, where he trained under BAFTA Lifetime Achievement Award
+        recipient Anthony B. Richmond, ASC, BSC. Before that, he completed a
+        Bachelor's degree in Computer Science and Communication Engineering —
+        the foundation that now powers Grace's backend and TDH Systems'
+        technical work. His films have been recognized at the International New
+        York Film Festival, Los Angeles International Film Festival, and the
+        International Film & Entertainment Festival of Australia, where he won
+        Best Production.
       portfolioLinks:
         - label: Read more
           href: https://www.siddharthagrawalfilms.com/
