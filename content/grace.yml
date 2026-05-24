@@ -276,8 +276,7 @@ compliance:
     - Exhibit G, Studio Teacher Daily Report, Safety Meeting sign-in, Daily
       Timesheets — generated as PDFs
   deferralNote: "Paper-first today: generated PDFs get signed in person and
-    re-uploaded. In-app electronic signatures (DocuSeal-backed) land in the next
-    release."
+    re-uploaded. In-app electronic signatures coming soon."
 vault:
   num: "10"
   numLabel: The Vault
@@ -382,18 +381,17 @@ pricing:
       featured: true
       badge: Recommended
       bullets:
-        - Everything in Standard
+        - Everything in Standard Plus
+        - "Higher seat ceilings: 6 T1 · 10 T2 · 40 T3"
         - "Vault: forensic-watermarked screener portal with magic-link auth"
         - "DIT pipeline: media cards, dailies packages, clip delivery"
-        - "Higher seat ceilings: 6 T1 · 10 T2 · 40 T3"
-        - Priority beta support
         - 300GB Storage for Creative assets, Dailies & Screeners
   tierCta:
     label: Request access →
     href: /contact?topic=Grace
-  note: "Add-on packs: additional production slots ($30/mo), seat packs by tier.
-    All prorated. Beta access includes a 90-day free card-on-file access to
-    Standard or Studio subscription."
+  note: "Add-on packs: additional production slots and seat packs by tier. All
+    prorated. Beta access includes a 90-day free access to Standard or Studio
+    subscription."
 faq:
   num: "14"
   heading: Things people ask
