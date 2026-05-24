@@ -2,9 +2,8 @@ hero:
   eyebrow: ""
   title: Obelisk
   motto: One studio. Every stage.
-  positioning: >-
-    An independent studio of working filmmakers — building tools and finishing
-    pictures for the people who actually make films.
+  positioning: An independent studio of working filmmakers — building tools and
+    finishing pictures for the people who make them.
   meta:
     - Burbank · Los Angeles
     - Independent Studio
@@ -28,9 +27,12 @@ studio:
   aside:
     label: Studio Index
     items:
-      - { term: Founded, detail: "2026" }
-      - { term: Discipline, detail: "Software · Post Production" }
-      - { term: Location, detail: "Burbank, California" }
+      - term: Founded
+        detail: "2026"
+      - term: Discipline
+        detail: Software · Post Production
+      - term: Location
+        detail: Burbank, California
 offerings:
   kicker: What We Make
   heading: Software. *Finishing.*
@@ -44,8 +46,8 @@ offerings:
         Grace is built around one idea: every department on a film should be
         working from the same picture. Breakdown feeds schedule. Schedule feeds
         budget. Budget feeds call sheet. Everything connects, nothing gets
-        re-entered, and no one is working from a stale version. The smart parts
-        are baked in — co-pilot, never autopilot. Filmmakers stay in command.
+        re-entered, and no one is working from a stale version. Grace's AI runs
+        as a co-pilot, never an autopilot. It suggests; you decide.
       href: /grace
       cta: Learn more
     - kicker: II · Services
@@ -70,28 +72,26 @@ partnership:
     - name: Kshitij Kapil
       company: Founder · Obelisk Studios
       roles: []
-      bio: >
-        Cinematographer and colorist. The picture side of Grace, the post house,
-        and the studio.
+      bio: Cinematographer and colorist. Anchors the picture side — Grace, the post
+        house, and how the studio shows up in the room.
     - name: Siddharth Agrawal
-      company: Founder · TDH Systems
+      company: Founding Partner · TDH Systems
       roles: []
-      bio: >
-        Producer, cinematographer, and editor. Builds the engineering behind
-        Grace.
+      bio: Producer, cinematographer, and editor. Builds the engine underneath Grace
+        and thinks long about where it goes next.
   films:
     - title: Piroba
-      year: 2026 · NYIFA
-      synopsis: Best Indie Short · Cinematography by Kshitij Kapil · Produced by
-        Siddharth Agrawal
+      year: 2026 · NYIFA · IndieX
+      synopsis: Best Indie Short, Best Makeup, Best Score · Cinematography by Kshitij
+        Kapil · Produced by Siddharth Agrawal
     - title: Exsanguination
-      year: 2025 · IFEFA · Picasso
+      year: 2025 · 10+ Awards
       synopsis: Best Production · Best Cinematographer of the Year · Cinematography &
         Produced by Siddharth Agrawal
     - title: Between The Lines
-      year: 2025 · 5 Festivals
-      synopsis: Best Film at Mokkho · Best US Short at Rohip and Kodaikanal ·
-        Cinematography & Produced by Siddharth Agrawal
+      year: 2025 · 10+ Awards
+      synopsis: Best Film · Best CInematography · Cinematography & Produced by
+        Siddharth Agrawal
     - title: The Night the Sky Fell
       year: 2025 · IndieX
       synopsis: Outstanding Achievement for Cinematography · Cinematography & Produced
@@ -99,7 +99,6 @@ partnership:
   collab:
     eyebrow: — Previous Collaboration
     heading: A working history, *on screen.*
-    lead: >-
-      Selected films from the partners — together and apart. The work that built
+    lead: Selected films from the partners — together and apart. The work that built
       the trust this partnership runs on.
     ctaLabel: View the full partnership
