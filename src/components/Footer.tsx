@@ -17,6 +17,10 @@ const FALLBACK: SharedContent["footer"] = {
       { label: "Work", href: "/#offerings" },
       { label: "Partnership", href: "/partnership" },
     ] },
+    { label: "Legal", links: [
+      { label: "Privacy Policy", href: "/privacy" },
+      { label: "Terms of Service", href: "/terms" },
+    ] },
     { label: "Contact", links: [
       { label: "hello@theobeliskstudio.com", href: "mailto:hello@theobeliskstudio.com" },
       { label: "Contact form", href: "/contact" },
@@ -51,7 +55,6 @@ export function Footer({ footer = FALLBACK }: Props) {
 
         <div className="footer-base">
           <div>© {FOOTER_YEAR} Obelisk Studios · Burbank, California</div>
-          <div>v0.1</div>
         </div>
       </div>
 
@@ -68,7 +71,7 @@ export function Footer({ footer = FALLBACK }: Props) {
         }
         .footer-grid {
           display: grid;
-          grid-template-columns: 2fr 1fr 1fr;
+          grid-template-columns: 1.6fr 1fr 1.3fr 1fr;
           gap: 64px;
           margin-bottom: 80px;
         }

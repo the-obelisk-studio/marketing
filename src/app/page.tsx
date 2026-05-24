@@ -65,8 +65,6 @@ export default function HomePage() {
             </Reveal>
           )}
         </div>
-
-        <div className="hero-scroll">scroll ↓</div>
       </section>
 
       {/* ── 01 · THE STUDIO ── */}
@@ -323,20 +321,6 @@ export default function HomePage() {
           color: var(--ink-soft);
           margin-top: 64px;
         }
-        .hero-scroll {
-          position: absolute;
-          bottom: 32px;
-          right: var(--container-pad);
-          font-family: var(--font-mono);
-          font-size: 10px;
-          letter-spacing: 0.28em;
-          text-transform: uppercase;
-          color: var(--ink-muted);
-          writing-mode: vertical-rl;
-          text-orientation: mixed;
-          opacity: 0.7;
-        }
-
         /* ── SECTION ── */
         .section {
           padding: 160px 0;
@@ -641,7 +625,7 @@ export default function HomePage() {
           .page-container { padding: 0 var(--container-pad-mobile); }
           .hero { padding: 130px 0 60px; min-height: auto; }
           .section { padding: 100px 0; }
-          .obelisk-glyph, .hero-scroll { display: none; }
+          .obelisk-glyph { display: none; }
           .about-grid, .offerings-grid, .founders-grid {
             grid-template-columns: 1fr;
             gap: 48px;

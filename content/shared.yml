@@ -17,10 +17,6 @@ footer:
         - { label: Work, href: "/#offerings" }
         - { label: Partnership, href: /partnership }
         - { label: Grace guide, href: /grace/guide }
-    - label: Contact
-      links:
-        - { label: hello@theobeliskstudio.com, href: "mailto:hello@theobeliskstudio.com" }
-        - { label: Contact form, href: /contact }
     - label: Legal
       links:
         - { label: Privacy Policy, href: /privacy }
@@ -31,3 +27,7 @@ footer:
         - { label: Vault Recipient Terms, href: /legal/vault }
         - { label: DMCA, href: /dmca }
         - { label: Privacy request, href: /privacy/request }
+    - label: Contact
+      links:
+        - { label: hello@theobeliskstudio.com, href: "mailto:hello@theobeliskstudio.com" }
+        - { label: Contact form, href: /contact }
