@@ -12,6 +12,18 @@ export const OG_IMAGE = `${SITE_URL}/og.png`
 export const OG_IMAGE_WIDTH = 1200
 export const OG_IMAGE_HEIGHT = 630
 
+// Square variant — iMessage, WhatsApp, Slack and some LinkedIn surfaces
+// crop the standard 1.91:1 OG to a square tile; providing a real square
+// lets them pick a better-composed image instead of cropping ours.
+export const OG_IMAGE_SQUARE = `${SITE_URL}/og-square.png`
+export const OG_IMAGE_SQUARE_SIZE = 1200
+
+// Twitter/X's summary_large_image is 1.91:1 too, but we render it at
+// 16:9 (1200×675) because that's what X actually serves in-timeline.
+export const TWITTER_IMAGE = `${SITE_URL}/twitter-card.png`
+export const TWITTER_IMAGE_WIDTH = 1200
+export const TWITTER_IMAGE_HEIGHT = 675
+
 // Per-page metadata helper. Next merges Metadata at the top level but
 // REPLACES nested objects (openGraph, twitter), so any page that wants
 // to set og:title etc. must also re-specify images/type/siteName. This
@@ -41,13 +53,19 @@ export function pageMetadata(opts: {
           height: OG_IMAGE_HEIGHT,
           alt: SITE_NAME,
         },
+        {
+          url: OG_IMAGE_SQUARE,
+          width: OG_IMAGE_SQUARE_SIZE,
+          height: OG_IMAGE_SQUARE_SIZE,
+          alt: SITE_NAME,
+        },
       ],
     },
     twitter: {
       card: "summary_large_image",
       title: ogTitle,
       description: opts.description,
-      images: [OG_IMAGE],
+      images: [TWITTER_IMAGE],
     },
   }
 }
@@ -58,7 +76,7 @@ export function organizationLd() {
     "@type": "Organization",
     name: SITE_NAME,
     url: SITE_URL,
-    logo: `${SITE_URL}/og.png`,
+    logo: OG_IMAGE_SQUARE,
     description: SITE_TAGLINE,
     foundingDate: "2026",
     address: {

@@ -11,6 +11,9 @@ import {
   OG_IMAGE,
   OG_IMAGE_WIDTH,
   OG_IMAGE_HEIGHT,
+  OG_IMAGE_SQUARE,
+  OG_IMAGE_SQUARE_SIZE,
+  TWITTER_IMAGE,
   organizationLd,
   websiteLd,
 } from "@/lib/seo"
@@ -58,13 +61,19 @@ export const metadata: Metadata = {
         height: OG_IMAGE_HEIGHT,
         alt: SITE_NAME,
       },
+      {
+        url: OG_IMAGE_SQUARE,
+        width: OG_IMAGE_SQUARE_SIZE,
+        height: OG_IMAGE_SQUARE_SIZE,
+        alt: SITE_NAME,
+      },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: SITE_NAME,
     description: SITE_TAGLINE,
-    images: [OG_IMAGE],
+    images: [TWITTER_IMAGE],
   },
   robots: {
     index: true,
