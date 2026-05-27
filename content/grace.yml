@@ -6,7 +6,7 @@ hero:
     pm script revision doesn't become a 7 pm crisis.
   primaryCta:
     label: Request beta access →
-    href: /contact?topic=Grace
+    href: /beta-interest
   secondaryCta:
     label: See how it works ↓
     href: "#problem"
@@ -388,7 +388,7 @@ pricing:
         - 300GB Storage for Creative assets, Dailies & Screeners
   tierCta:
     label: Request access →
-    href: /contact?topic=Grace
+    href: /beta-interest
   note: "Add-on packs: additional production slots and seat packs by tier. All
     prorated. Beta access includes a 90-day free access to Standard or Studio
     subscription."
@@ -447,7 +447,7 @@ finalCta:
   body: Tell us about your production and we'll get you set up.
   primaryCta:
     label: Request beta access →
-    href: /contact?topic=Grace
+    href: /beta-interest
   secondaryCta:
     label: Back to top ↑
     href: "#"

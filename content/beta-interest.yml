@@ -1,0 +1,29 @@
+# Beta interest form page. Edited via Decap CMS at /admin/.
+# Schema: src/lib/schema.ts → BetaInterestPageSchema.
+#
+# The form fields themselves are NOT here — they're locked to the
+# Grace API contract (see app/api/beta-interest in the grace-production
+# repo). This file only owns the surrounding copy.
+
+hero:
+  meta:
+    - Grace Production OS
+    - Closed beta
+    - Tell us about your production
+  headline: "Request *beta access.*"
+  positioning: |
+    Grace is open to a small cohort of working productions while we shape the next few releases. Tell us what you're shooting, what you wrangle for it, and we'll get back to you with an access link if it's a fit.
+
+intro:
+  kicker: The Form
+  heading: "A few details so we can *route you properly.*"
+  body: Required fields are marked with a star. Everything else is optional, but the more we know, the better we can match you with the right onboarding.
+
+success:
+  eyebrow: Interest received
+  heading: "Thanks. We'll be *in touch.*"
+  body: |
+    Your interest is logged. If you're a fit for the closed beta we'll send your access link from invites@theobeliskstudio.com — usually within a few days.
+
+finePrint: |
+  We use these details only to evaluate beta fit and to send your invite if we accept. No third-party tracking. No marketing list signup.

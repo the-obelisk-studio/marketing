@@ -493,6 +493,26 @@ export const LegalDocumentSchema = z.object({
 
 export type LegalDocumentContent = z.infer<typeof LegalDocumentSchema>
 
+// Beta-interest page. Form fields themselves are NOT Decap-editable —
+// they're tied to the Grace API contract. Decap only owns the page
+// chrome: hero copy, intro paragraph, success-state copy, fine-print.
+export const BetaInterestPageSchema = z.object({
+  hero: HeroPillsHeroSchema,
+  intro: z.object({
+    kicker: z.string().optional(),
+    heading: z.string().optional(),
+    body: z.string().optional(),
+  }).default({}),
+  success: z.object({
+    eyebrow: z.string().default("Thank you"),
+    heading: z.string().default("We'll be *in touch.*"),
+    body: z.string().default(
+      "Your interest is logged. If you're a fit for the closed beta we'll send your access link from invites@theobeliskstudio.com within a few days."
+    ),
+  }).default({ eyebrow: "Thank you", heading: "We'll be *in touch.*", body: "" }),
+  finePrint: z.string().optional(),
+})
+
 export const CONTENT_SCHEMAS = {
   "shared.yml": SharedSchema,
   "index.yml": IndexPageSchema,
@@ -500,6 +520,7 @@ export const CONTENT_SCHEMAS = {
   "post.yml": PostPageSchema,
   "grace.yml": GracePageSchema,
   "contact.yml": ContactPageSchema,
+  "beta-interest.yml": BetaInterestPageSchema,
   "privacy.yml": PrivacyPageSchema,
   "terms.yml": TermsPageSchema,
   "dmca.yml": LegalDocumentSchema,
@@ -522,6 +543,7 @@ export type ContactContent = z.infer<typeof ContactPageSchema>
 export type PrivacyContent = z.infer<typeof PrivacyPageSchema>
 export type PrivacySection = z.infer<typeof PrivacySectionSchema>
 export type TermsContent = z.infer<typeof TermsPageSchema>
+export type BetaInterestContent = z.infer<typeof BetaInterestPageSchema>
 
 export type Founder = z.infer<typeof FounderSchema>
 export type Film = z.infer<typeof FilmSchema>
