@@ -53,12 +53,6 @@ export function pageMetadata(opts: {
           height: OG_IMAGE_HEIGHT,
           alt: SITE_NAME,
         },
-        {
-          url: OG_IMAGE_SQUARE,
-          width: OG_IMAGE_SQUARE_SIZE,
-          height: OG_IMAGE_SQUARE_SIZE,
-          alt: SITE_NAME,
-        },
       ],
     },
     twitter: {
