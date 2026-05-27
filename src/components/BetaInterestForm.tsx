@@ -11,7 +11,7 @@
 
 import { useEffect, useRef, useState } from "react"
 
-type Status = "idle" | "submitting" | "success" | "error"
+type Status = "idle" | "submitting" | "success" | "already_requested" | "error"
 
 const ROLES = [
   "1st AD",
@@ -150,6 +150,13 @@ export function BetaInterestForm() {
       })
       if (!res.ok) {
         const body = (await res.json().catch(() => ({}))) as { error?: string }
+        if (body?.error === "already_requested") {
+          // Dedupe match — show the dedicated landing state instead of
+          // a generic form-error so the user knows it's known to us and
+          // gets a clear next step (info@).
+          setStatus("already_requested")
+          return
+        }
         setError(humanError(body?.error) || `Submit failed (${res.status})`)
         setStatus("error")
         if (widgetIdRef.current && window.turnstile) {
@@ -171,11 +178,30 @@ export function BetaInterestForm() {
         <div className="success-eyebrow">Interest received</div>
         <h3 className="success-title">Thanks. We'll be <em>in touch.</em></h3>
         <p className="success-body">
-          Your interest is logged. If you're a fit for the closed beta we'll send your access link from{" "}
+          Your interest is logged. A confirmation receipt is on its way to your inbox. If you're a fit for the closed beta we'll send your access link from{" "}
           <a href="mailto:invites@theobeliskstudio.com" style={{ color: "var(--kodachrome)", textDecoration: "underline" }}>
             invites@theobeliskstudio.com
           </a>{" "}
           — usually within a few days.
+        </p>
+
+        <style>{successStyles}</style>
+      </div>
+    )
+  }
+
+  if (status === "already_requested") {
+    return (
+      <div className="form-success">
+        <div className="success-eyebrow">Already on file</div>
+        <h3 className="success-title">We already have your <em>interest in.</em></h3>
+        <p className="success-body">
+          A request from this email is already in our queue. To follow up, add details, or ask anything else, reach us at{" "}
+          <a href="mailto:info@theobeliskstudio.com" style={{ color: "var(--kodachrome)", textDecoration: "underline" }}>
+            info@theobeliskstudio.com
+          </a>{" "}
+          or through the{" "}
+          <a href="/contact" style={{ color: "var(--kodachrome)", textDecoration: "underline" }}>contact form</a>.
         </p>
 
         <style>{successStyles}</style>
