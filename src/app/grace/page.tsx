@@ -509,8 +509,6 @@ export default function GracePage() {
 
       {/* ── FINAL CTA ────────────────────────────────────────────── */}
       <section className="section section-cta" id="contact">
-        <RegMark className="tl" />
-        <RegMark className="tr" />
         <div className="page-container">
           <Reveal>
             <h2 className="cta-heading">
