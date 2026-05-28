@@ -1,6 +1,6 @@
 hero:
   headline: A finishing house, *run by working filmmakers.*
-  positioning: Edit, color, and finishing — done as collaboration, not as a queue.
+  positioning: Edit, color, and finishing, done as collaboration, not as a queue.
   meta:
     - Obelisk Studios
     - Post Production Services
@@ -17,7 +17,7 @@ approach:
     session, maybe two. The director sees a draft on a link.
 
 
-    We work the other way. The edit, the color, the finish — these are creative decisions, not technical handoffs. A grade isn't a preset matched to dailies; it's a choice about what the picture is supposed to feel like, made in conversation with the people who shot it. Editorial isn't a punch list; it's the moment the film actually becomes itself.
+    We work the other way. The edit, the color, the finish: these are creative decisions, not technical handoffs. A grade isn't a preset matched to dailies; it's a choice about what the picture is supposed to feel like, made in conversation with the people who shot it. Editorial isn't a punch list; it's the moment the film actually becomes itself.
 
 
     We give each project the time it needs, and stay in the room with the people who made the picture. *That's the whole offering.*
@@ -31,7 +31,7 @@ services:
       title: Edit.
       tagline: From assembly to picture lock.
       description: Narrative, documentary, and short-form editorial. We work in
-        DaVinci Resolve and Premiere — whichever the production was cut on,
+        DaVinci Resolve and Premiere, whichever the production was cut on,
         whichever serves the story. From director's cut through notes passes to
         picture lock. Full edit from dailies, or a fresh pair of eyes on a cut
         that's stuck.
@@ -47,7 +47,7 @@ services:
       description: >
         DaVinci Resolve color, supervised by working DPs. Conform, primary,
         secondary, shot match, look development, deliverables. We grade the
-        picture together — DP in the room or on the link, decisions made in
+        picture together, DP in the room or on the link, decisions made in
         conversation. ACES and Rec.709 pipelines, RAW from any camera body, HDR
         on request.
       tools:
@@ -62,7 +62,7 @@ services:
       tagline: Conform, deliverables, festival masters.
       description: >
         Online conform from offline cut. Title and credit work. Versioning for
-        festivals, streamers, broadcast, theatrical. Deliverables in any spec —
+        festivals, streamers, broadcast, theatrical. Deliverables in any spec:
         DCP, ProRes, H.264 mezzanine, IMF. Quality control passes. The
         unglamorous work that decides whether the picture actually plays.
       tools:
@@ -74,9 +74,9 @@ services:
       status: In Collaboration
       statusKind: collab
       title: Sound.
-      tagline: Design, edit, mix — through trusted partners.
+      tagline: Design, edit, mix, through trusted partners.
       description: >
-        We don't run sound in-house — yet. For now, sound design, dialogue edit,
+        We don't run sound in-house, yet. For now, sound design, dialogue edit,
         ADR, foley, and final mix run through a curated set of collaborators
         we've worked with before. You get a single point of contact through us,
         and the sound work stays inside the same conversation the picture's in.
@@ -90,13 +90,13 @@ howItRuns:
   steps:
     - number: "01"
       title: First conversation.
-      description: A call about the project — script, footage, intent. Spec, schedule,
+      description: A call about the project. Script, footage, intent. Spec, schedule,
         scope. We figure out together whether the work fits the suite and the
         calendar.
     - number: "02"
       title: Conform & prep.
-      description: Footage in. Conform from EDL or FCPXML. Reference material —
-        director's notes, look references, prior color work — ingested. Suite
+      description: Footage in. Conform from EDL or FCPXML. Reference material
+        (director's notes, look references, prior color work) ingested. Suite
         calibrated for the project.
     - number: "03"
       title: In the room.
@@ -114,7 +114,7 @@ filmmakers:
   founders:
     - name: Kshitij Kapil
       company: Cinematographer · Colorist
-      bio: Approaches color the way he approaches the camera — as a creative tool in
+      bio: Approaches color the way he approaches the camera, as a creative tool in
         service of the story.
       portfolioLinks:
         - label: View Kshitij's portfolio

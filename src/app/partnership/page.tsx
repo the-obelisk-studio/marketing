@@ -6,6 +6,7 @@
 import Link from "next/link"
 import { Reveal } from "@/components/Reveal"
 import { RegMark } from "@/components/RegMark"
+import { HeroMark } from "@/components/HeroMark"
 import { Inline, Body } from "@/lib/rich-text"
 import { loadContent } from "@/lib/content"
 import { pageMetadata } from "@/lib/seo"
@@ -14,7 +15,7 @@ import type { CrewEntry, FestivalEntry } from "@/lib/schema"
 export const metadata = pageMetadata({
   title: "Partnership",
   description:
-    "Obelisk Studios and TDH Systems — a partnership built on the work. Two studios, one picture.",
+    "Obelisk Studios and TDH Systems, a partnership built on the work. Two studios, one picture.",
   path: "/partnership/",
 })
 
@@ -52,10 +53,6 @@ export default function PartnershipPage() {
       {/* ── HERO ── */}
       <section className="hero">
         <div className="page-container">
-          <svg className="obelisk-glyph" viewBox="0 0 64 380" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-            <path d="M32 0 L48 56 L18 56 Z M18 56 L48 56 L46 380 L20 380 Z" fill="currentColor" />
-          </svg>
-
           {c.hero.meta.length > 0 && (
             <Reveal eager delay={100}>
               <div className="hero-meta">
@@ -71,9 +68,11 @@ export default function PartnershipPage() {
 
           {c.hero.headline && (
             <Reveal eager delay={250}>
-              <h1 className="hero-headline">
-                <Inline>{c.hero.headline}</Inline>
-              </h1>
+              <HeroMark>
+                <h1 className="hero-headline">
+                  <Inline>{c.hero.headline}</Inline>
+                </h1>
+              </HeroMark>
             </Reveal>
           )}
 
@@ -293,14 +292,6 @@ export default function PartnershipPage() {
           justify-content: center;
           padding: 160px 0 100px;
           position: relative;
-        }
-        .obelisk-glyph {
-          position: absolute;
-          top: 50%; right: -30px;
-          transform: translateY(-50%);
-          width: 64px; height: 380px;
-          opacity: 0.06; pointer-events: none;
-          color: var(--ink);
         }
         .hero-meta {
           font-family: var(--font-mono);
@@ -705,7 +696,6 @@ export default function PartnershipPage() {
           .page-container { padding: 0 var(--container-pad-mobile); }
           .hero { padding: 130px 0 60px; min-height: auto; }
           .section, .cta-section { padding: 100px 0; }
-          .obelisk-glyph { display: none; }
           .entities-grid, .filmmakers-grid { grid-template-columns: 1fr; gap: 48px; }
           .film-detail { grid-template-columns: 1fr; gap: 32px; }
           .section :global(.reg-mark.tl) { left: var(--container-pad-mobile); }

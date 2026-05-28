@@ -2,7 +2,7 @@ hero:
   badge: In Development · Closed Beta
   title: The production operating system
   titleMuted: built by working filmmakers.
-  sub: Script, schedule, budget, and call sheets from one source of truth — so a 4
+  sub: Script, schedule, budget, and call sheets from one source of truth, so a 4
     pm script revision doesn't become a 7 pm crisis.
   primaryCta:
     label: Request beta access →
@@ -20,7 +20,7 @@ problems:
   items:
     - scenario: Same scene numbers, re-typed in four tools by Tuesday.
       response: Break it down once. Schedule, budget, DOOD and call sheet read from
-        the same scenes — every element, every cast member, every location,
+        the same scenes. Every element, every cast member, every location,
         already there. The call sheet builds itself from the day.
     - scenario: Five days got added to the schedule. The budget hasn't heard.
       response: One stripboard, one budget, one DOOD. Every department reads the same
@@ -38,12 +38,12 @@ thesis:
     Grace is built around one idea: every department on a film should be working
     from the same picture. Breakdown feeds schedule. Schedule feeds budget.
     Budget feeds call sheet. Everything connects, nothing gets re-entered, and
-    no one is working from a stale version. One system, end to end — from page
+    no one is working from a stale version. One system, end to end, from page
     to wrap.
   points:
     - One upload changes everything downstream.
-    - One screen for the day on set — everything the floor needs, live.
-    - Every role sees their own view — and nothing else.
+    - One screen for the day on set. Everything the floor needs, live.
+    - Every role sees their own view, and nothing else.
     - Compliance flagged when the day's being built, not after payroll.
   flow:
     ariaLabel: Inputs flow into Grace's single source of truth, which cascades into
@@ -73,7 +73,7 @@ dots:
   items:
     - color: blue
       label: Grace did this
-      detail: Suggested from your data — rate cards, breakdown inferences, recommended
+      detail: Suggested from your data. Rate cards, breakdown inferences, recommended
         pacings. Editable, overridable.
     - color: gold
       label: You did this
@@ -85,7 +85,7 @@ dots:
   closer: Grace suggests. You decide.
   shot:
     src: /uploads/grace/dot-system.png
-    caption: Breakdown — dots visible in every cell
+    caption: Breakdown, dots visible in every cell
     wide: true
 cascade:
   num: "04"
@@ -144,9 +144,9 @@ preProduction:
     - layout: two-col
       shots:
         - src: /uploads/grace/budget.png
-          caption: Budget — top sheet
+          caption: Budget · top sheet
         - src: /uploads/grace/budget-detail.png
-          caption: Budget — line-item detail
+          caption: Budget · line-item detail
     - layout: two-col
       shots:
         - src: /uploads/grace/shot-list.png
@@ -161,15 +161,15 @@ production:
   body: >
     Call sheets that build themselves from the schedule. Time cards that prefill
     from call time and meal duration. A set dashboard tracking actuals against
-    the strip plan. Script supervisor notes, editor log, VFX flags — every
+    the strip plan. Script supervisor notes, editor log, VFX flags, every
     department's daily work in one tool.
   rows:
     - layout: featured
       shots:
         - src: /uploads/grace/day1-approved.png
-          caption: Call sheet — approved
+          caption: Call sheet · approved
         - src: /uploads/grace/set-dashboard.png
-          caption: Set dashboard — live
+          caption: Set dashboard · live
     - layout: three-col
       shots:
         - src: /uploads/grace/set-dashboard-mobile-modes.png
@@ -193,10 +193,10 @@ graceAi:
     The chat panel reads the production state and answers questions in context.
     Why is this scene's HMU so long? Which crew member's call time conflicts
     with a turnaround? What's our French-hours exposure today? Trained on
-    industry compliance — IATSE, DGA, SAG, Teamsters thresholds built in.
+    industry compliance: IATSE, DGA, SAG, Teamsters thresholds built in.
   shot:
     src: /uploads/grace/grace-ai-panel.png
-    caption: Grace AI — co-pilot panel open on the strip board
+    caption: Grace AI · co-pilot panel open on the strip board
     wide: true
 departments:
   num: "08"
@@ -230,7 +230,7 @@ departments:
     - role: Script Supervisor
       gives:
         - Per-take logging with circle/hold/NG and continuity photos
-        - Cross-shot-list-version editor log — never orphans a circled take
+        - Cross-shot-list-version editor log, never orphans a circled take
         - Daily Script Sup Report PDF, ready to send
     - role: VFX Supervisor
       gives:
@@ -242,7 +242,7 @@ departments:
         - "Media-card pipeline: hot → offloading → offloaded → verified →
           cleared"
         - Per-day dailies packages delivered to editorial via the Vault
-        - Shared-key delivery — no byte duplication
+        - Shared-key delivery, no byte duplication
 compliance:
   num: "09"
   numLabel: Built-in compliance
@@ -266,15 +266,15 @@ compliance:
     - label: Mixed (strictest)
       active: false
   bullets:
-    - Turnaround check at call-sheet lock — refuses approval on a short rest,
+    - Turnaround check at call-sheet lock, refuses approval on a short rest,
       requires authorized override
-    - Meal-penalty math baked into the day clock — six- and twelve-hour windows
+    - Meal-penalty math baked into the day clock, six- and twelve-hour windows
       tracked
-    - Minor hours hard-blocked server-side — minors can't be scheduled past the
+    - Minor hours hard-blocked server-side, minors can't be scheduled past the
       cap without acknowledgement
     - French hours (continuous workday) handled as a per-day flag
     - Exhibit G, Studio Teacher Daily Report, Safety Meeting sign-in, Daily
-      Timesheets — generated as PDFs
+      Timesheets, generated as PDFs
   deferralNote: "Paper-first today: generated PDFs get signed in person and
     re-uploaded. In-app electronic signatures coming soon."
 vault:
@@ -304,7 +304,7 @@ vault:
     - src: /uploads/grace/dailies.png
       caption: Dailies delivery
     - src: /uploads/grace/screeners.png
-      caption: Screeners — watermarked
+      caption: Screeners · watermarked
   tierNote: The Vault is a Studio-tier feature.
 operations:
   num: "11"
@@ -317,7 +317,7 @@ operations:
     - title: The right people, the right view
       body: Role-based access that maps to how productions work.
     - title: Server-rendered PDFs
-      body: Call sheets, timecards, reports — by the dozen.
+      body: Call sheets, timecards, reports. By the dozen.
     - title: Real software, under the hood
       body: Audit trails, version history, API-first architecture.
   rows:
@@ -326,15 +326,15 @@ operations:
         - src: /uploads/grace/org-settings.png
           caption: Org settings
         - src: /uploads/grace/access.png
-          caption: Access control — per person
+          caption: Access control · per person
         - src: /uploads/grace/compliance.png
-          caption: Compliance — union profiles
+          caption: Compliance · union profiles
     - layout: three-col
       shots:
         - src: /uploads/grace/cast-roster.png
-          caption: Cast roster — SAG-AFTRA
+          caption: Cast roster · SAG-AFTRA
         - src: /uploads/grace/crew-roster.png
-          caption: Crew roster — IATSE rates
+          caption: Crew roster · IATSE rates
         - src: /uploads/grace/billing.png
           caption: Billing
 whyBuilt:
@@ -353,7 +353,7 @@ whyBuilt:
     href: /partnership
   shot:
     src: /uploads/grace/grace-light-dark-mockup.png
-    alt: Grace — light and dark mode
+    alt: Grace, light and dark mode
 pricing:
   num: "13"
   heading: Two plans.
@@ -398,19 +398,19 @@ faq:
   headingMuted: before they buy.
   items:
     - q: What makes Grace different from existing production software?
-      a: Most production tools are databases — a script in one place, a schedule in
+      a: Most production tools are databases. A script in one place, a schedule in
         another, a call sheet that someone re-types from both. Grace is a
         intelligent workflow. The script change cascades to the call sheet on
         its own; every department reads the same number, and union compliance is
         checked when the day is built, not at payroll audit. Every value carries
-        a dot showing who decided it — Grace suggested, you decided, or signed.
+        a dot showing who decided it. Grace suggested, you decided, or signed.
         Humans run the production. Software handles the busywork.
     - q: Can my whole crew use it, or just production?
-      a: The whole crew. Seats are organized by role — producers and UPMs at the top,
+      a: The whole crew. Seats are organized by role. Producers and UPMs at the top,
         directors and department heads in the middle, crew and cast at the
         floor. Standard includes 28 seats out of the box; Studio includes 56.
         Seat packs extend further as you need them. The crew tier sees only
-        their day, their call, their own time card — never the budget, never the
+        their day, their call, their own time card. Never the budget, never the
         script unless they're in the scene.
     - q: What happens to my data if I cancel?
       a: Your access stays unaffected until the end of billing period then it switches
@@ -420,26 +420,26 @@ faq:
     - q: Does it handle weekly TV or multi-block episodics?
       a: Today Grace is optimized for one production at a time. Weekly TV and
         multi-block episodic shows are on the roadmap. If that's your shape,
-        write to us — we'd rather hear from you before we build it than after.
+        write to us. We'd rather hear from you before we build it than after.
     - q: What about SAG Ultra Low Budget / Short Project Agreement?
-      a: Standard SAG-AFTRA thresholds work today. The tier-specific variants — Low
-        Budget, Ultra Low Budget, Short Project Agreement — are in the next
+      a: Standard SAG-AFTRA thresholds work today. The tier-specific variants (Low
+        Budget, Ultra Low Budget, Short Project Agreement) are in the next
         compliance release. If you're shooting on one of those agreements now,
         we'll get them in front of our timeline.
     - q: How does Grace handle confidential screeners?
-      a: Through the Vault — magic-link delivery with a 6-digit code to the
+      a: Through the Vault. Magic-link delivery with a 6-digit code to the
         recipient's email, forensic watermarking burned into every frame (email
         + session ID), device locking on first claim, and a full event log of
         code requests, plays, seeks, and device changes. The recipient gets the
         cut without an account.
     - q: Are you self-hosted or SaaS?
       a: SaaS, with US-based hosting and storage. Self-hosted deployment for studios
-        that need it is on the table — write to us if it's a hard requirement.
+        that need it is on the table. Write to us if it's a hard requirement.
     - q: Who's behind it?
       a: Grace Production OS is a joint venture between Obelisk Studios, founded by
         Kshitij Kapil, and TDH Systems, founded by Siddharth Agrawal. Two
-        filmmakers — a working DP and colorist on one side, a producer and
-        engineer on the other — building the tool they wanted on their own
+        filmmakers, a working DP and colorist on one side, a producer and
+        engineer on the other, building the tool they wanted on their own
         pictures. The full story is on the partnership page.
 finalCta:
   heading: Grace is open to a small beta cohort

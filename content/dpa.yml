@@ -16,12 +16,12 @@ hero:
 
     Where Customer is a business or organization that holds personal data about its cast, crew, production partners, or other individuals and uses Grace to manage that data, Customer acts as the *controller* of that personal data and Obelisk Studios acts as the *processor*. This DPA sets out the terms governing that processor relationship.
 
-    The full executable DPA — including EU Standard Contractual Clauses and the Annexes describing technical and organizational measures and sub-processors — is available as a downloadable PDF. The summary on this page is a faithful description of what the DPA contains. Where this page and the DPA PDF differ, the PDF controls.
+    The full executable DPA (including EU Standard Contractual Clauses and the Annexes describing technical and organizational measures and sub-processors) is available as a downloadable PDF. The summary on this page is a faithful description of what the DPA contains. Where this page and the DPA PDF differ, the PDF controls.
 
 sections:
   - heading: Subject matter, duration, and scope
     body: |
-      The subject matter of the processing is the provision of Grace Production OS — a hosted software-as-a-service platform for managing film and television production — to Customer. The duration is the term of Customer's subscription, plus any post-termination retention period required under the Privacy Policy or applicable law. The nature and purpose of the processing are limited to those operations necessary to operate Grace for Customer.
+      The subject matter of the processing is the provision of Grace Production OS (a hosted software-as-a-service platform for managing film and television production) to Customer. The duration is the term of Customer's subscription, plus any post-termination retention period required under the Privacy Policy or applicable law. The nature and purpose of the processing are limited to those operations necessary to operate Grace for Customer.
 
   - heading: Categories of data subjects and personal data
     body: |
@@ -57,7 +57,7 @@ sections:
 
   - heading: How to countersign
     body: |
-      For an executed copy of the DPA — fully filled in with Customer's identification details, signed by Obelisk Studios, and ready for Customer's countersignature — email legal@theobeliskstudio.com. Provide the customer entity's legal name, the data-protection contact's name and email, and any specific sub-processor objections you wish to record. We return countersigned copies within ten business days.
+      For an executed copy of the DPA (fully filled in with Customer's identification details, signed by Obelisk Studios, and ready for Customer's countersignature), email legal@theobeliskstudio.com. Provide the customer entity's legal name, the data-protection contact's name and email, and any specific sub-processor objections you wish to record. We return countersigned copies within ten business days.
 
 contact:
   heading: Legal contact

@@ -122,7 +122,7 @@ export function PrivacyRequestForm() {
       </div>
 
       <div className="form-field">
-        <label htmlFor="production">Production name <span className="opt">— if you were added to one</span></label>
+        <label htmlFor="production">Production name <span className="opt">(if you were added to one)</span></label>
         <input type="text" id="production" name="production" placeholder="Helps us locate your record" autoComplete="organization" />
       </div>
 

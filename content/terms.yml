@@ -7,7 +7,7 @@ hero:
   title: Terms of Service
   lastUpdated: May 17, 2026
   intro: |
-    These terms govern your use of Grace Production OS — the software product operated by Obelisk Studios. By signing in to an account, paying for a subscription, or otherwise using Grace, you agree to be bound by these terms.
+    These terms govern your use of Grace Production OS, the software product operated by Obelisk Studios. By signing in to an account, paying for a subscription, or otherwise using Grace, you agree to be bound by these terms.
 
     They're long but real: they cover what we promise, what you promise, how the relationship is paid for, what happens if something goes wrong, and how disputes get resolved.
 
@@ -36,7 +36,7 @@ sections:
 
       Payment is processed by Stripe, our payment provider. Their terms apply to the payment process itself; we do not store your card details.
 
-      Upgrades, downgrades, and add-on changes prorate against your current billing period — the math is computed by Stripe at the moment of change.
+      Upgrades, downgrades, and add-on changes prorate against your current billing period. The math is computed by Stripe at the moment of change.
 
       If a payment fails, we will attempt recovery in line with Stripe's standard retry schedule. After a defined grace period (currently seven days), your account moves to read-only access until payment is restored.
 
@@ -52,7 +52,7 @@ sections:
 
       *Post-signup confirmation.* Immediately after you start a subscription or trial, we send a confirmation email to the address on your account that repeats the renewal date, the renewal amount, and a direct link to cancel.
 
-      *Pre-renewal reminder.* For trials longer than 31 days, we send a reminder email between 3 and 21 days before the first charge — currently scheduled at 7 days before — repeating the charge amount and the cancellation link.
+      *Pre-renewal reminder.* For trials longer than 31 days, we send a reminder email between 3 and 21 days before the first charge (currently scheduled at 7 days before), repeating the charge amount and the cancellation link.
 
       *How to cancel.* You can cancel any subscription or trial online, at any time, without contacting support, in Settings → Billing inside Grace. The cancel control is at least as easy to find and use as the sign-up flow. You may also email finance@theobeliskstudio.com.
 
@@ -62,7 +62,7 @@ sections:
     body: |
       Cancellations end your subscription at the close of the current period; we do not refund the unused portion of a paid period.
 
-      If you believe you were charged in error — for example, a duplicate charge, a charge after a successful cancellation, or a charge on a closed account — email finance@theobeliskstudio.com within 30 days of the charge and we will review the case. Where we agree we charged in error, we will refund the disputed amount through the original payment method.
+      If you believe you were charged in error (for example, a duplicate charge, a charge after a successful cancellation, or a charge on a closed account), email finance@theobeliskstudio.com within 30 days of the charge and we will review the case. Where we agree we charged in error, we will refund the disputed amount through the original payment method.
 
       For promotional trials that auto-convert to paid subscriptions, the conversion charge follows the same rule: cancel before the trial ends to avoid the charge; once the charge is processed, the no-refund-of-unused-portion rule applies to the converted period.
 
@@ -76,27 +76,27 @@ sections:
 
       *Interfere with the service* through automated scraping at a rate that degrades availability, unauthorized penetration testing, attempts to bypass access controls, reverse engineering (except as permitted by mandatory law), or unauthorized resale of access.
 
-      *Misuse confidentiality features* — for example, using the Vault screener share flow to distribute material you are not authorized to distribute.
+      *Misuse confidentiality features,* for example, using the Vault screener share flow to distribute material you are not authorized to distribute.
 
       We may suspend or terminate accounts that materially violate this section. Where reasonable, we will notify you and give you a chance to cure.
 
   - heading: Your content
     body: |
-      Everything you upload to Grace — scripts, schedules, budgets, cast and crew records, dailies, screeners, photos, call sheets, deal memos, and any other materials — *belongs to you.* You retain full ownership and intellectual property rights in your content. We claim no ownership.
+      Everything you upload to Grace (scripts, schedules, budgets, cast and crew records, dailies, screeners, photos, call sheets, deal memos, and any other materials) *belongs to you.* You retain full ownership and intellectual property rights in your content. We claim no ownership.
 
       To operate the service, you grant Obelisk Studios a limited, non-exclusive, royalty-free license to host, store, transmit, process (including through the AI subprocessors named in our Privacy Policy), display, and deliver your content for the sole purpose of providing Grace to you and the people you have authorized through Grace's access controls.
 
-      This license is co-extensive with your need for the service: it ends when you delete the content, close your account, or instruct us to stop processing — subject to the retention timelines described in the Privacy Policy and any legal obligations we may have to retain records (e.g., financial records for tax purposes).
+      This license is co-extensive with your need for the service: it ends when you delete the content, close your account, or instruct us to stop processing, subject to the retention timelines described in the Privacy Policy and any legal obligations we may have to retain records (e.g., financial records for tax purposes).
 
   - heading: Confidentiality
     body: |
-      Production materials — particularly unproduced scripts, cast contact information, deal terms, and dailies — carry industry-standard confidentiality expectations. Obelisk Studios treats all content you upload as confidential.
+      Production materials (particularly unproduced scripts, cast contact information, deal terms, and dailies) carry industry-standard confidentiality expectations. Obelisk Studios treats all content you upload as confidential.
 
       We do not disclose user content to third parties except:
 
       *To the subprocessors named in our Privacy Policy,* and only to the minimum extent necessary to operate the service.
 
-      *Where required by valid legal process* — in which case we will notify you of the request prior to disclosure unless we are legally prohibited from doing so.
+      *Where required by valid legal process,* in which case we will notify you of the request prior to disclosure unless we are legally prohibited from doing so.
 
       *Where you instruct us to* through Grace's sharing features (e.g., emailing a call sheet, sharing a screener via Vault, inviting a collaborator).
 
@@ -106,11 +106,11 @@ sections:
 
       AI output is *generated, not human-authored.* It can be inaccurate, incomplete, or inconsistent. It is not legal, medical, financial, accounting, employment, or other professional advice. You remain responsible for reviewing AI output before relying on it. To the maximum extent permitted by applicable law, we disclaim all warranties of accuracy, completeness, and fitness for purpose with respect to AI-generated content.
 
-      Grace's Dot System (the colored-dot trust indicators on every field) is designed precisely so that AI-suggested values remain visibly distinguishable from human-verified ones — *blue* dots mark Grace-suggested or AI-inferred content, *gold* dots mark human-entered content, and *green* dots mark content verified from a signed document. Treat blue-dot fields as drafts to be reviewed, not as authoritative.
+      Grace's Dot System (the colored-dot trust indicators on every field) is designed precisely so that AI-suggested values remain visibly distinguishable from human-verified ones: *blue* dots mark Grace-suggested or AI-inferred content, *gold* dots mark human-entered content, and *green* dots mark content verified from a signed document. Treat blue-dot fields as drafts to be reviewed, not as authoritative.
 
   - heading: Promotional trials and beta codes
     body: |
-      From time to time we offer promotional sign-up codes — including, currently, the 90-day Founders' Beta — that grant a longer free trial than the default. The mechanics of each promotion are disclosed at the moment you redeem the code: trial length, the post-trial price, the renewal cadence, and eligibility.
+      From time to time we offer promotional sign-up codes (including, currently, the 90-day Founders' Beta) that grant a longer free trial than the default. The mechanics of each promotion are disclosed at the moment you redeem the code: trial length, the post-trial price, the renewal cadence, and eligibility.
 
       Promotional trials auto-convert to paid subscriptions at the disclosed price on the disclosed date unless you cancel before then. The acknowledgment, confirmation, and pre-renewal reminder requirements described under "Automatic renewal disclosures" above apply to promotional trials in the same way they apply to ordinary subscriptions.
 
@@ -122,7 +122,7 @@ sections:
 
   - heading: Third-party services
     body: |
-      Grace integrates with third-party services to deliver parts of its functionality — payment processing through Stripe, email delivery through Resend, file storage through Cloudflare R2, AI processing through Anthropic and Google, weather data through Open-Meteo, geocoding through OpenStreetMap, and others enumerated in our Privacy Policy.
+      Grace integrates with third-party services to deliver parts of its functionality: payment processing through Stripe, email delivery through Resend, file storage through Cloudflare R2, AI processing through Anthropic and Google, weather data through Open-Meteo, geocoding through OpenStreetMap, and others enumerated in our Privacy Policy.
 
       Your use of those third-party services is governed by their respective terms in addition to these. We are not responsible for the availability, accuracy, or behavior of third-party services.
 
@@ -134,11 +134,11 @@ sections:
 
   - heading: Term and termination
     body: |
-      These terms apply for as long as you have an account with us. You may close your account at any time through Settings — your subscription will end at the close of the current billing period and your data will be handled per the Privacy Policy's retention schedule.
+      These terms apply for as long as you have an account with us. You may close your account at any time through Settings. Your subscription will end at the close of the current billing period and your data will be handled per the Privacy Policy's retention schedule.
 
       We may suspend or terminate your account if you materially breach these terms, if your payment fails after the grace period described above, or if continued operation would create undue legal or operational risk for us. Where reasonable, we will notify you in advance and give you an opportunity to cure.
 
-      On termination by either party, your access to Grace ends, billing stops at the end of the then-current period, and your data is retained or deleted per the Privacy Policy. Sections of these terms that by their nature should survive termination — Your Content (the license you granted us, to the extent we still hold data), Confidentiality, Intellectual Property, Disclaimers, Limitation of Liability, Indemnification, Governing Law — survive.
+      On termination by either party, your access to Grace ends, billing stops at the end of the then-current period, and your data is retained or deleted per the Privacy Policy. Sections of these terms that by their nature should survive termination survive: Your Content (the license you granted us, to the extent we still hold data), Confidentiality, Intellectual Property, Disclaimers, Limitation of Liability, Indemnification, Governing Law.
 
   - heading: Copyright complaints and DMCA agent
     body: |
@@ -182,7 +182,7 @@ sections:
     body: |
       You agree to defend, indemnify, and hold harmless Obelisk Studios and its officers, employees, and agents from any third-party claim, demand, loss, liability, damage, or expense (including reasonable attorneys' fees) arising out of (a) content you upload to or share through Grace, (b) your breach of these terms, or (c) your violation of any law or any right of a third party.
 
-      We will promptly notify you of any such claim, give you reasonable cooperation in the defense, and allow you to control the defense — provided you do not settle the matter in a way that imposes obligations on us without our written consent.
+      We will promptly notify you of any such claim, give you reasonable cooperation in the defense, and allow you to control the defense, provided you do not settle the matter in a way that imposes obligations on us without our written consent.
 
   - heading: Governing law and dispute resolution
     body: |
@@ -194,7 +194,7 @@ sections:
     body: |
       We may update these terms as Grace evolves, as new features ship, or as laws change. The "Last updated" date at the top of this page always reflects the current version.
 
-      Material changes — anything that meaningfully alters the rights and obligations described here — will be communicated by email to active account holders at least 14 days before the changes take effect. Continued use of Grace after the effective date constitutes acceptance of the updated terms. If you do not accept the updates, you may close your account before the effective date and the prior terms will continue to apply to your historical use.
+      Material changes (anything that meaningfully alters the rights and obligations described here) will be communicated by email to active account holders at least 14 days before the changes take effect. Continued use of Grace after the effective date constitutes acceptance of the updated terms. If you do not accept the updates, you may close your account before the effective date and the prior terms will continue to apply to your historical use.
 
   - heading: Miscellaneous
     body: |

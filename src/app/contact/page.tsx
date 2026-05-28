@@ -3,6 +3,7 @@
 
 import { Reveal } from "@/components/Reveal"
 import { RegMark } from "@/components/RegMark"
+import { HeroMark } from "@/components/HeroMark"
 import { Inline } from "@/lib/rich-text"
 import { ContactForm } from "@/components/ContactForm"
 import { loadContent } from "@/lib/content"
@@ -11,7 +12,7 @@ import { pageMetadata } from "@/lib/seo"
 export const metadata = pageMetadata({
   title: "Contact",
   description:
-    "Get in touch with Obelisk Studios — software, finishing, partnership, or anything else.",
+    "Get in touch with Obelisk Studios. Software, finishing, partnership, or anything else.",
   path: "/contact/",
 })
 
@@ -38,7 +39,9 @@ export default function ContactPage() {
 
           {c.hero.headline && (
             <Reveal eager delay={250}>
-              <h1 className="hero-headline"><Inline>{c.hero.headline}</Inline></h1>
+              <HeroMark>
+                <h1 className="hero-headline"><Inline>{c.hero.headline}</Inline></h1>
+              </HeroMark>
             </Reveal>
           )}
 

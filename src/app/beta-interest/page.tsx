@@ -11,9 +11,9 @@ import { loadContent } from "@/lib/content"
 import { pageMetadata } from "@/lib/seo"
 
 export const metadata = pageMetadata({
-  title: "Request beta access — Grace Production OS",
+  title: "Request beta access · Grace Production OS",
   description:
-    "Tell us about your production. Grace is open to a small beta cohort of working productions — we'll get back to you with an access link if it's a fit.",
+    "Tell us about your production. Grace is open to a small beta cohort of working productions, and we'll get back to you with an access link if it's a fit.",
   path: "/beta-interest/",
 })
 

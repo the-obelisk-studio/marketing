@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return pageMetadata({
     title,
     description:
-      "Grace Production OS user guide — workflows, role quickstarts, and feature reference for the production OS Obelisk runs on.",
+      "Grace Production OS user guide. Workflows, role quickstarts, and feature reference for the production OS Obelisk runs on.",
     path: `/grace/guide${slug ? "/" + slug : ""}/`,
   })
 }

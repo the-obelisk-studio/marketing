@@ -4,18 +4,18 @@
 hero:
   headline: "Tell us what you're *working on.*"
   positioning: |
-    Software, finishing, partnership, or something that doesn't fit any of those yet — we read every message ourselves.
+    Software, finishing, partnership, or something that doesn't fit any of those yet. We read every message ourselves.
   meta:
     - Obelisk Studios
     - Get in touch
     - Burbank · Los Angeles
 
 info:
-  - label: "— Email"
+  - label: "Email"
     value: hello@theobeliskstudio.com
-  - label: "— Studio"
+  - label: "Studio"
     value: Burbank, California
-  - label: "— Response"
+  - label: "Response"
     value: Usually within a few days
 
 form:

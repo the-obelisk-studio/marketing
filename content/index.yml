@@ -2,7 +2,7 @@ hero:
   eyebrow: ""
   title: Obelisk
   motto: One studio. Every stage.
-  positioning: An independent studio of working filmmakers — building tools and
+  positioning: An independent studio of working filmmakers, building tools and
     finishing pictures for the people who make them.
   meta:
     - Burbank · Los Angeles
@@ -19,10 +19,10 @@ studio:
     production?* If the answer is no, we don't ship it.
 
 
-    A film moves in stages: development, prep, production, post. Most tools and most studios live in one of those stages and pretend the others don't exist. We've worked all of them. Obelisk is built from that understanding — that what gets decided in development shapes what's possible in color, that what gets shot on day one matters in the edit suite three months later, that the picture is one continuous thing from page to final frame.
+    A film moves in stages: development, prep, production, post. Most tools and most studios live in one of those stages and pretend the others don't exist. We've worked all of them. Obelisk is built from that understanding: what gets decided in development shapes what's possible in color, what gets shot on day one matters in the edit suite three months later, the picture is one continuous thing from page to final frame.
 
 
-    And we work *with* people, not for them. Software is a co-pilot, never an autopilot. Finishing runs as a collaboration with the DP, the director, and the editor — not a black box that returns a master. The studio is built around a single conviction across both pillars: the work is better when the people doing it are working together.
+    And we work *with* people, not for them. Software is a co-pilot, never an autopilot. Finishing runs as a collaboration with the DP, the director, and the editor, not a black box that returns a master. The studio is built around a single conviction across both pillars: the work is better when the people doing it are working together.
   links: []
   aside:
     label: Studio Index
@@ -57,11 +57,11 @@ offerings:
       tagline: Edit, color, and finishing.
       blurb: >
         A finishing house run by working filmmakers. Editorial and color anchor
-        the work — supervised by DPs and editors who care about the picture as a
+        the work, supervised by DPs and editors who care about the picture as a
         whole, not as a queue of timelines to push through. Sound design and mix
         are next; we're locking in collaborators now. Built for indie features,
         documentaries, and short-form work that deserves to be finished with
-        care — not pushed through a render queue.
+        care, not pushed through a render queue.
       href: /post
       cta: View finishing
 partnership:
@@ -72,7 +72,7 @@ partnership:
     - name: Kshitij Kapil
       company: Founder · Obelisk Studios
       roles: []
-      bio: Cinematographer and colorist. Anchors the picture side — Grace, the post
+      bio: Cinematographer and colorist. Anchors the picture side. Grace, the post
         house, and how the studio shows up in the room.
     - name: Siddharth Agrawal
       company: Founding Partner · TDH Systems
@@ -97,8 +97,8 @@ partnership:
       synopsis: Outstanding Achievement for Cinematography · Cinematography & Produced
         by Kshitij Kapil
   collab:
-    eyebrow: — Previous Collaboration
+    eyebrow: Previous Collaboration
     heading: A working history, *on screen.*
-    lead: Selected films from the partners — together and apart. The work that built
+    lead: Selected films from the partners, together and apart. The work that built
       the trust this partnership runs on.
     ctaLabel: View the full partnership

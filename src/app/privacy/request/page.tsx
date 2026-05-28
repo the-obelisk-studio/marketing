@@ -35,7 +35,7 @@ export default function PrivacyRequestPage() {
 
           <Reveal eager delay={450}>
             <p className="hero-positioning">
-              Use this form to ask us to access, correct, delete, restrict, or object to the use of personal data we hold about you. It works for Grace account-holders and for anyone else whose data may be in our records — production crew added to a Grace production, screener recipients, or anyone who contacted us at some point.
+              Use this form to ask us to access, correct, delete, restrict, or object to the use of personal data we hold about you. It works for Grace account-holders and for anyone else whose data may be in our records: production crew added to a Grace production, screener recipients, or anyone who contacted us at some point.
             </p>
             <p className="hero-positioning">
               We respond within 30 days as required by law, and usually much sooner. If you'd rather skip the form, email <a href="mailto:privacy@theobeliskstudio.com">privacy@theobeliskstudio.com</a> directly.

@@ -81,7 +81,7 @@ export function ContactForm({ topics }: Props) {
       </div>
 
       <div className="form-field">
-        <label htmlFor="project">Production or project name <span className="opt">— optional</span></label>
+        <label htmlFor="project">Production or project name <span className="opt">(optional)</span></label>
         <input type="text" id="project" name="project" placeholder="If applicable" autoComplete="organization" />
       </div>
 

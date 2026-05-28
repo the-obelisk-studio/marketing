@@ -181,8 +181,8 @@ export function BetaInterestForm() {
           Your interest is logged. A confirmation receipt is on its way to your inbox. If you're a fit for the closed beta we'll send your access link from{" "}
           <a href="mailto:invites@theobeliskstudio.com" style={{ color: "var(--kodachrome)", textDecoration: "underline" }}>
             invites@theobeliskstudio.com
-          </a>{" "}
-          — usually within a few days.
+          </a>
+          , usually within a few days.
         </p>
 
         <style>{successStyles}</style>
@@ -278,11 +278,11 @@ export function BetaInterestForm() {
       </div>
 
       <div className="divider">
-        <span>Optional — high-signal</span>
+        <span>Optional · high-signal</span>
       </div>
 
       <div className="form-field">
-        <label>What you use today <span className="opt">— optional, pick any</span></label>
+        <label>What you use today <span className="opt">(optional, pick any)</span></label>
         <div className="checkbox-grid">
           {TOOLS.map(t => (
             <label key={t} className="checkbox-row">
@@ -304,7 +304,7 @@ export function BetaInterestForm() {
       </div>
 
       <div className="form-field">
-        <label htmlFor="recentCredit">Recent credit or IMDB link <span className="opt">— optional</span></label>
+        <label htmlFor="recentCredit">Recent credit or IMDB link <span className="opt">(optional)</span></label>
         <input
           type="text"
           id="recentCredit"
@@ -316,7 +316,7 @@ export function BetaInterestForm() {
       </div>
 
       <div className="form-field">
-        <label htmlFor="biggestPain">What's your biggest pain in production management right now? <span className="opt">— optional</span></label>
+        <label htmlFor="biggestPain">What's your biggest pain in production management right now? <span className="opt">(optional)</span></label>
         <textarea
           id="biggestPain"
           value={biggestPain}
@@ -361,7 +361,7 @@ function humanError(code: string | undefined): string | null {
     role_other_required: "Please tell us what role you fill.",
     country_required: "Please enter your country or region.",
     invalid_stage: "Please pick your current stage.",
-    captcha_failed: "Captcha check failed — please retry.",
+    captcha_failed: "Captcha check failed. Please retry.",
     forbidden_origin: "This form can't submit from this origin.",
     server_error: "Something went wrong on our end. Please try again.",
   }

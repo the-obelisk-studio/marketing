@@ -8,6 +8,7 @@
 import Link from "next/link"
 import { Reveal } from "@/components/Reveal"
 import { RegMark } from "@/components/RegMark"
+import { HeroMark } from "@/components/HeroMark"
 import { JsonLd } from "@/components/JsonLd"
 import { ZoomableImage } from "@/components/ZoomableImage"
 import { loadContent } from "@/lib/content"
@@ -15,9 +16,9 @@ import { pageMetadata, softwareApplicationLd } from "@/lib/seo"
 import type { GraceContent } from "@/lib/schema"
 
 export const metadata = pageMetadata({
-  title: "Grace — Production OS for working filmmakers",
+  title: "Grace · Production OS for working filmmakers",
   description:
-    "The production operating system built by working filmmakers. Script, schedule, budget, call sheets, and on-set comms from one source of truth — so a 4 pm script revision doesn't become a 7 pm crisis.",
+    "The production operating system built by working filmmakers. Script, schedule, budget, call sheets, and on-set comms from one source of truth, so a 4 pm script revision doesn't become a 7 pm crisis.",
   path: "/grace/",
 })
 
@@ -39,10 +40,12 @@ export default function GracePage() {
             </Reveal>
           )}
           <Reveal eager delay={220}>
-            <h1 className="hero-title">
-              {c.hero.title}
-              {c.hero.titleMuted && <> <span className="muted">{c.hero.titleMuted}</span></>}
-            </h1>
+            <HeroMark>
+              <h1 className="hero-title">
+                {c.hero.title}
+                {c.hero.titleMuted && <> <span className="muted">{c.hero.titleMuted}</span></>}
+              </h1>
+            </HeroMark>
           </Reveal>
           <Reveal eager delay={420}>
             <p className="hero-sub">{c.hero.sub}</p>
@@ -951,9 +954,9 @@ function PageStyles() {
         border-radius: 50%;
         display: inline-block;
       }
-      .dot-blue { background: #4a6fa5; box-shadow: 0 0 10px rgba(74, 111, 165, 0.35); }
-      .dot-gold { background: var(--saffron); box-shadow: 0 0 10px rgba(184, 134, 44, 0.35); }
-      .dot-green { background: var(--sage); box-shadow: 0 0 10px rgba(74, 93, 74, 0.35); }
+      .dot-blue { background: #2563EB; box-shadow: 0 0 10px rgba(37, 99, 235, 0.35); }
+      .dot-gold { background: #D69821; box-shadow: 0 0 10px rgba(214, 152, 33, 0.35); }
+      .dot-green { background: #1F8A3B; box-shadow: 0 0 10px rgba(31, 138, 59, 0.35); }
       .dot-label {
         font-family: var(--font-mono);
         font-size: 11px;
@@ -961,9 +964,9 @@ function PageStyles() {
         text-transform: uppercase;
         font-weight: 600;
       }
-      .dot-label-blue { color: #4a6fa5; }
-      .dot-label-gold { color: var(--saffron); }
-      .dot-label-green { color: var(--sage); }
+      .dot-label-blue { color: #2563EB; }
+      .dot-label-gold { color: #D69821; }
+      .dot-label-green { color: #1F8A3B; }
       .dot-card p {
         font-family: var(--font-display);
         font-size: 15px;

@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { Reveal } from "@/components/Reveal"
 import { RegMark } from "@/components/RegMark"
+import { HeroMark } from "@/components/HeroMark"
 import { Inline, Body } from "@/lib/rich-text"
 import { loadContent } from "@/lib/content"
 import { pageMetadata } from "@/lib/seo"
@@ -10,7 +11,7 @@ import { pageMetadata } from "@/lib/seo"
 export const metadata = pageMetadata({
   title: "Post Production",
   description:
-    "A finishing house run by working filmmakers. Edit, color, and finishing — supervised by the people who shot the picture.",
+    "A finishing house run by working filmmakers. Edit, color, and finishing, supervised by the people who shot the picture.",
   path: "/post/",
 })
 
@@ -22,10 +23,6 @@ export default function PostPage() {
       {/* ── HERO ── */}
       <section className="hero">
         <div className="page-container">
-          <svg className="obelisk-glyph" viewBox="0 0 64 380" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-            <path d="M32 0 L48 56 L18 56 Z M18 56 L48 56 L46 380 L20 380 Z" fill="currentColor" />
-          </svg>
-
           {c.hero.meta.length > 0 && (
             <Reveal eager delay={100}>
               <div className="hero-meta">
@@ -41,7 +38,9 @@ export default function PostPage() {
 
           {c.hero.headline && (
             <Reveal eager delay={250}>
-              <h1 className="hero-headline"><Inline>{c.hero.headline}</Inline></h1>
+              <HeroMark>
+                <h1 className="hero-headline"><Inline>{c.hero.headline}</Inline></h1>
+              </HeroMark>
             </Reveal>
           )}
 
@@ -211,7 +210,6 @@ export default function PostPage() {
           position: relative;
         }
         .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 160px 0 100px; position: relative; }
-        .obelisk-glyph { position: absolute; top: 50%; right: -30px; transform: translateY(-50%); width: 64px; height: 380px; opacity: 0.06; pointer-events: none; color: var(--ink); }
         .hero-meta { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 48px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
         .hero-meta .dash { width: 64px; height: 1px; background: var(--ink-faint); }
         .hero-headline { font-family: var(--font-display); font-variation-settings: "opsz" 144, "wght" 440; font-size: clamp(48px, 9.5vw, 144px); line-height: 0.95; letter-spacing: -0.025em; color: var(--ink); margin-bottom: 32px; max-width: 18ch; }
@@ -290,7 +288,6 @@ export default function PostPage() {
           .page-container { padding: 0 var(--container-pad-mobile); }
           .hero { padding: 130px 0 60px; min-height: auto; }
           .section, .cta-section { padding: 100px 0; }
-          .obelisk-glyph { display: none; }
           .services-grid, .filmmakers-grid { grid-template-columns: 1fr; gap: 48px; }
           .process-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
           .section :global(.reg-mark.tl) { left: var(--container-pad-mobile); }

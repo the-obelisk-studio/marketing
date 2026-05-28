@@ -7,7 +7,7 @@ import type { Metadata } from "next"
 export const SITE_URL = "https://www.theobeliskstudio.com"
 export const SITE_NAME = "Obelisk Studios"
 export const SITE_TAGLINE =
-  "An independent studio of working filmmakers — building tools and finishing pictures."
+  "An independent studio of working filmmakers, building tools and finishing pictures."
 export const OG_IMAGE = `${SITE_URL}/og.png`
 export const OG_IMAGE_WIDTH = 1200
 export const OG_IMAGE_HEIGHT = 630
@@ -100,7 +100,7 @@ export function softwareApplicationLd() {
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
     description:
-      "Grace is a production operating system for film and television — call sheets, scheduling, budgeting, scripts, dailies, and Vault screeners in one connected place.",
+      "Grace is a production operating system for film and television. Call sheets, scheduling, budgeting, scripts, dailies, and Vault screeners in one connected place.",
     url: `${SITE_URL}/grace/`,
     publisher: {
       "@type": "Organization",
