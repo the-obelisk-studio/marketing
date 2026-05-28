@@ -1,7 +1,7 @@
 hero:
   eyebrow: Legal
   title: Sub-processors
-  lastUpdated: May 17, 2026
+  lastUpdated: May 27, 2026
   intro: >
     This page lists the third-party service providers ("sub-processors") that
     Obelisk Studios LLC engages to operate Grace Production OS. Each receives
@@ -44,6 +44,12 @@ sections:
         detail: Application hosting and compute for the Grace web/server tier. Receives
           all data passing through Grace's servers in the course of request
           handling.
+      - label: Sentry, by Functional Software, Inc. (United States)
+        detail: Error monitoring and diagnostics. Receives error messages and stack
+          traces, the page or route where an error occurred (with sensitive tokens
+          and query parameters redacted), browser/device/OS type, and a pseudonymous
+          account identifier. Does not receive names, email addresses, or production
+          content.
       - label: Anthropic, PBC (United States)
         detail: AI processing of script content (Claude API). Receives script text or
           PDF for breakdown extraction. Anthropic's paid API tier does not

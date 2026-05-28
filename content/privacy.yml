@@ -1,7 +1,7 @@
 hero:
   eyebrow: Privacy
   title: Privacy Policy
-  lastUpdated: May 17, 2026
+  lastUpdated: May 27, 2026
   intro: >
     This policy explains what Obelisk Studios collects when you use Grace
     Production OS, why we collect it, who else touches it, and the rights you
@@ -79,6 +79,12 @@ sections:
       - label: Railway
         detail: Application hosting and compute. Receives all data passing through
           Grace's servers.
+      - label: Sentry
+        detail: Error monitoring and diagnostics (operated by Functional Software,
+          Inc.). Receives error messages and stack traces, the page or route where
+          an error occurred (with sensitive tokens and query parameters redacted),
+          browser/device/OS type, and a pseudonymous account identifier. Does not
+          receive your name, email address, or production content.
       - label: Anthropic
         detail: AI processing of script content (Claude). Script text or PDF is sent for
           breakdown extraction. Anthropic does not retain user-API data beyond
@@ -133,6 +139,19 @@ sections:
 
 
       If you have a script that cannot leave a closed network for legal or contractual reasons (e.g., NDA-bound studio material), do not upload it to Grace.
+  - heading: Error monitoring and diagnostics
+    body: >
+      We use Sentry (operated by Functional Software, Inc.) to detect and
+      diagnose technical errors so we can keep the service reliable. When an
+      error occurs, Sentry receives diagnostic data: the error message and
+      stack trace, the page or route where it occurred (configured to redact
+      sensitive tokens and query parameters), your browser, device, and
+      operating-system type, and a pseudonymous account identifier that lets
+      us count affected users and correlate an error to your account for
+      support. We do not send Sentry your name or email address, and we do
+      not send the contents of your scripts, budgets, schedules, call sheets,
+      or other production data. Sentry processes this diagnostic data in the
+      United States under a data processing agreement.
   - heading: Cookies and tracking
     body: >
       Grace uses session cookies set by Clerk to keep you signed in, a small
@@ -141,7 +160,7 @@ sections:
       sessions use a separate HMAC-signed cookie scoped to the share token.
 
 
-      We do not use third-party advertising cookies, marketing pixels, or analytics tools that track users across other sites. Server-side analytics (page views and error counts) are aggregate.
+      We do not use third-party advertising cookies, marketing pixels, or analytics tools that track users across other sites. Server-side page-view analytics are aggregate; error reports are handled as described under "Error monitoring and diagnostics" above.
   - heading: How long we keep your data
     body: >
       *While your account is active.* We retain all data necessary to operate
