@@ -16,8 +16,10 @@ sections:
       under the laws of the United States and based in Burbank, California.
       Grace Production OS (the software product) is operated by Obelisk
       Studios LLC. References below to "we," "us," and "our" mean Obelisk
-      Studios LLC, which is the data controller for the personal data processed
-      through Grace.
+      Studios LLC.
+
+
+      For some data we are the *controller* (we decide why and how it is processed): your account and billing information, the beta-access and contact details you send us directly, and our own marketing communications. For the cast, crew, and production data that a customer organization manages in Grace, that customer is the *controller* and we act as their *processor*, handling the data only on their documented instructions. Our Data Processing Addendum at theobeliskstudio.com/legal/dpa governs that processor relationship.
 
 
       Our privacy contact is the Obelisk Studios Privacy Lead, who can be reached at privacy@theobeliskstudio.com. For the full registered address and any inquiry that requires postal correspondence, write to that address and we will respond with the appropriate mailing information.
@@ -41,6 +43,9 @@ sections:
 
 
       *Communications.* If you contact us or send a call sheet, invitation, or screener through Grace, we retain the message contents and recipients.
+
+
+      *Beta-access and waitlist submissions.* If you request beta access or contact us through our marketing site, we collect what you provide, typically your name, email address, professional role, country, production stage, and the tools you currently use, so we can evaluate and respond to your interest.
   - heading: How we use it
     body: >
       To deliver the product: render dashboards, send the call sheets and
@@ -109,7 +114,7 @@ sections:
         detail: Software development, technical operations, and customer-support
           engineering for Grace. Personnel acting under TDH's engagement may
           access the production database for engineering and support purposes,
-          subject to an intercompany data-processing addendum with Obelisk
+          under confidentiality and data-protection obligations to Obelisk
           Studios LLC. TDH is based in India; cross-border transfers are
           described under "International data transfers" below.
   - heading: Cast and crew data, how Grace handles it
@@ -270,7 +275,7 @@ sections:
       another jurisdiction, you consent to these transfers.
 
 
-      For users in the European Economic Area, the United Kingdom, or Switzerland, we rely on the EU Standard Contractual Clauses (and the UK International Data Transfer Agreement / UK Addendum where applicable) as the legal basis for international transfers. Following the Schrems II decision and corresponding guidance from the EDPB, we have completed a Transfer Impact Assessment that documents the technical and organizational safeguards applied to each downstream transfer (encryption in transit and at rest, contractual SCCs with each sub-processor, EU–US Data Privacy Framework certifications where vendors have them). The Transfer Impact Assessment and our Data Processing Addendum are available at theobeliskstudio.com/legal/dpa, or on request to privacy@theobeliskstudio.com.
+      For users in the European Economic Area, the United Kingdom, or Switzerland, we rely on the EU Standard Contractual Clauses (and the UK International Data Transfer Agreement / UK Addendum where applicable) as the legal basis for international transfers. We apply technical and organizational safeguards to these transfers, including encryption in transit and at rest, contractual data-protection terms with each sub-processor, and reliance on the EU–US Data Privacy Framework where the vendor is certified. Our Data Processing Addendum is summarized at theobeliskstudio.com/legal/dpa, and the executable version is available on request to privacy@theobeliskstudio.com.
   - heading: Changes to this policy
     body: >
       We may update this policy as Grace evolves, new service providers come

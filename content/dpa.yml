@@ -2,7 +2,7 @@
 # /src/app/legal/dpa/page.tsx with the shared LegalDocument component.
 #
 # NOTE: This page publishes the *summary* of our DPA. The full executable
-# DPA — including SCCs and Annexes — is the PDF at /legal/dpa.pdf, which
+# DPA — including SCCs and Annexes — is provided on request, and
 # will be replaced with a lawyer-redlined version before any enterprise
 # counterparty needs to countersign. Until then, this page communicates
 # the substantive position and the path to countersignature.
@@ -16,7 +16,7 @@ hero:
 
     Where Customer is a business or organization that holds personal data about its cast, crew, production partners, or other individuals and uses Grace to manage that data, Customer acts as the *controller* of that personal data and Obelisk Studios acts as the *processor*. This DPA sets out the terms governing that processor relationship.
 
-    The full executable DPA (including EU Standard Contractual Clauses and the Annexes describing technical and organizational measures and sub-processors) is available as a downloadable PDF. The summary on this page is a faithful description of what the DPA contains. Where this page and the DPA PDF differ, the PDF controls.
+    The full executable DPA (including EU Standard Contractual Clauses and the Annexes describing technical and organizational measures and sub-processors) is available on request. The summary on this page is a faithful description of what the DPA contains; where the executable DPA and this page differ, the executable DPA controls.
 
 sections:
   - heading: Subject matter, duration, and scope
@@ -53,7 +53,7 @@ sections:
     body: |
       Where personal data is transferred outside the European Economic Area, the United Kingdom, or Switzerland to a jurisdiction not covered by an adequacy decision, the transfer is governed by the EU Standard Contractual Clauses (Module Two, Controller-to-Processor), the UK International Data Transfer Agreement / UK Addendum, or the Swiss equivalent, as applicable. Annex I to those Clauses is set out in Annex I of the executable DPA.
 
-      We have completed a Transfer Impact Assessment that documents the technical and organizational safeguards applied to each downstream transfer (encryption, contractual SCCs with each sub-processor, EU–US Data Privacy Framework certifications where vendors hold them). The TIA is available on request.
+      We apply technical and organizational safeguards to each downstream transfer, including encryption, contractual data-protection terms with each sub-processor, and reliance on the EU–US Data Privacy Framework where the vendor is certified.
 
   - heading: How to countersign
     body: |
