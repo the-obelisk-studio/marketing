@@ -1,7 +1,7 @@
 hero:
   eyebrow: Legal
   title: Sub-processors
-  lastUpdated: May 27, 2026
+  lastUpdated: May 31, 2026
   intro: >
     This page lists the third-party service providers ("sub-processors") that
     Obelisk Studios LLC engages to operate Grace Production OS. Each receives
@@ -50,18 +50,29 @@ sections:
           and query parameters redacted), browser/device/OS type, and a pseudonymous
           account identifier. Does not receive names, email addresses, or production
           content.
+      - label: Amazon Web Services, Inc. (United States)
+        detail: Primary AI processing via Amazon Bedrock — script breakdown
+          extraction, the Grace AI assistant panel, and VFX-shot suggestions
+          (Anthropic Claude and related models, hosted within AWS in region
+          us-east-1). Receives script text or PDF and the production data needed
+          to answer a given request. Amazon Bedrock does not store prompts or
+          completions, does not use them to train any models, and does not share
+          them with the underlying model providers.
       - label: Anthropic, PBC (United States)
-        detail: AI processing of script content (Claude API). Receives script text or
-          PDF for breakdown extraction. Anthropic's paid API tier does not
+        detail: Failover AI processing (Claude, direct API), used only if Amazon
+          Bedrock is unavailable. Receives script text or PDF and request context
+          only while the failover is active. Anthropic's paid API tier does not
           retain user-API data beyond standard operational logs and does not use
           it for model training.
       - label: Google LLC (United States)
-        detail: (a) Fallback AI processing of script content (Gemini API) when Claude is
-          unavailable. (b) Address geocoding via the Google Maps Platform Places
-          API for production locations and nearest-hospital lookups on call
-          sheets. Receives the script text (Gemini) or the address string
-          (Places). Neither service uses paid-API content to train Google's
-          general models.
+        detail: (a) Secondary fallback AI processing via Google Cloud Vertex AI
+          (Gemini) when the primary model is unavailable; Google AI Studio serves
+          the same role during the direct-API failover. (b) Address geocoding and
+          nearest-hospital lookups via the Google Maps Platform Geocoding API and
+          Places API. Receives script text / production data (Vertex AI) or an
+          address string / coordinates (Maps Platform). Vertex AI is governed by
+          the Google Cloud Data Processing Addendum; neither service uses
+          paid-tier content to train Google's general models.
       - label: Open-Meteo GmbH (Germany)
         detail: Weather data for shoot-day forecasts on call sheets. Receives
           latitude/longitude only, no production identity.

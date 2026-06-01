@@ -1,7 +1,7 @@
 hero:
   eyebrow: Privacy
   title: Privacy Policy
-  lastUpdated: May 27, 2026
+  lastUpdated: May 31, 2026
   intro: >
     This policy explains what Obelisk Studios collects when you use Grace
     Production OS, why we collect it, who else touches it, and the rights you
@@ -90,18 +90,26 @@ sections:
           an error occurred (with sensitive tokens and query parameters redacted),
           browser/device/OS type, and a pseudonymous account identifier. Does not
           receive your name, email address, or production content.
+      - label: Amazon Web Services (Amazon Bedrock)
+        detail: Primary AI processing — script breakdown extraction, the Grace AI
+          assistant panel, and VFX-shot suggestions (Anthropic Claude and related
+          models, hosted within AWS). Receives script text/PDF and the production
+          data needed for a request. Amazon Bedrock does not store prompts or
+          completions, does not train models on them, and does not share them with
+          the model providers.
       - label: Anthropic
-        detail: AI processing of script content (Claude). Script text or PDF is sent for
-          breakdown extraction. Anthropic does not retain user-API data beyond
+        detail: Failover AI processing (Claude, direct API), used only if Amazon
+          Bedrock is unavailable. Anthropic does not retain user-API data beyond
           standard operational logs and does not use it for model training.
       - label: Google
-        detail: Fallback AI processing of script content (Gemini), used when Claude is
-          unavailable. Google does not use API content for model training when
-          accessed via the paid API tier.
+        detail: Secondary fallback AI processing of script content via Google Cloud
+          Vertex AI (Gemini); Google AI Studio serves this role during the
+          direct-API failover. Google does not use paid-tier content for model
+          training. (Google also provides geocoding — see below.)
       - label: Open-Meteo
         detail: Weather data for shoot-day forecasts on call sheets. Receives
           latitude/longitude only, no production identity.
-      - label: Google Maps Platform (Places API)
+      - label: Google Maps Platform (Geocoding API and Places API)
         detail: Address-to-coordinates geocoding for production locations and
           nearest-hospital lookups on call sheets. Receives the address string
           or coordinates only, no production identity. Operated by Google under
@@ -135,12 +143,16 @@ sections:
   - heading: AI processing of scripts
     body: >
       Because this is a real concern for our user base: when you upload a
-      script, its full text is sent to Anthropic's Claude API for parsing into
-      scenes, characters, and breakdown elements. If Claude is unavailable, the
-      text falls back to Google's Gemini API for the same purpose.
+      script, its full text is sent to Amazon Bedrock for parsing into scenes,
+      characters, and breakdown elements. Bedrock runs the model within Amazon
+      Web Services and does not store, train on, or share the content. The same
+      Bedrock processing powers the Grace AI assistant panel and VFX-shot
+      suggestions. If Bedrock is unavailable, processing falls back to Google
+      Cloud Vertex AI (Gemini) and, as a last-resort failover, to the Anthropic
+      (Claude) and Google (Gemini) direct APIs.
 
 
-      Both providers' paid API tiers commit, in their terms of service, to not training models on user-API content. Both encrypt traffic in transit. We do not send scripts anywhere else, do not retain copies outside your Grace account, and do not share scripts with third parties for marketing or analytics.
+      Amazon Bedrock and Google Cloud Vertex AI, and the failover Anthropic and Google API tiers, all commit in their terms of service to not training models on this content, and all encrypt traffic in transit. We do not send scripts anywhere else, do not retain copies outside your Grace account, and do not share scripts with third parties for marketing or analytics.
 
 
       If you have a script that cannot leave a closed network for legal or contractual reasons (e.g., NDA-bound studio material), do not upload it to Grace.
