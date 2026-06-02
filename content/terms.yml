@@ -5,7 +5,7 @@
 hero:
   eyebrow: Legal
   title: Terms of Service
-  lastUpdated: May 31, 2026
+  lastUpdated: June 1, 2026
   intro: |
     These terms govern your use of Grace Production OS, the software product operated by Obelisk Studios. By signing in to an account, paying for a subscription, or otherwise using Grace, you agree to be bound by these terms.
 
@@ -122,7 +122,7 @@ sections:
 
   - heading: Third-party services
     body: |
-      Grace integrates with third-party services to deliver parts of its functionality: payment processing through Stripe, email delivery through Resend, file storage through Cloudflare R2, AI processing through Amazon Bedrock (with Anthropic and Google as failovers), weather data through Open-Meteo, geocoding through Google Maps Platform and OpenStreetMap, and others enumerated in our Privacy Policy.
+      Grace integrates with third-party services to deliver parts of its functionality: payment processing through Stripe, email delivery through Resend, file storage through Cloudflare R2, AI processing through Amazon Bedrock (with Anthropic and Google as failovers), weather data through Open-Meteo, geocoding through Google Maps Platform and OpenStreetMap, product-usage analytics through PostHog (US-hosted), and others enumerated in our Privacy Policy.
 
       Your use of those third-party services is governed by their respective terms in addition to these. We are not responsible for the availability, accuracy, or behavior of third-party services.
 

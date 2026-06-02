@@ -1,7 +1,7 @@
 hero:
   eyebrow: Privacy
   title: Privacy Policy
-  lastUpdated: May 31, 2026
+  lastUpdated: June 1, 2026
   intro: >
     This policy explains what Obelisk Studios collects when you use Grace
     Production OS, why we collect it, who else touches it, and the rights you
@@ -39,7 +39,7 @@ sections:
       *Billing information.* Your card details are never seen by Grace. They're collected directly by our payment processor (Stripe). We retain billing history, invoice metadata, and subscription state.
 
 
-      *Usage information.* Standard server logs (IP address, request time, route, status code), error reports, and which features were used. We don't run ad tracking, behavioral profiling, or session-replay tools.
+      *Usage information.* Standard server logs (IP address, request time, route, status code), error reports, and product-analytics events: page views (recording the in-app route you visited, with sensitive tokens and query parameters redacted from the path), how long a screen was open, and a fixed set of feature-usage actions, all captured under a pseudonymous identifier via PostHog as described under "Product analytics" below. We don't run advertising tracking, cross-context behavioral advertising, or session-replay tools.
 
 
       *Communications.* If you contact us or send a call sheet, invitation, or screener through Grace, we retain the message contents and recipients.
@@ -51,8 +51,10 @@ sections:
       To deliver the product: render dashboards, send the call sheets and
       emails you compose, parse scripts you upload, generate PDFs, process
       payments. To diagnose bugs and outages from the server logs. To
-      communicate with you about your account, security issues, and material
-      changes to the service.
+      understand which features are adopted and where users get stuck, through
+      the privacy-minimal product analytics described under "Product analytics"
+      below. To communicate with you about your account, security issues, and
+      material changes to the service.
 
 
       We do not sell your data, share it with advertisers, or use it to train third-party AI models for purposes beyond serving your request.
@@ -90,6 +92,20 @@ sections:
           an error occurred (with sensitive tokens and query parameters redacted),
           browser/device/OS type, and a pseudonymous account identifier. Does not
           receive your name, email address, or production content.
+      - label: PostHog
+        detail: Product analytics. Receives a fixed set of explicit events — page
+          views (recording the in-app route visited, with sensitive tokens and query
+          parameters redacted from the path), how long a screen was open, and
+          lifecycle actions such as sign-up, production created, or call sheet sent —
+          carrying non-identifying counts and category labels, a pseudonymous account
+          identifier, and pseudonymous organization and production identifiers along
+          with a few non-identifying group attributes (the organization's subscription
+          plan, and the production's union status, shoot-day count, and status). Sets
+          a first-party cookie and uses browser local storage to hold the pseudonymous
+          identifier. We do not enable session replay, autocapture, or heatmaps. Does
+          not receive your name, email address, scripts, budgets, or other production
+          content, and is not used to train any models. Processes this data in the
+          United States.
       - label: Amazon Web Services (Amazon Bedrock)
         detail: Primary AI processing — script breakdown extraction, the Grace AI
           assistant panel, and VFX-shot suggestions (Anthropic Claude and related
@@ -169,15 +185,39 @@ sections:
       not send the contents of your scripts, budgets, schedules, call sheets,
       or other production data. Sentry processes this diagnostic data in the
       United States under a data processing agreement.
+  - heading: Product analytics
+    body: >
+      We use PostHog to understand which features are adopted and where users
+      get stuck, so we can improve Grace. We run it in a deliberately minimal,
+      confidentiality-first configuration. We capture only a fixed set of
+      explicit events: page views (which record the in-app route you visited,
+      with sensitive tokens and query parameters redacted from the path before
+      transmission), how long a screen was open, and lifecycle actions such as
+      signing up, creating a production, or sending a call sheet. We do not use
+      automatic event capture; every event is one we deliberately defined. We
+      identify those events by a pseudonymous account identifier together with
+      pseudonymous organization and production identifiers, which carry only a
+      few non-identifying attributes (the organization's subscription plan, and
+      the production's union status, shoot-day count, and status). The events
+      themselves carry non-identifying metadata only (counts and category
+      labels, for example how many recipients a call sheet had). We do not
+      enable session replay, autocapture, or heatmaps, and we do not send
+      PostHog your name, email address, or the contents of your scripts,
+      budgets, schedules, call sheets, or other production data.
+
+
+      To keep this data on our own domain, analytics events are routed through a same-origin proxy on Grace rather than sent to PostHog directly from your browser. PostHog sets a first-party cookie and uses browser local storage to remember the pseudonymous identifier. PostHog processes this data in the United States under a data processing agreement. PostHog runs only inside the signed-in Grace application; it is not loaded on our public marketing site, on the sign-in or sign-up pages, on the admin console, or on the Vault and share screener pages.
   - heading: Cookies and tracking
     body: >
       Grace uses session cookies set by Clerk to keep you signed in, a small
-      HMAC-signed cookie to remember your active organization, and (during
-      checkout) cookies set by Stripe on its hosted pages. Vault screener
-      sessions use a separate HMAC-signed cookie scoped to the share token.
+      HMAC-signed cookie to remember your active organization, (during checkout)
+      cookies set by Stripe on its hosted pages, and a first-party cookie plus
+      browser local storage set by our product-analytics tool (PostHog) to hold
+      a pseudonymous identifier. Vault screener sessions use a separate
+      HMAC-signed cookie scoped to the share token.
 
 
-      We do not use third-party advertising cookies, marketing pixels, or analytics tools that track users across other sites. Server-side page-view analytics are aggregate; error reports are handled as described under "Error monitoring and diagnostics" above.
+      We use one product-analytics tool, PostHog, which records a fixed set of explicit events keyed to a pseudonymous identifier and does not track you across other websites; it is described under "Product analytics" above. We do not use third-party advertising cookies, marketing pixels, or cross-site tracking. Error reports are handled as described under "Error monitoring and diagnostics" above.
   - heading: How long we keep your data
     body: >
       *While your account is active.* We retain all data necessary to operate
@@ -198,13 +238,13 @@ sections:
       *Contract performance,* creating and operating your account, billing you, delivering call sheets and screeners you compose, and otherwise providing the service you have asked for.
 
 
-      *Legitimate interest,* diagnosing outages, preventing abuse, securing the platform, and operating ordinary server logs. We balance these interests against your privacy expectations and do not use legitimate interest as a basis for marketing.
+      *Legitimate interest,* diagnosing outages, preventing abuse, securing the platform, operating ordinary server logs, and understanding feature adoption through privacy-minimal product analytics (PostHog, described above). We balance these interests against your privacy expectations and do not use legitimate interest as a basis for marketing.
 
 
       *Legal obligation,* retaining billing and tax records, responding to lawful regulatory inquiries, and complying with industry-specific requirements (e.g., minor-employment record-keeping where applicable).
 
 
-      *Consent,* only where consent is the appropriate basis: optional marketing emails, optional analytics or non-essential cookies if and when we introduce them, and any other purpose presented to you with a clear opt-in.
+      *Consent,* only where consent is the appropriate basis: optional marketing emails, any non-essential cookies that require consent under applicable local law, and any other purpose presented to you with a clear opt-in.
 
 
       Where we ask for consent, you may withdraw it at any time by writing to privacy@theobeliskstudio.com or by using the in-product control where one is provided. Withdrawal does not affect the lawfulness of processing carried out before the withdrawal.

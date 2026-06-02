@@ -1,7 +1,7 @@
 hero:
   eyebrow: Legal
   title: Sub-processors
-  lastUpdated: May 31, 2026
+  lastUpdated: June 1, 2026
   intro: >
     This page lists the third-party service providers ("sub-processors") that
     Obelisk Studios LLC engages to operate Grace Production OS. Each receives
@@ -50,6 +50,21 @@ sections:
           and query parameters redacted), browser/device/OS type, and a pseudonymous
           account identifier. Does not receive names, email addresses, or production
           content.
+      - label: PostHog, Inc. (United States)
+        detail: Product analytics, used to understand which features are adopted and
+          where users get stuck. Receives a fixed set of explicit events — page views
+          (recording the in-app route visited, with sensitive tokens and query
+          parameters redacted from the path), how long a screen was open, and
+          lifecycle actions such as sign-up, production created, and call sheet sent —
+          carrying non-identifying counts and category labels, a pseudonymous
+          account identifier, and pseudonymous organization and production identifiers
+          together with a few non-identifying group attributes (the organization's
+          subscription plan, and the production's union status, shoot-day count, and
+          status). Sets a first-party cookie and a browser local-storage value to hold
+          the pseudonymous identifier; events are routed through a same-origin reverse
+          proxy. Session replay, autocapture, and heatmaps are disabled. Does not
+          receive names, email addresses, script text, budgets, or other production
+          content, and is not used to train any models.
       - label: Amazon Web Services, Inc. (United States)
         detail: Primary AI processing via Amazon Bedrock — script breakdown
           extraction, the Grace AI assistant panel, and VFX-shot suggestions
