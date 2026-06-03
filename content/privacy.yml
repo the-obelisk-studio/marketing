@@ -1,7 +1,7 @@
 hero:
   eyebrow: Privacy
   title: Privacy Policy
-  lastUpdated: June 1, 2026
+  lastUpdated: June 2, 2026
   intro: >
     This policy explains what Obelisk Studios collects when you use Grace
     Production OS, why we collect it, who else touches it, and the rights you
@@ -45,12 +45,16 @@ sections:
       *Communications.* If you contact us or send a call sheet, invitation, or screener through Grace, we retain the message contents and recipients.
 
 
+      *Electronic signatures and signing records.* When a document is sent for electronic signature through Grace, we process the recipients' names and email addresses, the signatures they apply, and a tamper-evident audit log recorded as legal evidence that the document was executed — including each signer's IP address, browser/device (user agent), and the timestamps of when the request was sent, opened, and signed. Recipients may be people who do not hold a Grace account (for example, cast or crew asked to sign a single document).
+
+
       *Beta-access and waitlist submissions.* If you request beta access or contact us through our marketing site, we collect what you provide, typically your name, email address, professional role, country, production stage, and the tools you currently use, so we can evaluate and respond to your interest.
   - heading: How we use it
     body: >
       To deliver the product: render dashboards, send the call sheets and
-      emails you compose, parse scripts you upload, generate PDFs, process
-      payments. To diagnose bugs and outages from the server logs. To
+      emails you compose, parse scripts you upload, generate PDFs, send
+      documents you choose for electronic signature, process payments. To
+      diagnose bugs and outages from the server logs. To
       understand which features are adopted and where users get stuck, through
       the privacy-minimal product analytics described under "Product analytics"
       below. To communicate with you about your account, security issues, and
@@ -72,8 +76,9 @@ sections:
           us), and tax/billing address.
       - label: Resend
         detail: Outbound email delivery (call sheets, invitations, vault shares,
-          verification codes). Receives recipient addresses and email body
-          content.
+          verification codes, and signature requests, reminders, and
+          completed-document notifications). Receives recipient addresses and
+          email body content.
       - label: Cloudflare R2
         detail: File storage for scripts, photos, screeners, dailies, and call-sheet
           PDFs. Files are stored encrypted at rest.
@@ -81,11 +86,14 @@ sections:
         detail: DNS, network edge, and the marketing-site CDN. Receives standard request
           metadata (IP, user agent, URL path).
       - label: Neon
-        detail: Managed PostgreSQL hosting for the Grace application database. Receives
-          all structured app data described above.
+        detail: Managed PostgreSQL hosting for the Grace application database, and a
+          separate database for our self-hosted document-signing service. Receives
+          all structured app data described above, plus signing records and audit
+          logs for documents sent for e-signature.
       - label: Railway
-        detail: Application hosting and compute. Receives all data passing through
-          Grace's servers.
+        detail: Application hosting and compute, both for Grace's web/server tier and
+          for our self-hosted document-signing service. Receives all data passing
+          through those servers.
       - label: Sentry
         detail: Error monitoring and diagnostics (operated by Functional Software,
           Inc.). Receives error messages and stack traces, the page or route where
@@ -207,6 +215,19 @@ sections:
 
 
       To keep this data on our own domain, analytics events are routed through a same-origin proxy on Grace rather than sent to PostHog directly from your browser. PostHog sets a first-party cookie and uses browser local storage to remember the pseudonymous identifier. PostHog processes this data in the United States under a data processing agreement. PostHog runs only inside the signed-in Grace application; it is not loaded on our public marketing site, on the sign-in or sign-up pages, on the admin console, or on the Vault and share screener pages.
+  - heading: Electronic signatures
+    body: >
+      Grace lets you send certain documents (such as compliance forms) for
+      electronic signature. We provide this with a signing service we host
+      ourselves on the infrastructure already listed above (Railway for compute,
+      a dedicated Neon database, and Resend for email). The document is not sent
+      to any outside signing company; it stays within our own systems.
+
+
+      When you send a document for signature, the recipients you choose receive an email from us with a secure link to review and sign it. We process their name and email address, the signature they apply, and a tamper-evident audit log kept as legal evidence that the document was executed — each signer's IP address, browser and device type, and the timestamps of when the request was sent, opened, and signed. Recipients may be people who do not have a Grace account; we process their information only to obtain and record their signature on that document. Once everyone has signed, the fully-executed PDF (with its signing certificate and audit log) is stored in your Grace account, and a copy is emailed to the signers.
+
+
+      The signing page sets a short-lived session cookie on the signing service's own subdomain solely to run the signing session. We do not use the signing service for analytics, advertising, or model training.
   - heading: Cookies and tracking
     body: >
       Grace uses session cookies set by Clerk to keep you signed in, a small
@@ -235,10 +256,10 @@ sections:
       the GDPR (and equivalent provisions of the UK GDPR and the Swiss FADP):
 
 
-      *Contract performance,* creating and operating your account, billing you, delivering call sheets and screeners you compose, and otherwise providing the service you have asked for.
+      *Contract performance,* creating and operating your account, billing you, delivering call sheets and screeners you compose, sending documents you choose for electronic signature, and otherwise providing the service you have asked for.
 
 
-      *Legitimate interest,* diagnosing outages, preventing abuse, securing the platform, operating ordinary server logs, and understanding feature adoption through privacy-minimal product analytics (PostHog, described above). We balance these interests against your privacy expectations and do not use legitimate interest as a basis for marketing.
+      *Legitimate interest,* diagnosing outages, preventing abuse, securing the platform, operating ordinary server logs, understanding feature adoption through privacy-minimal product analytics (PostHog, described above), and maintaining a tamper-evident signing audit log (including signers' IP addresses and timestamps) as legal evidence that a document was executed. We balance these interests against your privacy expectations and do not use legitimate interest as a basis for marketing.
 
 
       *Legal obligation,* retaining billing and tax records, responding to lawful regulatory inquiries, and complying with industry-specific requirements (e.g., minor-employment record-keeping where applicable).

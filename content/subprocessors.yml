@@ -1,7 +1,7 @@
 hero:
   eyebrow: Legal
   title: Sub-processors
-  lastUpdated: June 1, 2026
+  lastUpdated: June 2, 2026
   intro: >
     This page lists the third-party service providers ("sub-processors") that
     Obelisk Studios LLC engages to operate Grace Production OS. Each receives
@@ -16,6 +16,9 @@ sections:
       Effective as of the "Last updated" date above. Each entry names the
       provider, the function it performs, the categories of data it receives,
       and the legal entity's principal place of business.
+
+
+      Note on electronic signatures: Grace's e-signature feature runs on software we host ourselves on the infrastructure listed below (Railway, Neon, and Resend). Document content and signer identity are not shared with the software's maker or any other third party — they are processed only within our own systems.
     list:
       - label: Clerk, Inc. (United States)
         detail: Authentication, sign-in, session management, and multi-factor
@@ -28,8 +31,9 @@ sections:
           invoices.
       - label: Resend, Inc. (United States)
         detail: Outbound email delivery (call sheets, production invitations, vault
-          shares, verification codes, transactional notifications). Receives
-          recipient addresses and email body content.
+          shares, verification codes, transactional notifications, and
+          electronic-signature requests, reminders, and completed-document
+          notifications). Receives recipient addresses and email body content.
       - label: Cloudflare, Inc. (United States)
         detail: (a) Object storage via Cloudflare R2 for scripts, photos, screeners,
           dailies, and call-sheet PDFs (files encrypted at rest with AES-256).
@@ -38,12 +42,14 @@ sections:
           edge role; receives uploaded file contents in the R2 role.
       - label: Neon, Inc. (United States)
         detail: Managed PostgreSQL hosting for the Grace application database, with
-          point-in-time recovery snapshots. Receives all structured application
-          data described in the Privacy Policy.
+          point-in-time recovery snapshots, plus a separate database for our
+          self-hosted electronic-signature service. Receives all structured
+          application data described in the Privacy Policy, plus signing records
+          and audit logs for documents sent for e-signature.
       - label: Railway Corp. (United States)
-        detail: Application hosting and compute for the Grace web/server tier. Receives
-          all data passing through Grace's servers in the course of request
-          handling.
+        detail: Application hosting and compute for the Grace web/server tier and for
+          our self-hosted electronic-signature service. Receives all data passing
+          through those servers in the course of request handling.
       - label: Sentry, by Functional Software, Inc. (United States)
         detail: Error monitoring and diagnostics. Receives error messages and stack
           traces, the page or route where an error occurred (with sensitive tokens
