@@ -16,7 +16,7 @@ hero:
 problems:
   num: "01"
   heading: Three problems every production has,
-  headingMuted: None of them have to.
+  headingMuted: None of them have to exist.
   items:
     - scenario: Same scene numbers, re-typed in four tools by Tuesday.
       response: Break it down once. Schedule, budget, DOOD and call sheet read from
@@ -38,8 +38,8 @@ thesis:
     Grace is built around one idea: every department on a film should be working
     from the same picture. Breakdown feeds schedule. Schedule feeds budget.
     Budget feeds call sheet. Everything connects, nothing gets re-entered, and
-    no one is working from a stale version. One system, end to end, from page
-    to wrap.
+    no one is working from a stale version. One system, end to end, from page to
+    wrap.
   points:
     - One upload changes everything downstream.
     - One screen for the day on set. Everything the floor needs, live.
@@ -427,11 +427,11 @@ faq:
         compliance release. If you're shooting on one of those agreements now,
         we'll get them in front of our timeline.
     - q: How does Grace handle confidential screeners?
-      a: Through the Vault. Magic-link delivery with a 6-digit code to the
-        recipient's email, forensic watermarking burned into every frame (email
-        + session ID), device locking on first claim, and a full event log of
-        code requests, plays, seeks, and device changes. The recipient gets the
-        cut without an account.
+      a: Through the Vault. Magic-link delivery with a 6-digit code to the recipient's
+        email, forensic watermarking burned into every frame (email + session
+        ID), device locking on first claim, and a full event log of code
+        requests, plays, seeks, and device changes. The recipient gets the cut
+        without an account.
     - q: Are you self-hosted or SaaS?
       a: SaaS, with US-based hosting and storage. Self-hosted deployment for studios
         that need it is on the table. Write to us if it's a hard requirement.
