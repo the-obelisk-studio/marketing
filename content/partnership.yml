@@ -63,18 +63,18 @@ filmmakers:
   heading: Two filmmakers, *across the cycle.*
   founders:
     - name: Kshitij Kapil
-      company: Founder · Obelisk Studios
+      company: Founder · Obelisk Studio
       bio: >
         Kshitij Kapil is an award-winning cinematographer and colorist with
         nearly a decade of experience. He holds a Master of Fine Arts in
         Cinematography from the New York Film Academy and a Bachelor of Fine
         Arts in Film from Syracuse University. He has had the privilege of being
-        mentored by acclaimed cinematographer Anthony B. Richmond, ASC, BSC.
-        His work spans short films, feature films, documentaries, music videos,
-        and commercials, with a consistent focus on achieving superior image
-        quality and serving the story with intention. Kshitij's cinematography
-        has been recognized at well-established festivals such as WorldFest
-        Houston International Film Festival and IndieX Film Festival.
+        mentored by acclaimed cinematographer Anthony B. Richmond, ASC, BSC. His
+        work spans short films, feature films, documentaries, music videos, and
+        commercials, with a consistent focus on achieving superior image quality
+        and serving the story with intention. Kshitij's cinematography has been
+        recognized at well-established festivals such as WorldFest Houston
+        International Film Festival and IndieX Film Festival.
       portfolioLinks:
         - label: Read more
           href: https://kshitijkapil.com/
@@ -85,11 +85,11 @@ filmmakers:
         and post-production. He holds an MFA in Cinematography from the New York
         Film Academy, where he trained under BAFTA Lifetime Achievement Award
         recipient Anthony B. Richmond, ASC, BSC. Before that, he completed a
-        Bachelor's degree in Computer Science and Communication Engineering,
-        the foundation that now powers Grace's backend and TDH Systems'
-        technical work. His films have been recognized at the Cannes Marché du
-        Film, International New York Film Festival, Los Angeles International
-        Film Festival, and the International Film & Entertainment Festival of
+        Bachelor's degree in Computer Science and Communication Engineering, the
+        foundation that now powers Grace's backend and TDH Systems' technical
+        work. His films have been recognized at the Cannes Marché du Film,
+        International New York Film Festival, Los Angeles International Film
+        Festival, and the International Film & Entertainment Festival of
         Australia, where he won Best Production.
       portfolioLinks:
         - label: Read more
@@ -97,8 +97,8 @@ filmmakers:
 selectedWork:
   kicker: Selected Work
   heading: A working history, *on screen.*
-  body: Films from the partners, together and apart. Each one carried through
-    some part of the cycle the studio now serves.
+  body: Films from the partners, together and apart. Each one carried through some
+    part of the cycle the studio now serves.
   films:
     - title: Piroba
       genre: Short Film · Drama, Action
