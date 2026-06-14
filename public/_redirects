@@ -6,5 +6,5 @@
 # Pricing lives inside the app (Clerk-authed). Marketing redirects
 # to the public pricing page on the app subdomain so the ToS link
 # (theobeliskstudio.com/pricing) resolves cleanly instead of 404ing.
-/pricing https://app.theobeliskstudio.com/pricing 301
-/pricing/ https://app.theobeliskstudio.com/pricing 301
+/pricing https://us.graceproductionos.com/pricing 301
+/pricing/ https://us.graceproductionos.com/pricing 301

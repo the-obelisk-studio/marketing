@@ -44,7 +44,7 @@ const TOOLS = [
   "Other",
 ] as const
 
-const GRACE_API = process.env.NEXT_PUBLIC_GRACE_API_URL ?? "https://app.theobeliskstudio.com"
+const GRACE_API = process.env.NEXT_PUBLIC_GRACE_API_URL ?? "https://us.graceproductionos.com"
 const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? ""
 
 declare global {

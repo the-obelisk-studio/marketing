@@ -111,7 +111,7 @@ export function softwareApplicationLd() {
       "@type": "Offer",
       priceCurrency: "USD",
       price: "149.00",
-      url: "https://app.theobeliskstudio.com/pricing",
+      url: "https://us.graceproductionos.com/pricing",
     },
   }
 }
