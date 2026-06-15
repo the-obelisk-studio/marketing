@@ -5,7 +5,7 @@
 import type { Metadata } from "next"
 
 export const SITE_URL = "https://www.theobeliskstudio.com"
-export const SITE_NAME = "Obelisk Studios"
+export const SITE_NAME = "Obelisk Studio"
 export const SITE_TAGLINE =
   "An independent studio of working filmmakers, building tools and finishing pictures."
 export const OG_IMAGE = `${SITE_URL}/og.png`

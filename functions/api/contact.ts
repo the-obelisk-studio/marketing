@@ -28,7 +28,7 @@ type Payload = {
 }
 
 const DEFAULT_TO = "hello@theobeliskstudio.com"
-const DEFAULT_FROM = "Obelisk Studios <hello@theobeliskstudio.com>"
+const DEFAULT_FROM = "Obelisk Studio <hello@theobeliskstudio.com>"
 
 function escapeHtml(s: string): string {
   return s.replace(/[&<>"']/g, c => (
@@ -86,7 +86,7 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
     </div>`
 
   const text =
-    `Obelisk Studios · contact form\n\n` +
+    `Obelisk Studio · contact form\n\n` +
     `Name: ${name}\n` +
     `Email: ${email}\n` +
     `Topic: ${topic}\n` +

@@ -70,7 +70,7 @@ export function PrivacyRequestForm() {
         <div className="success-eyebrow">Request received</div>
         <h3 className="success-title">Thanks. We'll respond within <em>30 days.</em></h3>
         <p className="success-body">
-          Your privacy request landed with the Obelisk Studios Privacy Lead. We acknowledge receipt within a few business days and substantively respond within 30 days as required by law. If you don't hear from us, write directly to <a href="mailto:privacy@theobeliskstudio.com" style={{ color: "var(--kodachrome)", textDecoration: "underline" }}>privacy@theobeliskstudio.com</a>.
+          Your privacy request landed with the Obelisk Studio Privacy Lead. We acknowledge receipt within a few business days and substantively respond within 30 days as required by law. If you don't hear from us, write directly to <a href="mailto:privacy@theobeliskstudio.com" style={{ color: "var(--kodachrome)", textDecoration: "underline" }}>privacy@theobeliskstudio.com</a>.
         </p>
 
         <style>{`

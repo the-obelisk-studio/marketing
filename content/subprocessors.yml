@@ -4,7 +4,7 @@ hero:
   lastUpdated: June 2, 2026
   intro: >
     This page lists the third-party service providers ("sub-processors") that
-    Obelisk Studios LLC engages to operate Grace Production OS. Each receives
+    Obelisk Studio LLC engages to operate Grace Production OS. Each receives
     only the personal data necessary to deliver its piece of the service, and
     each is contractually bound to use that data solely on our instructions.
 
@@ -27,7 +27,7 @@ sections:
       - label: Stripe, Inc. (United States)
         detail: Subscription billing and payment processing. Receives billing email,
           payment-method details (collected by Stripe directly, never by Obelisk
-          Studios), tax/billing address, and the metadata Stripe needs to render
+          Studio), tax/billing address, and the metadata Stripe needs to render
           invoices.
       - label: Resend, Inc. (United States)
         detail: Outbound email delivery (call sheets, production invitations, vault
@@ -105,7 +105,7 @@ sections:
           engineering for Grace. Personnel acting under TDH's engagement may
           access the production database for engineering and support purposes.
           Subject to confidentiality and data-protection obligations to Obelisk
-          Studios LLC and to the international-transfer safeguards described in
+          Studio LLC and to the international-transfer safeguards described in
           the Privacy Policy.
   - heading: How to receive change notifications
     body: >
@@ -126,6 +126,6 @@ contact:
   heading: Privacy contact
   body: >
     For questions about any sub-processor on this list, to object to a planned
-    change, or to subscribe to change notifications, contact the Obelisk Studios
+    change, or to subscribe to change notifications, contact the Obelisk Studio
     Privacy Lead.
   email: privacy@theobeliskstudio.com

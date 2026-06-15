@@ -1,4 +1,4 @@
-# Deploy guide — Obelisk Studios marketing site
+# Deploy guide — Obelisk Studio marketing site
 
 Code is shipped; the remaining work is Cloudflare-side. Follow this in order.
 
@@ -22,9 +22,9 @@ CF Pages → Settings → Environment variables. Both Production and Preview nee
 |---|---|---|
 | `RESEND_API_KEY` | `re_FNWyJ...` | Same key Grace uses (Step 4 of master migration plan). |
 | `CONTACT_TO_EMAIL` | `hello@theobeliskstudio.com` | Or whichever inbox should receive form submissions. |
-| `CONTACT_FROM_EMAIL` | `Obelisk Studios <hello@theobeliskstudio.com>` | Must be a Resend-verified address. |
+| `CONTACT_FROM_EMAIL` | `Obelisk Studio <hello@theobeliskstudio.com>` | Must be a Resend-verified address. |
 | `PRIVACY_TO_EMAIL` | `privacy@theobeliskstudio.com` | Optional; defaults to this if unset. DSAR / data-subject-request inbox. |
-| `PRIVACY_FROM_EMAIL` | `Obelisk Studios Privacy <privacy@theobeliskstudio.com>` | Optional; defaults to this if unset. |
+| `PRIVACY_FROM_EMAIL` | `Obelisk Studio Privacy <privacy@theobeliskstudio.com>` | Optional; defaults to this if unset. |
 | `NODE_VERSION` | `20` | |
 
 Save, then trigger a re-deploy.

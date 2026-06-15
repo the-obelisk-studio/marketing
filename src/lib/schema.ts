@@ -29,7 +29,7 @@ export const FounderSchema = z.object({
   bio: z.string(),                        // markdown allowed
   portfolioLinks: z.array(LinkSchema).default([]),
   photo: z.string().optional(),           // /uploads/foo.jpg
-  company: z.string().optional(),         // "Obelisk Studios" / "TDH Systems"
+  company: z.string().optional(),         // "Obelisk Studio" / "TDH Systems"
 })
 
 // ── Film credit ────────────────────────────────────────────────
@@ -171,7 +171,7 @@ export const HeroPillsHeroSchema = z.object({
 
 export const StudioEntitySchema = z.object({
   label: z.string(),                     // "— Studio of Record"
-  name: z.string(),                      // "Obelisk Studios"
+  name: z.string(),                      // "Obelisk Studio"
   founder: z.string().optional(),        // "Founded by Kshitij Kapil"
   description: z.string(),
   tags: z.array(z.string()).default([]),

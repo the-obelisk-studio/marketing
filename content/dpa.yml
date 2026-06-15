@@ -12,9 +12,9 @@ hero:
   title: Data Processing Addendum
   lastUpdated: May 17, 2026
   intro: |
-    This Data Processing Addendum ("DPA") supplements the Terms of Service between Obelisk Studios LLC ("Obelisk Studios," "we") and the customer ("Customer") and applies whenever Obelisk Studios processes personal data on Customer's behalf in connection with Grace Production OS.
+    This Data Processing Addendum ("DPA") supplements the Terms of Service between Obelisk Studio LLC ("Obelisk Studio," "we") and the customer ("Customer") and applies whenever Obelisk Studio processes personal data on Customer's behalf in connection with Grace Production OS.
 
-    Where Customer is a business or organization that holds personal data about its cast, crew, production partners, or other individuals and uses Grace to manage that data, Customer acts as the *controller* of that personal data and Obelisk Studios acts as the *processor*. This DPA sets out the terms governing that processor relationship.
+    Where Customer is a business or organization that holds personal data about its cast, crew, production partners, or other individuals and uses Grace to manage that data, Customer acts as the *controller* of that personal data and Obelisk Studio acts as the *processor*. This DPA sets out the terms governing that processor relationship.
 
     The full executable DPA (including EU Standard Contractual Clauses and the Annexes describing technical and organizational measures and sub-processors) is available on request. The summary on this page is a faithful description of what the DPA contains; where the executable DPA and this page differ, the executable DPA controls.
 
@@ -29,7 +29,7 @@ sections:
 
       The categories of personal data include names, contact details, role and department, deal terms and rates, work-eligibility documents (where Customer chooses to record them), production-related notes, and content Customer uploads through Grace. Special categories of data are processed only where Customer enters them (e.g., minor cast information, in which case standard production-side compliance practice applies).
 
-  - heading: Obelisk Studios' obligations as processor
+  - heading: Obelisk Studio's obligations as processor
     body: |
       *Processing only on documented instructions.* We process personal data only on Customer's documented instructions, which are reflected in the Terms of Service, this DPA, and Customer's use of the product.
 
@@ -45,7 +45,7 @@ sections:
 
   - heading: Sub-processors
     body: |
-      Customer authorizes Obelisk Studios to engage the sub-processors listed at theobeliskstudio.com/legal/subprocessors, which is updated as our sub-processor list changes. We require each sub-processor to provide at least the same level of data protection that we provide under this DPA.
+      Customer authorizes Obelisk Studio to engage the sub-processors listed at theobeliskstudio.com/legal/subprocessors, which is updated as our sub-processor list changes. We require each sub-processor to provide at least the same level of data protection that we provide under this DPA.
 
       We will notify Customer at least 14 days in advance of adding or replacing any sub-processor that processes Customer's personal data. Customer may object to the change in writing; if the objection cannot be resolved by mutually agreed mitigations, Customer may terminate the subscription with respect to the affected service without further liability beyond fees accrued.
 
@@ -57,10 +57,10 @@ sections:
 
   - heading: How to countersign
     body: |
-      For an executed copy of the DPA (fully filled in with Customer's identification details, signed by Obelisk Studios, and ready for Customer's countersignature), email legal@theobeliskstudio.com. Provide the customer entity's legal name, the data-protection contact's name and email, and any specific sub-processor objections you wish to record. We return countersigned copies within ten business days.
+      For an executed copy of the DPA (fully filled in with Customer's identification details, signed by Obelisk Studio, and ready for Customer's countersignature), email legal@theobeliskstudio.com. Provide the customer entity's legal name, the data-protection contact's name and email, and any specific sub-processor objections you wish to record. We return countersigned copies within ten business days.
 
 contact:
   heading: Legal contact
   body: |
-    For DPA execution, sub-processor inquiries, or audit requests, contact the Obelisk Studios legal team at the address below.
+    For DPA execution, sub-processor inquiries, or audit requests, contact the Obelisk Studio legal team at the address below.
   email: legal@theobeliskstudio.com

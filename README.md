@@ -1,4 +1,4 @@
-# Obelisk Studios marketing site
+# Obelisk Studio marketing site
 
 Live at https://www.theobeliskstudio.com (post-deploy).
 

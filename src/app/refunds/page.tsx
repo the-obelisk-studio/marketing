@@ -10,7 +10,7 @@ import { pageMetadata } from "@/lib/seo"
 export const metadata: Metadata = pageMetadata({
   title: "Refund Policy",
   description:
-    "How Obelisk Studios handles cancellations, refunds, and charges in error for Grace Production OS subscriptions.",
+    "How Obelisk Studio handles cancellations, refunds, and charges in error for Grace Production OS subscriptions.",
   path: "/refunds/",
 })
 

@@ -28,7 +28,7 @@ type Payload = {
 }
 
 const DEFAULT_TO = "privacy@theobeliskstudio.com"
-const DEFAULT_FROM = "Obelisk Studios Privacy <privacy@theobeliskstudio.com>"
+const DEFAULT_FROM = "Obelisk Studio Privacy <privacy@theobeliskstudio.com>"
 
 function escapeHtml(s: string): string {
   return s.replace(/[&<>"']/g, c => (
@@ -95,7 +95,7 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
     </div>`
 
   const text =
-    `Obelisk Studios · privacy / DSAR request\n\n` +
+    `Obelisk Studio · privacy / DSAR request\n\n` +
     `Name: ${name}\n` +
     `Email: ${email}\n` +
     `Request type: ${requestType}\n` +

@@ -9,7 +9,7 @@ import { pageMetadata } from "@/lib/seo"
 export const metadata = pageMetadata({
   title: "Privacy Policy",
   description:
-    "How Obelisk Studios collects, uses, and protects your data when you use Grace Production OS.",
+    "How Obelisk Studio collects, uses, and protects your data when you use Grace Production OS.",
   path: "/privacy/",
 })
 

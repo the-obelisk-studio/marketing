@@ -12,7 +12,7 @@ import { pageMetadata } from "@/lib/seo"
 export const metadata: Metadata = pageMetadata({
   title: "Privacy request",
   description:
-    "Submit a data-access, correction, deletion, or other privacy request to Obelisk Studios. Account-holders and non-account-holders alike.",
+    "Submit a data-access, correction, deletion, or other privacy request to Obelisk Studio. Account-holders and non-account-holders alike.",
   path: "/privacy/request/",
 })
 

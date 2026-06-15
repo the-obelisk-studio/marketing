@@ -14,7 +14,7 @@ import { loadContent } from "@/lib/content"
 import { pageMetadata } from "@/lib/seo"
 
 export const metadata = pageMetadata({
-  title: "Obelisk Studios",
+  title: "Obelisk Studio",
   description:
     "Independent filmmakers building tools and finishing pictures. Software and post production, run by working filmmakers, in Burbank.",
   path: "/",

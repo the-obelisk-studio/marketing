@@ -10,7 +10,7 @@ import { pageMetadata } from "@/lib/seo"
 export const metadata: Metadata = pageMetadata({
   title: "Data Processing Addendum",
   description:
-    "The Data Processing Addendum that supplements Obelisk Studios' Terms of Service for customers acting as data controllers.",
+    "The Data Processing Addendum that supplements Obelisk Studio's Terms of Service for customers acting as data controllers.",
   path: "/legal/dpa/",
 })
 

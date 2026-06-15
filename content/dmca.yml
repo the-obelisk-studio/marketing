@@ -6,14 +6,14 @@ hero:
   title: DMCA Notice & Takedown
   lastUpdated: May 17, 2026
   intro: |
-    Obelisk Studios respects the intellectual property rights of others and expects users of Grace Production OS to do the same. We respond to notices of alleged copyright infringement that comply with the U.S. Digital Millennium Copyright Act ("DMCA"), 17 U.S.C. §512.
+    Obelisk Studio respects the intellectual property rights of others and expects users of Grace Production OS to do the same. We respond to notices of alleged copyright infringement that comply with the U.S. Digital Millennium Copyright Act ("DMCA"), 17 U.S.C. §512.
 
     This page describes how to send a takedown notice, how to file a counter-notification, and how to reach our designated agent.
 
 sections:
   - heading: Our designated agent
     body: |
-      Obelisk Studios has registered a designated agent with the United States Copyright Office under 17 U.S.C. §512(c)(2). Notices that meet the requirements below should be addressed to the agent at the contact information listed at the bottom of this page.
+      Obelisk Studio has registered a designated agent with the United States Copyright Office under 17 U.S.C. §512(c)(2). Notices that meet the requirements below should be addressed to the agent at the contact information listed at the bottom of this page.
 
       Notices that do not meet the statutory requirements may not entitle us to act on them and may not start the response clock under §512. Please follow the format below carefully, or send your notice through your own counsel.
 
@@ -49,7 +49,7 @@ sections:
       - label: Good-faith statement
         detail: A statement, under penalty of perjury, that you have a good-faith belief that the material was removed or disabled as a result of mistake or misidentification.
       - label: Contact and consent to jurisdiction
-        detail: Your name, address, and telephone number, and a statement that you consent to the jurisdiction of the United States District Court for the district where your address is located (or, if your address is outside the United States, for any judicial district in which Obelisk Studios may be found), and that you will accept service of process from the person who provided the original notice or an authorized agent.
+        detail: Your name, address, and telephone number, and a statement that you consent to the jurisdiction of the United States District Court for the district where your address is located (or, if your address is outside the United States, for any judicial district in which Obelisk Studio may be found), and that you will accept service of process from the person who provided the original notice or an authorized agent.
 
   - heading: What happens after a counter-notification
     body: |
@@ -66,5 +66,5 @@ sections:
 contact:
   heading: Designated agent
   body: |
-    Send DMCA notices to the designated agent for Obelisk Studios LLC at the email below. Postal correspondence is also accepted; reply to the email and we will provide the current registered mailing address. The agent's identity and contact information are also on file with the U.S. Copyright Office Designated Agent Directory.
+    Send DMCA notices to the designated agent for Obelisk Studio LLC at the email below. Postal correspondence is also accepted; reply to the email and we will provide the current registered mailing address. The agent's identity and contact information are also on file with the U.S. Copyright Office Designated Agent Directory.
   email: dmca@theobeliskstudio.com

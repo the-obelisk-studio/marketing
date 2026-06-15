@@ -12,7 +12,7 @@ import { pageMetadata } from "@/lib/seo"
 export const metadata = pageMetadata({
   title: "Contact",
   description:
-    "Get in touch with Obelisk Studios. Software, finishing, partnership, or anything else.",
+    "Get in touch with Obelisk Studio. Software, finishing, partnership, or anything else.",
   path: "/contact/",
 })
 

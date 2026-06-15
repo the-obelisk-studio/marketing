@@ -15,7 +15,7 @@ import type { CrewEntry, FestivalEntry } from "@/lib/schema"
 export const metadata = pageMetadata({
   title: "Partnership",
   description:
-    "Obelisk Studios and TDH Systems, a partnership built on the work. Two studios, one picture.",
+    "Obelisk Studio and TDH Systems, a partnership built on the work. Two studios, one picture.",
   path: "/partnership/",
 })
 

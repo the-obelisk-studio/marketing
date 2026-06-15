@@ -9,7 +9,7 @@ import { pageMetadata } from "@/lib/seo"
 export const metadata = pageMetadata({
   title: "Terms of Service",
   description:
-    "Terms governing the use of Grace Production OS, the software product operated by Obelisk Studios.",
+    "Terms governing the use of Grace Production OS, the software product operated by Obelisk Studio.",
   path: "/terms/",
 })
 

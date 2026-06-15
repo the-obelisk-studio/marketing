@@ -10,7 +10,7 @@ import { pageMetadata } from "@/lib/seo"
 export const metadata: Metadata = pageMetadata({
   title: "DMCA Notice & Takedown",
   description:
-    "How to file a DMCA notice or counter-notification with Obelisk Studios, and how to reach our designated agent.",
+    "How to file a DMCA notice or counter-notification with Obelisk Studio, and how to reach our designated agent.",
   path: "/dmca/",
 })
 

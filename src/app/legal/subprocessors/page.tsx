@@ -10,7 +10,7 @@ import { pageMetadata } from "@/lib/seo"
 export const metadata: Metadata = pageMetadata({
   title: "Sub-processors",
   description:
-    "Third-party service providers that process personal data on Obelisk Studios' behalf to operate Grace Production OS.",
+    "Third-party service providers that process personal data on Obelisk Studio's behalf to operate Grace Production OS.",
   path: "/legal/subprocessors/",
 })
 
