@@ -5,6 +5,7 @@
 // (validated by GracePageSchema in src/lib/schema.ts). Edits flow through
 // Decap CMS → YAML → build.
 
+import type { Metadata } from "next"
 import Link from "next/link"
 import { Reveal } from "@/components/Reveal"
 import { RegMark } from "@/components/RegMark"
@@ -15,12 +16,19 @@ import { loadContent } from "@/lib/content"
 import { pageMetadata, softwareApplicationLd } from "@/lib/seo"
 import type { GraceContent } from "@/lib/schema"
 
-export const metadata = pageMetadata({
-  title: "Grace · Production OS for working filmmakers",
-  description:
-    "The production operating system built by working filmmakers. Script, schedule, budget, call sheets, and on-set comms from one source of truth, so a 4 pm script revision doesn't become a 7 pm crisis.",
-  path: "/grace/",
-})
+export const metadata: Metadata = {
+  ...pageMetadata({
+    title: "Grace · Production OS for working filmmakers",
+    description:
+      "The production operating system built by working filmmakers. Script, schedule, budget, call sheets, and on-set comms from one source of truth, so a 4 pm script revision doesn't become a 7 pm crisis.",
+    path: "/grace/",
+  }),
+  // Cross-domain canonical: the standalone Grace marketing site
+  // (graceproductionos.com) is the authoritative home for this content now.
+  // Point search engines at it so this Obelisk-hosted duplicate doesn't
+  // split ranking. SEO hint only — the page still serves here unchanged.
+  alternates: { canonical: "https://graceproductionos.com/us/" },
+}
 
 type Shot = GraceContent["hero"]["shot"]
 type Row = GraceContent["preProduction"]["rows"][number]
