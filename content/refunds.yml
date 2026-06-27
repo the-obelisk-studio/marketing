@@ -25,6 +25,8 @@ sections:
 
   - heading: Promotional trials that auto-convert to paid
     body: |
+      During the current free beta no payment method is collected and nothing converts to a paid subscription, so this section does not apply to a beta account. It governs the prior code-redeemed promotional trials only.
+
       The 90-day Founders' Beta and similar promotional trials auto-convert to paid subscriptions at the price disclosed when the code was redeemed. To avoid the conversion charge, cancel before the trial ends: Settings → Billing inside Grace, no support contact required.
 
       Once the conversion charge has processed, the no-refund-of-unused-portion rule above applies to the newly paid period.
