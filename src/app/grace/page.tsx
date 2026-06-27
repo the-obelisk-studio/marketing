@@ -463,25 +463,35 @@ export default function GracePage() {
           {c.pricing.body && (
             <Reveal delay={200}><p className="section-body">{c.pricing.body}</p></Reveal>
           )}
-          <div className="pricing-grid">
-            {c.pricing.tiers.map((t, i) => (
-              <Reveal key={t.name} delay={280 + i * 140}>
-                <article className={`pricing-card${t.featured ? " featured" : ""}`}>
-                  {t.badge && <div className="tier-badge">{t.badge}</div>}
-                  <div className="tier-name">{t.name}</div>
-                  <div className="tier-desc">{t.desc}</div>
-                  <div className="tier-price">{t.price}<span> / month</span></div>
-                  {t.annual && <div className="tier-annual">{t.annual}</div>}
-                  <ul className="tier-bullets">
-                    {t.bullets.map((b, j) => (
-                      <li key={j}>{b}</li>
-                    ))}
-                  </ul>
-                  <Link href={c.pricing.tierCta.href} className="cta-primary tier-cta">{c.pricing.tierCta.label}</Link>
-                </article>
-              </Reveal>
-            ))}
-          </div>
+          {c.pricing.tiers && c.pricing.tiers.length > 0 ? (
+            <div className="pricing-grid">
+              {c.pricing.tiers.map((t, i) => (
+                <Reveal key={t.name} delay={280 + i * 140}>
+                  <article className={`pricing-card${t.featured ? " featured" : ""}`}>
+                    {t.badge && <div className="tier-badge">{t.badge}</div>}
+                    <div className="tier-name">{t.name}</div>
+                    <div className="tier-desc">{t.desc}</div>
+                    <div className="tier-price">{t.price}<span> / month</span></div>
+                    {t.annual && <div className="tier-annual">{t.annual}</div>}
+                    <ul className="tier-bullets">
+                      {t.bullets.map((b, j) => (
+                        <li key={j}>{b}</li>
+                      ))}
+                    </ul>
+                    {c.pricing.tierCta && (
+                      <Link href={c.pricing.tierCta.href} className="cta-primary tier-cta">{c.pricing.tierCta.label}</Link>
+                    )}
+                  </article>
+                </Reveal>
+              ))}
+            </div>
+          ) : c.pricing.cta ? (
+            <Reveal delay={280}>
+              <div className="hero-ctas centered">
+                <a href={c.pricing.cta.href} className="cta-primary">{c.pricing.cta.label}</a>
+              </div>
+            </Reveal>
+          ) : null}
           {c.pricing.note && (
             <Reveal delay={620}>
               <p className="pricing-note">{c.pricing.note}</p>

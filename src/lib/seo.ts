@@ -110,8 +110,9 @@ export function softwareApplicationLd() {
     offers: {
       "@type": "Offer",
       priceCurrency: "USD",
-      price: "149.00",
-      url: "https://us.graceproductionos.com/pricing",
+      price: "0.00",
+      description: "Free during the beta",
+      url: "https://us.graceproductionos.com/sign-up",
     },
   }
 }

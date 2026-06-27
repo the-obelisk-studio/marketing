@@ -1,12 +1,12 @@
 hero:
-  badge: Closed Beta
+  badge: Free Beta
   title: The production operating system
   titleMuted: built by working filmmakers.
   sub: Script, schedule, budget, and call sheets from one source of truth, so a 4
     pm script revision doesn't become a 7 pm crisis.
   primaryCta:
-    label: Request beta access →
-    href: /beta-interest
+    label: Sign up free →
+    href: https://us.graceproductionos.com/sign-up
   secondaryCta:
     label: See how it works ↓
     href: "#problem"
@@ -356,42 +356,18 @@ whyBuilt:
     alt: Grace, light and dark mode
 pricing:
   num: "13"
-  heading: Two plans.
-  headingMuted: Pick the one that fits, scale with packs.
+  heading: Free during the beta.
+  headingMuted: Every feature, no card, no commitment.
   body: >
-    Pricing is per production company, not per seat. Pack-style add-ons let you
-    grow without re-negotiating.
-  tiers:
-    - name: Standard
-      desc: Run pre-pro and shoot a project end-to-end.
-      price: $149
-      annual: $1,499 / year
-      featured: false
-      bullets:
-        - 1 active production
-        - 3 producer-tier + 5 dept-head-tier + 20 crew/cast seats
-        - Full breakdown, schedule, budget, call sheets
-        - Set dashboard, compliance, editor turnover
-        - Vault and DIT pipeline available as upgrade
-        - 100GB Storage for creative assets
-    - name: Studio
-      desc: Plus secure dailies, screener portal, and DIT workflow.
-      price: $299
-      annual: $2,999 / year
-      featured: true
-      badge: Recommended
-      bullets:
-        - Everything in Standard Plus
-        - "Higher seat ceilings: 6 T1 · 10 T2 · 40 T3"
-        - "Vault: forensic-watermarked screener portal with magic-link auth"
-        - "DIT pipeline: media cards, dailies packages, clip delivery"
-        - 300GB Storage for Creative assets, Dailies & Screeners
-  tierCta:
-    label: Request access →
-    href: /beta-interest
-  note: "Add-on packs: additional production slots and seat packs by tier. All
-    prorated. Beta access includes a 90-day free access to Standard or Studio
-    subscription."
+    Grace is completely free while we're in beta. You get every feature, with no
+    credit card and nothing to cancel. We'll give you advance notice before we
+    introduce any paid plans, and you'll never be charged automatically. You
+    choose whether to subscribe.
+  cta:
+    label: Sign up free →
+    href: https://us.graceproductionos.com/sign-up
+  note: "The free beta is open to US-based production companies for now. More
+    regions are coming."
 faq:
   num: "14"
   heading: Things people ask
@@ -442,12 +418,13 @@ faq:
         engineer on the other, building the tool they wanted on their own
         pictures. The full story is on the partnership page.
 finalCta:
-  heading: Grace is open to a small beta cohort
-  headingMuted: right now.
-  body: Tell us about your production and we'll get you set up.
+  heading: Grace is free while we're in beta.
+  headingMuted: Start tonight.
+  body: Sign up, build your first call sheet, and see the day run itself. No card,
+    no commitment.
   primaryCta:
-    label: Request beta access →
-    href: /beta-interest
+    label: Sign up free →
+    href: https://us.graceproductionos.com/sign-up
   secondaryCta:
     label: Back to top ↑
     href: "#"
