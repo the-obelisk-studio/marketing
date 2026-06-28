@@ -1,7 +1,7 @@
 hero:
   eyebrow: Privacy
   title: Privacy Policy
-  lastUpdated: June 2, 2026
+  lastUpdated: June 27, 2026
   intro: >
     This policy explains what Obelisk Studio collects when you use Grace
     Production OS, why we collect it, who else touches it, and the rights you
@@ -40,6 +40,9 @@ sections:
 
 
       *Usage information.* Standard server logs (IP address, request time, route, status code), error reports, and product-analytics events: page views (recording the in-app route you visited, with sensitive tokens and query parameters redacted from the path), how long a screen was open, and a fixed set of feature-usage actions, all captured under a pseudonymous identifier via PostHog as described under "Product analytics" below. We don't run advertising tracking, cross-context behavioral advertising, or session-replay tools.
+
+
+      *Approximate location at sign-up.* When you create an organization, we determine the country your request appears to come from to confirm eligibility for the current beta (open to US-based individuals and companies) and to route you correctly. We match your IP address against a locally hosted copy of the DB-IP "IP to Country Lite" database on our own servers; your IP address is never sent to DB-IP. This is only a soft signal, the country you select and confirm at sign-up is what governs. IP geolocation by DB-IP (https://db-ip.com), used unmodified under the Creative Commons Attribution 4.0 International (CC-BY 4.0) license (https://creativecommons.org/licenses/by/4.0/).
 
 
       *Communications.* If you contact us or send a call sheet, invitation, or screener through Grace, we retain the message contents and recipients.

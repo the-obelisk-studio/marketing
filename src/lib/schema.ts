@@ -376,6 +376,8 @@ export const GracePageSchema = z.object({
   }),
 
   pricing: GraceSectionHeadSchema.extend({
+    // tiers + tierCta optional so the free-beta surface can omit paid plans
+    // and show a single "free during the beta" CTA. GA restores the grid.
     tiers: z.array(z.object({
       name: z.string(),
       desc: z.string(),
@@ -384,8 +386,9 @@ export const GracePageSchema = z.object({
       bullets: z.array(z.string()).default([]),
       featured: z.boolean().default(false),
       badge: z.string().optional(),  // shown on the featured tier ("Recommended")
-    })).min(1),
-    tierCta: GraceCtaButtonSchema,
+    })).optional(),
+    tierCta: GraceCtaButtonSchema.optional(),
+    cta: GraceCtaButtonSchema.optional(),  // free-beta CTA (used when tiers omitted)
     note: z.string().optional(),
   }),
 
