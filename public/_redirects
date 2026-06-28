@@ -8,3 +8,24 @@
 # (theobeliskstudio.com/pricing) resolves cleanly instead of 404ing.
 /pricing https://us.graceproductionos.com/pricing 301
 /pricing/ https://us.graceproductionos.com/pricing 301
+
+# Grace legal pages are RETIRED on this domain. The canonical, maintained
+# set now lives on graceproductionos.com (the app's LEGAL_HOST). These
+# 301s stop the stale Obelisk-hosted copies from being served and send all
+# traffic to the single source of truth. /privacy/request (the privacy
+# intake form) intentionally STAYS on this domain, so these are exact-path
+# rules and do not match /privacy/request.
+/terms https://graceproductionos.com/terms 301
+/terms/ https://graceproductionos.com/terms 301
+/privacy https://graceproductionos.com/privacy 301
+/privacy/ https://graceproductionos.com/privacy 301
+/refunds https://graceproductionos.com/refunds 301
+/refunds/ https://graceproductionos.com/refunds 301
+/dmca https://graceproductionos.com/dmca 301
+/dmca/ https://graceproductionos.com/dmca 301
+/legal/vault https://graceproductionos.com/legal/vault 301
+/legal/vault/ https://graceproductionos.com/legal/vault 301
+/legal/dpa https://graceproductionos.com/legal/dpa 301
+/legal/dpa/ https://graceproductionos.com/legal/dpa 301
+/legal/subprocessors https://graceproductionos.com/legal/subprocessors 301
+/legal/subprocessors/ https://graceproductionos.com/legal/subprocessors 301
