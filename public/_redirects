@@ -9,6 +9,12 @@
 /pricing https://us.graceproductionos.com/pricing 301
 /pricing/ https://us.graceproductionos.com/pricing 301
 
+# The closed-beta interest form is RETIRED — the open free beta replaced
+# it with direct public sign-up. 301 the old form URL to the app sign-up
+# page so any still-indexed link resolves cleanly.
+/beta-interest https://us.graceproductionos.com/sign-up 301
+/beta-interest/ https://us.graceproductionos.com/sign-up 301
+
 # Grace legal pages are RETIRED on this domain. The canonical, maintained
 # set now lives on graceproductionos.com (the app's LEGAL_HOST). These
 # 301s stop the stale Obelisk-hosted copies from being served and send all

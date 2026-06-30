@@ -743,34 +743,6 @@ collections:
               - { name: body, widget: text, required: false }
               - { name: topics, label: Form topic options, widget: list, field: { name: topic, widget: string } }
 
-      # ── Beta interest form (page chrome only — fields are code-owned) ──
-      - name: beta-interest
-        label: "Beta Interest Form"
-        file: content/beta-interest.yml
-        format: yaml
-        fields:
-          - name: hero
-            widget: object
-            fields:
-              - { name: headline, widget: string, hint: "Italics via *asterisks*." }
-              - { name: positioning, widget: text, required: false }
-              - { name: meta, widget: list, field: { name: item, widget: string } }
-          - name: intro
-            label: "Form intro block"
-            widget: object
-            fields:
-              - { name: kicker, widget: string, required: false }
-              - { name: heading, widget: string, required: false, hint: "Italics via *asterisks*." }
-              - { name: body, widget: text, required: false }
-          - name: success
-            label: "Submission success screen"
-            widget: object
-            fields:
-              - { name: eyebrow, widget: string }
-              - { name: heading, widget: string, hint: "Italics via *asterisks*." }
-              - { name: body, widget: text }
-          - { name: finePrint, label: "Fine print under form", widget: text, required: false }
-
       # ── Privacy policy ────────────────────────────────────────────
       - name: privacy
         label: "Privacy Policy"
